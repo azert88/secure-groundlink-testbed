@@ -1,0 +1,17 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 15301862,
+ "operations": [
+  {
+   "byte_changes": [],
+   "source_filename": "data_15301862_2026-10-27T13-42-56_g0",
+   "subtype": "duplicate",
+   "t_new": 153.0,
+   "type": "sequence"
+  }
+ ],
+ "seed": 2402923247863675576,
+ "split": "train",
+ "variant_id": "sequence_00"
+}

@@ -1,0 +1,23 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 15228452,
+ "operations": [
+  {
+   "rise_db": 1.2358232813865035,
+   "t0_s": 46.89691839562741,
+   "t1_s": 143.4253721578391,
+   "type": "noise_rise"
+  },
+  {
+   "byte_changes": [],
+   "source_filename": "data_15228452_2026-10-17T13-44-29_g1",
+   "subtype": "duplicate",
+   "t_new": 220.0,
+   "type": "sequence"
+  }
+ ],
+ "seed": 14981015206397073130,
+ "split": "train",
+ "variant_id": "sequence_00"
+}

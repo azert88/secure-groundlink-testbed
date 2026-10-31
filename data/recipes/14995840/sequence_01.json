@@ -1,0 +1,28 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 14995840,
+ "operations": [
+  {
+   "rise_db": 3.8288755660825076,
+   "t0_s": 261.0363817821194,
+   "t1_s": 374.4755320801896,
+   "type": "noise_rise"
+  },
+  {
+   "byte_changes": [
+    [
+     221,
+     169
+    ]
+   ],
+   "source_filename": "data_14995840_2026-09-14T14-05-49_0001",
+   "subtype": "forged",
+   "t_new": 5.0,
+   "type": "sequence"
+  }
+ ],
+ "seed": 123876744276828810,
+ "split": "test",
+ "variant_id": "sequence_01"
+}

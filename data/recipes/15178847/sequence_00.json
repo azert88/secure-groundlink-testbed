@@ -1,0 +1,21 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 15178847,
+ "operations": [
+  {
+   "end_s": 47.44305866803096,
+   "start_s": 39.053788285182264,
+   "type": "edge_attenuation"
+  },
+  {
+   "filename": "data_15178847_2026-10-11T19-55-01_g0",
+   "shift_s": -7.0,
+   "subtype": "timing",
+   "type": "sequence"
+  }
+ ],
+ "seed": 8961886134248573750,
+ "split": "calib",
+ "variant_id": "sequence_00"
+}

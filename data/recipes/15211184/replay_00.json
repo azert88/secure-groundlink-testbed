@@ -1,0 +1,36 @@
+{
+ "group": "replay",
+ "norad": 39444,
+ "obs_id": 15211184,
+ "operations": [
+  {
+   "depth_db": 2.8738367973147976,
+   "phase": 3.629605651655948,
+   "rate_hz": 0.21999313260835712,
+   "type": "fading"
+  },
+  {
+   "airtime_s": 4.33,
+   "audio": true,
+   "delta_s": 129.0,
+   "evasion": 0,
+   "fade_ms": 10.0,
+   "length": 5,
+   "margin_s": 0.5,
+   "placement": "later",
+   "source_filenames": [
+    "data_15211184_2026-10-15T14-03-39_g0",
+    "data_15211184_2026-10-15T14-03-44_g0",
+    "data_15211184_2026-10-15T14-03-49_g0",
+    "data_15211184_2026-10-15T14-03-54_g0",
+    "data_15211184_2026-10-15T14-03-59_g0"
+   ],
+   "source_obs": null,
+   "subtype": "intra_pass",
+   "type": "replay"
+  }
+ ],
+ "seed": 13929939485990222569,
+ "split": "train",
+ "variant_id": "replay_00"
+}

@@ -1,0 +1,629 @@
+{
+ "seed": 20261103,
+ "cases": [
+  {
+   "norad": 25397,
+   "shape": "tone",
+   "f0_hz": 4000.0,
+   "obs_id": 15034285,
+   "station_id": 1664,
+   "f_edge_hz": 10148.4,
+   "clean_line_flag": false,
+   "results": [
+    {
+     "snr_db": -10.0,
+     "inr_db": 10.19837010557968,
+     "p_ref": 0.1595635236108796,
+     "p_interf": 1.595635236108796,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 3984.4,
+       "f_hi_hz": 4007.8,
+       "width_hz": 46.9,
+       "run_lo_hz": 3960.9,
+       "run_hi_hz": 4031.2,
+       "peak_db": 33.5,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": []
+    },
+    {
+     "snr_db": 0.0,
+     "inr_db": 0.1983701055796809,
+     "p_ref": 0.1595635236108796,
+     "p_interf": 0.1595635236108796,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 3984.4,
+       "f_hi_hz": 4007.8,
+       "width_hz": 46.9,
+       "run_lo_hz": 3984.4,
+       "run_hi_hz": 4031.2,
+       "peak_db": 23.6,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": []
+    },
+    {
+     "snr_db": 10.0,
+     "inr_db": -9.80162989442032,
+     "p_ref": 0.1595635236108796,
+     "p_interf": 0.01595635236108796,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 3984.4,
+       "f_hi_hz": 4007.8,
+       "width_hz": 46.9,
+       "run_lo_hz": 3984.4,
+       "run_hi_hz": 4007.8,
+       "peak_db": 13.8,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": []
+    },
+    {
+     "snr_db": 20.0,
+     "inr_db": -19.80162989442032,
+     "p_ref": 0.1595635236108796,
+     "p_interf": 0.0015956352361087961,
+     "line_found": false,
+     "flagged": false,
+     "in_signal_band": false,
+     "line_flag_obs": false,
+     "lines_at_f0": [],
+     "downlink": []
+    },
+    {
+     "snr_db": 30.0,
+     "inr_db": -29.80162989442032,
+     "p_ref": 0.1595635236108796,
+     "p_interf": 0.0001595635236108796,
+     "line_found": false,
+     "flagged": false,
+     "in_signal_band": false,
+     "line_flag_obs": false,
+     "lines_at_f0": [],
+     "downlink": []
+    }
+   ]
+  },
+  {
+   "norad": 25397,
+   "shape": "noise",
+   "f0_hz": 7000.0,
+   "bw_hz": 150.0,
+   "obs_id": 15034285,
+   "station_id": 1664,
+   "f_edge_hz": 10148.4,
+   "clean_line_flag": false,
+   "results": [
+    {
+     "snr_db": -10.0,
+     "inr_db": 10.19837010557968,
+     "p_ref": 0.1595635236108796,
+     "p_interf": 1.595635236108796,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 6937.5,
+       "f_hi_hz": 7054.7,
+       "width_hz": 140.6,
+       "run_lo_hz": 6867.2,
+       "run_hi_hz": 7125.0,
+       "peak_db": 30.4,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": []
+    },
+    {
+     "snr_db": 0.0,
+     "inr_db": 0.1983701055796809,
+     "p_ref": 0.1595635236108796,
+     "p_interf": 0.1595635236108796,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 6937.5,
+       "f_hi_hz": 7054.7,
+       "width_hz": 140.6,
+       "run_lo_hz": 6914.1,
+       "run_hi_hz": 7101.6,
+       "peak_db": 21.0,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": []
+    },
+    {
+     "snr_db": 10.0,
+     "inr_db": -9.80162989442032,
+     "p_ref": 0.1595635236108796,
+     "p_interf": 0.01595635236108796,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 6937.5,
+       "f_hi_hz": 7078.1,
+       "width_hz": 164.1,
+       "run_lo_hz": 6984.4,
+       "run_hi_hz": 7031.2,
+       "peak_db": 11.5,
+       "max_frac": 0.38,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": []
+    },
+    {
+     "snr_db": 20.0,
+     "inr_db": -19.80162989442032,
+     "p_ref": 0.1595635236108796,
+     "p_interf": 0.0015956352361087961,
+     "line_found": false,
+     "flagged": false,
+     "in_signal_band": false,
+     "line_flag_obs": false,
+     "lines_at_f0": [],
+     "downlink": []
+    },
+    {
+     "snr_db": 30.0,
+     "inr_db": -29.80162989442032,
+     "p_ref": 0.1595635236108796,
+     "p_interf": 0.0001595635236108796,
+     "line_found": false,
+     "flagged": false,
+     "in_signal_band": false,
+     "line_flag_obs": false,
+     "lines_at_f0": [],
+     "downlink": []
+    }
+   ]
+  },
+  {
+   "norad": 39444,
+   "shape": "tone",
+   "f0_hz": 6000.0,
+   "obs_id": 15123656,
+   "station_id": 4011,
+   "f_edge_hz": 22781.2,
+   "clean_line_flag": false,
+   "results": [
+    {
+     "snr_db": -10.0,
+     "inr_db": 9.90292945643741,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 0.0010235789818659766,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 6000.0,
+       "f_hi_hz": 6000.0,
+       "width_hz": 23.4,
+       "run_lo_hz": 5976.6,
+       "run_hi_hz": 6023.4,
+       "peak_db": 43.4,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 0.0,
+     "inr_db": -0.09707054356258812,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 0.00010235789818659766,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 6000.0,
+       "f_hi_hz": 6000.0,
+       "width_hz": 23.4,
+       "run_lo_hz": 5976.6,
+       "run_hi_hz": 6023.4,
+       "peak_db": 33.4,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 10.0,
+     "inr_db": -10.097070543562587,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 1.0235789818659765e-05,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 6000.0,
+       "f_hi_hz": 6000.0,
+       "width_hz": 23.4,
+       "run_lo_hz": 5976.6,
+       "run_hi_hz": 6023.4,
+       "peak_db": 23.4,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 20.0,
+     "inr_db": -20.097070543562587,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 1.0235789818659765e-06,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 6000.0,
+       "f_hi_hz": 6000.0,
+       "width_hz": 23.4,
+       "run_lo_hz": 6000.0,
+       "run_hi_hz": 6000.0,
+       "peak_db": 13.6,
+       "max_frac": 0.939,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 30.0,
+     "inr_db": -30.097070543562587,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 1.0235789818659766e-07,
+     "line_found": false,
+     "flagged": false,
+     "in_signal_band": false,
+     "line_flag_obs": false,
+     "lines_at_f0": [],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "norad": 39444,
+   "shape": "noise",
+   "f0_hz": 3000.0,
+   "bw_hz": 150.0,
+   "obs_id": 15123656,
+   "station_id": 4011,
+   "f_edge_hz": 22781.2,
+   "clean_line_flag": false,
+   "results": [
+    {
+     "snr_db": -10.0,
+     "inr_db": 9.90292945643741,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 0.0010235789818659766,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 2929.7,
+       "f_hi_hz": 3070.3,
+       "width_hz": 164.1,
+       "run_lo_hz": 2835.9,
+       "run_hi_hz": 3164.1,
+       "peak_db": 36.3,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 0.0,
+     "inr_db": -0.09707054356258812,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 0.00010235789818659766,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 2929.7,
+       "f_hi_hz": 3070.3,
+       "width_hz": 164.1,
+       "run_lo_hz": 2882.8,
+       "run_hi_hz": 3117.2,
+       "peak_db": 27.1,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 10.0,
+     "inr_db": -10.097070543562587,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 1.0235789818659765e-05,
+     "line_found": true,
+     "flagged": true,
+     "in_signal_band": false,
+     "line_flag_obs": true,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 2929.7,
+       "f_hi_hz": 3070.3,
+       "width_hz": 164.1,
+       "run_lo_hz": 2906.2,
+       "run_hi_hz": 3093.8,
+       "peak_db": 17.5,
+       "max_frac": 0.998,
+       "narrow": true,
+       "in_signal_band": false
+      }
+     ],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 20.0,
+     "inr_db": -20.097070543562587,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 1.0235789818659765e-06,
+     "line_found": false,
+     "flagged": false,
+     "in_signal_band": false,
+     "line_flag_obs": false,
+     "lines_at_f0": [],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 30.0,
+     "inr_db": -30.097070543562587,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 1.0235789818659766e-07,
+     "line_found": false,
+     "flagged": false,
+     "in_signal_band": false,
+     "line_flag_obs": false,
+     "lines_at_f0": [],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "norad": 39444,
+   "shape": "tone",
+   "f0_hz": 11650.0,
+   "obs_id": 15123656,
+   "station_id": 4011,
+   "f_edge_hz": 22781.2,
+   "clean_line_flag": false,
+   "results": [
+    {
+     "snr_db": -10.0,
+     "inr_db": 9.90292945643741,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 0.0010235789818659766,
+     "line_found": true,
+     "flagged": false,
+     "in_signal_band": true,
+     "line_flag_obs": false,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 11648.4,
+       "f_hi_hz": 11648.4,
+       "width_hz": 23.4,
+       "run_lo_hz": 11625.0,
+       "run_hi_hz": 11671.9,
+       "peak_db": 29.8,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": true
+      }
+     ],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 0.0,
+     "inr_db": -0.09707054356258812,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 0.00010235789818659766,
+     "line_found": true,
+     "flagged": false,
+     "in_signal_band": true,
+     "line_flag_obs": false,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 11648.4,
+       "f_hi_hz": 11648.4,
+       "width_hz": 23.4,
+       "run_lo_hz": 11625.0,
+       "run_hi_hz": 11671.9,
+       "peak_db": 19.8,
+       "max_frac": 1.0,
+       "narrow": true,
+       "in_signal_band": true
+      }
+     ],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 10.0,
+     "inr_db": -10.097070543562587,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 1.0235789818659765e-05,
+     "line_found": true,
+     "flagged": false,
+     "in_signal_band": true,
+     "line_flag_obs": false,
+     "lines_at_f0": [
+      {
+       "f_lo_hz": 11648.4,
+       "f_hi_hz": 11648.4,
+       "width_hz": 23.4,
+       "run_lo_hz": 11648.4,
+       "run_hi_hz": 11648.4,
+       "peak_db": 10.3,
+       "max_frac": 0.312,
+       "narrow": true,
+       "in_signal_band": true
+      }
+     ],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 20.0,
+     "inr_db": -20.097070543562587,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 1.0235789818659765e-06,
+     "line_found": false,
+     "flagged": false,
+     "in_signal_band": false,
+     "line_flag_obs": false,
+     "lines_at_f0": [],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    },
+    {
+     "snr_db": 30.0,
+     "inr_db": -30.097070543562587,
+     "p_ref": 0.00010235789818659766,
+     "p_interf": 1.0235789818659766e-07,
+     "line_found": false,
+     "flagged": false,
+     "in_signal_band": false,
+     "line_flag_obs": false,
+     "lines_at_f0": [],
+     "downlink": [
+      [
+       10898.4,
+       12398.4
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

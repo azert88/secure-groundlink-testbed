@@ -1,0 +1,30 @@
+{
+ "group": "replay",
+ "norad": 39444,
+ "obs_id": 15230978,
+ "operations": [
+  {
+   "airtime_s": 4.33,
+   "audio": true,
+   "delta_s": 276.0,
+   "evasion": 0,
+   "fade_ms": 10.0,
+   "length": 5,
+   "margin_s": 0.5,
+   "placement": "later",
+   "source_filenames": [
+    "data_15230978_2026-10-18T02-51-24_g0",
+    "data_15230978_2026-10-18T02-51-29_g0",
+    "data_15230978_2026-10-18T02-51-34_g0",
+    "data_15230978_2026-10-18T02-51-39_g0",
+    "data_15230978_2026-10-18T02-51-44_g0"
+   ],
+   "source_obs": null,
+   "subtype": "intra_pass",
+   "type": "replay"
+  }
+ ],
+ "seed": 2136013565424878209,
+ "split": "calib",
+ "variant_id": "replay_00"
+}

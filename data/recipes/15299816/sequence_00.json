@@ -1,0 +1,21 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 15299816,
+ "operations": [
+  {
+   "filenames": [
+    "data_15299816_2026-10-28T07-09-27_g0",
+    "data_15299816_2026-10-28T07-09-32_g0",
+    "data_15299816_2026-10-28T07-09-37_g0"
+   ],
+   "k": 3,
+   "label_filename": "data_15299816_2026-10-28T07-09-42_g0",
+   "subtype": "deletion",
+   "type": "sequence"
+  }
+ ],
+ "seed": 17082041106884942537,
+ "split": "train",
+ "variant_id": "sequence_00"
+}

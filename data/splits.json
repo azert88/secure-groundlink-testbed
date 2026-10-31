@@ -1,0 +1,591 @@
+{
+ "rules": "by observation; test station-disjoint from train; see data/make_splits.py",
+ "satellites": {
+  "25397": {
+   "frame_test_extra": [
+    15033863,
+    15034285,
+    15042383,
+    15080837,
+    15080917,
+    15091860
+   ],
+   "name": "TECHSAT 1B",
+   "obs": {
+    "14911770": {
+     "audio": true,
+     "frames": false,
+     "station_id": 431,
+     "timing_reliable": true
+    },
+    "14911777": {
+     "audio": true,
+     "frames": false,
+     "station_id": 1696,
+     "timing_reliable": true
+    },
+    "14915678": {
+     "audio": true,
+     "frames": false,
+     "station_id": 431,
+     "timing_reliable": true
+    },
+    "14926205": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4755,
+     "timing_reliable": true
+    },
+    "14942057": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4171,
+     "timing_reliable": true
+    },
+    "14944671": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4755,
+     "timing_reliable": true
+    },
+    "14956312": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4803,
+     "timing_reliable": true
+    },
+    "14966459": {
+     "audio": true,
+     "frames": false,
+     "station_id": 6,
+     "timing_reliable": true
+    },
+    "14974899": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4803,
+     "timing_reliable": true
+    },
+    "14976061": {
+     "audio": true,
+     "frames": false,
+     "station_id": 6,
+     "timing_reliable": true
+    },
+    "15001383": {
+     "audio": true,
+     "frames": false,
+     "station_id": 1466,
+     "timing_reliable": true
+    },
+    "15004025": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4451,
+     "timing_reliable": true
+    },
+    "15021469": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4791,
+     "timing_reliable": true
+    },
+    "15033837": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4151,
+     "timing_reliable": true
+    },
+    "15033863": {
+     "audio": true,
+     "frames": true,
+     "station_id": 1664,
+     "timing_reliable": true
+    },
+    "15034285": {
+     "audio": true,
+     "frames": true,
+     "station_id": 1664,
+     "timing_reliable": true
+    },
+    "15042383": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4188,
+     "timing_reliable": true
+    },
+    "15063067": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4451,
+     "timing_reliable": true
+    },
+    "15066716": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4394,
+     "timing_reliable": true
+    },
+    "15069330": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4073,
+     "timing_reliable": true
+    },
+    "15080453": {
+     "audio": true,
+     "frames": false,
+     "station_id": 3855,
+     "timing_reliable": true
+    },
+    "15080837": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4188,
+     "timing_reliable": true
+    },
+    "15080917": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4188,
+     "timing_reliable": true
+    },
+    "15087899": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4460,
+     "timing_reliable": true
+    },
+    "15087940": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4791,
+     "timing_reliable": true
+    },
+    "15087941": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4151,
+     "timing_reliable": true
+    },
+    "15091860": {
+     "audio": true,
+     "frames": true,
+     "station_id": 5049,
+     "timing_reliable": true
+    },
+    "15091907": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4394,
+     "timing_reliable": true
+    },
+    "15128862": {
+     "audio": true,
+     "frames": false,
+     "station_id": 1696,
+     "timing_reliable": true
+    },
+    "15140303": {
+     "audio": true,
+     "frames": false,
+     "station_id": 1664,
+     "timing_reliable": true
+    },
+    "15150189": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4738,
+     "timing_reliable": true
+    },
+    "15173022": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4738,
+     "timing_reliable": true
+    },
+    "15202727": {
+     "audio": true,
+     "frames": false,
+     "station_id": 2173,
+     "timing_reliable": true
+    },
+    "15230631": {
+     "audio": true,
+     "frames": false,
+     "station_id": 2987,
+     "timing_reliable": true
+    },
+    "15236772": {
+     "audio": true,
+     "frames": false,
+     "station_id": 2987,
+     "timing_reliable": true
+    },
+    "15237441": {
+     "audio": true,
+     "frames": false,
+     "station_id": 754,
+     "timing_reliable": true
+    },
+    "15244766": {
+     "audio": true,
+     "frames": false,
+     "station_id": 754,
+     "timing_reliable": true
+    },
+    "15252654": {
+     "audio": true,
+     "frames": false,
+     "station_id": 2173,
+     "timing_reliable": true
+    },
+    "15252702": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4460,
+     "timing_reliable": true
+    },
+    "15287498": {
+     "audio": true,
+     "frames": false,
+     "station_id": 1466,
+     "timing_reliable": true
+    },
+    "15305494": {
+     "audio": true,
+     "frames": false,
+     "station_id": 2968,
+     "timing_reliable": true
+    },
+    "15312338": {
+     "audio": true,
+     "frames": false,
+     "station_id": 3855,
+     "timing_reliable": true
+    }
+   },
+   "splits": {
+    "calib": [
+     14911770,
+     14911777,
+     14926205,
+     14942057,
+     15063067,
+     15066716,
+     15087941,
+     15252702
+    ],
+    "test": [
+     15033863,
+     15034285,
+     15042383,
+     15069330,
+     15080837,
+     15080917,
+     15091860,
+     15140303
+    ],
+    "train": [
+     14915678,
+     14944671,
+     14956312,
+     14966459,
+     14974899,
+     14976061,
+     15001383,
+     15004025,
+     15021469,
+     15033837,
+     15080453,
+     15087899,
+     15087940,
+     15091907,
+     15128862,
+     15150189,
+     15173022,
+     15202727,
+     15230631,
+     15236772,
+     15237441,
+     15244766,
+     15252654,
+     15287498,
+     15305494,
+     15312338
+    ]
+   },
+   "test_stations": [
+    1664,
+    4073,
+    4188,
+    5049
+   ]
+  },
+  "39444": {
+   "frame_test_extra": [],
+   "name": "FUNCUBE-1",
+   "obs": {
+    "14932721": {
+     "audio": true,
+     "frames": true,
+     "station_id": 2107,
+     "timing_reliable": true
+    },
+    "14934136": {
+     "audio": true,
+     "frames": true,
+     "station_id": 2107,
+     "timing_reliable": false
+    },
+    "14944444": {
+     "audio": true,
+     "frames": false,
+     "station_id": 2107,
+     "timing_reliable": true
+    },
+    "14957048": {
+     "audio": true,
+     "frames": true,
+     "station_id": 2107,
+     "timing_reliable": true
+    },
+    "14966979": {
+     "audio": true,
+     "frames": true,
+     "station_id": 5155,
+     "timing_reliable": false
+    },
+    "14971294": {
+     "audio": false,
+     "frames": true,
+     "station_id": 5155,
+     "timing_reliable": true
+    },
+    "14987124": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "14995840": {
+     "audio": true,
+     "frames": true,
+     "station_id": 1763,
+     "timing_reliable": false
+    },
+    "14995842": {
+     "audio": true,
+     "frames": true,
+     "station_id": 1763,
+     "timing_reliable": false
+    },
+    "14995843": {
+     "audio": true,
+     "frames": true,
+     "station_id": 1763,
+     "timing_reliable": false
+    },
+    "14998723": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4806,
+     "timing_reliable": true
+    },
+    "15012409": {
+     "audio": true,
+     "frames": false,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "15023587": {
+     "audio": true,
+     "frames": false,
+     "station_id": 2107,
+     "timing_reliable": true
+    },
+    "15081287": {
+     "audio": false,
+     "frames": true,
+     "station_id": 4434,
+     "timing_reliable": false
+    },
+    "15090581": {
+     "audio": true,
+     "frames": true,
+     "station_id": 2107,
+     "timing_reliable": true
+    },
+    "15123656": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4011,
+     "timing_reliable": true
+    },
+    "15178847": {
+     "audio": true,
+     "frames": true,
+     "station_id": 2107,
+     "timing_reliable": true
+    },
+    "15192857": {
+     "audio": true,
+     "frames": true,
+     "station_id": 2107,
+     "timing_reliable": true
+    },
+    "15192903": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "15202507": {
+     "audio": true,
+     "frames": true,
+     "station_id": 2107,
+     "timing_reliable": true
+    },
+    "15202641": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "15211184": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "15222456": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "15228452": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "15229495": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4806,
+     "timing_reliable": true
+    },
+    "15230978": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "15237468": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4272,
+     "timing_reliable": false
+    },
+    "15242426": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "15244977": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4806,
+     "timing_reliable": true
+    },
+    "15275276": {
+     "audio": true,
+     "frames": true,
+     "station_id": 2107,
+     "timing_reliable": true
+    },
+    "15285174": {
+     "audio": true,
+     "frames": true,
+     "station_id": 2107,
+     "timing_reliable": true
+    },
+    "15297741": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "15299816": {
+     "audio": false,
+     "frames": true,
+     "station_id": 4434,
+     "timing_reliable": false
+    },
+    "15301862": {
+     "audio": true,
+     "frames": true,
+     "station_id": 4272,
+     "timing_reliable": true
+    },
+    "15305451": {
+     "audio": true,
+     "frames": true,
+     "station_id": 2107,
+     "timing_reliable": true
+    }
+   },
+   "splits": {
+    "calib": [
+     14987124,
+     15012409,
+     15090581,
+     15178847,
+     15222456,
+     15230978,
+     15242426
+    ],
+    "test": [
+     14995840,
+     14995842,
+     14995843,
+     14998723,
+     15229495,
+     15244977
+    ],
+    "train": [
+     14932721,
+     14934136,
+     14944444,
+     14957048,
+     14966979,
+     14971294,
+     15023587,
+     15081287,
+     15123656,
+     15192857,
+     15192903,
+     15202507,
+     15202641,
+     15211184,
+     15228452,
+     15237468,
+     15275276,
+     15285174,
+     15297741,
+     15299816,
+     15301862,
+     15305451
+    ]
+   },
+   "test_stations": [
+    1763,
+    4806
+   ]
+  }
+ },
+ "seed": 20261103,
+ "source": "data/qc_report.json"
+}

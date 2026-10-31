@@ -1,0 +1,890 @@
+{
+ "by_group": {
+  "benign": 222,
+  "clean": 77,
+  "combo": 147,
+  "evasion": 27,
+  "interference": 267,
+  "replay": 65,
+  "sequence": 72,
+  "snrgrid": 140
+ },
+ "by_split_satellite": {
+  "calib/25397": 56,
+  "calib/39444": 79,
+  "test/25397": 235,
+  "test/39444": 184,
+  "train/25397": 208,
+  "train/39444": 255
+ },
+ "recipes": 1017,
+ "skipped": [
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14911770,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14911770,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14911770,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14911777,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14911777,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14911777,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14915678,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14915678,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14915678,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14926205,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14926205,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14926205,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14942057,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14942057,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14942057,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14944444,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14944444,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14944444,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14944671,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14944671,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14944671,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14956312,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14956312,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14956312,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14966459,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14966459,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14966459,
+   "reason": "not available"
+  },
+  {
+   "group": "benign",
+   "n": 3,
+   "obs_id": 14971294,
+   "reason": "not available"
+  },
+  {
+   "group": "interference",
+   "n": 4,
+   "obs_id": 14971294,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14971294,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14974899,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14974899,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14974899,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14976061,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14976061,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14976061,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14987124,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14987124,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 14987124,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 14998723,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 14998723,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 10,
+   "obs_id": 14998723,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15001383,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15001383,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15001383,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15004025,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15004025,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15004025,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15012409,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15012409,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15012409,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15021469,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15021469,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15021469,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15023587,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15023587,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15023587,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15033837,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15033837,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15033837,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15063067,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15063067,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15063067,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15066716,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15066716,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15066716,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15069330,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15069330,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 10,
+   "obs_id": 15069330,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15080453,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15080453,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15080453,
+   "reason": "not available"
+  },
+  {
+   "obs_id": 15080917,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "evasion_01"
+  },
+  {
+   "group": "benign",
+   "n": 3,
+   "obs_id": 15081287,
+   "reason": "not available"
+  },
+  {
+   "group": "interference",
+   "n": 4,
+   "obs_id": 15081287,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15081287,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15087899,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15087899,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15087899,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15087940,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15087940,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15087940,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15087941,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15087941,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15087941,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15091907,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15091907,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15091907,
+   "reason": "not available"
+  },
+  {
+   "obs_id": 15123656,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "replay_00"
+  },
+  {
+   "obs_id": 15123656,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "replay_01"
+  },
+  {
+   "obs_id": 15123656,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "combo_00"
+  },
+  {
+   "obs_id": 15123656,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "combo_01"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15128862,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15128862,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15128862,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15140303,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15140303,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 10,
+   "obs_id": 15140303,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15150189,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15150189,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15150189,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15173022,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15173022,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15173022,
+   "reason": "not available"
+  },
+  {
+   "obs_id": 15192857,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "replay_00"
+  },
+  {
+   "obs_id": 15192857,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "replay_01"
+  },
+  {
+   "obs_id": 15192857,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "combo_00"
+  },
+  {
+   "obs_id": 15192857,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "combo_01"
+  },
+  {
+   "obs_id": 15202507,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "replay_00"
+  },
+  {
+   "obs_id": 15202507,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "replay_01"
+  },
+  {
+   "obs_id": 15202507,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "combo_00"
+  },
+  {
+   "obs_id": 15202507,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "combo_01"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15202727,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15202727,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15202727,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15230631,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15230631,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15230631,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15236772,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15236772,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15236772,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15237441,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15237441,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15237441,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15244766,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15244766,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15244766,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15252654,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15252654,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15252654,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15252702,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15252702,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15252702,
+   "reason": "not available"
+  },
+  {
+   "obs_id": 15275276,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "replay_00"
+  },
+  {
+   "obs_id": 15275276,
+   "reason": "no gap holds the copied frames",
+   "variant_id": "combo_01"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15287498,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15287498,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15287498,
+   "reason": "not available"
+  },
+  {
+   "group": "benign",
+   "n": 3,
+   "obs_id": 15299816,
+   "reason": "not available"
+  },
+  {
+   "group": "interference",
+   "n": 4,
+   "obs_id": 15299816,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15299816,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15305494,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15305494,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15305494,
+   "reason": "not available"
+  },
+  {
+   "group": "replay",
+   "n": 2,
+   "obs_id": 15312338,
+   "reason": "not available"
+  },
+  {
+   "group": "sequence",
+   "n": 2,
+   "obs_id": 15312338,
+   "reason": "not available"
+  },
+  {
+   "group": "combo",
+   "n": 2,
+   "obs_id": 15312338,
+   "reason": "not available"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "group": "benign",
+ "norad": 25397,
+ "obs_id": 15087940,
+ "operations": [
+  {
+   "depth_db": 5.473146301592059,
+   "phase": 5.027644729737557,
+   "rate_hz": 0.1033526581828007,
+   "type": "fading"
+  },
+  {
+   "end_s": 59.755948007872774,
+   "start_s": 40.92706624737255,
+   "type": "edge_attenuation"
+  }
+ ],
+ "seed": 15311861897735607806,
+ "split": "train",
+ "variant_id": "benign_01"
+}

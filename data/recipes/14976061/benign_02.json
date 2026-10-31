@@ -1,0 +1,16 @@
+{
+ "group": "benign",
+ "norad": 25397,
+ "obs_id": 14976061,
+ "operations": [
+  {
+   "rise_db": 2.1199844969041544,
+   "t0_s": 125.73874890339783,
+   "t1_s": 193.88341665838135,
+   "type": "noise_rise"
+  }
+ ],
+ "seed": 6813306727837245358,
+ "split": "train",
+ "variant_id": "benign_02"
+}

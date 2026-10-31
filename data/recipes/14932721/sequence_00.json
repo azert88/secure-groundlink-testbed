@@ -1,0 +1,31 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 14932721,
+ "operations": [
+  {
+   "end_s": 49.68207733826236,
+   "start_s": 41.888946721268525,
+   "type": "edge_attenuation"
+  },
+  {
+   "byte_changes": [
+    [
+     79,
+     67
+    ],
+    [
+     126,
+     155
+    ]
+   ],
+   "source_filename": "data_14932721_2026-09-04T06-03-06_g0",
+   "subtype": "forged",
+   "t_new": 82.0,
+   "type": "sequence"
+  }
+ ],
+ "seed": 11801699891099788616,
+ "split": "train",
+ "variant_id": "sequence_00"
+}

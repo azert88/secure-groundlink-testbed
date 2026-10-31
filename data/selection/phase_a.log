@@ -1,0 +1,3 @@
+[A] prefilter (public satyaml v5.9.0, 409 satellites): {"narrow_1k2": {"mode_ok": 60, "not_in_grsat": 40, "grsat_mode_mismatch": 5, "kept": 15}, "fsk_9k6": {"mode_ok": 118, "not_in_grsat": 86, "grsat_mode_mismatch": 2, "kept": 30}}
+[A] kept 45 candidates (43 satellites, 53 transmitters); window 2026-08-30T00:00:00Z .. 2026-10-29T00:00:00Z
+[A] 1/45 TECHSAT 1B (25397, fsk_9k6): good+demod=290 stations=24 exact=True (net=0, cache=22)

@@ -1,0 +1,21 @@
+{
+ "group": "benign",
+ "norad": 25397,
+ "obs_id": 15034285,
+ "operations": [
+  {
+   "rise_db": 5.584895882691119,
+   "t0_s": 325.91631901844966,
+   "t1_s": 439.210555394949,
+   "type": "noise_rise"
+  },
+  {
+   "end_s": 25.698866133085293,
+   "start_s": 47.252505632044304,
+   "type": "edge_attenuation"
+  }
+ ],
+ "seed": 1102989410938345860,
+ "split": "test",
+ "variant_id": "benign_02"
+}

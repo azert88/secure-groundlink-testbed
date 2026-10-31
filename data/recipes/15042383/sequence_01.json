@@ -1,0 +1,22 @@
+{
+ "group": "sequence",
+ "norad": 25397,
+ "obs_id": 15042383,
+ "operations": [
+  {
+   "depth_db": 5.949239402137047,
+   "phase": 4.91839166444218,
+   "rate_hz": 0.3953472967674772,
+   "type": "fading"
+  },
+  {
+   "filename": "data_15042383_2026-09-22T05-37-32_g0",
+   "shift_s": -8.0,
+   "subtype": "timing",
+   "type": "sequence"
+  }
+ ],
+ "seed": 14333355865916101007,
+ "split": "test",
+ "variant_id": "sequence_01"
+}

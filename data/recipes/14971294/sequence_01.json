@@ -1,0 +1,16 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 14971294,
+ "operations": [
+  {
+   "filename": "data_14971294_2026-09-10T14-46-39_g0",
+   "jump": 4,
+   "subtype": "counter_jump",
+   "type": "sequence"
+  }
+ ],
+ "seed": 10574958664796748974,
+ "split": "train",
+ "variant_id": "sequence_01"
+}

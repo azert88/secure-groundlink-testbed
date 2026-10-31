@@ -1,0 +1,99 @@
+{
+ "window": [
+  "2026-08-30T00:00:00Z",
+  "2026-10-29T00:00:00Z"
+ ],
+ "shortlist": {
+  "narrow_1k2": [
+   {
+    "norad": 14781,
+    "name": "UOSAT 2",
+    "modes": [
+     "AFSK"
+    ],
+    "transmitters": [
+     "aBPWui23BqUhVc62nySNuQ"
+    ],
+    "n_good": 6,
+    "n_good_with_demod": 1,
+    "n_stations": 1,
+    "n_frames_total": 1,
+    "exact": true,
+    "meets_all": false,
+    "class": "narrow_1k2",
+    "burst_period_s": null,
+    "burst_frac_regular": null,
+    "burst_obs": [
+     {
+      "obs_id": 15139537,
+      "ground_station": 2198,
+      "n_frames": 1,
+      "n_bursts": 1,
+      "frames_per_burst_median": 1,
+      "period_s": null,
+      "mad_s": null,
+      "frac_regular": null
+     }
+    ],
+    "decoders": [],
+    "counter_fields": {}
+   },
+   {
+    "norad": 20439,
+    "name": "PACSAT",
+    "modes": [
+     "BPSK"
+    ],
+    "transmitters": [
+     "YDZA3DwNftFUhhTePBN2Hg",
+     "6hZFcJypsM4H7zY6rExLXd"
+    ],
+    "n_good": 0,
+    "n_good_with_demod": 0,
+    "n_stations": 0,
+    "n_frames_total": 0,
+    "exact": true,
+    "meets_all": false,
+    "class": "narrow_1k2",
+    "burst_period_s": null,
+    "burst_frac_regular": null,
+    "burst_obs": [],
+    "decoders": [],
+    "counter_fields": {}
+   },
+   {
+    "norad": 20442,
+    "name": "LUSAT",
+    "modes": [
+     "BPSK"
+    ],
+    "transmitters": [
+     "Z2ViCYEPTmBkKPkMKFgnJg"
+    ],
+    "n_good": 1,
+    "n_good_with_demod": 0,
+    "n_stations": 0,
+    "n_frames_total": 0,
+    "exact": true,
+    "meets_all": false,
+    "class": "narrow_1k2",
+    "burst_period_s": null,
+    "burst_frac_regular": null,
+    "burst_obs": [],
+    "decoders": [],
+    "counter_fields": {}
+   }
+  ],
+  "fsk_9k6": []
+ },
+ "recommendations": {
+  "narrow_1k2": null,
+  "fsk_9k6": null
+ },
+ "n_candidates": 3,
+ "n_meeting_all": 0,
+ "requests": {
+  "network": 6,
+  "cache_hits": 0
+ }
+}

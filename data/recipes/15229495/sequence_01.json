@@ -1,0 +1,22 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 15229495,
+ "operations": [
+  {
+   "depth_db": 3.02465399275571,
+   "phase": 4.394488724562365,
+   "rate_hz": 0.2859638356321741,
+   "type": "fading"
+  },
+  {
+   "filename": "data_15229495_2026-10-18T09-14-15_g0",
+   "shift_s": -4.0,
+   "subtype": "timing",
+   "type": "sequence"
+  }
+ ],
+ "seed": 14457593973241179491,
+ "split": "test",
+ "variant_id": "sequence_01"
+}

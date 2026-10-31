@@ -1,0 +1,22 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 14934136,
+ "operations": [
+  {
+   "depth_db": 4.302549900831105,
+   "phase": 4.650985846870519,
+   "rate_hz": 0.283123136878319,
+   "type": "fading"
+  },
+  {
+   "filename": "data_14934136_2026-09-04T19-17-34_g0",
+   "jump": 8,
+   "subtype": "counter_jump",
+   "type": "sequence"
+  }
+ ],
+ "seed": 5794983995992262269,
+ "split": "train",
+ "variant_id": "sequence_00"
+}

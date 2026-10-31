@@ -1,0 +1,7 @@
+[B] 25397: 40 obs selected from 24 stations
+[B] 39444: 36 obs selected from 7 stations
+[B] 1/5 obs 15004025 (25397): 4 requests, 2.88 MB, 12.4 s
+[B] 2/5 obs 15287655 (25397): 6 requests, 7.77 MB, 19.4 s
+[B] 3/5 obs 15179622 (25397): 4 requests, 4.58 MB, 13.1 s
+[B] 4/5 obs 15123656 (39444): 84 requests, 15.10 MB, 266.3 s
+[B] 5/5 obs 15242426 (39444): 32 requests, 4.53 MB, 101.8 s

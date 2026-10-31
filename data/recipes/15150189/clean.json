@@ -1,0 +1,9 @@
+{
+ "group": "clean",
+ "norad": 25397,
+ "obs_id": 15150189,
+ "operations": [],
+ "seed": 14744600167328855702,
+ "split": "train",
+ "variant_id": "clean"
+}

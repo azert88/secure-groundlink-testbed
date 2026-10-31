@@ -1,0 +1,56 @@
+{
+ "group": "combo",
+ "norad": 39444,
+ "obs_id": 14966979,
+ "operations": [
+  {
+   "airtime_s": 4.33,
+   "audio": false,
+   "delta_s": 93.0,
+   "evasion": 0,
+   "fade_ms": 10.0,
+   "length": 8,
+   "margin_s": 0.5,
+   "placement": "later",
+   "source_filenames": [
+    "data_14966979_2026-09-10T03-57-12_g0",
+    "data_14966979_2026-09-10T03-57-17_g0",
+    "data_14966979_2026-09-10T03-57-22_g0",
+    "data_14966979_2026-09-10T03-57-37_g0",
+    "data_14966979_2026-09-10T03-57-47_g0",
+    "data_14966979_2026-09-10T03-57-52_g0",
+    "data_14966979_2026-09-10T03-58-22_g0",
+    "data_14966979_2026-09-10T03-58-27_g0"
+   ],
+   "source_obs": null,
+   "subtype": "intra_pass",
+   "type": "replay"
+  },
+  {
+   "filename": "data_14966979_2026-09-10T03-56-47_g1",
+   "jump": 10,
+   "subtype": "counter_jump",
+   "type": "sequence"
+  },
+  {
+   "bw_hz": 112.5730378228117,
+   "drift_hz_s": 0.0,
+   "evasion": 0,
+   "f0_hz": 17914.393037635058,
+   "phase": 4.8564400905304215,
+   "segments": [
+    [
+     93.76032714959466,
+     122.97783563888561
+    ]
+   ],
+   "shape": "noise",
+   "snr_db": 2.1495349052461385,
+   "subtype": "noise",
+   "type": "interference"
+  }
+ ],
+ "seed": 5989261136806098762,
+ "split": "train",
+ "variant_id": "combo_00"
+}

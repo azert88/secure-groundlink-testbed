@@ -1,0 +1,15 @@
+{
+ "group": "benign",
+ "norad": 25397,
+ "obs_id": 14911770,
+ "operations": [
+  {
+   "end_s": 31.914582881962765,
+   "start_s": 51.98422410674445,
+   "type": "edge_attenuation"
+  }
+ ],
+ "seed": 4763309649505982975,
+ "split": "calib",
+ "variant_id": "benign_01"
+}

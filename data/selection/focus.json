@@ -1,0 +1,500 @@
+{
+ "window": [
+  "2026-08-30T00:00:00Z",
+  "2026-10-29T00:00:00Z"
+ ],
+ "probe": [
+  {
+   "norad": 60527,
+   "name": "CUAVA-2",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "hcMU5oRhAUXwDFKHw4JFRu"
+   ],
+   "n_good": 25,
+   "n_good_with_demod": 17,
+   "n_stations": 3,
+   "n_frames_total": 93,
+   "exact": false,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 60469,
+   "name": "Waratah Seed-1",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "bqQczGHzaJv2yUZu3pkfpN"
+   ],
+   "n_good": 25,
+   "n_good_with_demod": 12,
+   "n_stations": 4,
+   "n_frames_total": 86,
+   "exact": false,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 39440,
+   "name": "CUBEBUG-2",
+   "modes": [
+    "AFSK"
+   ],
+   "transmitters": [
+    "2KinLbk46zccaYCdUY4Lqr"
+   ],
+   "n_good": 25,
+   "n_good_with_demod": 10,
+   "n_stations": 4,
+   "n_frames_total": 13,
+   "exact": false,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 43786,
+   "name": "ITASAT 1",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "Mhtbkk6uei97oKEmLkGLBm"
+   ],
+   "n_good": 25,
+   "n_good_with_demod": 10,
+   "n_stations": 3,
+   "n_frames_total": 13,
+   "exact": false,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 40024,
+   "name": "NANOSATC-BR1",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "s8jpdkUffam9RxRArizMQd"
+   ],
+   "n_good": 14,
+   "n_good_with_demod": 10,
+   "n_stations": 2,
+   "n_frames_total": 91,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 52898,
+   "name": "RANDEV",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "dH8RH93DA7E5eqsERBmTgK"
+   ],
+   "n_good": 12,
+   "n_good_with_demod": 4,
+   "n_stations": 4,
+   "n_frames_total": 11,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 37224,
+   "name": "O/OREOS",
+   "modes": [
+    "AFSK"
+   ],
+   "transmitters": [
+    "uFLHu8MEJU5LJqjkVSHs2G"
+   ],
+   "n_good": 5,
+   "n_good_with_demod": 3,
+   "n_stations": 3,
+   "n_frames_total": 3,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 57174,
+   "name": "SATURN",
+   "modes": [
+    "AFSK"
+   ],
+   "transmitters": [
+    "4T8D7kLMyV8rF5r4rpBnfd"
+   ],
+   "n_good": 5,
+   "n_good_with_demod": 3,
+   "n_stations": 2,
+   "n_frames_total": 6,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 43790,
+   "name": "Eaglet 1",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "NwAjXMKwWFyQkeSz9Qn9RS"
+   ],
+   "n_good": 5,
+   "n_good_with_demod": 2,
+   "n_stations": 2,
+   "n_frames_total": 107,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 40074,
+   "name": "UKUBE-1",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "HWdDcVRpjQJCxMbtRkL5em",
+    "9UHihpacwFrRmgZNAweK2g"
+   ],
+   "n_good": 0,
+   "n_good_with_demod": 0,
+   "n_stations": 0,
+   "n_frames_total": 0,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 43803,
+   "name": "JY1Sat",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "ocoEf6MEZtiZgvEWSWsqtY"
+   ],
+   "n_good": 25,
+   "n_good_with_demod": 0,
+   "n_stations": 0,
+   "n_frames_total": 0,
+   "exact": false,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 57184,
+   "name": "Monitor-2",
+   "modes": [
+    "AFSK"
+   ],
+   "transmitters": [
+    "o6jjcgr6pzJ2JXqvy2v6oV",
+    "jyEKBpFSxtF2WwiHzvATSL"
+   ],
+   "n_good": 0,
+   "n_good_with_demod": 0,
+   "n_stations": 0,
+   "n_frames_total": 0,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 57195,
+   "name": "Avion Kaluga 650",
+   "modes": [
+    "AFSK"
+   ],
+   "transmitters": [
+    "2pKHMvrVL3nuidgND8h3SR",
+    "h9rBBEAbc7WiRZmYnBZMkR"
+   ],
+   "n_good": 1,
+   "n_good_with_demod": 0,
+   "n_stations": 0,
+   "n_frames_total": 0,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 60240,
+   "name": "OOV-Cube",
+   "modes": [
+    "AFSK"
+   ],
+   "transmitters": [
+    "9WGrdoYnrpR5GebU7vZGNB"
+   ],
+   "n_good": 2,
+   "n_good_with_demod": 0,
+   "n_stations": 0,
+   "n_frames_total": 0,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  }
+ ],
+ "picks": [
+  [
+   60527,
+   "narrow_1k2"
+  ],
+  [
+   60469,
+   "narrow_1k2"
+  ]
+ ],
+ "results": [
+  {
+   "norad": 25397,
+   "name": "TECHSAT 1B",
+   "modes": [
+    "FSK"
+   ],
+   "transmitters": [
+    "5W3dB4ix8qxUZ362SQvVwh",
+    "Dr9jk4p5WxHjhJ7ETmXzbY"
+   ],
+   "n_good": 470,
+   "n_good_with_demod": 290,
+   "n_stations": 24,
+   "n_frames_total": 1672,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": true,
+   "class": "fsk_9k6",
+   "grsat_name": "GO-32",
+   "burst_period_s": 30.0,
+   "burst_frac_regular": 0.9333333333333333,
+   "burst_obs": [
+    {
+     "obs_id": 15070561,
+     "ground_station": 4188,
+     "n_frames": 46,
+     "n_bursts": 16,
+     "frames_per_burst_median": 3.0,
+     "period_s": 30.0,
+     "mad_s": 1.0,
+     "frac_regular": 0.9333333333333333
+    },
+    {
+     "obs_id": 15066403,
+     "ground_station": 4188,
+     "n_frames": 45,
+     "n_bursts": 17,
+     "frames_per_burst_median": 3,
+     "period_s": 30.0,
+     "mad_s": 0.0,
+     "frac_regular": 1.0
+    },
+    {
+     "obs_id": 15042383,
+     "ground_station": 4188,
+     "n_frames": 43,
+     "n_bursts": 17,
+     "frames_per_burst_median": 3,
+     "period_s": 30.0,
+     "mad_s": 5.5,
+     "frac_regular": 0.625
+    }
+   ],
+   "decoders": [],
+   "counter_fields": {}
+  },
+  {
+   "norad": 39444,
+   "name": "FUNCUBE-1",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "Pt4MFHSC8UFHu3aTQTLz9K"
+   ],
+   "n_good": 378,
+   "n_good_with_demod": 69,
+   "n_stations": 7,
+   "n_frames_total": 1849,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2",
+   "grsat_name": "AO-73",
+   "burst_period_s": 5.0,
+   "burst_frac_regular": 1.0,
+   "burst_obs": [
+    {
+     "obs_id": 15123656,
+     "ground_station": 4011,
+     "n_frames": 82,
+     "n_bursts": 81,
+     "frames_per_burst_median": 1,
+     "period_s": 5.0,
+     "mad_s": 0.0,
+     "frac_regular": 1.0
+    },
+    {
+     "obs_id": 15291362,
+     "ground_station": 2107,
+     "n_frames": 65,
+     "n_bursts": 65,
+     "frames_per_burst_median": 1,
+     "period_s": 5.0,
+     "mad_s": 0.0,
+     "frac_regular": 1.0
+    },
+    {
+     "obs_id": 15176528,
+     "ground_station": 2107,
+     "n_frames": 63,
+     "n_bursts": 62,
+     "frames_per_burst_median": 1.0,
+     "period_s": 5.0,
+     "mad_s": 0.0,
+     "frac_regular": 1.0
+    }
+   ],
+   "decoders": [],
+   "counter_fields": {}
+  },
+  {
+   "norad": 60527,
+   "name": "CUAVA-2",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "hcMU5oRhAUXwDFKHw4JFRu"
+   ],
+   "n_good": 97,
+   "n_good_with_demod": 57,
+   "n_stations": 6,
+   "n_frames_total": 362,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2",
+   "grsat_name": "CUAVA-2",
+   "burst_period_s": 31.0,
+   "burst_frac_regular": 1.0,
+   "burst_obs": [
+    {
+     "obs_id": 14980745,
+     "ground_station": 4394,
+     "n_frames": 22,
+     "n_bursts": 9,
+     "frames_per_burst_median": 3,
+     "period_s": 31.0,
+     "mad_s": 0.0,
+     "frac_regular": 1.0
+    },
+    {
+     "obs_id": 14969922,
+     "ground_station": 4755,
+     "n_frames": 19,
+     "n_bursts": 9,
+     "frames_per_burst_median": 2,
+     "period_s": 30.5,
+     "mad_s": 0.5,
+     "frac_regular": 1.0
+    },
+    {
+     "obs_id": 15123788,
+     "ground_station": 4394,
+     "n_frames": 16,
+     "n_bursts": 6,
+     "frames_per_burst_median": 3.0,
+     "period_s": 31.0,
+     "mad_s": 1.0,
+     "frac_regular": 1.0
+    }
+   ],
+   "decoders": [],
+   "counter_fields": {}
+  },
+  {
+   "norad": 60469,
+   "name": "Waratah Seed-1",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "bqQczGHzaJv2yUZu3pkfpN"
+   ],
+   "n_good": 112,
+   "n_good_with_demod": 54,
+   "n_stations": 8,
+   "n_frames_total": 341,
+   "exact": true,
+   "stopped_early": false,
+   "meets_all": false,
+   "class": "narrow_1k2",
+   "grsat_name": "WS-1",
+   "burst_period_s": 31.0,
+   "burst_frac_regular": 0.75,
+   "burst_obs": [
+    {
+     "obs_id": 15254265,
+     "ground_station": 4394,
+     "n_frames": 15,
+     "n_bursts": 5,
+     "frames_per_burst_median": 3,
+     "period_s": 31.0,
+     "mad_s": 0.5,
+     "frac_regular": 0.75
+    },
+    {
+     "obs_id": 15023520,
+     "ground_station": 4394,
+     "n_frames": 14,
+     "n_bursts": 5,
+     "frames_per_burst_median": 3,
+     "period_s": 31.0,
+     "mad_s": 0.5,
+     "frac_regular": 1.0
+    },
+    {
+     "obs_id": 14976409,
+     "ground_station": 5049,
+     "n_frames": 13,
+     "n_bursts": 6,
+     "frames_per_burst_median": 2.0,
+     "period_s": 30.0,
+     "mad_s": 0.0,
+     "frac_regular": 0.6
+    }
+   ],
+   "decoders": [],
+   "counter_fields": {}
+  }
+ ],
+ "requests": {
+  "network": 0,
+  "cache_hits": 64
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "group": "sequence",
+ "norad": 25397,
+ "obs_id": 15034285,
+ "operations": [
+  {
+   "factor": 1.0175955502270815,
+   "t0_s": 224.38559789949423,
+   "t1_s": 337.16925653281623,
+   "type": "gain"
+  },
+  {
+   "filenames": [
+    "data_15034285_2026-09-21T06-02-34",
+    "data_15034285_2026-09-21T06-03-04"
+   ],
+   "k": 2,
+   "label_filename": "data_15034285_2026-09-21T06-03-34",
+   "subtype": "deletion",
+   "type": "sequence"
+  }
+ ],
+ "seed": 12463873960662585812,
+ "split": "test",
+ "variant_id": "sequence_01"
+}

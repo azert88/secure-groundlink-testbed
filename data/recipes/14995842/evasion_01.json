@@ -1,0 +1,27 @@
+{
+ "group": "evasion",
+ "norad": 39444,
+ "obs_id": 14995842,
+ "operations": [
+  {
+   "bw_hz": null,
+   "drift_hz_s": 2.6982600433098045,
+   "evasion": 1,
+   "f0_hz": 10430.787236232998,
+   "phase": 1.540728501702152,
+   "segments": [
+    [
+     0.0,
+     387.823
+    ]
+   ],
+   "shape": "tone",
+   "snr_db": 1.6975194277605166,
+   "subtype": "drift",
+   "type": "interference"
+  }
+ ],
+ "seed": 15456289543792237014,
+ "split": "test",
+ "variant_id": "evasion_01"
+}

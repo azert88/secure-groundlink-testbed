@@ -1,0 +1,36 @@
+{
+ "group": "sequence",
+ "norad": 25397,
+ "obs_id": 15080837,
+ "operations": [
+  {
+   "rise_db": 4.42934455226613,
+   "t0_s": 823.509903241313,
+   "t1_s": 840.1853151134552,
+   "type": "noise_rise"
+  },
+  {
+   "byte_changes": [
+    [
+     31,
+     137
+    ],
+    [
+     35,
+     249
+    ],
+    [
+     41,
+     226
+    ]
+   ],
+   "source_filename": "data_15080837_2026-09-28T16-21-58_g0",
+   "subtype": "forged",
+   "t_new": 629.0,
+   "type": "sequence"
+  }
+ ],
+ "seed": 2867501708295192663,
+ "split": "test",
+ "variant_id": "sequence_01"
+}

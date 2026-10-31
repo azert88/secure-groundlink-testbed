@@ -1,0 +1,27 @@
+{
+ "group": "interference",
+ "norad": 39444,
+ "obs_id": 15023587,
+ "operations": [
+  {
+   "bw_hz": null,
+   "drift_hz_s": 0.0,
+   "evasion": 0,
+   "f0_hz": 11783.08897386496,
+   "phase": 3.3939669277654647,
+   "segments": [
+    [
+     139.64996481324638,
+     185.5737204780284
+    ]
+   ],
+   "shape": "tone",
+   "snr_db": -2.310622374399509,
+   "subtype": "tone",
+   "type": "interference"
+  }
+ ],
+ "seed": 12314500069175415895,
+ "split": "train",
+ "variant_id": "interference_01"
+}

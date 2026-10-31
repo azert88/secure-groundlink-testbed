@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------- secrets and private material
+.env
+keys/private/
+
+# ---------------------------------------------------------------- local environment and tools
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.claude/
+challenge_docs/
+notes.txt
+# challenge material kept in docs/ (slides, specification book, resource list; hold organiser contacts)
+docs/Capture d*.png
+docs/Ground*Truth*.pdf
+
+# ---------------------------------------------------------------- data: large, rebuilt, or not redistributable
+# raw SatNOGS files are never redistributed (decision 29); only the per-file manifest is kept
+data/raw/*
+!data/raw/manifest.csv
+# rebuilt by the pipeline from raw + recipes (fingerprints in data/DATA.md section 8)
+data/features/
+data/tables/
+data/labels/
+data/cache/
+data/validation/cues/
+data/explore/
+
+# ---------------------------------------------------------------- audio anywhere in the tree
+*.ogg
+*.wav
+*.flac
+*.mp3
+*.opus

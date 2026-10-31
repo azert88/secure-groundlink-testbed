@@ -1,0 +1,25 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 15242426,
+ "operations": [
+  {
+   "factor": 0.3025251637070007,
+   "t0_s": null,
+   "t1_s": null,
+   "type": "gain"
+  },
+  {
+   "filenames": [
+    "data_15242426_2026-10-19T13-24-50_g0"
+   ],
+   "k": 1,
+   "label_filename": "data_15242426_2026-10-19T13-24-55_g0",
+   "subtype": "deletion",
+   "type": "sequence"
+  }
+ ],
+ "seed": 13488302998882612988,
+ "split": "calib",
+ "variant_id": "sequence_00"
+}

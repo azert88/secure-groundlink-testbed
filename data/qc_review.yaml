@@ -1,0 +1,10 @@
+# Phase C human waterfall review: {obs_id: ok | rejected}
+# 2026-10-30: the 7 FUNCUBE-1 flags of the first Phase C run (global-median line screen).
+# Superseded by the local-baseline line screen (decision 43); these observations are no longer flagged.
+14995840: ok
+14966979: ok
+15192857: ok
+14995843: ok
+15237468: ok
+14934136: ok
+15301862: ok

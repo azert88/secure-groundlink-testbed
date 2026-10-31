@@ -1,0 +1,85 @@
+{
+ "window": [
+  "2026-08-30T00:00:00Z",
+  "2026-10-29T00:00:00Z"
+ ],
+ "criteria": {
+  "min_good_obs_with_demod": 50,
+  "min_stations": 10,
+  "max_catalog_norad": 90000,
+  "mode_classes": {
+   "narrow_1k2": {
+    "baud": 1200,
+    "match": "exact",
+    "modes": [
+     "AFSK",
+     "BPSK"
+    ]
+   },
+   "fsk_9k6": {
+    "baud": 9600,
+    "match": "prefix",
+    "modes": [
+     "FSK",
+     "GFSK",
+     "GMSK",
+     "MSK"
+    ]
+   }
+  }
+ },
+ "rows": [
+  {
+   "norad": 14781,
+   "name": "UOSAT 2",
+   "modes": [
+    "AFSK"
+   ],
+   "transmitters": [
+    "aBPWui23BqUhVc62nySNuQ"
+   ],
+   "n_good": 6,
+   "n_good_with_demod": 1,
+   "n_stations": 1,
+   "n_frames_total": 1,
+   "exact": true,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 20439,
+   "name": "PACSAT",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "YDZA3DwNftFUhhTePBN2Hg",
+    "6hZFcJypsM4H7zY6rExLXd"
+   ],
+   "n_good": 0,
+   "n_good_with_demod": 0,
+   "n_stations": 0,
+   "n_frames_total": 0,
+   "exact": true,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  },
+  {
+   "norad": 20442,
+   "name": "LUSAT",
+   "modes": [
+    "BPSK"
+   ],
+   "transmitters": [
+    "Z2ViCYEPTmBkKPkMKFgnJg"
+   ],
+   "n_good": 1,
+   "n_good_with_demod": 0,
+   "n_stations": 0,
+   "n_frames_total": 0,
+   "exact": true,
+   "meets_all": false,
+   "class": "narrow_1k2"
+  }
+ ]
+}

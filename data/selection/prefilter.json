@@ -1,0 +1,471 @@
+{
+ "grsat_source": "public satyaml v5.9.0",
+ "n_grsat_satellites": 409,
+ "counts": {
+  "narrow_1k2": {
+   "mode_ok": 60,
+   "not_in_grsat": 40,
+   "grsat_mode_mismatch": 5,
+   "kept": 15
+  },
+  "fsk_9k6": {
+   "mode_ok": 118,
+   "not_in_grsat": 86,
+   "grsat_mode_mismatch": 2,
+   "kept": 30
+  }
+ },
+ "kept": [
+  {
+   "norad": 25397,
+   "class": "fsk_9k6",
+   "name": "TECHSAT 1B",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 2,
+   "grsat_name": "GO-32"
+  },
+  {
+   "norad": 37224,
+   "class": "narrow_1k2",
+   "name": "O/OREOS",
+   "db_modes": [
+    "AFSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "O/OREOS"
+  },
+  {
+   "norad": 39417,
+   "class": "fsk_9k6",
+   "name": "ZACUBE-1",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "ZACUBE-1"
+  },
+  {
+   "norad": 39440,
+   "class": "fsk_9k6",
+   "name": "CUBEBUG-2",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "CUBEBUG-2"
+  },
+  {
+   "norad": 39440,
+   "class": "narrow_1k2",
+   "name": "CUBEBUG-2",
+   "db_modes": [
+    "AFSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "CUBEBUG-2"
+  },
+  {
+   "norad": 39444,
+   "class": "narrow_1k2",
+   "name": "FUNCUBE-1",
+   "db_modes": [
+    "BPSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "AO-73"
+  },
+  {
+   "norad": 39446,
+   "class": "fsk_9k6",
+   "name": "UWE-3",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 3,
+   "grsat_name": "UWE-3"
+  },
+  {
+   "norad": 40012,
+   "class": "fsk_9k6",
+   "name": "UNISAT-6",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "UNISAT-6"
+  },
+  {
+   "norad": 40014,
+   "class": "fsk_9k6",
+   "name": "BUGSAT-1",
+   "db_modes": [
+    "FSK",
+    "GMSK"
+   ],
+   "n_transmitters": 2,
+   "grsat_name": "BUGSAT-1"
+  },
+  {
+   "norad": 40024,
+   "class": "narrow_1k2",
+   "name": "NANOSATC-BR1",
+   "db_modes": [
+    "BPSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "NanosatC-BR1"
+  },
+  {
+   "norad": 40042,
+   "class": "fsk_9k6",
+   "name": "POLYITAN-1",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "POLYITAN-1"
+  },
+  {
+   "norad": 40043,
+   "class": "fsk_9k6",
+   "name": "TIGRISAT",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "TIGRISAT"
+  },
+  {
+   "norad": 40074,
+   "class": "narrow_1k2",
+   "name": "UKUBE-1",
+   "db_modes": [
+    "BPSK"
+   ],
+   "n_transmitters": 2,
+   "grsat_name": "UKube-1"
+  },
+  {
+   "norad": 40974,
+   "class": "fsk_9k6",
+   "name": "BISONSAT",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "BISONSAT"
+  },
+  {
+   "norad": 43784,
+   "class": "fsk_9k6",
+   "name": "SNUGLITE",
+   "db_modes": [
+    "GMSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "SNUGLITE"
+  },
+  {
+   "norad": 43786,
+   "class": "narrow_1k2",
+   "name": "ITASAT 1",
+   "db_modes": [
+    "BPSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "ITASAT 1"
+  },
+  {
+   "norad": 43790,
+   "class": "fsk_9k6",
+   "name": "Eaglet 1",
+   "db_modes": [
+    "GMSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "Eaglet-I"
+  },
+  {
+   "norad": 43790,
+   "class": "narrow_1k2",
+   "name": "Eaglet 1",
+   "db_modes": [
+    "BPSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "Eaglet-I"
+  },
+  {
+   "norad": 43792,
+   "class": "fsk_9k6",
+   "name": "ESEO",
+   "db_modes": [
+    "GMSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "ESEO"
+  },
+  {
+   "norad": 43803,
+   "class": "narrow_1k2",
+   "name": "JY1Sat",
+   "db_modes": [
+    "BPSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "JY1-Sat"
+  },
+  {
+   "norad": 43880,
+   "class": "fsk_9k6",
+   "name": "UWE-4",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "UWE-4"
+  },
+  {
+   "norad": 46504,
+   "class": "fsk_9k6",
+   "name": "NETSAT 4",
+   "db_modes": [
+    "FSK AX.25 G3RUH"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "NETSAT 4"
+  },
+  {
+   "norad": 46505,
+   "class": "fsk_9k6",
+   "name": "NETSAT 3",
+   "db_modes": [
+    "FSK AX.25 G3RUH"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "NETSAT 3"
+  },
+  {
+   "norad": 46506,
+   "class": "fsk_9k6",
+   "name": "NETSAT 1",
+   "db_modes": [
+    "FSK AX.25 G3RUH"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "NETSAT 1"
+  },
+  {
+   "norad": 46507,
+   "class": "fsk_9k6",
+   "name": "NETSAT 2",
+   "db_modes": [
+    "FSK AX.25 G3RUH"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "NETSAT 2"
+  },
+  {
+   "norad": 47945,
+   "class": "fsk_9k6",
+   "name": "UNISAT-7",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "UNISAT-7"
+  },
+  {
+   "norad": 52897,
+   "class": "fsk_9k6",
+   "name": "STEP CubeLab-II",
+   "db_modes": [
+    "GMSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "STEP-CUBELAB-II"
+  },
+  {
+   "norad": 52898,
+   "class": "narrow_1k2",
+   "name": "RANDEV",
+   "db_modes": [
+    "BPSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "RANDEV"
+  },
+  {
+   "norad": 52899,
+   "class": "fsk_9k6",
+   "name": "SNUGLITE-II",
+   "db_modes": [
+    "GMSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "SNUGLITE-II"
+  },
+  {
+   "norad": 53107,
+   "class": "fsk_9k6",
+   "name": "ASTROBIO",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 2,
+   "grsat_name": "ASTROBIO"
+  },
+  {
+   "norad": 55104,
+   "class": "fsk_9k6",
+   "name": "Sharjahsat-1",
+   "db_modes": [
+    "GMSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "Sharjahsat-1"
+  },
+  {
+   "norad": 57172,
+   "class": "fsk_9k6",
+   "name": "UmKA-1",
+   "db_modes": [
+    "GMSK USP"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "UmKA-1"
+  },
+  {
+   "norad": 57174,
+   "class": "narrow_1k2",
+   "name": "SATURN",
+   "db_modes": [
+    "AFSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "SATURN"
+  },
+  {
+   "norad": 57175,
+   "class": "fsk_9k6",
+   "name": "CUBEBEL-2",
+   "db_modes": [
+    "FSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "CubeBel-2"
+  },
+  {
+   "norad": 57180,
+   "class": "fsk_9k6",
+   "name": "Monitor-3",
+   "db_modes": [
+    "GMSK USP"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "MONITOR-3"
+  },
+  {
+   "norad": 57182,
+   "class": "fsk_9k6",
+   "name": "Monitor-4",
+   "db_modes": [
+    "GMSK USP"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "MONITOR-4"
+  },
+  {
+   "norad": 57184,
+   "class": "narrow_1k2",
+   "name": "Monitor-2",
+   "db_modes": [
+    "AFSK"
+   ],
+   "n_transmitters": 2,
+   "grsat_name": "MONITOR-2"
+  },
+  {
+   "norad": 57195,
+   "class": "narrow_1k2",
+   "name": "Avion Kaluga 650",
+   "db_modes": [
+    "AFSK"
+   ],
+   "n_transmitters": 2,
+   "grsat_name": "AVION"
+  },
+  {
+   "norad": 57203,
+   "class": "fsk_9k6",
+   "name": "UTMN2",
+   "db_modes": [
+    "GMSK USP"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "UTMN-2"
+  },
+  {
+   "norad": 59112,
+   "class": "fsk_9k6",
+   "name": "SONATE-2",
+   "db_modes": [
+    "GMSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "SONATE-2"
+  },
+  {
+   "norad": 60240,
+   "class": "narrow_1k2",
+   "name": "OOV-Cube",
+   "db_modes": [
+    "AFSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "OOV-Cube"
+  },
+  {
+   "norad": 60243,
+   "class": "fsk_9k6",
+   "name": "ROBUSTA-3A",
+   "db_modes": [
+    "GMSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "ROBUSTA-3A"
+  },
+  {
+   "norad": 60469,
+   "class": "narrow_1k2",
+   "name": "Waratah Seed-1",
+   "db_modes": [
+    "BPSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "WS-1"
+  },
+  {
+   "norad": 60527,
+   "class": "narrow_1k2",
+   "name": "CUAVA-2",
+   "db_modes": [
+    "BPSK"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "CUAVA-2"
+  },
+  {
+   "norad": 64549,
+   "class": "fsk_9k6",
+   "name": "UND ROADS 2",
+   "db_modes": [
+    "FSK AX.100 Mode 5"
+   ],
+   "n_transmitters": 1,
+   "grsat_name": "UND ROADS 2"
+  }
+ ]
+}

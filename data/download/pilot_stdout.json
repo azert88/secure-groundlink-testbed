@@ -1,0 +1,26 @@
+{
+ "per_satellite": {
+  "25397": {
+   "n_obs": 40,
+   "requests": 258,
+   "requests_per_obs": 6.5,
+   "bytes": 202742439,
+   "mb_per_obs": 5.07
+  },
+  "39444": {
+   "n_obs": 36,
+   "requests": 903,
+   "requests_per_obs": 25.1,
+   "bytes": 349662672,
+   "mb_per_obs": 9.71
+  }
+ },
+ "total": {
+  "requests": 1161,
+  "bytes": 552405112,
+  "gb": 0.552,
+  "seconds_per_request": 3.18,
+  "hours": 1.03
+ },
+ "over_limit": false
+}

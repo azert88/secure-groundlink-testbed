@@ -1,0 +1,21 @@
+{
+ "group": "benign",
+ "norad": 39444,
+ "obs_id": 15012409,
+ "operations": [
+  {
+   "end_s": 36.35179978146707,
+   "start_s": 59.70353329614905,
+   "type": "edge_attenuation"
+  },
+  {
+   "factor": 1.0226387956566156,
+   "t0_s": 398.30995062689476,
+   "t1_s": 438.8547590161504,
+   "type": "gain"
+  }
+ ],
+ "seed": 12994459118545823075,
+ "split": "calib",
+ "variant_id": "benign_02"
+}

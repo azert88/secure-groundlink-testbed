@@ -1,0 +1,122 @@
+{
+ "mode": "pilot",
+ "finished_utc": "2026-10-29T23:51:21Z",
+ "observations": [
+  {
+   "obs_id": 15004025,
+   "norad": 25397,
+   "station": 4451,
+   "start": "2026-09-16T09:03:25Z",
+   "duration_s": 180.0,
+   "n_demod": 2,
+   "n_files": 5,
+   "n_requests": 4,
+   "n_skipped": 0,
+   "bytes_downloaded": 2878202,
+   "seconds": 12.4,
+   "audio_bytes": 1229129,
+   "waterfall_bytes": 1649059,
+   "demod_bytes": 14,
+   "audio_sha256": "acf776f8c7bc8a2ad63f4d764f29b228d59d0ceae003060da6d964775ca15b88",
+   "audio_url": "https://network-satnogs.freetls.fastly.net/media/data_obs/2026/9/16/9/15004025/satnogs_15004025_2026-09-16T09-03-25.ogg"
+  },
+  {
+   "obs_id": 15287655,
+   "norad": 25397,
+   "station": 5049,
+   "start": "2026-10-25T21:05:33Z",
+   "duration_s": 913.0,
+   "n_demod": 4,
+   "n_files": 7,
+   "n_requests": 6,
+   "n_skipped": 0,
+   "bytes_downloaded": 7773247,
+   "seconds": 19.4,
+   "audio_bytes": 6119380,
+   "waterfall_bytes": 1653793,
+   "demod_bytes": 74,
+   "audio_sha256": "0d857525145f5e69ede6e9169214e1cd0d75d2c3dc35517cefa364ab0d769abc",
+   "audio_url": "https://network-satnogs.freetls.fastly.net/media/data_obs/2026/10/25/21/15287655/satnogs_15287655_2026-10-25T21-05-33.ogg"
+  },
+  {
+   "obs_id": 15179622,
+   "norad": 25397,
+   "station": 5065,
+   "start": "2026-10-13T05:36:18Z",
+   "duration_s": 585.0,
+   "n_demod": 2,
+   "n_files": 5,
+   "n_requests": 4,
+   "n_skipped": 0,
+   "bytes_downloaded": 4584050,
+   "seconds": 13.1,
+   "audio_bytes": 2930562,
+   "waterfall_bytes": 1653476,
+   "demod_bytes": 12,
+   "audio_sha256": "04906af043a8b94a51fc9c1654be70d23d7fa160339b8b43254d21c7bc66fcb9",
+   "audio_url": "https://network-satnogs.freetls.fastly.net/media/data_obs/2026/10/13/5/15179622/satnogs_15179622_2026-10-13T05-36-18.ogg"
+  },
+  {
+   "obs_id": 15123656,
+   "norad": 39444,
+   "station": 4011,
+   "start": "2026-10-05T03:15:05Z",
+   "duration_s": 438.0,
+   "n_demod": 82,
+   "n_files": 85,
+   "n_requests": 84,
+   "n_skipped": 0,
+   "bytes_downloaded": 15097753,
+   "seconds": 266.3,
+   "audio_bytes": 13331720,
+   "waterfall_bytes": 1745041,
+   "demod_bytes": 20992,
+   "audio_sha256": "d1aa0f57f0998b40cb0dbbe3aca0cb54f3209d58edfff1d7ece14ce6c4d31e6a",
+   "audio_url": "https://network-satnogs.freetls.fastly.net/media/data_obs/2026/10/5/3/15123656/satnogs_15123656_2026-10-05T03-15-05.ogg"
+  },
+  {
+   "obs_id": 15242426,
+   "norad": 39444,
+   "station": 4272,
+   "start": "2026-10-19T13:22:13Z",
+   "duration_s": 296.0,
+   "n_demod": 30,
+   "n_files": 33,
+   "n_requests": 32,
+   "n_skipped": 0,
+   "bytes_downloaded": 4529320,
+   "seconds": 101.8,
+   "audio_bytes": 2801464,
+   "waterfall_bytes": 1720196,
+   "demod_bytes": 7660,
+   "audio_sha256": "89e35eb0628dedaf0d18c91c4128b668be2b179a2bef636b4598a5c16fefd81e",
+   "audio_url": "https://network-satnogs.freetls.fastly.net/media/data_obs/2026/10/19/13/15242426/satnogs_15242426_2026-10-19T13-22-13.ogg"
+  }
+ ],
+ "projection_full": {
+  "per_satellite": {
+   "25397": {
+    "n_obs": 40,
+    "requests": 258,
+    "requests_per_obs": 6.5,
+    "bytes": 202742439,
+    "mb_per_obs": 5.07
+   },
+   "39444": {
+    "n_obs": 36,
+    "requests": 903,
+    "requests_per_obs": 25.1,
+    "bytes": 349662672,
+    "mb_per_obs": 9.71
+   }
+  },
+  "total": {
+   "requests": 1161,
+   "bytes": 552405112,
+   "gb": 0.552,
+   "seconds_per_request": 3.18,
+   "hours": 1.03
+  },
+  "over_limit": false
+ }
+}

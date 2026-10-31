@@ -1,0 +1,22 @@
+{
+ "group": "benign",
+ "norad": 39444,
+ "obs_id": 15090581,
+ "operations": [
+  {
+   "rise_db": 2.6858155795986423,
+   "t0_s": 363.2472940354525,
+   "t1_s": 386.52126139655627,
+   "type": "noise_rise"
+  },
+  {
+   "factor": 2.4983570274511564,
+   "t0_s": null,
+   "t1_s": null,
+   "type": "gain"
+  }
+ ],
+ "seed": 8993600216027009914,
+ "split": "calib",
+ "variant_id": "benign_00"
+}

@@ -1,0 +1,27 @@
+{
+ "group": "snrgrid",
+ "norad": 25397,
+ "obs_id": 15080837,
+ "operations": [
+  {
+   "bw_hz": null,
+   "drift_hz_s": 0.0,
+   "evasion": 0,
+   "f0_hz": 7244.325915765557,
+   "phase": 1.5009000345219499,
+   "segments": [
+    [
+     436.6245293700339,
+     442.6292299846913
+    ]
+   ],
+   "shape": "tone",
+   "snr_db": 25.0,
+   "subtype": "tone",
+   "type": "interference"
+  }
+ ],
+ "seed": 14079945090249957569,
+ "split": "test",
+ "variant_id": "snrgrid_+25"
+}

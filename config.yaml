@@ -1,0 +1,248 @@
+# Central configuration. Every numeric parameter of the dataset pipeline lives here.
+seed: 20261103
+
+paths:
+  data_dir: data
+  api_cache_dir: data/cache/api        # cached raw API responses (safe to delete, rebuilt on demand)
+  selection_dir: data/selection        # Phase A outputs
+
+satnogs:
+  network_api: https://network.satnogs.org/api
+  db_api: https://db.satnogs.org/api
+  # satnogs-decoders Kaitai structs, used only to look for counter / uptime fields
+  decoders_ksy_url: https://gitlab.com/librespacefoundation/satnogs/satnogs-decoders/-/raw/master/ksy/{decoder}.ksy
+  min_request_interval_s: 3.0          # spec: at most 1 request every 3 s (stricter than CLAUDE.md's 2 s)
+  max_retries: 6
+  backoff_base_s: 4.0                  # exponential backoff: base * 2**attempt, capped below
+  backoff_max_s: 120.0
+  timeout_s: 60
+  page_size: 25                        # Network API page size (cursor pagination via Link header)
+  user_agent: "tsyp14-track1-dataset/0.1 (research; rate-limited; cached)"
+  env_file: .env                       # gitignored; holds the optional DB API token
+  token_env_var: SATNOGS_DB_TOKEN      # only needed for DB artifacts (.h5) and DB telemetry
+
+grsat:
+  # Supported-satellite list. Uses an installed gr-satellites if present, else the public
+  # satyaml files of this pinned release (tarball checked against its SHA-256).
+  version: v5.9.0
+  tarball_url: https://codeload.github.com/daniestevez/gr-satellites/tar.gz/refs/tags/v5.9.0
+  tarball_sha256: c9a33e85599918a7e13adcd0636a77a580544886895a25eb303b15609a77a416
+  extract_dir: data/cache/grsat_v5.9.0
+
+selection:
+  window_end_utc: "2026-10-29T00:00:00Z"   # fixed for reproducibility
+  window_days: 60
+  max_catalog_norad: 90000             # ids >= this are temporary (~98xxx / 99xxx)
+  satellite_status: "in orbit"         # DB satellite status value
+  min_good_obs_with_demod: 50
+  min_stations: 10
+  min_stations_by_class:
+    narrow_1k2: 7                      # lowered: no 1k2 candidate reaches 10 stations (Phase A)
+  max_pages_per_transmitter: 20        # 20 x 25 = 500 obs; beyond that counts are lower bounds
+  # Allowed modes: AFSK1k2, BPSK1k2, FSK9k6, GMSK9k6 (GFSK and MSK are excluded).
+  # grsat_modulations: gr-satellites modulations that can decode this class
+  # (gr-satellites has no separate GMSK modulation; GMSK is decoded by its FSK demodulator).
+  mode_classes:
+    narrow_1k2:
+      baud: 1200
+      match: exact
+      modes: [AFSK, BPSK]
+      grsat_modulations: [AFSK, BPSK, DBPSK]
+    fsk_9k6:
+      baud: 9600
+      match: prefix                    # e.g. "FSK AX.100 Mode 5", "GMSK USP"
+      modes: [FSK, GMSK]
+      grsat_modulations: [FSK]
+  burst_gap_s: 2.0                    # new burst when gap between frames > this
+  burst_multiple_tol_s: 1.5            # interval counts as regular if within tol of k * period
+  n_burst_obs: 3                       # observations used to measure the burst period
+  n_shortlist: 10                      # top satellites measured for burst period and counter fields
+  top_k: 5
+  # Focused run (--focus): fixed candidates + best extra ones of probe_class, chosen by a
+  # one-page probe (most recent 25 good obs per transmitter), ranked by obs with demoddata.
+  focus:
+    fixed:
+      - {norad: 25397, class: fsk_9k6}     # TECHSAT 1B, full scan already cached
+      - {norad: 39444, class: narrow_1k2}  # FUNCUBE-1
+    probe_class: narrow_1k2
+    n_probe_pick: 2
+    early_stop_classes: [narrow_1k2]       # stop paging a transmitter once thresholds are met
+  counter_field_regex: "(counter|cnt|uptime|seq|frame_?(no|num|nr|count))"
+
+download:
+  # Phase B. Eligible = status good, demoddata present, audio + waterfall URLs present,
+  # inside the selection window, transmitter of the satellite's mode class.
+  raw_dir: data/raw
+  manifest: data/raw/manifest.csv
+  data_md: data/DATA.md
+  report_dir: data/download            # plan + pilot / full reports (JSON)
+  satellites:
+    - {norad: 25397, class: fsk_9k6, target_obs: 60, cap_per_station: 6}       # TECHSAT 1B (QC keeps first 40 passing)
+    - {norad: 39444, class: narrow_1k2, target_obs: null, cap_per_station: 12} # FUNCUBE-1, all up to cap
+  pilot: {25397: 3, 39444: 2}          # observations per satellite in the pilot
+  test_only_stations: {39444: 2}       # FUNCUBE-1 stations reserved for test (chosen in Phase E)
+  max_projected_hours: 4.0             # above this, propose cuts before the full download
+
+canonical:
+  # Canonical frame stream (detect/canonical.py), same step in QC, tables and detectors (decision 45)
+  # Byte-identical frames at most this far after the first copy are one frame (decision 50):
+  # FUNCUBE-1 0 s (same-second decoder branches only; no rewrites observed),
+  # TECHSAT 1B 5 s (observed rewrite delays 1-4 s). Merged copies keep n_copies / copy_delays_s.
+  max_rewrite_delay_s: {39444: 0.0, 25397: 5.0}
+
+qc:
+  # Phase C (DATASET_SPEC.md section 3)
+  report_csv: data/qc_report.csv
+  report_md: data/qc_report.md
+  report_json: data/qc_report.json
+  review_file: data/qc_review.yaml       # human waterfall review: {obs_id: ok | rejected}
+  max_duration_diff_s: 10.0              # reject if |audio duration - (end - start)| > this
+  min_frames: 10                         # reject if fewer canonical frames than this
+  sample_rate: 48000
+  channels: 1
+  psd:                                   # same estimator as Phase D windows
+    win_s: 1.0
+    hop_s: 0.5
+    nperseg: 2048
+    noverlap: 1024
+    f_low_hz: 100.0
+    edge_margin_hz: 100.0                # passband = [f_low, f_edge - margin]
+    edge_drop_db: 20.0                   # f_edge: highest freq with median PSD within this of in-band median
+    drop_smooth_hz: 1000.0               # f_drop: steepest fall of the median PSD, median-filtered over this width ...
+    drop_min_hz: 1000.0                  # ... searched above f_low + this; bounds the f_edge search (decision 43)
+    baseline_hz: 500.0                   # line screen: local baseline = median over +-this around each bin ...
+    baseline_exclude_hz: 50.0            # ... excluding +-this around the bin (decision 43)
+    chunk_windows: 200                   # windows per Welch batch (memory bound)
+  line_threshold_db: 10.0                # persistent line: bin > median-normalized +10 dB ...
+  line_min_frac_windows: 0.30            # ... in more than 30% of windows -> flag for review
+  line_max_width_hz: 200.0               # only lines at most this wide flag (decision 40); wider are reported only
+  signal_band_min_frac: 0.05             # own signal band: > line_threshold_db over the in-band median in > this share of windows
+  signal_band_margin_hz: 200.0           # narrow lines within the downlink region +- this are in_signal_band, not flagged (decision 44)
+  downlink_file: data/downlink_bands.json  # per-satellite downlink region learned from TRAIN only (decision 55)
+  downlink_min_obs_frac: 0.25            # a bin is downlink if it lies in an observed signal band in >= this share of TRAIN obs
+  # timing_reliable: few seconds may hold more canonical frames than the satellite can send.
+  # FUNCUBE-1: one 5200-symbol frame at 1200 Bd lasts 4.3 s -> at most 1 per second.
+  # TECHSAT 1B: provisional (short AX.25 frames at 9600 Bd; bursts of 3 frames).
+  max_frames_per_second: {39444: 1, 25397: 4}
+  timing_max_overfull_frac: 0.05         # tolerate isolated late writes, not batched writes
+  timing_min_counter_consistent: 0.9     # FUNCUBE-1: share of counter steps matching timestamps (+-1.5 s)
+  keep_first: {25397: 40}                # keep the first N passing observations (plan order)
+  burst_remeasure: {25397: 3}            # burst period on N observations from N different stations
+  funcube:                               # frame layout verified on pilot frames (see PROGRESS.md)
+    norad: 39444
+    frame_len: 256
+    satid: 2                             # FC1FM, top 2 bits of byte 0
+    seq_byte: 50                         # 24-bit big-endian seqnumber at bytes 50..52
+    cycle: 24                            # frame type (low 6 bits of byte 0) cycles 0..23
+    s_per_count: 5.0                     # one counter step = one 5 s frame
+  techsat:                               # beacon layout from the 239 canonical frames (decision 39)
+    norad: 25397
+    frame_len: 44
+    marker: TechSat                      # ASCII marker inside every beacon
+    counter_byte: 6                      # uint32 little-endian seconds counter at bytes 6..9
+    s_per_count: 1.0                     # seconds counter
+
+tables:
+  # Phase D (DATASET_SPEC.md section 4): data/build_tables.py
+  out_dir: data/tables
+  labels_csv: data/labels/labels.csv     # never read by detect/
+  clean_variant: clean
+  burst_gap_s: 2.0                       # new burst when the gap to the previous frame is > this
+  burst_margin_s: 1.0                    # burst_active: window overlaps [first - 1 s, last + 1 s] of a burst
+  feature_band_top_margin_hz: 200.0      # features over [f_low, f_drop - this] (decision 48)
+  chain:                                 # common processing chain, every variant incl. clean (spec 6.1)
+    headroom: 0.5
+    vorbis_compression_level: 0.4        # soundfile/libsndfile Vorbis compression level 0..1 (0 = best quality), fixed
+  features_chunk_windows: 40             # windows per FFT batch (memory bound)
+
+positive_control:
+  # Line-screen positive control on real audio (decision 52): data/qc_positive_control.py
+  out_json: data/qc_positive_control.json
+  snr_db: [-10.0, 0.0, 10.0, 20.0, 30.0] # -10 dB is the requested check; higher SNRs show the margin
+  cases:
+    - {norad: 25397, shape: tone, f0_hz: 4000.0}                   # inside the TECHSAT 1B FSK band
+    - {norad: 25397, shape: noise, f0_hz: 7000.0, bw_hz: 150.0}
+    - {norad: 39444, shape: tone, f0_hz: 6000.0}                   # outside the FUNCUBE-1 downlink
+    - {norad: 39444, shape: noise, f0_hz: 3000.0, bw_hz: 150.0}
+    - {norad: 39444, shape: tone, f0_hz: 11650.0}                  # inside the downlink: expected in_signal_band
+
+splits:
+  # Phase E (DATASET_SPEC.md section 5): data/make_splits.py
+  out_json: data/splits.json
+  fractions: {train: 0.6, calib: 0.2, test: 0.2}
+  test_only_stations: {39444: 2}         # decision 23
+  excluded_test_stations: {39444: [2107, 4272]}   # decision 30
+  test_station_obs_range: [3, 6]         # decision 30: each test-only station holds 3..6 observations
+
+attacks:
+  # Phase F (DATASET_SPEC.md section 6): data/make_recipes.py -> data/recipes/<obs_id>/<variant_id>.json
+  recipes_dir: data/recipes
+  report_json: data/recipes/report.json
+  replay:
+    length: [5, 20]                      # L ~ UniformInt[5, 20] consecutive frames
+    margin_s: 0.5                        # audio segment margin around the copied frames
+    airtime_s: {39444: 4.33, 25397: 0.1} # frame on-air time (FUNCUBE-1 5200 symbols at 1200 Bd), both sides (decision 59)
+    fade_ms: 10.0                        # raised-cosine crossfade at both edges
+    min_delay_s: 10.0                    # copies at least this far from the source (> any rewrite-merge window)
+  sequence:
+    subtypes: [deletion, swap, duplicate, forged, timing, counter_jump]
+    deletion_k: [1, 3]
+    timing_shift_s: [3, 8]
+    counter_jump: [2, 10]
+    forged_bytes: [1, 4]
+    forged_protect_bytes: 16             # bytes changed only outside the first 16
+  interference:
+    p_tone: 0.5
+    bw_hz: [20.0, 200.0]                 # noise band width ~ Uniform
+    f0_low_hz: 200.0                     # f0 ~ Uniform[200 Hz, feature_band_hi] (decision 48: up to f_drop - 200 Hz)
+    # snr_db = 10 log10(P_ref / P_interf) is a signal-to-interference ratio (SIR): low = strong (decision 62)
+    snr_random_db: [-10.0, 30.0]
+    snr_grid_db: [-10, -5, 0, 5, 10, 15, 20, 25, 30, 35]
+    p_full: 0.4                          # full pass, else a segment
+    segment_s: [5.0, 60.0]
+  evasion:
+    subtypes: [cross_pass, intermittent, near_threshold, drift, strongest]
+    on_off_s: [1.0, 5.0]
+    near_threshold_snr_db: [20.0, 30.0]    # weak interferer near the screen's limit (decision 62)
+    drift_max_hz_s: 5.0
+    drift_min_hz_s: 0.5
+  benign:
+    ops: [gain, noise_rise, fading, edge_attenuation]
+    n_ops: [1, 2]
+    p_gain_whole: 0.5
+    gain_segment_s: [10.0, 120.0]
+    gain_factor: [0.3, 3.0]
+    noise_rise_db: [1.0, 6.0]
+    noise_segment_s: [10.0, 120.0]
+    fading_rate_hz: [0.05, 0.5]
+    fading_depth_db: [0.5, 6.0]
+    edge_ramp_s: [20.0, 60.0]
+    p_under_attack: 0.3                  # one benign op underneath an attack
+  variants:                              # spec 6.6; test standard combo raised to 10 (decision 58)
+    clean: {train: 1, calib: 1, test: 1}
+    benign: {train: 3, calib: 3, test: 3}
+    interference: {train: 4, calib: 3, test: 3}
+    snrgrid: {train: 0, calib: 0, test: 10}
+    replay: {train: 2, calib: 2, test: 2}
+    sequence: {train: 2, calib: 2, test: 2}
+    combo: {train: 2, calib: 2, test: 10}
+    evasion: {train: 0, calib: 0, test: 2}
+
+features:
+  # Phase G: data/build_features.py -> data/features/<obs_id>/{frames,windows,labels}.csv
+  out_dir: data/features
+  runtime_json: data/features/runtime.json
+  window_min_overlap_s: 0.5              # window label = 1 if attack active >= this
+
+validation:
+  # Phase H (DATASET_SPEC.md section 8): data/validate.py -> data/validation_report.{md,json}
+  out_md: data/validation_report.md
+  out_json: data/validation_report.json
+  cues_dir: data/validation/cues          # per-observation shortcut cues (post-chain peak / RMS), cached
+  # shortcut test (data/diag_shortcut.py, decisions 63-65): within-observation, benign-matched
+  # weighted AUC on structure cues (duration_s, n_windows) and level cues (peak_abs, rms_db, mean_power_db)
+  shortcut_auc_dev_max: 0.1               # rule |AUC - 0.5| < this
+  shortcut_level_min_snr_db: 15.0         # level cues are a rule for interference at snr_db >= this
+  single_features: [peak_to_median_db, max_dev_from_obs_median_db, spectral_kurtosis, peak_persistence, flatness]
+  snr_bin_db: 5.0
+  roundtrip_variants: [clean, interference_00, combo_00]

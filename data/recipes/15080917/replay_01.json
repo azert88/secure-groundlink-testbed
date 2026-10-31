@@ -1,0 +1,38 @@
+{
+ "group": "replay",
+ "norad": 25397,
+ "obs_id": 15080917,
+ "operations": [
+  {
+   "end_s": 34.42319270808568,
+   "start_s": 59.11655329638614,
+   "type": "edge_attenuation"
+  },
+  {
+   "airtime_s": 0.1,
+   "audio": true,
+   "delta_s": 15.0,
+   "evasion": 0,
+   "fade_ms": 10.0,
+   "length": 8,
+   "margin_s": 0.5,
+   "placement": "later",
+   "source_filenames": [
+    "data_15080917_2026-09-28T17-56-28_g0",
+    "data_15080917_2026-09-28T17-56-58_g0",
+    "data_15080917_2026-09-28T17-58-29",
+    "data_15080917_2026-09-28T17-58-58_g0",
+    "data_15080917_2026-09-28T17-59-28_g0",
+    "data_15080917_2026-09-28T17-59-58_g0",
+    "data_15080917_2026-09-28T18-00-28_g0",
+    "data_15080917_2026-09-28T18-00-58_g0"
+   ],
+   "source_obs": null,
+   "subtype": "intra_pass",
+   "type": "replay"
+  }
+ ],
+ "seed": 1694695502880340610,
+ "split": "test",
+ "variant_id": "replay_01"
+}

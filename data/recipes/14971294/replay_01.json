@@ -1,0 +1,35 @@
+{
+ "group": "replay",
+ "norad": 39444,
+ "obs_id": 14971294,
+ "operations": [
+  {
+   "airtime_s": 4.33,
+   "audio": false,
+   "delta_s": -52.0,
+   "evasion": 0,
+   "fade_ms": 10.0,
+   "length": 10,
+   "margin_s": 0.5,
+   "placement": "earlier",
+   "source_filenames": [
+    "data_14971294_2026-09-10T14-46-34_g0",
+    "data_14971294_2026-09-10T14-46-39_g0",
+    "data_14971294_2026-09-10T14-46-44_g0",
+    "data_14971294_2026-09-10T14-46-49_g0",
+    "data_14971294_2026-09-10T14-46-54_g0",
+    "data_14971294_2026-09-10T14-46-59_g0",
+    "data_14971294_2026-09-10T14-47-04_g0",
+    "data_14971294_2026-09-10T14-48-28_g0",
+    "data_14971294_2026-09-10T14-48-49_g0",
+    "data_14971294_2026-09-10T14-48-53_g0"
+   ],
+   "source_obs": null,
+   "subtype": "intra_pass",
+   "type": "replay"
+  }
+ ],
+ "seed": 15907221066037455444,
+ "split": "train",
+ "variant_id": "replay_01"
+}

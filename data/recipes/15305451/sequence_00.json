@@ -1,0 +1,22 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 15305451,
+ "operations": [
+  {
+   "factor": 2.6142630355712035,
+   "t0_s": 224.73631775843486,
+   "t1_s": 297.57768826755193,
+   "type": "gain"
+  },
+  {
+   "filename": "data_15305451_2026-10-28T07-08-36_g0",
+   "shift_s": 7.0,
+   "subtype": "timing",
+   "type": "sequence"
+  }
+ ],
+ "seed": 928633959545076366,
+ "split": "train",
+ "variant_id": "sequence_00"
+}

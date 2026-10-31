@@ -1,0 +1,16 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 15222456,
+ "operations": [
+  {
+   "filename": "data_15222456_2026-10-16T13-53-57_g0",
+   "shift_s": 6.0,
+   "subtype": "timing",
+   "type": "sequence"
+  }
+ ],
+ "seed": 17394619042035616371,
+ "split": "calib",
+ "variant_id": "sequence_01"
+}

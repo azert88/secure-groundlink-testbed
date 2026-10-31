@@ -1,0 +1,68 @@
+{
+ "group": "combo",
+ "norad": 25397,
+ "obs_id": 15042383,
+ "operations": [
+  {
+   "end_s": 46.66449627596311,
+   "start_s": 35.73264054920844,
+   "type": "edge_attenuation"
+  },
+  {
+   "airtime_s": 0.1,
+   "audio": true,
+   "delta_s": 237.0,
+   "evasion": 0,
+   "fade_ms": 10.0,
+   "length": 11,
+   "margin_s": 0.5,
+   "placement": "later",
+   "source_filenames": [
+    "data_15042383_2026-09-22T05-37-32_g0",
+    "data_15042383_2026-09-22T05-38-02_g0",
+    "data_15042383_2026-09-22T05-38-21_g0",
+    "data_15042383_2026-09-22T05-38-32_g0",
+    "data_15042383_2026-09-22T05-39-02_g0",
+    "data_15042383_2026-09-22T05-39-32_g0",
+    "data_15042383_2026-09-22T05-40-02_g0",
+    "data_15042383_2026-09-22T05-40-32_g0",
+    "data_15042383_2026-09-22T05-41-02_g0",
+    "data_15042383_2026-09-22T05-42-32_g0",
+    "data_15042383_2026-09-22T05-42-51_g0"
+   ],
+   "source_obs": null,
+   "subtype": "intra_pass",
+   "type": "replay"
+  },
+  {
+   "filenames": [
+    "data_15042383_2026-09-22T05-34-51_g0",
+    "data_15042383_2026-09-22T05-35-33"
+   ],
+   "k": 2,
+   "label_filename": "data_15042383_2026-09-22T05-36-32_g0",
+   "subtype": "deletion",
+   "type": "sequence"
+  },
+  {
+   "bw_hz": 52.378045444551546,
+   "drift_hz_s": 0.0,
+   "evasion": 0,
+   "f0_hz": 7704.244743306248,
+   "phase": 4.523552441744106,
+   "segments": [
+    [
+     0.0,
+     860.083
+    ]
+   ],
+   "shape": "noise",
+   "snr_db": 9.792551188232807,
+   "subtype": "noise",
+   "type": "interference"
+  }
+ ],
+ "seed": 16896679246808330475,
+ "split": "test",
+ "variant_id": "combo_06"
+}

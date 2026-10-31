@@ -1,0 +1,24 @@
+{
+ "group": "sequence",
+ "norad": 39444,
+ "obs_id": 14995843,
+ "operations": [
+  {
+   "rise_db": 2.052633176477457,
+   "t0_s": 150.2633067391983,
+   "t1_s": 219.55099743325053,
+   "type": "noise_rise"
+  },
+  {
+   "filenames": [
+    "data_14995843_2026-09-16T03-01-20_0012",
+    "data_14995843_2026-09-16T03-01-20_0013"
+   ],
+   "subtype": "swap",
+   "type": "sequence"
+  }
+ ],
+ "seed": 4374563389520452307,
+ "split": "test",
+ "variant_id": "sequence_00"
+}

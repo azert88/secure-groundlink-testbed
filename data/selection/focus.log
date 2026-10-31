@@ -1,0 +1,20 @@
+[A] prefilter (public satyaml v5.9.0, 409 satellites): {"narrow_1k2": {"mode_ok": 60, "not_in_grsat": 40, "grsat_mode_mismatch": 5, "kept": 15}, "fsk_9k6": {"mode_ok": 118, "not_in_grsat": 86, "grsat_mode_mismatch": 2, "kept": 30}}
+[A] kept 45 candidates (43 satellites, 53 transmitters); window 2026-08-30T00:00:00Z .. 2026-10-29T00:00:00Z
+[A] probe O/OREOS (37224): page-1 good+demod=3 stations=3
+[A] probe CUBEBUG-2 (39440): page-1 good+demod=10 stations=4
+[A] probe NANOSATC-BR1 (40024): page-1 good+demod=10 stations=2
+[A] probe UKUBE-1 (40074): page-1 good+demod=0 stations=0
+[A] probe ITASAT 1 (43786): page-1 good+demod=10 stations=3
+[A] probe Eaglet 1 (43790): page-1 good+demod=2 stations=2
+[A] probe JY1Sat (43803): page-1 good+demod=0 stations=0
+[A] probe RANDEV (52898): page-1 good+demod=4 stations=4
+[A] probe SATURN (57174): page-1 good+demod=3 stations=2
+[A] probe Monitor-2 (57184): page-1 good+demod=0 stations=0
+[A] probe Avion Kaluga 650 (57195): page-1 good+demod=0 stations=0
+[A] probe OOV-Cube (60240): page-1 good+demod=0 stations=0
+[A] probe Waratah Seed-1 (60469): page-1 good+demod=12 stations=4
+[A] probe CUAVA-2 (60527): page-1 good+demod=17 stations=3
+[A] TECHSAT 1B (25397, fsk_9k6): good+demod=290 stations=24 meets_all=True period=30.0 (net=0, cache=39)
+[A] FUNCUBE-1 (39444, narrow_1k2): good+demod=69 stations=7 meets_all=False period=5.0 (net=0, cache=55)
+[A] CUAVA-2 (60527, narrow_1k2): good+demod=57 stations=6 meets_all=False period=31.0 (net=0, cache=59)
+[A] Waratah Seed-1 (60469, narrow_1k2): good+demod=54 stations=8 meets_all=False period=31.0 (net=0, cache=64)
