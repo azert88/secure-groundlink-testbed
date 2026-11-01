@@ -1,6 +1,6 @@
 # Progress log — dataset build (DATASET_SPEC.md)
 
-Last update: 2026-10-31 (Phase H shortcut test revised, decisions 63–67).
+Last update: 2026-11-01 (sequence v1 reported, v2 planned; Phase L started, decisions 85–86).
 
 ## Status by phase
 
@@ -15,6 +15,9 @@ Last update: 2026-10-31 (Phase H shortcut test revised, decisions 63–67).
 | G — Features | **Done** (run by the user): 77/77 observations in `data/features/` (`runtime.json`, finished 2026-10-30 21:48 UTC) |
 | H — Validation | **Done** (run by the user; shortcut check revised and rerun from the cache, 2026-10-31): all 7 checks pass, shortcut test with 5 documented limitations (see Phase H) |
 | I — Datasheet | **Done** (2026-10-31): `data/DATA.md` sections 1–8 (Datasheets for Datasets) + provenance appendix; source licence checked (SatNOGS Network and DB: CC BY-SA 4.0). **Dataset frozen for detector training** (SHA-256 fingerprints in DATA.md section 8). 83 tests pass |
+| J — Replay detector | **Approved** (2026-11-01): locked, test F1 1.000, FPR 0 |
+| K — Sequence detector | **Version 1 is the reported result** (locked, test per-obs recall 0.29, FPR 1.26 %); version 2 (changes a, b of decision 84) is a planned fix, not built (decision 85) |
+| L — Interference detector | **Done, at STOP** (2026-11-01): version 1 locked; test AUC 0.84 but FPR 34–36 % at the calibrated threshold (station shift, decision 89); `detect/run.py` prototype runs it on a raw folder; **v2 (post hoc, decision 92)** locked and tested once: FPR clean / benign 0.14 % / 0.16 %, TPR 0.48 |
 
 ## Phase A — what exists
 
@@ -404,7 +407,7 @@ Revised test (decisions 63–65), rerun with `python data/validate.py --only sho
 
 ---------------------------------------------------------------------------------------------
 
-# Detector phases (DETECTOR_SPEC.md)
+# Detector phases (docs/DETECTOR_SPEC.md)
 
 ## Phase J — Replay detector: test lock (rule 10)
 
@@ -481,4 +484,151 @@ no metrics, all scores 0).
 | 73 | `line_tol_s` = 5.5 s | Train clean residuals are 0, 1 or 5 s; must stay below half the 10 s minimum copy shift for the mode window |
 | 74 | Causal scoring (prefix of the stream) for detection delay and online FPR; final per-frame score with the full pass | Delay must be measured as a station would see it |
 | 75 | Minimal Ed25519 manifest (`trust/manifest.py`) and test lock (`eval/lock.py`) built in Phase J; Phase M extends `trust/`. `cryptography` installed in `.venv` (allowed dependency) | Rule 10 requires signing before the first test evaluation |
-| 76 | `DETECTOR_SPEC.md` is read from the repository root (no `docs/DETECTOR_SPEC.md` exists) | File location |
+| 76 | `DETECTOR_SPEC.md` moved from the repository root to `docs/DETECTOR_SPEC.md` (2026-11-01, after Phase J); the frozen Phase J files cite it by name only and were not edited | Housekeeping; editing locked files would break the lock |
+| 77 | **Phase J approved. Operating threshold tau = 0.35** (the rule fixed before the lock). The strict point (tau > 0.35) is reported only as an alternative and is not adopted | Choosing it after seeing test results would be post-hoc tuning |
+| 78 | **CLI smoke test on test data recorded**: before the lock, `detect/replay_det.py --obs-dir` was run once on the raw clean folder of test observation 15229495, without labels and without metrics (all scores 0). Nothing was tuned on it | Transparency (rule 10) |
+| 79 | **Note for Phase O (frozen detector unchanged)**: evaluate a near-copy replay evasion (1 byte of each replayed frame changed outside the counter field, so the hash no longer matches). Any detector change it motivates is a new version with a new lock; both versions are reported | Phase J test frames are exact copies, so the hash evidence was decisive |
+
+## Phase K — Sequence detector: test lock (rule 10)
+
+Frozen and signed on 2026-11-01 (20:06 UTC) BEFORE any evaluation on test. Lock file `models/sequence/lock.json`
+(same pinned Ed25519 key), SHA-256 of lock.json `43ee3dc01b835bf1b92ec384952de263cb7c6773ed02aeb9ac6359e7a2b924fa`.
+Operating threshold tau = 2.3054 (score = -log10 p >= tau; calib 2.3054, train guard 2.2893, decision 72 rule);
+strict point 2.7825 reported as an alternative only. The naming rule for fusion (`detect/naming.py`) is locked with it.
+
+| file | SHA-256 |
+|---|---|
+| `models/sequence/profile.json` | `bfd568b29ad55e1516d94a46705b533763023d79ca854db7d684f5f4b830051f` |
+| `models/sequence/threshold.json` | `98af1c1168bbb02265633385025f558019b7ebc5b2303afcf468207d339480c3` |
+| `detect/sequence_det.py` | `36b270eaf7266ccd784a9784d768654bd0528054b9effa71eea0ca0fec1a4f83` |
+| `detect/naming.py` | `f64f9ccf57bcb3bb3347806720ecef4eb3c8259941dd56ef39fa2f5c32b5e74e` |
+| shared, unchanged since the Phase J lock | `detect/replay_det.py`, `frames_io.py`, `hash_store.py`, `canonical.py`, `counters.py` (hashes as in Phase J) |
+
+## Phase K — Sequence detector: results (2026-11-01), version 1 (official)
+
+Files: `detect/sequence_det.py`, `detect/naming.py`, `eval/sequence_eval.py`, `tests/test_sequence_det.py`
+(11 tests; full suite 115 pass). Reports `eval/out/sequence/report_{train,calib,test}.{json,md}`.
+TRAIN natural statistics (FUNCUBE-1, 605 frames): counter-time deviation 0 s 83 %, 1 s 15 %, exactly one count
+(5 s) 1.7 %, 3 s 1 frame, beyond 10 s 2 frames; 1-3 missing frames on 7 % of steps; 2 inversions, 0 swap
+patterns, 0 duplicates, 0 same-counter clashes. TECHSAT 1B: 36 train frames only.
+
+| split | seq. frames | per-obs recall [95 % CI] | per-obs F1 | pooled FPR (clean / benign) | events |
+|---|---|---|---|---|---|
+| train (dev) | 80 | 0.862 [0.772, 0.938] | 0.770 | 0.0078 (0.0075 / 0.0049) | 57 / 67 |
+| calib | 22 | 0.820 [0.660, 0.960] | 0.844 | 0.0012 (0 / 0) | 16 / 20 |
+| **test** | 162 | **0.291 [0.102, 0.499]** | **0.267** | **0.0126** (0.0109 / 0.0109) | **41 / 132** |
+
+Test recall per subtype (timing on timing-reliable observations only), FUNCUBE-1 / TECHSAT 1B:
+deletion 0/6, 0/15; swap 0.44 (n=32), 0 (n=28); duplicate 1.00 (10), 0 (12); forged 0.82 (17), 0 (12);
+timing 0.75 (4), 0 (14); counter_jump 1.00 (7), 0 (5). Median detection delay 0 s (max 45 s).
+Baselines on test: energy recall 0 (AUC 0.46); counter_step 0.037; abs_time_dev 0.235 at FPR 0 (per-obs F1 0.344,
+above the detector's 0.267). Ablations: without content FPR 0.0016 and per-obs F1 0.328; every other group
+lowers recall.
+
+Why test is far below calib (diagnosed after the test run; nothing retuned):
+1. **TECHSAT 1B can never alert (design error, decision 81).** p = max(own, pooled) lets the Laplace prior
+   of its 36 train frames dominate: any never-seen event gets p >= 1/37, score <= 1.57 < tau 2.31. The unit
+   test only checked that pooling was active, not that a rare event could still reach tau.
+2. **Content evidence does not transfer across stations.** 70 of 73 test false alarms are content, all on
+   2 observations of test station 1763; positions constant in TRAIN passes vary there. The
+   leave-one-OBSERVATION-out estimate hid the station shift. Test FPR 1.26 % is above the 1 % target.
+3. **Swap in batched passes** (timing not usable, 1763): recall 0.25 against 1.00 when timing is usable;
+   the file order within a batched second does not follow the counters.
+4. Deletion 0 / 21: indistinguishable from natural losses, as expected.
+
+Fusion view (frozen detectors, either one alerting, test): duplicates 22 / 22 (TECHSAT 1B duplicates are
+caught by the replay detector's single-repeat evidence), forged FUNCUBE-1 0.82 / TECHSAT 1B 0.33; FPR 1.26 %.
+
+Naming (`detect/naming.py`, locked; test): name accuracy 0.994 on alerted attacked frames. 803 frames
+flagged by both detectors: 790 replay -> "replay", 10 duplicates -> "duplicate", 2 forged -> "forged",
+1 cross-pass -> "replay_cross_pass". Rule: a block of copies sharing one shift (or an earlier pass) is a
+replay; ONE repeated frame is a sequence duplicate; intra-pass evidence takes precedence over a match with
+another station's recording of the same pass.
+
+## Detector decisions, continued
+
+| # | Decision | Reason |
+|---|---|---|
+| 80 | Sequence score = -log10(min p) over 6 evidence groups, p = Laplace-smoothed natural probability from TRAIN clean frames; time deviation scored by its exact 1 s bin; swap-pattern rate separate from generic inversions; order analysis without frames already explained as copies; same threshold rule as decision 72 | Natural deviations are 0, 1 or one count; tail probabilities would make every timing shift look natural; one jumped counter must not flag its neighbours |
+| 81 | **Error, recorded**: small-satellite pooling p = max(own, pooled) caps TECHSAT 1B at score 1.57 < tau, so version 1 cannot alert on TECHSAT 1B | Found on test; version 1 stays the official result |
+| 82 | Naming for fusion (`detect/naming.py`) frozen with Phase K; timing vs counter_jump from the phase on the pass rhythm and whether the deviation is a whole number of >= 2 counts | Train naming accuracy 0.992 |
+| 83 | Phase K CLI smoke test on a TRAIN folder (15123656), not test | Lesson from decision 78 |
+| 84 | **Version 2 proposed, not built** (needs approval): (a) pooled p, raised to the satellite's own p only for values it actually shows (count > 0); (b) content profile checked leave-one-STATION-out on train, positions kept only if constant across stations; (c) nothing else. Any v2 is post hoc: new lock, reported next to version 1, version 1 stays the official result | Test results motivated these changes |
+| 85 | **Sequence detector: version 1 is the reported result; version 2 is a planned fix, not built for Phase 1.** Diagnosis (Phase K results): (1) small-satellite pooling p = max(own, pooled) caps TECHSAT 1B at score 1.57 < tau 2.31, so TECHSAT 1B can never alert (decision 81); (2) content positions constant in TRAIN vary at test station 1763 (70 of 73 test false alarms; leave-one-observation-out hid the station shift), test FPR 1.26 % > 1 % target; (3) swap in batched passes is weak without timing; (4) deletion is indistinguishable from natural loss. Planned v2 = (a) pooled p, raised to the satellite's own p only for values it actually shows (count > 0), fixing (1); (b) content profile checked leave-one-STATION-out on train, keeping only positions constant across stations, fixing (2). If ever built: new lock, reported next to v1, v1 stays official | Organizers' email (2026-11-01): Phase 1 deliverables are an anonymous technical report with preliminary validation, the GitHub repository, a working proof-of-concept prototype and documentation; time goes to Phase L and the prototype. The report states the v1 numbers and this diagnosis |
+| 86 | Prototype entry point `detect/run.py`: runs the detectors on ONE raw recording folder (audio.ogg, demoddata/, metadata.json), no labels; Phase L wires the interference detector into it, later phases add the others | Deliverables now include a working proof-of-concept prototype (decision 85) |
+| 87 | Phase L design: features in feature space (template = per-satellite TRAIN clean median / MAD of window features, peak-frequency rarity, within-recording deviations); level features only in the `with_level` ablation; grid on every 4th TRAIN window, learning rate fixed at 0.1, 8 combinations, max_iter 200 (first run with 16 combinations on every 2nd window: ~8 min per combination, stopped); threshold from CALIB only (no train guard: in-sample train scores of a learned model are meaningless, out-of-fold scores come from other models), OOF train FPR at tau reported (2.7 %); smoothing chosen on calib by TPR among (1,1) (2,2) (2,3) (3,4) (3,5) at <= 1 % smoothed FPR | Frozen dataset stores features, not spectra; CPU budget before the deadline |
+| 88 | Main model keeps no level features although `with_level` has higher calib AUC (0.902 vs 0.862): power_db and noise_floor_db rank 2nd and 3rd in its importances (they would dominate), and gain changes are benign | Rule 1 / benign robustness |
+| 89 | **Phase L version 1 is the reported result; its threshold does not transfer to new stations (diagnosed after the test run; nothing retuned).** 6 of 14 test observations carry almost all false alarms (FPR 0.09–0.99 each; the other 8 <= 0.5 %): stations 4188 / 4073 (TECHSAT 1B) and 1763 (FUNCUBE-1) record a wider audio band, so occupied_bw_hz is 9.42 kHz vs 9.23 kHz in TRAIN (tz 5.4) and 19.6 kHz vs 17.2 kHz (tz 14), and tz_occupied_bw_hz is the top feature; one 4806 pass has a persistent line (tz persistence 10). The template scale (MAD of a quantized feature) is too small. Grouped CV by observation hid the station shift (as in decision 84). Evidence: ablation without the shape group: test FPR 4.4 %, per-obs F1 0.746 | Same lesson as Phase K |
+| 90 | **Version 2 proposed, not built** (needs approval): (a) drop occupied_bw_hz / tz_occupied_bw_hz (band-edge dependent, a receiver property); (b) floor the template scale at one frequency bin / a fixed fraction of the TRAIN spread; (c) grid and threshold checked leave-one-STATION-out on train+calib; nothing else. Post hoc: new lock, reported next to version 1 | Test results motivated these changes |
+| 91 | Phase L smoke test of `detect/run.py` on TRAIN raw folder 14915678: 1041 windows, 0 alerts, 11.4 s, 489 MB peak traced memory. The Phase L lock includes `detect/run.py`; Phase N will extend run.py as a new version (the Phase L test report is already produced) | Prototype deliverable (decision 86) |
+
+## Phase L — Interference detector: test lock (rule 10)
+
+Frozen and signed on 2026-11-01 (20:36 UTC) BEFORE any evaluation on test. Lock `models/interference/lock.json`
+(pinned Ed25519 key), SHA-256 `1d1ee6f984cc17cb30f08bd51da5904a63dd4dfc56222d7aec3592cdb6e36bc9`.
+tau = 0.6650 (raw score; strict 0.9864); smoothing 3 of 5 at tau 0.6085; calibration isotonic (CV Brier 0.0738 vs Platt 0.0753).
+
+| file | SHA-256 |
+|---|---|
+| `models/interference/model.pkl` | `e96f2ce9b3d513c3325c0dd63225fd1963d3f50322633457ff823881ae9871e5` |
+| `models/interference/extras.pkl` | `014fbc4fb38090833c213d9b5c7078757c8be23d588d3545678f4298c8244aad` |
+| `models/interference/threshold.json` | `51ea074451ee822bc94ca9f262987edeb5bc468a0659799ea80ee12ab996142c` |
+| `models/interference/template.json` | `717106d176a35ebe314d8bcb80dcc0cc351ff89fb094570c127ccec1d0ec926c` |
+| `detect/interference_det.py` | `95d2fa3f02ede9f35c960490eee1bbae75b3a16853133fd6cf12dfb85ce61b2f` |
+| `detect/audio_front.py` | `80cdcfc44d0a7c096e7ec553e6b41fcba611e68d14cc02037a2bcbb0ac80758d` |
+| `detect/run.py` | `466eeb319841d4cbe148ab89e9966e8d961a83cd85ce87af4dae0fb26ab5191d` |
+| `detect/features.py` | `3fa455a14c7edffa72a9e4b0bf7405e25a301367c53241e612d7bc3b321a6e1a` |
+| `detect/frames_io.py` | unchanged since Phase J |
+
+## Phase L — Interference detector: results (2026-11-01), version 1 (official)
+
+Files: `detect/interference_det.py`, `detect/audio_front.py` (raw audio -> windows, reproduces the frozen features to
+5e-5), `detect/run.py` (prototype), `eval/interference_eval.py`, `tests/test_interference_det.py` (5 tests; suite 120 pass).
+Reports `eval/out/interference/report_{calib,test}.{json,md}`, `fit_report.json`, `reliability_{calib,test}.png`.
+Grid best: 15 leaves, min_samples_leaf 400, l2 0 (CV pAUC@1 % 0.840; one fold 0.72).
+
+| split | AUC | TPR@1 % FPR (curve) | TPR at tau | FPR clean / benign | per-obs F1 | events | ECE |
+|---|---|---|---|---|---|---|---|
+| calib | 0.862 | 0.644 | 0.633 | 0.0052 / 0.0050 | 0.731 [0.576, 0.857] | 44 / 55 | (in-sample) |
+| **test** | **0.844** | **0.564** | 0.774 | **0.364 / 0.340** | 0.629 [0.533, 0.734] | 269 / 292 | 0.164 |
+| test, strict tau | | | 0.632 | 0.045 / 0.046 | 0.710 [0.613, 0.799] | 196 / 292 | |
+
+Test smoothed (3 of 5): TPR 0.786, FPR clean 0.384, median delay 1 s. Per shape TPR noise 0.80, tone 0.76; per satellite
+TECHSAT 1B 0.87, FUNCUBE-1 0.60. Pd vs snr_db (test, raw tau): <= 0 dB 1.00, 5 dB 0.93, 10 dB 0.88, 20 dB 0.73,
+30 dB 0.32; min detectable snr_db 5 dB (inflated by the FPR). Evasion TPR (smoothed) 0.84 / 0.83.
+Baselines and others on test (AUC; TPR@1 % FPR on the curve): energy 0.529 / 0.033; peak_to_median_db 0.796 / 0.161;
+model B IsolationForest 0.853 / 0.345 (FPR 0 at its tau, TPR 0.04); leave-one-shape-out: noise held out TPR 0.60, tone
+held out 0.73; ablations: with_level 0.848, no_peak 0.800, no_shape 0.843 (FPR 4.4 %, best F1 0.746), no_deviation
+0.841, no_template 0.832, no_obs_relative 0.845. Calib importances (permutation): tz_occupied_bw_hz, spectral_entropy,
+tz_peak_persistence, peak_rarity.
+Honest reading: ranking power transfers (AUC 0.84, above both baselines), the operating threshold does not (decision 89).
+| 92 | **Interference v2 built (post hoc, after the v1 diagnosis; rules fixed before any v2 test look).** (a) no occupied-bandwidth features; features whose per-recording clean median follows the receiver band edge (\|Spearman\| >= 0.75 on train + calib: peak_width, flatness, entropy, kurtosis) only as within-recording deviations d_<f>; (b) template scale >= max(window MAD, between-station SD of clean medians, 1 dB / 1 window / 1 bin); (c) station-grouped CV on train + calib (GroupKFold by station, 6 folds instead of 22 single-station folds, for CPU; 22 stations), every window scored by a model that never saw its station; these out-of-fold scores give calibration (isotonic, Brier 0.124 vs Platt 0.184), the 1 % threshold (tau 0.99985) and smoothing (3 of 5); v1 hyperparameters, models on every 2nd window. Gate fixed in advance (lower worst-station FPR, fewer stations > 2 %, TPR@1 % within 0.05 of v1), on the station-out-of-fold scores: v1 AUC 0.847, TPR@1 % 0.502, worst station 12.2 % (4011), 1 station > 2 %; v2 AUC 0.827, TPR@1 % 0.514, worst 1.85 %, 0 stations > 2 % -> **passed**; lock signed, test run once | User decision after the Phase L STOP |
+| 93 | **Main finding: cross-station generalization is the main difficulty** (sequence content profile, decision 85; interference threshold, decisions 89 and 92). Observation-grouped validation hides it; station-grouped validation exposes it. v2 trades recall for false alarms: on test it removes the station false alarms but misses full-pass interference (d_ features cancel when the interferer lasts the whole recording; Pd at -10 dB 0.77, noise TPR 0.35). **Phase 2 fix: a per-station template built from the station's own earlier clean passes** (as the replay hash archive, decision 68), so absolute shape features can be compared with the same receiver's normal spectrum and full-pass interference becomes visible again | Recorded for the report |
+| 94 | Report-code fix after the test runs: snrgrid variants are named `snrgrid_+20` etc., the filter `kind == "snrgrid"` matched none, so the v1 Pd-vs-SNR curve had used all positives in 5 dB bins. Fixed to `startswith("snrgrid")` in both eval scripts and both test reports regenerated (no model, threshold or locked file changed) | Transparency |
+
+## Phase L — Interference detector v2: test lock (rule 10)
+
+Frozen and signed on 2026-11-01 (21:19 UTC) BEFORE its test run. Lock `models/interference_v2/lock.json`, SHA-256
+`02cdfcb8c423031ac085877b73ca0922510448581db577017697a3c1fcb01da4`. Prototype: `detect/run.py --model models/interference_v2/model.pkl`.
+
+| file | SHA-256 |
+|---|---|
+| `models/interference_v2/model.pkl` | `2412d06aaf39af367304d9ada291d6c14f2fea87b5e2a1ac366364a642c89696` |
+| `models/interference_v2/threshold.json` | `c8ae4698d7c21e9b1a92ef9459794cf651bb9162d0817831e2ba38a949fdc67d` |
+| `models/interference_v2/template.json` | `2e4e6b39474fe9b70a498627988af495c7d4c014d51188b3d2d1229e746ab329` |
+| detect/interference_det.py, audio_front.py, features.py, run.py | unchanged since the v1 lock |
+
+## Phase L — v1 (official) vs v2 (post hoc, after diagnosis) on test
+
+Files: `eval/interference_v2.py`, `tests/test_interference_v2.py` (2 tests; suite 122 pass), `eval/out/interference_v2/{loso_report,report_test}.{json,md}`.
+
+| version | AUC | TPR@1 % FPR (curve) | TPR at tau | FPR clean / benign | per-obs F1 | events | ECE | evasion TPR | min detectable snr_db |
+|---|---|---|---|---|---|---|---|---|---|
+| v1 | 0.844 | 0.564 | 0.774 | 0.364 / 0.340 | 0.629 [0.533, 0.734] | 269 / 292 | 0.164 | 0.84 | 10 |
+| v2 | 0.864 | 0.580 | 0.484 | **0.0014 / 0.0016** | 0.582 [0.457, 0.694] | 154 / 292 | 0.056 | 0.44 | none (Pd -10 dB 0.77) |
+
+Per-station test FPR (raw tau), v1 -> v2: 1664 0.27 % -> 0; 1763 14.4 % -> 0; 4073 92.7 % -> 0; 4188 87.4 % -> 0;
+4806 24.5 % -> 0.66 %; 5049 0.12 % -> 0. TPR by shape v1 noise 0.80 / tone 0.76; v2 noise 0.35 / tone 0.59.
+Pd vs snr_db (snrgrid), v1: -10..0 dB 1.00, 5 dB 0.97, 10 dB 0.93, 20 dB 0.82, 30 dB 0.20; v2: -10 dB 0.77, 0 dB 0.90,
+10 dB 0.84, 20 dB 0.25, >= 25 dB ~0. v2 meets the false-alarm target on every test station; v1 has the higher recall
+only because its threshold sits inside the false-alarm cloud of new stations. Sequence v2 not built (usage).

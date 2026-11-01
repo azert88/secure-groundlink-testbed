@@ -1,0 +1,10 @@
+{
+ "tau": 0.6649993426403213,
+ "tau_strict": 0.9864293279053837,
+ "k": 3,
+ "n": 5,
+ "tau_smoothed": 0.6085149340905859,
+ "target_fpr": 0.01,
+ "strict_fpr": 0.001,
+ "rule": "tau on raw model score for <= target FPR on CALIB not-attacked windows, pooled and per satellite"
+}

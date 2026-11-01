@@ -32,3 +32,6 @@ data/explore/
 *.flac
 *.mp3
 *.opus
+
+# window caches with labels, rebuilt by eval/interference_eval.py cache
+eval/out/interference/cache_*.pkl

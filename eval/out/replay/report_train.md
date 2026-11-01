@@ -42,7 +42,7 @@ Fires on other attacks: sequence/counter_jump 0.00 (n=9), sequence/deletion 0.00
 
 | detector | tau | recall | FPR | F1 | per-obs F1 | EER |
 |---|---|---|---|---|---|---|
-| baseline energy | 9.741 | 0.019 | 0.0020 | 0.037 | 0.028 [0.000, 0.067] | 0.579 [0.539, 0.620] |
+| baseline energy | 9.74105 | 0.019 | 0.0020 | 0.037 | 0.028 [0.000, 0.067] | 0.579 [0.539, 0.620] |
 | baseline n_earlier_same_bytes | > 1 | 0.066 | 0.0000 | 0.124 | 0.051 [0.000, 0.154] | 0.099 [0.022, 0.206] |
 | baseline counter_le_max | > 1 | 0.000 | 0.0000 | 0.000 | 0.000 [0.000, 0.000] | 0.097 [0.013, 0.199] |
 | baseline (natural tau=1, FPR not controlled) n_earlier_same_bytes | 1 | 0.897 | 0.0675 | 0.677 | 0.737 [0.548, 0.905] | 0.099 [0.022, 0.206] |

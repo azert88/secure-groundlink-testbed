@@ -1,0 +1,26 @@
+{
+ "obs_dir": "14915678",
+ "norad": 25397,
+ "detectors": {
+  "interference": {
+   "detector": "interference",
+   "n_windows": 1041,
+   "tau": 0.6649993426403213,
+   "smoothing": "3 of 5",
+   "n_alert_windows": 0,
+   "n_raw_alert_windows": 0,
+   "events": [],
+   "audio": {
+    "sample_rate": 48000,
+    "duration_s": 521.025,
+    "band_hz": [
+     100.0,
+     18444.53
+    ]
+   },
+   "runtime_s": 11.36,
+   "peak_traced_mb": 488.7
+  }
+ },
+ "alert": false
+}

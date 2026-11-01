@@ -1,0 +1,282 @@
+{
+ "n_train": {
+  "pos": 88096,
+  "neg": 296095,
+  "obs": 45
+ },
+ "grid": [
+  {
+   "learning_rate": 0.1,
+   "max_leaf_nodes": 15,
+   "min_samples_leaf": 50,
+   "l2_regularization": 0.0,
+   "pauc_mean": 0.8390666165930354,
+   "pauc_folds": [
+    0.9082,
+    0.727,
+    0.8805,
+    0.8219,
+    0.8577
+   ]
+  },
+  {
+   "learning_rate": 0.1,
+   "max_leaf_nodes": 15,
+   "min_samples_leaf": 50,
+   "l2_regularization": 1.0,
+   "pauc_mean": 0.8159597910231284,
+   "pauc_folds": [
+    0.8965,
+    0.7387,
+    0.868,
+    0.7936,
+    0.7829
+   ]
+  },
+  {
+   "learning_rate": 0.1,
+   "max_leaf_nodes": 15,
+   "min_samples_leaf": 400,
+   "l2_regularization": 0.0,
+   "pauc_mean": 0.8399342012532147,
+   "pauc_folds": [
+    0.9105,
+    0.7231,
+    0.88,
+    0.8302,
+    0.8558
+   ]
+  },
+  {
+   "learning_rate": 0.1,
+   "max_leaf_nodes": 15,
+   "min_samples_leaf": 400,
+   "l2_regularization": 1.0,
+   "pauc_mean": 0.8157095682139998,
+   "pauc_folds": [
+    0.8973,
+    0.7391,
+    0.8678,
+    0.7934,
+    0.781
+   ]
+  },
+  {
+   "learning_rate": 0.1,
+   "max_leaf_nodes": 31,
+   "min_samples_leaf": 50,
+   "l2_regularization": 0.0,
+   "pauc_mean": 0.8373259175755805,
+   "pauc_folds": [
+    0.9152,
+    0.7238,
+    0.8789,
+    0.813,
+    0.8558
+   ]
+  },
+  {
+   "learning_rate": 0.1,
+   "max_leaf_nodes": 31,
+   "min_samples_leaf": 50,
+   "l2_regularization": 1.0,
+   "pauc_mean": 0.8155738265113873,
+   "pauc_folds": [
+    0.8988,
+    0.7396,
+    0.8671,
+    0.7911,
+    0.7813
+   ]
+  },
+  {
+   "learning_rate": 0.1,
+   "max_leaf_nodes": 31,
+   "min_samples_leaf": 400,
+   "l2_regularization": 0.0,
+   "pauc_mean": 0.8363120834564255,
+   "pauc_folds": [
+    0.9092,
+    0.7165,
+    0.8774,
+    0.8255,
+    0.8529
+   ]
+  },
+  {
+   "learning_rate": 0.1,
+   "max_leaf_nodes": 31,
+   "min_samples_leaf": 400,
+   "l2_regularization": 1.0,
+   "pauc_mean": 0.8160087719352106,
+   "pauc_folds": [
+    0.8973,
+    0.7392,
+    0.8679,
+    0.7931,
+    0.7825
+   ]
+  }
+ ],
+ "best_params": {
+  "learning_rate": 0.1,
+  "max_leaf_nodes": 15,
+  "min_samples_leaf": 400,
+  "l2_regularization": 0.0
+ },
+ "n_iter": 200,
+ "calibration": {
+  "brier_cv": {
+   "isotonic": 0.07383553262070815,
+   "platt": 0.07526861687908891
+  },
+  "method": "isotonic"
+ },
+ "smoothing": [
+  {
+   "k": 1,
+   "n": 1,
+   "tau": 0.6655606239821695,
+   "calib_tpr": 0.632345596803729,
+   "calib_fpr": 0.006701414743112435
+  },
+  {
+   "k": 2,
+   "n": 2,
+   "tau": 0.6004862025416421,
+   "calib_tpr": 0.6323039786915265,
+   "calib_fpr": 0.005845678532134562
+  },
+  {
+   "k": 2,
+   "n": 3,
+   "tau": 0.6330661644812035,
+   "calib_tpr": 0.6373397702680207,
+   "calib_fpr": 0.006112401506984808
+  },
+  {
+   "k": 3,
+   "n": 4,
+   "tau": 0.5917585716722275,
+   "calib_tpr": 0.6378808057266523,
+   "calib_fpr": 0.006012380391415966
+  },
+  {
+   "k": 3,
+   "n": 5,
+   "tau": 0.6085149340905859,
+   "calib_tpr": 0.6420426169468952,
+   "calib_fpr": 0.006201309165268223
+  }
+ ],
+ "oof_train_fpr_at_tau": 0.02739781410455103,
+ "importances_calib": {
+  "main": {
+   "tz_occupied_bw_hz": 0.02102,
+   "spectral_entropy": 0.01593,
+   "tz_peak_persistence": 0.01512,
+   "peak_rarity": 0.01375,
+   "d_max_dev_from_obs_median_db": 0.01084,
+   "occupied_bw_hz": 0.00993,
+   "tz_peak_to_median_db": 0.00381,
+   "peak_to_median_db": 0.00195,
+   "peak_persistence": 0.00124,
+   "flatness": 0.00098,
+   "peak_width_hz": 0.00021,
+   "tz_peak_width_hz": -0.00161,
+   "tz_spectral_kurtosis": -0.00212,
+   "d_flatness": -0.00228,
+   "spectral_kurtosis": -0.00237,
+   "tz_max_dev_from_obs_median_db": -0.0036,
+   "d_peak_to_median_db": -0.00497,
+   "d_spectral_kurtosis": -0.00525,
+   "max_dev_from_obs_median_db": -0.00546,
+   "d_spectral_entropy": -0.00594,
+   "tz_flatness": -0.00794,
+   "tz_spectral_entropy": -0.00974
+  },
+  "with_level": {
+   "tz_occupied_bw_hz": 0.03431,
+   "power_db": 0.02504,
+   "noise_floor_db": 0.01995,
+   "peak_rarity": 0.01714,
+   "tz_peak_persistence": 0.01599,
+   "spectral_entropy": 0.01481,
+   "d_power_db": 0.01037,
+   "d_max_dev_from_obs_median_db": 0.00981,
+   "tz_peak_to_median_db": 0.009,
+   "occupied_bw_hz": 0.00839,
+   "tz_spectral_entropy": 0.00632,
+   "tz_max_dev_from_obs_median_db": 0.00548,
+   "tz_flatness": 0.00485,
+   "peak_to_median_db": 0.00444,
+   "max_dev_from_obs_median_db": 0.00274,
+   "peak_persistence": 0.00229,
+   "d_flatness": 0.00184,
+   "d_spectral_entropy": 0.00179,
+   "flatness": 0.00098,
+   "tz_spectral_kurtosis": 0.00076,
+   "tz_peak_width_hz": -0.00039,
+   "spectral_kurtosis": -0.00058,
+   "d_peak_to_median_db": -0.00101,
+   "d_spectral_kurtosis": -0.00102,
+   "peak_width_hz": -0.00122
+  }
+ },
+ "threshold": {
+  "tau": 0.6649993426403213,
+  "tau_strict": 0.9864293279053837,
+  "k": 3,
+  "n": 5,
+  "tau_smoothed": 0.6085149340905859,
+  "target_fpr": 0.01,
+  "strict_fpr": 0.001,
+  "rule": "tau on raw model score for <= target FPR on CALIB not-attacked windows, pooled and per satellite"
+ },
+ "extras_calib": {
+  "energy": {
+   "tau": 5.420249938964844,
+   "calib_auc": 0.5342137918682043
+  },
+  "peak_to_median_db": {
+   "tau": 25.582700729370117,
+   "calib_auc": 0.804480465649309
+  },
+  "model_B_isoforest": {
+   "tau": 0.6735841393602564,
+   "calib_auc": 0.799624449322595
+  },
+  "loso_without_noise": {
+   "tau": 0.700788492556729,
+   "calib_auc": 0.8442319309841834
+  },
+  "loso_without_tone": {
+   "tau": 0.682700134610247,
+   "calib_auc": 0.8857380566498708
+  },
+  "ablation_with_level": {
+   "tau": 0.6485005449515495,
+   "calib_auc": 0.9024012349206394
+  },
+  "ablation_no_peak": {
+   "tau": 0.676362589051301,
+   "calib_auc": 0.8693403666538433
+  },
+  "ablation_no_shape": {
+   "tau": 0.7402304338436458,
+   "calib_auc": 0.8185964145803697
+  },
+  "ablation_no_deviation": {
+   "tau": 0.7810023600295387,
+   "calib_auc": 0.8873123601106052
+  },
+  "ablation_no_template": {
+   "tau": 0.6782231231827928,
+   "calib_auc": 0.8744090418625954
+  },
+  "ablation_no_obs_relative": {
+   "tau": 0.7053973739491379,
+   "calib_auc": 0.8932077279796118
+  }
+ }
+}

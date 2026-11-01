@@ -1,0 +1,14 @@
+{
+ "created_utc": "2026-11-01T21:19:15Z",
+ "files": {
+  "detect/audio_front.py": "80cdcfc44d0a7c096e7ec553e6b41fcba611e68d14cc02037a2bcbb0ac80758d",
+  "detect/features.py": "3fa455a14c7edffa72a9e4b0bf7405e25a301367c53241e612d7bc3b321a6e1a",
+  "detect/interference_det.py": "95d2fa3f02ede9f35c960490eee1bbae75b3a16853133fd6cf12dfb85ce61b2f",
+  "detect/run.py": "466eeb319841d4cbe148ab89e9966e8d961a83cd85ce87af4dae0fb26ab5191d",
+  "models/interference_v2/model.pkl": "2412d06aaf39af367304d9ada291d6c14f2fea87b5e2a1ac366364a642c89696",
+  "models/interference_v2/template.json": "2e4e6b39474fe9b70a498627988af495c7d4c014d51188b3d2d1229e746ab329",
+  "models/interference_v2/threshold.json": "c8ae4698d7c21e9b1a92ef9459794cf651bb9162d0817831e2ba38a949fdc67d"
+ },
+ "label": "test lock: interference_v2",
+ "signature": "N9sa9ySJslahnKaoUzjiTEB8DshzaAq11WQ0daz5OueISw89NKIiDqEDdk1VVUP4d2i4ScPyWKyBIGpCfwTzCA=="
+}

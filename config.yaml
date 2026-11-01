@@ -248,7 +248,7 @@ validation:
   roundtrip_variants: [clean, interference_00, combo_00]
 
 detectors:
-  # Detector phases J-P (DETECTOR_SPEC.md). Models, thresholds and locks live in models/<detector>/.
+  # Detector phases J-P (docs/DETECTOR_SPEC.md). Models, thresholds and locks live in models/<detector>/.
   models_dir: models
   eval_dir: eval/out                     # per-split score caches and reports (eval/ reads labels, detect/ never does)
   target_fpr: 0.01                       # rule 3: thresholds for 1% false alarms on not-attacked calib samples
@@ -278,3 +278,18 @@ detectors:
       regress_run: 0.75                  # >= 2 frames: counter <= max seen and off the counter-time line, same offset
       regress_single: 0.35
       rewrite: 0.15                      # probable rewrite merged by the canonical stream (n_copies > 0)
+  sequence:
+    # Phase K (detect/sequence_det.py). Natural statistics from TRAIN clean frames; score = -log10(min p).
+    profile: models/sequence/profile.json
+    threshold: models/sequence/threshold.json
+    min_frames: 100                      # fewer train frames with a counter -> pooled timestamp statistics
+    dev_max_bin_s: 10                    # counter-time deviation in 1 s bins up to this, one tail bin beyond
+    swap_max_counts: 1.5                 # swap pattern: both members within this many steps of the line
+    timing_max_overfull_frac: 0.05       # detector-side timing check (as QC decision 34)
+    content_min_type_frames: 8           # constant byte positions need >= this many train frames of the type
+    report_p_max: 0.2                    # evidence with a larger natural probability is not reported
+    near_copy_max_bytes: 8               # same counter, <= this many bytes differ: near copy (forged), else counter clash
+    # counter-time line, same definition as the replay detector
+    line_tol_s: 5.5
+    line_min_frames: 3
+    line_ok_min_frac: 0.8

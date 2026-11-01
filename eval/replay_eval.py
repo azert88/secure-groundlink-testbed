@@ -352,8 +352,8 @@ def _tau(t: float) -> str:
     """Threshold for display; a tau just above a score level (nextafter) is shown as '> level'."""
     if math.isinf(t):
         return "inf"
-    r = round(t, 9)
-    return f"> {r:g}" if t > r else f"{t:.4g}"
+    r = float(f"{t:.10g}")
+    return f"> {r:g}" if (t > r and np.nextafter(r, np.inf) == t) else f"{t:.6g}"
 
 
 def _ci(t) -> str:

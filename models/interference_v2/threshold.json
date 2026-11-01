@@ -1,0 +1,10 @@
+{
+ "tau": 0.9998455718397593,
+ "tau_strict": 0.9999713913574436,
+ "k": 3,
+ "n": 5,
+ "tau_smoothed": 0.9998331480009326,
+ "target_fpr": 0.01,
+ "strict_fpr": 0.001,
+ "rule": "tau on station-out-of-fold scores (train + calib) for <= target FPR on not-attacked windows, pooled and per satellite"
+}

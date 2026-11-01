@@ -1,0 +1,81 @@
+{"learning_rate": 0.1, "max_leaf_nodes": 15, "min_samples_leaf": 50, "l2_regularization": 0.0, "pauc_mean": 0.8390666165930354, "pauc_folds": [0.9082, 0.727, 0.8805, 0.8219, 0.8577]}
+{"learning_rate": 0.1, "max_leaf_nodes": 15, "min_samples_leaf": 50, "l2_regularization": 1.0, "pauc_mean": 0.8159597910231284, "pauc_folds": [0.8965, 0.7387, 0.868, 0.7936, 0.7829]}
+{"learning_rate": 0.1, "max_leaf_nodes": 15, "min_samples_leaf": 400, "l2_regularization": 0.0, "pauc_mean": 0.8399342012532147, "pauc_folds": [0.9105, 0.7231, 0.88, 0.8302, 0.8558]}
+{"learning_rate": 0.1, "max_leaf_nodes": 15, "min_samples_leaf": 400, "l2_regularization": 1.0, "pauc_mean": 0.8157095682139998, "pauc_folds": [0.8973, 0.7391, 0.8678, 0.7934, 0.781]}
+{"learning_rate": 0.1, "max_leaf_nodes": 31, "min_samples_leaf": 50, "l2_regularization": 0.0, "pauc_mean": 0.8373259175755805, "pauc_folds": [0.9152, 0.7238, 0.8789, 0.813, 0.8558]}
+{"learning_rate": 0.1, "max_leaf_nodes": 31, "min_samples_leaf": 50, "l2_regularization": 1.0, "pauc_mean": 0.8155738265113873, "pauc_folds": [0.8988, 0.7396, 0.8671, 0.7911, 0.7813]}
+{"learning_rate": 0.1, "max_leaf_nodes": 31, "min_samples_leaf": 400, "l2_regularization": 0.0, "pauc_mean": 0.8363120834564255, "pauc_folds": [0.9092, 0.7165, 0.8774, 0.8255, 0.8529]}
+{"learning_rate": 0.1, "max_leaf_nodes": 31, "min_samples_leaf": 400, "l2_regularization": 1.0, "pauc_mean": 0.8160087719352106, "pauc_folds": [0.8973, 0.7392, 0.8679, 0.7931, 0.7825]}
+energy 0.5342
+peak_to_median_db 0.8045
+model_B_isoforest 0.7996
+loso_without_noise 0.8442
+loso_without_tone 0.8857
+ablation_with_level 0.9024
+ablation_no_peak 0.8693
+ablation_no_shape 0.8186
+ablation_no_deviation 0.8873
+ablation_no_template 0.8744
+ablation_no_obs_relative 0.8932
+{
+ "best_params": {
+  "learning_rate": 0.1,
+  "max_leaf_nodes": 15,
+  "min_samples_leaf": 400,
+  "l2_regularization": 0.0
+ },
+ "calibration": {
+  "brier_cv": {
+   "isotonic": 0.07383553262070815,
+   "platt": 0.07526861687908891
+  },
+  "method": "isotonic"
+ },
+ "threshold": {
+  "tau": 0.6649993426403213,
+  "tau_strict": 0.9864293279053837,
+  "k": 3,
+  "n": 5,
+  "tau_smoothed": 0.6085149340905859,
+  "target_fpr": 0.01,
+  "strict_fpr": 0.001,
+  "rule": "tau on raw model score for <= target FPR on CALIB not-attacked windows, pooled and per satellite"
+ },
+ "smoothing": [
+  {
+   "k": 1,
+   "n": 1,
+   "tau": 0.6655606239821695,
+   "calib_tpr": 0.632345596803729,
+   "calib_fpr": 0.006701414743112435
+  },
+  {
+   "k": 2,
+   "n": 2,
+   "tau": 0.6004862025416421,
+   "calib_tpr": 0.6323039786915265,
+   "calib_fpr": 0.005845678532134562
+  },
+  {
+   "k": 2,
+   "n": 3,
+   "tau": 0.6330661644812035,
+   "calib_tpr": 0.6373397702680207,
+   "calib_fpr": 0.006112401506984808
+  },
+  {
+   "k": 3,
+   "n": 4,
+   "tau": 0.5917585716722275,
+   "calib_tpr": 0.6378808057266523,
+   "calib_fpr": 0.006012380391415966
+  },
+  {
+   "k": 3,
+   "n": 5,
+   "tau": 0.6085149340905859,
+   "calib_tpr": 0.6420426169468952,
+   "calib_fpr": 0.006201309165268223
+  }
+ ]
+}

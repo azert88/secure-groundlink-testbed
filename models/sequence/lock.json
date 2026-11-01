@@ -1,0 +1,16 @@
+{
+ "created_utc": "2026-11-01T20:06:00Z",
+ "files": {
+  "detect/canonical.py": "96523031243787dded35e5f214e4cd6f4f154f4b5d4a447621592aea8c2a9667",
+  "detect/counters.py": "5a569f16b24817e38c3f9a0b6b7aae73f4300d0b4787af6f6c7c327e1f00e1dd",
+  "detect/frames_io.py": "dbb4785535dbdfe7b0c27254be6dbc3c696ad129e9817ea299bdef0b18c95da3",
+  "detect/hash_store.py": "3eeb1474ca6cf91c47c58cfface3cafcdeed1a20c024f8cc56042470d6ae45b0",
+  "detect/naming.py": "f64f9ccf57bcb3bb3347806720ecef4eb3c8259941dd56ef39fa2f5c32b5e74e",
+  "detect/replay_det.py": "ba6d220b003b31456881f637d041aa9617234e024fb755d560734cbcb3f9fdf9",
+  "detect/sequence_det.py": "36b270eaf7266ccd784a9784d768654bd0528054b9effa71eea0ca0fec1a4f83",
+  "models/sequence/profile.json": "bfd568b29ad55e1516d94a46705b533763023d79ca854db7d684f5f4b830051f",
+  "models/sequence/threshold.json": "98af1c1168bbb02265633385025f558019b7ebc5b2303afcf468207d339480c3"
+ },
+ "label": "test lock: sequence",
+ "signature": "s+0OdQTYiEZp8dU0IO/QkQsMQvlhh/gqXp/nmsmoE6luk2JGbYl0qkrZf6zGDIo3sF+FbZyLH+VeCxVxKABbBA=="
+}

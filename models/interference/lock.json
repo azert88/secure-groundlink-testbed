@@ -1,0 +1,16 @@
+{
+ "created_utc": "2026-11-01T20:36:49Z",
+ "files": {
+  "detect/audio_front.py": "80cdcfc44d0a7c096e7ec553e6b41fcba611e68d14cc02037a2bcbb0ac80758d",
+  "detect/features.py": "3fa455a14c7edffa72a9e4b0bf7405e25a301367c53241e612d7bc3b321a6e1a",
+  "detect/frames_io.py": "dbb4785535dbdfe7b0c27254be6dbc3c696ad129e9817ea299bdef0b18c95da3",
+  "detect/interference_det.py": "95d2fa3f02ede9f35c960490eee1bbae75b3a16853133fd6cf12dfb85ce61b2f",
+  "detect/run.py": "466eeb319841d4cbe148ab89e9966e8d961a83cd85ce87af4dae0fb26ab5191d",
+  "models/interference/extras.pkl": "014fbc4fb38090833c213d9b5c7078757c8be23d588d3545678f4298c8244aad",
+  "models/interference/model.pkl": "e96f2ce9b3d513c3325c0dd63225fd1963d3f50322633457ff823881ae9871e5",
+  "models/interference/template.json": "717106d176a35ebe314d8bcb80dcc0cc351ff89fb094570c127ccec1d0ec926c",
+  "models/interference/threshold.json": "51ea074451ee822bc94ca9f262987edeb5bc468a0659799ea80ee12ab996142c"
+ },
+ "label": "test lock: interference",
+ "signature": "MM4Hrz+mA1pYzqErntMQiewGj6NhH9EBla7o8ldOFjrDCITxatzGQpF2r0X8st+lqjNmMuSKsSg2ScZ6/zwLCg=="
+}
