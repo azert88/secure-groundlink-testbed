@@ -1,4 +1,4 @@
-"""Per-window audio features (DATASET_SPEC.md section 4, windows.csv), shared by tables and detectors.
+"""Per-window audio features (docs/DATASET_SPEC.md section 4, windows.csv), shared by tables and detectors.
 
 Windows: win_s long, hop_s apart. Each window holds Welch segments (Hann, nperseg, noverlap,
 constant detrend, density scaling: the same estimate as scipy.signal.welch). The per-segment

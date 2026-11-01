@@ -1,4 +1,4 @@
-"""Phase E: train / calib / test splits by observation (DATASET_SPEC.md section 5).
+"""Phase E: train / calib / test splits by observation (docs/DATASET_SPEC.md section 5).
 
 Universe per satellite: observations kept for audio (Phase C `selected`: qc_status ok or
 flagged_reviewed_ok, TECHSAT 1B keep-first-40) or passing frame QC (decision 37).

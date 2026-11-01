@@ -149,19 +149,29 @@ the audio is left untouched too (documented limitation).
 
 ### 6.4 Narrowband interference (standard test: hidden SNR)
 Definitions (write them in the report):
-- P_signal = mean in-band power over burst_active windows of the clean observation
-- P_noise  = mean in-band power over non-burst windows
-- snr_db = 10*log10(P_signal / P_interf);  inr_db = 10*log10(P_interf / P_noise)
+- in-band = [f_low, f_edge] of the observation (f_edge = signal-band limit, decision 48)
+- P_ref    = MEDIAN in-band power over ALL windows of the clean observation (both satellites)
+- P_noise  = mean in-band power over non-burst windows (all windows when burst_active is unknown,
+  i.e. timing-unreliable observations)
+- snr_db = 10*log10(P_ref / P_interf);  inr_db = 10*log10(P_interf / P_noise)
+- snr_db is a signal-to-interference ratio (SIR): LOW snr_db = STRONG interference. The column keeps
+  its name; inr_db (interference-to-noise ratio) is kept alongside it (decision 62)
+- Reason (decision 56, replaces "P_signal = mean in-band power over burst_active windows"): only 2 %
+  of TECHSAT 1B windows are burst_active, and FM-demodulated audio power drops during bursts
+  (FM quieting), so a burst-window mean is unstable and biased
+- f0 is drawn over the full non-silent band [200 Hz, f_drop - 200 Hz] (decision 48), so no audible
+  part of the band is blind; SNR stays referenced to [f_low, f_edge]
 Parameters:
 - shape: tone (p=0.5) or band-limited Gaussian noise (4th-order Butterworth band-pass,
   bandwidth B ~ Uniform[20, 200] Hz) (p=0.5)
-- f0 ~ Uniform[200 Hz, f_edge - 200 Hz]  (in-band only)
-- snr_db ~ Uniform[-25, +10] for random variants;
-  fixed grid {-25, -20, -15, -10, -5, 0, +5, +10} for the Pd-vs-SNR curve variants
+- f0 ~ Uniform[200 Hz + B/2, f_drop - 200 Hz - B/2]  (full non-silent band, decision 48)
+- snr_db ~ Uniform[-10, +30] for random variants;
+  fixed grid {-10, -5, 0, +5, ..., +35} (10 values) for the Pd-vs-SNR curve variants (decision 62;
+  the earlier ranges [-25, +10] and [-35, -25] were inverted for an SIR)
 - duration: full pass (p=0.4) or a segment of U[5, 60] s at a random onset (p=0.6)
 - tone amplitude A = sqrt(2 * P_interf); random phase; scale noise to P_interf exactly
 Evasion subtypes (evasion=1, test split only): intermittent (on/off 1–5 s),
-near-threshold SNR in [-35, -25], slow frequency drift (<= 5 Hz/s), placed at the
+near-threshold SNR in [+20, +30] (weak interferer, decision 62), slow frequency drift (<= 5 Hz/s), placed at the
 frequency of strongest signal energy.
 
 ### 6.5 Benign conditions (is_attack = 0, attack_type = benign)
@@ -177,10 +187,10 @@ underneath attacks (p=0.3) so detectors cannot use "any change = attack".
 | clean | 1 | 1 | 1 |
 | benign | 3 | 3 | 3 |
 | interference (random SNR) | 4 | 3 | 3 |
-| interference SNR grid (8 values) | 0 | 0 | 8 |
+| interference SNR grid (10 values) | 0 | 0 | 10 |
 | replay | 2 | 2 | 2 |
 | sequence (one anomaly) | 2 | 2 | 2 |
-| standard combo (replay + 1 sequence anomaly + interference) | 2 | 2 | 3 |
+| standard combo (replay + 1 sequence anomaly + interference) | 2 | 2 | 10 (decision 58) |
 | evasion | 0 | 0 | 2 |
 Materialize audio (ogg) only for: data/sample/ (2 observations, all groups) and
 data/standard_test/ (10 test combo variants with a separate hidden labels file).

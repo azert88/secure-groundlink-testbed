@@ -401,3 +401,84 @@ Revised test (decisions 63–65), rerun with `python data/validate.py --only sho
 - `.h5` check skipped (no DB token); audio is the primary data.
 - Phase G evasion risk of decision 45: a replay of a frame within 10 s of its original is merged away
   before detection. To test in Phase G (the replay attack spec uses older frames).
+
+---------------------------------------------------------------------------------------------
+
+# Detector phases (DETECTOR_SPEC.md)
+
+## Phase J — Replay detector: test lock (rule 10)
+
+Frozen and signed on 2026-11-01 (10:54 UTC) BEFORE any evaluation on test. Lock file `models/replay/lock.json`
+(Ed25519, pinned public key `keys/public/ed25519_public.pem`; private key in gitignored `keys/private/`),
+SHA-256 of lock.json `01ecc240475872bab3979eba933431b0810ce747c16cde276b62cedfebcd5b99`.
+Test results are produced only by `eval/replay_eval.py`, which refuses to run on test unless the lock verifies.
+
+| file | SHA-256 |
+|---|---|
+| `models/replay/params.json` | `9d36f6e3f72210300054436a5eb92113c905c9b43c8ffd47a9a8aef4162e2abd` |
+| `models/replay/threshold.json` | `8b5e2a74641d303ed73370990a6bf70cbea6519dce28d1866beb304d641bf998` |
+| `models/replay/hash_store.json` | `4877fbabfa88d594fa52cc87a11780b6a173fc287589e18e0bf147161acb1a60` |
+| `detect/replay_det.py` | `ba6d220b003b31456881f637d041aa9617234e024fb755d560734cbcb3f9fdf9` |
+| `detect/frames_io.py` | `dbb4785535dbdfe7b0c27254be6dbc3c696ad129e9817ea299bdef0b18c95da3` |
+| `detect/hash_store.py` | `3eeb1474ca6cf91c47c58cfface3cafcdeed1a20c024f8cc56042470d6ae45b0` |
+| `detect/canonical.py` | `96523031243787dded35e5f214e4cd6f4f154f4b5d4a447621592aea8c2a9667` |
+| `detect/counters.py` | `5a569f16b24817e38c3f9a0b6b7aae73f4300d0b4787af6f6c7c327e1f00e1dd` |
+
+## Phase J — Replay detector: results (2026-11-01)
+
+Files: `detect/frames_io.py` (raw demoddata or canonical rows -> canonical stream, no labels),
+`detect/hash_store.py` (archive of clean frames, earlier passes only), `detect/replay_det.py` (CLI on a raw
+recording folder), `trust/manifest.py` (Ed25519 manifests), `eval/lock.py` (test lock), `eval/metrics.py`,
+`eval/replay_eval.py` (fit / score / calibrate / report). Tests: `tests/test_replay_det.py`,
+`tests/test_trust_lock_metrics.py` (21 tests; full suite 104 pass). Reports: `eval/out/replay/report_{train,calib,test}.{json,md}`.
+
+TRAIN statistics (`models/replay/params.json`): natural intra-pass repeat rate 0 (both satellites); natural
+rewrite rate TECHSAT 1B 16.7 %, FUNCUBE-1 0; 33 clean cross-pass collisions, all the same pass heard by two
+stations (|dt| <= 6 s); 0.33 % of FUNCUBE-1 clean frames off the counter-time line (2 frames, -224 s and -380 s).
+
+Threshold: tau = 0.35 (alert if score >= tau; calib alone gave > 0.15, the train guard raised it, decision 72);
+strict point (0.1 %) tau > 0.35. Calib FPR 0; train FPR 0.34 % (the 2 natural off-line frames, once per variant).
+
+| split | obs | replay frames | not attacked | per-obs F1 [95 % CI] | pooled FPR | EER | events detected | median delay |
+|---|---|---|---|---|---|---|---|---|
+| train (dev) | 48 | 681 | 7586 | 0.982 [0.957, 1.000] | 0.0034 | 0.000 | 60 / 60 | 0 s (max 228 s) |
+| calib | 15 | 228 | 1648 | 1.000 | 0.0000 | 0.000 | 20 / 20 | 0 s |
+| **test** | 14 | 1424 | 5793 | **1.000 [1.000, 1.000]** | **0.0000** (clean 0, benign 0) | **0.000** | **133 / 133** | 0 s (alert on the 1st copy) |
+
+Test per satellite: TECHSAT 1B 618 / 618 replay frames, 0 / 2963 false alarms; FUNCUBE-1 806 / 806, 0 / 2830.
+Subtypes: intra_pass 132 / 132 events, cross_pass (evasion) 1 / 1. Online (ever alerted) FPR on test 0.
+Fires on other attacks (test): sequence duplicate 100 % (a duplicate IS a one-frame repeat; fusion must name
+it), forged 21 % (counter equal to its source and off the line), swap / deletion / timing / counter_jump 0 %.
+
+Baselines and ablations on test (thresholds from calib + train guard, same target FPR):
+- energy: recall 0.005, EER 0.70 (replayed audio has the same level: replay is invisible to energy).
+- n_earlier_same_bytes: at the 1 % rule tau > 1 -> detects nothing (concurrent receptions and copies placed
+  before their originals give > 1 % false alarms on train); at its natural tau = 1 it is also perfect on test.
+  **Honest reading: on this test set the exact-hash repeat does almost all the work**; attribution, the
+  concurrency rule and runs are what keep the false-alarm rule satisfied on train-like cases.
+- counter_le_max: tau > 1 -> nothing; at tau = 1 recall 0.929, FPR 1.47 % (counter-jump aftermath).
+- ablations: without intra-pass repeats recall 0.472 (counter regression alone); without the store 0.989;
+  without attribution / runs / regression / rewrite: unchanged on test.
+- No absolute-level features (rule 1 check not applicable: the detector uses bytes, counters and times only).
+
+Limitations: test frames are exact byte copies, so hash evidence is decisive; a replay with re-encoded or
+modified bytes falls to counter evidence (recall 0.47 in the ablation) or to the sequence detector. TECHSAT 1B
+replays exist only in test (no TECHSAT 1B replay was seen before the lock; logic covered by synthetic tests).
+Only 1 cross-pass replay event in test. Copies placed BEFORE their originals are blamed on the originals
+transiently while the pass arrives (train online FPR 1.3 %, 6 variants); final scores are correct.
+Development note: the CLI smoke test was run once on the raw clean folder of a test observation (no labels,
+no metrics, all scores 0).
+
+## Detector decisions (with reason)
+
+| # | Decision | Reason |
+|---|---|---|
+| 68 | Cross-pass evidence only if the archived reception is more than `concurrent_tol_s` away (60 s when the counter-time line fits, 1800 s with batched timestamps); closer = same pass heard by another station, reported as corroboration | 33 natural clean collisions in the archive, all concurrent receptions (|dt| <= 6 s); batched writes can move file times by up to a pass length; another pass is >= one orbit away |
+| 69 | Copy vs original: the member off the counter-time line is the copy; else first seen; an unresolved pair follows the shift of its line-attributed block. Line = mode of counter * s_per_count - t (singletons weigh 2) | Some replays are placed before their originals (5 of 80 train+calib); a mostly replayed pass (10 of 12 frames) left too few singletons for a median; undecodable counters exist |
+| 70 | A run = copies sharing one time shift (+-2 s), not adjacent frames | TECHSAT 1B copies interleave with the pass's own beacons (decision 60) |
+| 71 | Counter regression against the running max of line-consistent frames, only when the line fits | One forward counter jump otherwise makes every later clean frame a regression (baseline counter_le_max: 1.1-1.5 % FPR) |
+| 72 | Threshold = max(tau on CALIB not-attacked frames, tau on TRAIN not-attacked frames), each pooled and per satellite; strict 0.1 % point reported | Calib has no TECHSAT 1B replays and few rewrites; train shows the natural rewrite rate (16.7 %) |
+| 73 | `line_tol_s` = 5.5 s | Train clean residuals are 0, 1 or 5 s; must stay below half the 10 s minimum copy shift for the mode window |
+| 74 | Causal scoring (prefix of the stream) for detection delay and online FPR; final per-frame score with the full pass | Delay must be measured as a station would see it |
+| 75 | Minimal Ed25519 manifest (`trust/manifest.py`) and test lock (`eval/lock.py`) built in Phase J; Phase M extends `trust/`. `cryptography` installed in `.venv` (allowed dependency) | Rule 10 requires signing before the first test evaluation |
+| 76 | `DETECTOR_SPEC.md` is read from the repository root (no `docs/DETECTOR_SPEC.md` exists) | File location |

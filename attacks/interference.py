@@ -1,4 +1,4 @@
-"""Narrowband interference (DATASET_SPEC.md 6.4, decision 56).
+"""Narrowband interference (docs/DATASET_SPEC.md 6.4, decision 56).
 
 Reference powers of the clean observation (in-band = [f_low, f_edge], decision 48):
   P_ref   = median in-band power over ALL windows        snr_db = 10 log10(P_ref / P_interf)

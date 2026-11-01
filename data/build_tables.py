@@ -1,4 +1,4 @@
-"""Phase D: clean tables (DATASET_SPEC.md section 4). Deterministic, keyed by (obs_id, variant_id).
+"""Phase D: clean tables (docs/DATASET_SPEC.md section 4). Deterministic, keyed by (obs_id, variant_id).
 
 Inputs: data/raw/ (never modified), data/qc_report.json (Phase C), data/splits.json if present.
 Outputs (tables.out_dir): observations.csv, frames.csv, windows.csv; labels in tables.labels_csv.

@@ -1,4 +1,4 @@
-"""Benign conditions (DATASET_SPEC.md 6.5): is_attack = 0, attack_type = benign.
+"""Benign conditions (docs/DATASET_SPEC.md 6.5): is_attack = 0, attack_type = benign.
 
   gain             multiply the whole file or [t0, t1] by `factor` (10 ms raised-cosine transitions)
   noise_rise       add white noise on [t0, t1] that raises the in-band ([f_low, f_edge]) floor by

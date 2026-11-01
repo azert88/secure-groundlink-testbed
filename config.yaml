@@ -91,7 +91,7 @@ canonical:
   max_rewrite_delay_s: {39444: 0.0, 25397: 5.0}
 
 qc:
-  # Phase C (DATASET_SPEC.md section 3)
+  # Phase C (docs/DATASET_SPEC.md section 3)
   report_csv: data/qc_report.csv
   report_md: data/qc_report.md
   report_json: data/qc_report.json
@@ -143,7 +143,7 @@ qc:
     s_per_count: 1.0                     # seconds counter
 
 tables:
-  # Phase D (DATASET_SPEC.md section 4): data/build_tables.py
+  # Phase D (docs/DATASET_SPEC.md section 4): data/build_tables.py
   out_dir: data/tables
   labels_csv: data/labels/labels.csv     # never read by detect/
   clean_variant: clean
@@ -167,7 +167,7 @@ positive_control:
     - {norad: 39444, shape: tone, f0_hz: 11650.0}                  # inside the downlink: expected in_signal_band
 
 splits:
-  # Phase E (DATASET_SPEC.md section 5): data/make_splits.py
+  # Phase E (docs/DATASET_SPEC.md section 5): data/make_splits.py
   out_json: data/splits.json
   fractions: {train: 0.6, calib: 0.2, test: 0.2}
   test_only_stations: {39444: 2}         # decision 23
@@ -175,7 +175,7 @@ splits:
   test_station_obs_range: [3, 6]         # decision 30: each test-only station holds 3..6 observations
 
 attacks:
-  # Phase F (DATASET_SPEC.md section 6): data/make_recipes.py -> data/recipes/<obs_id>/<variant_id>.json
+  # Phase F (docs/DATASET_SPEC.md section 6): data/make_recipes.py -> data/recipes/<obs_id>/<variant_id>.json
   recipes_dir: data/recipes
   report_json: data/recipes/report.json
   replay:
@@ -235,7 +235,7 @@ features:
   window_min_overlap_s: 0.5              # window label = 1 if attack active >= this
 
 validation:
-  # Phase H (DATASET_SPEC.md section 8): data/validate.py -> data/validation_report.{md,json}
+  # Phase H (docs/DATASET_SPEC.md section 8): data/validate.py -> data/validation_report.{md,json}
   out_md: data/validation_report.md
   out_json: data/validation_report.json
   cues_dir: data/validation/cues          # per-observation shortcut cues (post-chain peak / RMS), cached
@@ -246,3 +246,35 @@ validation:
   single_features: [peak_to_median_db, max_dev_from_obs_median_db, spectral_kurtosis, peak_persistence, flatness]
   snr_bin_db: 5.0
   roundtrip_variants: [clean, interference_00, combo_00]
+
+detectors:
+  # Detector phases J-P (DETECTOR_SPEC.md). Models, thresholds and locks live in models/<detector>/.
+  models_dir: models
+  eval_dir: eval/out                     # per-split score caches and reports (eval/ reads labels, detect/ never does)
+  target_fpr: 0.01                       # rule 3: thresholds for 1% false alarms on not-attacked calib samples
+  strict_fpr: 0.001                      # second operating point, reported alongside (false alarms are a tie-breaker)
+  bootstrap: {n: 2000, ci: 0.95}         # rule 9: bootstrap at observation level
+  keys:
+    private: keys/private/ed25519_private.pem   # gitignored, generated locally (trust/manifest.py keygen)
+    public: keys/public/ed25519_public.pem      # pinned public key
+  replay:
+    # Phase J (detect/replay_det.py). Rule-based evidence; only the alert threshold is calibrated.
+    store: models/replay/hash_store.json # clean frames of the archive (sha256, frame UTC, pass start UTC)
+    params: models/replay/params.json    # train-only statistics (natural rates) + the parameters below
+    threshold: models/replay/threshold.json
+    # counter-time line: residual = counter * s_per_count - t; offset = median over singleton frames
+    line_tol_s: 5.5                      # train clean residuals are 0, 1 or 5 s (one count); < half the 10 s minimum copy shift
+    line_min_frames: 3                   # frames with a counter needed to fit the line (mode window = line_tol_s / 2)
+    line_ok_min_frac: 0.8                # line usable if >= this share of singletons lie within line_tol_s
+    shift_group_tol_s: 2.0               # copies whose time shift agrees within this form one run (1 s timestamps)
+    # same frame in another archived pass: same pass heard by another station if |dt| <= tol, else replay.
+    # Wide tolerance when the counter-time line does not fit (batched writes: file time != reception time).
+    concurrent_tol_s: {line_ok: 60.0, batched: 1800.0}
+    scores:                              # evidence strength (ordinal); the threshold is set on calib
+      cross_run: 1.0                     # >= 2 frames of an earlier pass, same time shift
+      cross_single: 0.9
+      intra_run: 0.85                    # >= 2 frames already seen in this pass, same time shift
+      intra_single: 0.6                  # one repeated frame (also what a sequence 'duplicate' looks like)
+      regress_run: 0.75                  # >= 2 frames: counter <= max seen and off the counter-time line, same offset
+      regress_single: 0.35
+      rewrite: 0.15                      # probable rewrite merged by the canonical stream (n_copies > 0)

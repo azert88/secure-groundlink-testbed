@@ -1,0 +1,204 @@
+{
+ "calibrated_on": "calib (train guard)",
+ "fpr_at_tau": {
+  "abl_no_attribution": {
+   "calib": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   },
+   "train": {
+    "25397": 0.0,
+    "39444": 0.009784735812133072,
+    "pooled": 0.009227524387028736
+   }
+  },
+  "abl_no_cross": {
+   "calib": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   },
+   "train": {
+    "25397": 0.0,
+    "39444": 0.00363433044450657,
+    "pooled": 0.003427366200896388
+   }
+  },
+  "abl_no_intra": {
+   "calib": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   },
+   "train": {
+    "25397": 0.0,
+    "39444": 0.00363433044450657,
+    "pooled": 0.003427366200896388
+   }
+  },
+  "abl_no_regress": {
+   "calib": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   },
+   "train": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   }
+  },
+  "abl_no_rewrite": {
+   "calib": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   },
+   "train": {
+    "25397": 0.0,
+    "39444": 0.00363433044450657,
+    "pooled": 0.003427366200896388
+   }
+  },
+  "abl_no_runs": {
+   "calib": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   },
+   "train": {
+    "25397": 0.0,
+    "39444": 0.00363433044450657,
+    "pooled": 0.003427366200896388
+   }
+  },
+  "base_counter_le_max": {
+   "calib": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   },
+   "train": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   }
+  },
+  "base_energy": {
+   "calib": {
+    "25397": 0.0,
+    "39444": 0.0012787723785166241,
+    "pooled": 0.0012135922330097086
+   },
+   "train": {
+    "25397": 0.004629629629629629,
+    "39444": 0.001817165222253285,
+    "pooled": 0.0019773266543633007
+   }
+  },
+  "base_n_earlier_same_bytes": {
+   "calib": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   },
+   "train": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   }
+  },
+  "main": {
+   "calib": {
+    "25397": 0.0,
+    "39444": 0.0,
+    "pooled": 0.0
+   },
+   "train": {
+    "25397": 0.0,
+    "39444": 0.00363433044450657,
+    "pooled": 0.003427366200896388
+   }
+  }
+ },
+ "fpr_at_tau_strict": {
+  "calib": {
+   "25397": 0.0,
+   "39444": 0.0,
+   "pooled": 0.0
+  },
+  "train": {
+   "25397": 0.0,
+   "39444": 0.0,
+   "pooled": 0.0
+  }
+ },
+ "n_not_attacked_frames": {
+  "calib": 1648,
+  "train": 7586
+ },
+ "n_replay_frames": {
+  "calib": 228,
+  "train": 681
+ },
+ "rule": "alert if score >= tau",
+ "strict_fpr": 0.001,
+ "target_fpr": 0.01,
+ "tau": 0.35,
+ "tau_parts": {
+  "abl_no_attribution": {
+   "calib": 0.15000000000000002,
+   "train_guard": 0.85
+  },
+  "abl_no_cross": {
+   "calib": 0.15000000000000002,
+   "train_guard": 0.35
+  },
+  "abl_no_intra": {
+   "calib": 0.15000000000000002,
+   "train_guard": 0.35
+  },
+  "abl_no_regress": {
+   "calib": 0.15000000000000002,
+   "train_guard": 0.15000000000000002
+  },
+  "abl_no_rewrite": {
+   "calib": 5e-324,
+   "train_guard": 0.35
+  },
+  "abl_no_runs": {
+   "calib": 0.15000000000000002,
+   "train_guard": 0.35
+  },
+  "base_counter_le_max": {
+   "calib": 1.0000000000000002,
+   "train_guard": 1.0000000000000002
+  },
+  "base_energy": {
+   "calib": 9.741049999999994,
+   "train_guard": 8.059899999999999
+  },
+  "base_n_earlier_same_bytes": {
+   "calib": 5e-324,
+   "train_guard": 1.0000000000000002
+  },
+  "main": {
+   "calib": 0.15000000000000002,
+   "train_guard": 0.35
+  }
+ },
+ "tau_strict": 0.35000000000000003,
+ "taus": {
+  "abl_no_attribution": 0.85,
+  "abl_no_cross": 0.35,
+  "abl_no_intra": 0.35,
+  "abl_no_regress": 0.15000000000000002,
+  "abl_no_rewrite": 0.35,
+  "abl_no_runs": 0.35,
+  "base_counter_le_max": 1.0000000000000002,
+  "base_energy": 9.741049999999994,
+  "base_n_earlier_same_bytes": 1.0000000000000002,
+  "main": 0.35
+ }
+}

@@ -1,4 +1,4 @@
-"""Phase A: rank SatNOGS satellites as dataset sources (DATASET_SPEC.md section 1).
+"""Phase A: rank SatNOGS satellites as dataset sources (docs/DATASET_SPEC.md section 1).
 
 Every number comes from the SatNOGS DB / Network APIs (cached, rate-limited). Nothing is guessed:
 when a count is capped by max_pages_per_transmitter it is reported as a lower bound (exact=false).

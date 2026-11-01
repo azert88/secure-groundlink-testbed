@@ -1,4 +1,4 @@
-"""Shared pieces of the attack / benign operations (DATASET_SPEC.md section 6).
+"""Shared pieces of the attack / benign operations (docs/DATASET_SPEC.md section 6).
 
 Frame stream: list of dicts, one per canonical frame, with at least
   t (seconds from observation start, 1 s resolution), hex, filename, counter,

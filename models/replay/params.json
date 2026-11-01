@@ -1,0 +1,66 @@
+{
+ "checks": {
+  "concurrent_dt_within_tol": {
+   "25397": true,
+   "39444": true
+  }
+ },
+ "fitted_on": "train",
+ "params": {
+  "concurrent_tol_s": {
+   "batched": 1800.0,
+   "line_ok": 60.0
+  },
+  "line_min_frames": 3,
+  "line_ok_min_frac": 0.8,
+  "line_tol_s": 5.5,
+  "scores": {
+   "cross_run": 1.0,
+   "cross_single": 0.9,
+   "intra_run": 0.85,
+   "intra_single": 0.6,
+   "regress_run": 0.75,
+   "regress_single": 0.35,
+   "rewrite": 0.15
+  },
+  "shift_group_tol_s": 2.0
+ },
+ "store_frames": {
+  "25397": 162,
+  "39444": 828
+ },
+ "train_stats": {
+  "25397": {
+   "concurrent_abs_dt_max_s": 1.0,
+   "concurrent_receptions": 3,
+   "frames": 54,
+   "line_dev_q50_q99_max_s": [
+    0.0,
+    2.0,
+    2.0
+   ],
+   "line_fitted_obs": 6,
+   "line_ok_obs": 6,
+   "natural_intra_repeat_rate": 0.0,
+   "natural_rewrite_rate": 0.16666666666666666,
+   "observations": 26,
+   "share_frames_off_line": 0.0
+  },
+  "39444": {
+   "concurrent_abs_dt_max_s": 6.0,
+   "concurrent_receptions": 30,
+   "frames": 615,
+   "line_dev_q50_q99_max_s": [
+    0.0,
+    5.0,
+    380.0
+   ],
+   "line_fitted_obs": 22,
+   "line_ok_obs": 22,
+   "natural_intra_repeat_rate": 0.0,
+   "natural_rewrite_rate": 0.0,
+   "observations": 22,
+   "share_frames_off_line": 0.003305785123966942
+  }
+ }
+}

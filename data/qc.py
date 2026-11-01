@@ -1,4 +1,4 @@
-"""Phase C: quality control and curation of downloaded observations (DATASET_SPEC.md section 3).
+"""Phase C: quality control and curation of downloaded observations (docs/DATASET_SPEC.md section 3).
 
 QC is split by task (decision 37); every observation gets both flags.
   Audio QC (interference, benign variants, audio features) fails if:

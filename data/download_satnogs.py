@@ -1,4 +1,4 @@
-"""Phase B: download SatNOGS observations for the selected satellites (DATASET_SPEC.md section 2).
+"""Phase B: download SatNOGS observations for the selected satellites (docs/DATASET_SPEC.md section 2).
 
 Per observation, into data/raw/<obs_id>/:
   metadata.json             the Network API observation record, as received

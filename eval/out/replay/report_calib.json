@@ -1,0 +1,1496 @@
+{
+ "split": "calib",
+ "n_obs": 15,
+ "n_frames": 1898,
+ "n_replay_frames": 228,
+ "n_not_attacked_frames": 1648,
+ "main": {
+  "tau": 0.35,
+  "pooled": {
+   "tp": 228,
+   "fp": 0,
+   "fn": 0,
+   "tn": 1648,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "fpr": 0.0
+  },
+  "fpr_by_category": {
+   "benign": {
+    "fpr": 0.0,
+    "n": 411
+   },
+   "clean": {
+    "fpr": 0.0,
+    "n": 137
+   },
+   "other": {
+    "fpr": 0.0,
+    "n": 1100
+   }
+  },
+  "per_obs": {
+   "precision": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "recall": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "f1": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "fpr": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "per_obs_n": {
+   "obs": 15,
+   "obs_with_replay": 5
+  },
+  "eer": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "auc": 1.0,
+  "events": {
+   "n": 20,
+   "detected": 20,
+   "per_obs_detection_rate": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "delay_s_median": 0.0,
+   "delay_s_max": 0.0,
+   "copies_until_alert_median": 1.0,
+   "by_subtype": {
+    "intra_pass": {
+     "n": 20,
+     "detected": 20
+    }
+   }
+  },
+  "online_fpr": 0.0,
+  "by_norad": {
+   "25397": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "tn": 84,
+    "precision": NaN,
+    "recall": NaN,
+    "f1": NaN,
+    "fpr": 0.0,
+    "eer": NaN
+   },
+   "39444": {
+    "tp": 228,
+    "fp": 0,
+    "fn": 0,
+    "tn": 1564,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0,
+    "eer": 0.0
+   }
+  },
+  "recall_by_subtype": {
+   "intra_pass": {
+    "n": 228,
+    "recall": 1.0
+   }
+  },
+  "fires_on_other_attacks": {
+   "sequence/counter_jump": {
+    "n": 5,
+    "alert_rate": 0.0
+   },
+   "sequence/deletion": {
+    "n": 4,
+    "alert_rate": 0.0
+   },
+   "sequence/duplicate": {
+    "n": 5,
+    "alert_rate": 1.0
+   },
+   "sequence/swap": {
+    "n": 4,
+    "alert_rate": 0.0
+   },
+   "sequence/timing": {
+    "n": 4,
+    "alert_rate": 0.25
+   }
+  }
+ },
+ "main_strict": {
+  "tau": 0.35000000000000003,
+  "pooled": {
+   "tp": 228,
+   "fp": 0,
+   "fn": 0,
+   "tn": 1648,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "fpr": 0.0
+  },
+  "fpr_by_category": {
+   "benign": {
+    "fpr": 0.0,
+    "n": 411
+   },
+   "clean": {
+    "fpr": 0.0,
+    "n": 137
+   },
+   "other": {
+    "fpr": 0.0,
+    "n": 1100
+   }
+  },
+  "per_obs": {
+   "precision": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "recall": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "f1": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "fpr": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "per_obs_n": {
+   "obs": 15,
+   "obs_with_replay": 5
+  },
+  "eer": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "auc": 1.0,
+  "events": {
+   "n": 20,
+   "detected": 20,
+   "per_obs_detection_rate": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "delay_s_median": 0.0,
+   "delay_s_max": 0.0,
+   "copies_until_alert_median": 1.0,
+   "by_subtype": {
+    "intra_pass": {
+     "n": 20,
+     "detected": 20
+    }
+   }
+  },
+  "online_fpr": 0.0,
+  "by_norad": {
+   "25397": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "tn": 84,
+    "precision": NaN,
+    "recall": NaN,
+    "f1": NaN,
+    "fpr": 0.0,
+    "eer": NaN
+   },
+   "39444": {
+    "tp": 228,
+    "fp": 0,
+    "fn": 0,
+    "tn": 1564,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0,
+    "eer": 0.0
+   }
+  },
+  "recall_by_subtype": {
+   "intra_pass": {
+    "n": 228,
+    "recall": 1.0
+   }
+  },
+  "fires_on_other_attacks": {
+   "sequence/counter_jump": {
+    "n": 5,
+    "alert_rate": 0.0
+   },
+   "sequence/deletion": {
+    "n": 4,
+    "alert_rate": 0.0
+   },
+   "sequence/duplicate": {
+    "n": 5,
+    "alert_rate": 1.0
+   },
+   "sequence/swap": {
+    "n": 4,
+    "alert_rate": 0.0
+   },
+   "sequence/timing": {
+    "n": 4,
+    "alert_rate": 0.0
+   }
+  }
+ },
+ "baselines": {
+  "energy": {
+   "tau": 9.741049999999994,
+   "pooled": {
+    "tp": 0,
+    "fp": 2,
+    "fn": 228,
+    "tn": 1646,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "fpr": 0.0012135922330097086
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.004866180048661801,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "recall": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "f1": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fpr": [
+     0.0008714596949891067,
+     0.0,
+     0.00261437908496732
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.543859649122807,
+    0.4694568206820682,
+    0.6231640686329483
+   ],
+   "auc": 0.4252948816215295,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 0,
+     "fp": 2,
+     "fn": 228,
+     "tn": 1562,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "fpr": 0.0012787723785166241,
+     "eer": 0.5394736842105263
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 0.0
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.0
+    }
+   }
+  },
+  "n_earlier_same_bytes": {
+   "tau": 1.0000000000000002,
+   "pooled": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 228,
+    "tn": 1648,
+    "precision": NaN,
+    "recall": 0.0,
+    "f1": 0.0,
+    "fpr": 0.0
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     NaN,
+     NaN,
+     NaN
+    ],
+    "recall": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "f1": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fpr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "auc": 1.0,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 228,
+     "tn": 1564,
+     "precision": NaN,
+     "recall": 0.0,
+     "f1": 0.0,
+     "fpr": 0.0,
+     "eer": 0.0
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 0.0
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.0
+    }
+   }
+  },
+  "counter_le_max": {
+   "tau": 1.0000000000000002,
+   "pooled": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 228,
+    "tn": 1648,
+    "precision": NaN,
+    "recall": 0.0,
+    "f1": 0.0,
+    "fpr": 0.0
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     NaN,
+     NaN,
+     NaN
+    ],
+    "recall": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "f1": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fpr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.010851401374933898,
+    0.002073994812770288,
+    0.01686146624567287
+   ],
+   "auc": 0.9923458524953159,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 228,
+     "tn": 1564,
+     "precision": NaN,
+     "recall": 0.0,
+     "f1": 0.0,
+     "fpr": 0.0,
+     "eer": 0.011427553100252832
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 0.0
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.0
+    }
+   }
+  }
+ },
+ "baselines_natural": {
+  "n_earlier_same_bytes": {
+   "tau": 1.0,
+   "pooled": {
+    "tp": 228,
+    "fp": 0,
+    "fn": 0,
+    "tn": 1648,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "recall": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "f1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "fpr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "auc": 1.0,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 228,
+     "fp": 0,
+     "fn": 0,
+     "tn": 1564,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "fpr": 0.0,
+     "eer": 0.0
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 1.0
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 1.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.0
+    }
+   }
+  },
+  "counter_le_max": {
+   "tau": 1.0,
+   "pooled": {
+    "tp": 227,
+    "fp": 18,
+    "fn": 1,
+    "tn": 1630,
+    "precision": 0.926530612244898,
+    "recall": 0.9956140350877193,
+    "f1": 0.959830866807611,
+    "fpr": 0.010922330097087379
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.016363636363636365,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     0.9280399600399599,
+     0.8842703962703963,
+     0.9721611721611723
+    ],
+    "recall": [
+     0.9971014492753623,
+     0.9913043478260869,
+     1.0
+    ],
+    "f1": [
+     0.9606421193657797,
+     0.9372146269511041,
+     0.9853454634865993
+    ],
+    "fpr": [
+     0.004038369275711833,
+     0.00062015503875969,
+     0.008076738551423665
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.010851401374933898,
+    0.002073994812770288,
+    0.01686146624567287
+   ],
+   "auc": 0.9923458524953159,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 227,
+     "fp": 18,
+     "fn": 1,
+     "tn": 1546,
+     "precision": 0.926530612244898,
+     "recall": 0.9956140350877193,
+     "f1": 0.959830866807611,
+     "fpr": 0.011508951406649617,
+     "eer": 0.011427553100252832
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 0.9956140350877193
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 1.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.5
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.75
+    }
+   }
+  }
+ },
+ "ablations": {
+  "no_cross": {
+   "tau": 0.35,
+   "pooled": {
+    "tp": 228,
+    "fp": 0,
+    "fn": 0,
+    "tn": 1648,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "recall": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "f1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "fpr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "auc": 1.0,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 228,
+     "fp": 0,
+     "fn": 0,
+     "tn": 1564,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "fpr": 0.0,
+     "eer": 0.0
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 1.0
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 1.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.25
+    }
+   }
+  },
+  "no_intra": {
+   "tau": 0.35,
+   "pooled": {
+    "tp": 227,
+    "fp": 0,
+    "fn": 1,
+    "tn": 1648,
+    "precision": 1.0,
+    "recall": 0.9956140350877193,
+    "f1": 0.9978021978021978,
+    "fpr": 0.0
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "recall": [
+     0.9971014492753623,
+     0.9913043478260869,
+     1.0
+    ],
+    "f1": [
+     0.9985401459854014,
+     0.9956204379562044,
+     1.0
+    ],
+    "fpr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.004385964912280715,
+    0.0,
+    0.011216885515920743
+   ],
+   "auc": 0.9977883878385282,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 227,
+     "fp": 0,
+     "fn": 1,
+     "tn": 1564,
+     "precision": 1.0,
+     "recall": 0.9956140350877193,
+     "f1": 0.9978021978021978,
+     "fpr": 0.0,
+     "eer": 0.004366812227074249
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 0.9956140350877193
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.25
+    }
+   }
+  },
+  "no_regress": {
+   "tau": 0.15000000000000002,
+   "pooled": {
+    "tp": 228,
+    "fp": 0,
+    "fn": 0,
+    "tn": 1648,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "recall": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "f1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "fpr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "auc": 1.0,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 228,
+     "fp": 0,
+     "fn": 0,
+     "tn": 1564,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "fpr": 0.0,
+     "eer": 0.0
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 1.0
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 1.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.0
+    }
+   }
+  },
+  "no_rewrite": {
+   "tau": 0.35,
+   "pooled": {
+    "tp": 228,
+    "fp": 0,
+    "fn": 0,
+    "tn": 1648,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "recall": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "f1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "fpr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "auc": 1.0,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 228,
+     "fp": 0,
+     "fn": 0,
+     "tn": 1564,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "fpr": 0.0,
+     "eer": 0.0
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 1.0
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 1.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.25
+    }
+   }
+  },
+  "no_attribution": {
+   "tau": 0.85,
+   "pooled": {
+    "tp": 228,
+    "fp": 0,
+    "fn": 0,
+    "tn": 1648,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "recall": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "f1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "fpr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "auc": 1.0,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 228,
+     "fp": 0,
+     "fn": 0,
+     "tn": 1564,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "fpr": 0.0,
+     "eer": 0.0
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 1.0
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.0
+    }
+   }
+  },
+  "no_runs": {
+   "tau": 0.35,
+   "pooled": {
+    "tp": 228,
+    "fp": 0,
+    "fn": 0,
+    "tn": 1648,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0
+   },
+   "fpr_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 411
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 137
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 1100
+    }
+   },
+   "per_obs": {
+    "precision": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "recall": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "f1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "fpr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "per_obs_n": {
+    "obs": 15,
+    "obs_with_replay": 5
+   },
+   "eer": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "auc": 1.0,
+   "by_norad": {
+    "25397": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "tn": 84,
+     "precision": NaN,
+     "recall": NaN,
+     "f1": NaN,
+     "fpr": 0.0,
+     "eer": NaN
+    },
+    "39444": {
+     "tp": 228,
+     "fp": 0,
+     "fn": 0,
+     "tn": 1564,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "fpr": 0.0,
+     "eer": 0.0
+    }
+   },
+   "recall_by_subtype": {
+    "intra_pass": {
+     "n": 228,
+     "recall": 1.0
+    }
+   },
+   "fires_on_other_attacks": {
+    "sequence/counter_jump": {
+     "n": 5,
+     "alert_rate": 0.0
+    },
+    "sequence/deletion": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/duplicate": {
+     "n": 5,
+     "alert_rate": 1.0
+    },
+    "sequence/swap": {
+     "n": 4,
+     "alert_rate": 0.0
+    },
+    "sequence/timing": {
+     "n": 4,
+     "alert_rate": 0.25
+    }
+   }
+  }
+ },
+ "energy_coverage": 1.0,
+ "strict_fpr": 0.001
+}

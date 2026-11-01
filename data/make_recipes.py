@@ -1,4 +1,4 @@
-"""Phase F: attack and benign recipes (DATASET_SPEC.md section 6). Deterministic, no audio read.
+"""Phase F: attack and benign recipes (docs/DATASET_SPEC.md section 6). Deterministic, no audio read.
 
 For every observation of data/splits.json, the variant mix of attacks.variants (spec 6.6, test
 standard combo raised to 10) is drawn with seed = SHA-256 of f"{obs_id}:{variant_id}".

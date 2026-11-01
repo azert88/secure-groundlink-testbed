@@ -1,0 +1,15 @@
+{
+ "created_utc": "2026-11-01T10:54:18Z",
+ "files": {
+  "detect/canonical.py": "96523031243787dded35e5f214e4cd6f4f154f4b5d4a447621592aea8c2a9667",
+  "detect/counters.py": "5a569f16b24817e38c3f9a0b6b7aae73f4300d0b4787af6f6c7c327e1f00e1dd",
+  "detect/frames_io.py": "dbb4785535dbdfe7b0c27254be6dbc3c696ad129e9817ea299bdef0b18c95da3",
+  "detect/hash_store.py": "3eeb1474ca6cf91c47c58cfface3cafcdeed1a20c024f8cc56042470d6ae45b0",
+  "detect/replay_det.py": "ba6d220b003b31456881f637d041aa9617234e024fb755d560734cbcb3f9fdf9",
+  "models/replay/hash_store.json": "4877fbabfa88d594fa52cc87a11780b6a173fc287589e18e0bf147161acb1a60",
+  "models/replay/params.json": "9d36f6e3f72210300054436a5eb92113c905c9b43c8ffd47a9a8aef4162e2abd",
+  "models/replay/threshold.json": "8b5e2a74641d303ed73370990a6bf70cbea6519dce28d1866beb304d641bf998"
+ },
+ "label": "test lock: replay",
+ "signature": "55kRMuPyPeXDUSqtBYhSwC4V/QlMKnEJStuK4ZMQG85R8e3TY8ENYOPHoZ/Mh2JG4y5piUdvO7igpYGkIEUKCg=="
+}

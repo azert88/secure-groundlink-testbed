@@ -1,4 +1,4 @@
-"""Within-observation, benign-matched shortcut test (DATASET_SPEC.md 8.3, decisions 63-65).
+"""Within-observation, benign-matched shortcut test (docs/DATASET_SPEC.md 8.3, decisions 63-65).
 
 The test asks whether a model could tell attacked from not-attacked variants from cues that a
 processing trace would leave (file duration, number of windows, post-chain peak and RMS, mean

@@ -1,4 +1,4 @@
-"""Apply a recipe to clean data, in memory (DATASET_SPEC.md 6, principle 5: recipes, not copies).
+"""Apply a recipe to clean data, in memory (docs/DATASET_SPEC.md 6, principle 5: recipes, not copies).
 
 clean observation dict (see data/build_features.load_clean):
   obs_id, norad, start (datetime), sr, audio (float32 or None), frames (canonical stream, label

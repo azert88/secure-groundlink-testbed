@@ -1,4 +1,4 @@
-"""Replay of a valid 5-20-frame subsequence (DATASET_SPEC.md 6.2).
+"""Replay of a valid 5-20-frame subsequence (docs/DATASET_SPEC.md 6.2).
 
 Frame level: copies of the source frames are inserted with every timestamp shifted by delta_s
 (the generator chooses a later inter-burst gap), so the intra-burst spacing is preserved. Copies

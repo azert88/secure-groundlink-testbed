@@ -1,4 +1,4 @@
-"""Phase G: features for all variants (DATASET_SPEC.md section 7).
+"""Phase G: features for all variants (docs/DATASET_SPEC.md section 7).
 
 For every recipe of an observation: load the clean raw data once, apply the recipe in memory
 (attacks.apply), run the common chain (data.build_tables.common_chain), and compute the frames,

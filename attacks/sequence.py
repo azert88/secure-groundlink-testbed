@@ -1,4 +1,4 @@
-"""One sequence anomaly per variant (DATASET_SPEC.md 6.3). Frame level only; audio untouched.
+"""One sequence anomaly per variant (docs/DATASET_SPEC.md 6.3). Frame level only; audio untouched.
 
 Targets are original filenames (stable when a replay was inserted before). Subtypes:
   deletion      remove k consecutive frames; the frame after the gap is labelled
