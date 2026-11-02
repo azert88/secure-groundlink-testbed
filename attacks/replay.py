@@ -42,6 +42,33 @@ def frame_spans(times, half: float) -> list[tuple[float, float]]:
     return out
 
 
+def protected_bytes(norad: int, qc: dict, frame: bytes) -> set[int]:
+    """Byte positions a near-copy must keep: the counter field (and, for FUNCUBE-1, byte 0 with the frame type;
+    for TECHSAT 1B, the ASCII marker), so the modified frame still decodes as a valid frame with the same counter."""
+    if norad == qc["funcube"]["norad"]:
+        s = qc["funcube"]["seq_byte"]
+        return {0, s, s + 1, s + 2}
+    if norad == qc["techsat"]["norad"]:
+        tc = qc["techsat"]
+        c = tc["counter_byte"]
+        m = frame.find(tc["marker"].encode())
+        return set(range(c, c + 4)) | (set(range(m, m + len(tc["marker"]))) if m >= 0 else set())
+    return set()
+
+
+def near_copy(hex_str: str, norad: int, qc: dict, seed: int) -> tuple[str, int]:
+    """Near-copy replay evasion (decision 79): change ONE byte outside the protected fields so the frame hash no
+    longer matches its original. Returns (new hex, changed position). Deterministic for a given seed."""
+    import numpy as np
+    b = bytearray(bytes.fromhex(hex_str))
+    keep = protected_bytes(norad, qc, bytes(b))
+    pos = [i for i in range(len(b)) if i not in keep]
+    rng = np.random.default_rng(seed)
+    i = int(pos[rng.integers(len(pos))])
+    b[i] ^= int(rng.integers(1, 256))
+    return b.hex(), i
+
+
 def apply_replay(frames: list[dict], audio, sr: int, op: dict, target: dict, source: dict) -> tuple[list, object, dict | None]:
     """Returns (new frame list, new audio, audio event or None).
 

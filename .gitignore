@@ -35,3 +35,9 @@ data/explore/
 
 # window caches with labels, rebuilt by eval/interference_eval.py cache
 eval/out/interference/cache_*.pkl
+
+# demo sample: 2 small observations with sanitized metadata (data/make_sample.py)
+!data/sample/*/audio.ogg
+
+# local outputs of the demo and the CLIs
+/out/

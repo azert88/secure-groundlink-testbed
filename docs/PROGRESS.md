@@ -1,6 +1,6 @@
 # Progress log — dataset build (DATASET_SPEC.md)
 
-Last update: 2026-11-02 (Phases N and M done, decisions 95–101).
+Last update: 2026-11-02 (Phases O and P done, decisions 102–106).
 
 ## Status by phase
 
@@ -19,6 +19,8 @@ Last update: 2026-11-02 (Phases N and M done, decisions 95–101).
 | K — Sequence detector | **Version 1 is the reported result** (locked, test per-obs recall 0.29, FPR 1.26 %); version 2 (changes a, b of decision 84) is a planned fix, not built (decision 85) |
 | L — Interference detector | **Done, at STOP** (2026-11-01): version 1 locked; test AUC 0.84 but FPR 34–36 % at the calibrated threshold (station shift, decision 89); `detect/run.py` prototype runs it on a raw folder; **v2 (post hoc, decision 92)** locked and tested once: FPR clean / benign 0.14 % / 0.16 %, TPR 0.48 |
 | N — Fusion and standard test | **Done** (2026-11-02): line screen + fusion, dev on train + calib, sequence v2 gate failed (v1 kept, content off in fusion, decision 100), lock 08:07 UTC, standard test run once: 0 / 44 false alarms, replay 1.00, sequence 0.31, interference 0.58 |
+| O — Near-copy evasion, results table | **Done** (2026-11-02): near-copy replay 0 / 133 named replay (exact 133 / 133), 52 % still not accepted via sequence alerts; `eval/results.{md,json}` |
+| P — Packaging | **Done** (2026-11-02): `attacks/run_attack.py`, `scripts/demo.py` / `make demo`, `data/sample/` (2 obs), pinned `requirements.txt` (Python 3.11–3.14), `setup.sh`, `environment.yml`, `README.md`, anonymity scan; 151 tests pass |
 | M — Trust layer | **Done, at STOP** (2026-11-02): per-frame HMAC envelope (`trust/envelope.py`), 9 deterministic rejection tests, 102 B and ~4.5 µs per frame |
 
 ## Phase A — what exists
@@ -722,3 +724,42 @@ Overhead (`eval/out/trust/overhead.json`, 20 000 frames, Python 3.14, idle machi
 Ed25519 manifest sign 50 µs, verify 99 µs (64-byte signature). `detect/run.py` refuses to run when the signed fusion lock does
 not verify (`--no-verify` for development). Losses before the station are the detectors' job; after the envelope the
 transport must be lossless, so a gap is rejected.
+
+## Phase O — near-copy replay evasion and results table (2026-11-02)
+
+`eval/evasion_near_copy.py` (run once on TEST, locked fusion, nothing retuned), `attacks.replay.near_copy`, `tests/test_evasion_near_copy.py`.
+The 133 TEST recipes containing a replay (110 combos, 22 replay, 1 cross-pass evasion) applied twice: exact copies (control) and
+near-copies (one seeded byte changed per replayed frame outside the counter field: FUNCUBE-1 byte 0 and seqnumber kept, TECHSAT 1B
+counter and ASCII marker kept). Frames-only raw folders through `detect/run.py`. Report `eval/out/evasion_near_copy/report.md`.
+
+| mode | replay detected (named) | any alert on a replayed frame | recording not accepted |
+|---|---|---|---|
+| exact | 1.000 (133 / 133) | 1.000 | 1.000 |
+| near-copy | **0.000 (0 / 133)** | 0.455 [0.182, 0.727] | 0.523 [0.265, 0.780] (FUNCUBE-1 1.00, TECHSAT 1B 0.12) |
+
+| # | Decision | Reason |
+|---|---|---|
+| 102 | **Near-copy finding (diagnosed after the run, nothing retuned)**: without hash matches the copies enter the counter-time line fit; when they are a large share of the pass the line fails (`line_ok` False, e.g. 56 % on line), which disables counter-regression evidence. Phase 2 fix: robust line (dominant line + lower-counter off-line cluster = copies); new version, new lock | Decision 79 |
+| 103 | `eval/results.{md,json}`: one table of every challenge metric from the existing reports; count CIs Clopper-Pearson 95 %, others per-observation bootstrap; 0 / 44 bound = rule of three 6.8 %, exact 6.6 % | Phase O request |
+
+## Phase P — packaging (2026-11-02)
+
+Files: `attacks/run_attack.py` (replay / sequence --subtype / interference --shape --f0 --snr-db / standard on a raw folder ->
+attacked folder, separate `<out>.truth.json`, before / after spectrogram PNG), `scripts/demo.py` (= `make demo`), `data/make_sample.py`
+-> `data/sample/{14932721 (FUNCUBE-1, train), 15080917 (TECHSAT 1B, test)}`, `requirements.txt`, `environment.yml`, `setup.sh`,
+`Makefile`, `README.md`, `eval/results.py`, `.gitattributes`; tests `tests/test_packaging.py`, `tests/test_results.py` (suite 151 pass).
+Demo (fresh venv from requirements.txt, Python 3.14, Windows): both clean passes accept, both attacked passes quarantined, 111 s.
+
+| # | Decision | Reason |
+|---|---|---|
+| 104 | **Pins for Python 3.11–3.14**: numpy 2.4.6, scipy 1.17.1, contourpy 1.3.3 instead of the dev venv's numpy 2.5.4, scipy 1.18.1, contourpy 1.4.0 (those need Python >= 3.12); scikit-learn stays 1.9.1 (the model pickles). Checked: `pip download --only-binary` resolves 35 manylinux wheels for each of 3.11, 3.12, 3.13, 3.14; a fresh 3.14 venv with these exact pins runs the demo and the tests, model.pkl loads without a version warning. Not executed on a Linux machine (none available here) | The jury's Kali / Ubuntu Python may be 3.11–3.13 |
+| 105 | **`.gitattributes`: every file listed in a `models/*/lock.json`, the locks, `data/splits.json`, `data/raw/manifest.csv` and `data/recipes/**` are `-text`** (stored and checked out byte-exact) | With `core.autocrlf=true` the working tree had CRLF files while git stored LF: on a Linux clone 13 of the 24 fusion-lock files would fail their SHA-256 and `detect/run.py` / `make demo` would refuse to run. No file content or lock changed; staged blobs now match the active locks (fusion, replay, sequence) and the DATA.md fingerprints. The 5 remaining mismatches are the known ones (superseded fusion v1 lock; Phase L `detect/run.py` in the interference locks, decisions 91 and 99) |
+| 106 | **Sample**: smallest audio + frame observation per satellite; TECHSAT 1B has frame-QC observations only in test (decision 54), so its sample is test observation 15080917 (demo only, no metric uses it). Sanitized metadata = allowlist (ids, times, transmitter, numeric station id, TLE); removed field names listed in the file | Decision 29 |
+
+**Anonymity scan (2026-11-02)**, all tracked + new files and the full git history (`git log --all -p`), for: usernames, emails,
+absolute paths (`C:\Users`, `/home/`), the local machine name, and all 106 observer / station names and coordinates found in
+`data/raw/*/metadata.json`. Files: no finding (only the rule text in CLAUDE.md and metadata field NAMES in the sanitizer, its test
+and the sample's `removed_fields` list). History content and commit messages: no finding. **Finding: every commit's author and
+committer is a GitHub username with its users.noreply.github.com email** (4 commits). Not rewritten, as instructed; future
+commits can use an anonymous identity (`git config user.name` / `user.email`), and the anonymous submission should be an export
+without history (e.g. `git archive`) or a fresh repository.

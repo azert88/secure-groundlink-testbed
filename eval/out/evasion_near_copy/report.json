@@ -1,0 +1,107 @@
+{
+ "n_observations": 11,
+ "n_recordings_per_mode": 133,
+ "ci": "per-observation mean, percentile bootstrap over observations",
+ "modes": {
+  "exact": {
+   "replay_detected": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "any_alert_on_replay": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "not_accepted": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "replay_frames": {
+    "tp": 1424,
+    "fp": 1,
+    "fn": 0,
+    "recall": 1.0,
+    "precision": 0.9993
+   },
+   "events_detected": "133 / 133",
+   "by_satellite": {
+    "25397": 1.0,
+    "39444": 1.0
+   },
+   "not_accepted_by_satellite": {
+    "25397": 1.0,
+    "39444": 1.0
+   },
+   "by_timing_reliable": {
+    "False": 1.0,
+    "True": 1.0
+   },
+   "by_group": {
+    "combo": 1.0,
+    "evasion": 1.0,
+    "replay": 1.0
+   },
+   "evidence_on_replay_frames": {
+    "intra_run": 132,
+    "regress_run": 73,
+    "rewrite": 48,
+    "cross_run": 1
+   },
+   "verdicts": {
+    "quarantine": 133
+   },
+   "false_frame_alerts_per_recording": 0.038
+  },
+  "near_copy": {
+   "replay_detected": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "any_alert_on_replay": [
+    0.4545,
+    0.1818,
+    0.7273
+   ],
+   "not_accepted": [
+    0.5227,
+    0.2652,
+    0.7803
+   ],
+   "replay_frames": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 1424,
+    "recall": 0.0,
+    "precision": 0.0
+   },
+   "events_detected": "0 / 133",
+   "by_satellite": {
+    "25397": 0.0,
+    "39444": 0.0
+   },
+   "not_accepted_by_satellite": {
+    "25397": 0.125,
+    "39444": 1.0
+   },
+   "by_timing_reliable": {
+    "False": 0.0,
+    "True": 0.0
+   },
+   "by_group": {
+    "combo": 0.0,
+    "evasion": 0.0,
+    "replay": 0.0
+   },
+   "evidence_on_replay_frames": {},
+   "verdicts": {
+    "quarantine": 70,
+    "accept": 63
+   },
+   "false_frame_alerts_per_recording": 0.09
+  }
+ }
+}

@@ -1,0 +1,267 @@
+obs_id,norad,station,timing_reliable,variant_id,group,subtype,mode,n_modified,runtime_s,verdict,replay_frames,replay_tp_frames,replay_fp_frames,replay_detected,replay_frames_alerted_any,any_alert_on_replay,false_frame_alerts,evidence_on_replay,alert_names,not_accepted
+14995840,39444,1763,False,combo_00,combo,intra_pass,exact,0,0.33,quarantine,13,13,0,True,13,True,0,['intra_run'],"['forged', 'replay']",True
+14995840,39444,1763,False,combo_00,combo,intra_pass,near_copy,13,0.48,quarantine,13,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,combo_01,combo,intra_pass,exact,0,0.27,quarantine,13,13,0,True,13,True,0,['intra_run'],['replay'],True
+14995840,39444,1763,False,combo_01,combo,intra_pass,near_copy,13,0.42,quarantine,13,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,combo_02,combo,intra_pass,exact,0,0.23,quarantine,13,13,0,True,13,True,0,['intra_run'],['replay'],True
+14995840,39444,1763,False,combo_02,combo,intra_pass,near_copy,13,0.49,quarantine,13,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,combo_03,combo,intra_pass,exact,0,0.23,quarantine,13,13,0,True,13,True,0,['intra_run'],['replay'],True
+14995840,39444,1763,False,combo_03,combo,intra_pass,near_copy,13,0.46,quarantine,13,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,combo_04,combo,intra_pass,exact,0,0.3,quarantine,13,13,0,True,13,True,0,['intra_run'],"['forged', 'replay']",True
+14995840,39444,1763,False,combo_04,combo,intra_pass,near_copy,13,0.5,quarantine,13,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,combo_05,combo,intra_pass,exact,0,0.24,quarantine,13,13,0,True,13,True,0,['intra_run'],"['forged', 'replay']",True
+14995840,39444,1763,False,combo_05,combo,intra_pass,near_copy,13,0.48,quarantine,13,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,combo_06,combo,intra_pass,exact,0,0.26,quarantine,13,13,0,True,13,True,0,['intra_run'],"['forged', 'replay']",True
+14995840,39444,1763,False,combo_06,combo,intra_pass,near_copy,13,0.45,quarantine,13,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,combo_07,combo,intra_pass,exact,0,0.24,quarantine,13,13,0,True,13,True,0,['intra_run'],['replay'],True
+14995840,39444,1763,False,combo_07,combo,intra_pass,near_copy,13,0.44,quarantine,13,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,combo_08,combo,intra_pass,exact,0,0.3,quarantine,13,13,0,True,13,True,0,['intra_run'],['replay'],True
+14995840,39444,1763,False,combo_08,combo,intra_pass,near_copy,13,0.42,quarantine,13,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,combo_09,combo,intra_pass,exact,0,0.25,quarantine,13,13,0,True,13,True,0,['intra_run'],['replay'],True
+14995840,39444,1763,False,combo_09,combo,intra_pass,near_copy,13,0.47,quarantine,13,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,replay_00,replay,intra_pass,exact,0,0.28,quarantine,16,16,0,True,16,True,0,['intra_run'],['replay'],True
+14995840,39444,1763,False,replay_00,replay,intra_pass,near_copy,16,0.41,quarantine,16,0,0,False,10,True,0,[],['forged'],True
+14995840,39444,1763,False,replay_01,replay,intra_pass,exact,0,0.27,quarantine,16,16,0,True,16,True,0,['intra_run'],['replay'],True
+14995840,39444,1763,False,replay_01,replay,intra_pass,near_copy,16,0.57,quarantine,16,0,0,False,10,True,0,[],['forged'],True
+14995842,39444,1763,False,combo_00,combo,intra_pass,exact,0,0.22,quarantine,12,12,0,True,12,True,0,['intra_run'],['replay'],True
+14995842,39444,1763,False,combo_00,combo,intra_pass,near_copy,12,0.45,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,combo_01,combo,intra_pass,exact,0,0.21,quarantine,12,12,0,True,12,True,0,['intra_run'],['replay'],True
+14995842,39444,1763,False,combo_01,combo,intra_pass,near_copy,12,0.39,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,combo_02,combo,intra_pass,exact,0,0.22,quarantine,12,12,0,True,12,True,0,['intra_run'],['replay'],True
+14995842,39444,1763,False,combo_02,combo,intra_pass,near_copy,12,0.41,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,combo_03,combo,intra_pass,exact,0,0.27,quarantine,12,12,0,True,12,True,0,['intra_run'],['replay'],True
+14995842,39444,1763,False,combo_03,combo,intra_pass,near_copy,12,0.54,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,combo_04,combo,intra_pass,exact,0,0.21,quarantine,12,12,0,True,12,True,0,['intra_run'],['replay'],True
+14995842,39444,1763,False,combo_04,combo,intra_pass,near_copy,12,0.41,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,combo_05,combo,intra_pass,exact,0,0.25,quarantine,12,12,0,True,12,True,0,['intra_run'],['replay'],True
+14995842,39444,1763,False,combo_05,combo,intra_pass,near_copy,12,0.42,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,combo_06,combo,intra_pass,exact,0,0.29,quarantine,12,12,0,True,12,True,0,['intra_run'],"['forged', 'replay']",True
+14995842,39444,1763,False,combo_06,combo,intra_pass,near_copy,12,0.49,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,combo_07,combo,intra_pass,exact,0,0.27,quarantine,12,12,0,True,12,True,0,['intra_run'],"['forged', 'replay']",True
+14995842,39444,1763,False,combo_07,combo,intra_pass,near_copy,12,0.41,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,combo_08,combo,intra_pass,exact,0,0.21,quarantine,12,12,0,True,12,True,0,['intra_run'],['replay'],True
+14995842,39444,1763,False,combo_08,combo,intra_pass,near_copy,12,0.46,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,combo_09,combo,intra_pass,exact,0,0.22,quarantine,12,12,0,True,12,True,0,['intra_run'],['replay'],True
+14995842,39444,1763,False,combo_09,combo,intra_pass,near_copy,12,0.39,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,evasion_00,evasion,cross_pass,exact,0,0.32,quarantine,16,16,0,True,16,True,2,['cross_run'],"['deletion', 'replay_cross_pass', 'swap']",True
+14995842,39444,1763,False,evasion_00,evasion,cross_pass,near_copy,16,0.48,quarantine,16,0,0,False,1,True,2,[],"['deletion', 'swap']",True
+14995842,39444,1763,False,replay_00,replay,intra_pass,exact,0,0.22,quarantine,15,15,0,True,15,True,0,['intra_run'],['replay'],True
+14995842,39444,1763,False,replay_00,replay,intra_pass,near_copy,15,0.43,quarantine,15,0,0,False,12,True,0,[],['forged'],True
+14995842,39444,1763,False,replay_01,replay,intra_pass,exact,0,0.26,quarantine,15,15,0,True,15,True,0,['intra_run'],['replay'],True
+14995842,39444,1763,False,replay_01,replay,intra_pass,near_copy,15,0.65,quarantine,15,0,0,False,12,True,0,[],['forged'],True
+14995843,39444,1763,False,combo_00,combo,intra_pass,exact,0,0.37,quarantine,18,18,0,True,18,True,0,['intra_run'],['replay'],True
+14995843,39444,1763,False,combo_00,combo,intra_pass,near_copy,18,0.7,quarantine,18,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,combo_01,combo,intra_pass,exact,0,0.39,quarantine,18,18,0,True,18,True,0,['intra_run'],['replay'],True
+14995843,39444,1763,False,combo_01,combo,intra_pass,near_copy,18,0.64,quarantine,18,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,combo_02,combo,intra_pass,exact,0,0.39,quarantine,18,18,0,True,18,True,0,['intra_run'],"['forged', 'replay']",True
+14995843,39444,1763,False,combo_02,combo,intra_pass,near_copy,18,0.64,quarantine,18,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,combo_03,combo,intra_pass,exact,0,0.34,quarantine,18,18,0,True,18,True,0,['intra_run'],['replay'],True
+14995843,39444,1763,False,combo_03,combo,intra_pass,near_copy,18,0.64,quarantine,18,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,combo_04,combo,intra_pass,exact,0,0.44,quarantine,18,18,0,True,18,True,0,['intra_run'],"['forged', 'replay']",True
+14995843,39444,1763,False,combo_04,combo,intra_pass,near_copy,18,0.63,quarantine,18,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,combo_05,combo,intra_pass,exact,0,0.35,quarantine,18,18,0,True,18,True,0,['intra_run'],['replay'],True
+14995843,39444,1763,False,combo_05,combo,intra_pass,near_copy,18,0.67,quarantine,18,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,combo_06,combo,intra_pass,exact,0,0.39,quarantine,18,18,0,True,18,True,0,['intra_run'],"['forged', 'replay']",True
+14995843,39444,1763,False,combo_06,combo,intra_pass,near_copy,18,0.7,quarantine,18,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,combo_07,combo,intra_pass,exact,0,0.38,quarantine,18,18,0,True,18,True,0,['intra_run'],['replay'],True
+14995843,39444,1763,False,combo_07,combo,intra_pass,near_copy,18,0.52,quarantine,18,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,combo_08,combo,intra_pass,exact,0,0.34,quarantine,18,18,0,True,18,True,0,['intra_run'],"['forged', 'replay']",True
+14995843,39444,1763,False,combo_08,combo,intra_pass,near_copy,18,0.78,quarantine,18,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,combo_09,combo,intra_pass,exact,0,0.36,quarantine,18,18,0,True,18,True,0,['intra_run'],['replay'],True
+14995843,39444,1763,False,combo_09,combo,intra_pass,near_copy,18,0.53,quarantine,18,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,replay_00,replay,intra_pass,exact,0,0.25,quarantine,20,20,0,True,20,True,0,['intra_run'],['replay'],True
+14995843,39444,1763,False,replay_00,replay,intra_pass,near_copy,20,0.65,quarantine,20,0,0,False,16,True,0,[],['forged'],True
+14995843,39444,1763,False,replay_01,replay,intra_pass,exact,0,0.24,quarantine,20,20,0,True,20,True,0,['intra_run'],['replay'],True
+14995843,39444,1763,False,replay_01,replay,intra_pass,near_copy,20,0.63,quarantine,20,0,0,False,16,True,0,[],['forged'],True
+15033863,25397,1664,True,combo_00,combo,intra_pass,exact,0,0.21,quarantine,6,6,0,True,6,True,0,['intra_run'],['replay'],True
+15033863,25397,1664,True,combo_00,combo,intra_pass,near_copy,6,0.3,accept,6,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,combo_01,combo,intra_pass,exact,0,0.28,quarantine,8,8,0,True,8,True,0,"['intra_run', 'regress_run']",['replay'],True
+15033863,25397,1664,True,combo_01,combo,intra_pass,near_copy,8,0.3,accept,8,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,combo_02,combo,intra_pass,exact,0,0.23,quarantine,8,8,0,True,8,True,0,"['intra_run', 'regress_run']",['replay'],True
+15033863,25397,1664,True,combo_02,combo,intra_pass,near_copy,8,0.3,accept,8,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,combo_03,combo,intra_pass,exact,0,0.27,quarantine,8,8,0,True,8,True,0,"['intra_run', 'regress_run']",['replay'],True
+15033863,25397,1664,True,combo_03,combo,intra_pass,near_copy,8,0.37,accept,8,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,combo_04,combo,intra_pass,exact,0,0.18,quarantine,5,5,0,True,5,True,0,"['intra_run', 'regress_run']",['replay'],True
+15033863,25397,1664,True,combo_04,combo,intra_pass,near_copy,5,0.28,accept,5,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,combo_05,combo,intra_pass,exact,0,0.29,quarantine,12,12,0,True,12,True,0,['intra_run'],['replay'],True
+15033863,25397,1664,True,combo_05,combo,intra_pass,near_copy,12,0.4,accept,12,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,combo_06,combo,intra_pass,exact,0,0.28,quarantine,10,10,0,True,10,True,0,"['intra_run', 'regress_run']",['replay'],True
+15033863,25397,1664,True,combo_06,combo,intra_pass,near_copy,10,0.38,accept,10,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,combo_07,combo,intra_pass,exact,0,0.22,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run']",['replay'],True
+15033863,25397,1664,True,combo_07,combo,intra_pass,near_copy,7,0.35,accept,7,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,combo_08,combo,intra_pass,exact,0,0.27,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run']",['replay'],True
+15033863,25397,1664,True,combo_08,combo,intra_pass,near_copy,7,0.32,accept,7,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,combo_09,combo,intra_pass,exact,0,0.32,quarantine,11,11,0,True,11,True,0,['intra_run'],['replay'],True
+15033863,25397,1664,True,combo_09,combo,intra_pass,near_copy,11,0.41,accept,11,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,replay_00,replay,intra_pass,exact,0,0.29,quarantine,10,10,0,True,10,True,0,"['intra_run', 'regress_run']",['replay'],True
+15033863,25397,1664,True,replay_00,replay,intra_pass,near_copy,10,0.36,accept,10,0,0,False,0,False,0,[],[],False
+15033863,25397,1664,True,replay_01,replay,intra_pass,exact,0,0.2,quarantine,5,5,0,True,5,True,0,"['intra_run', 'regress_run']",['replay'],True
+15033863,25397,1664,True,replay_01,replay,intra_pass,near_copy,5,0.29,accept,5,0,0,False,0,False,0,[],[],False
+15034285,25397,1664,True,combo_00,combo,intra_pass,exact,0,0.62,quarantine,20,20,0,True,20,True,0,"['intra_run', 'regress_run']",['replay'],True
+15034285,25397,1664,True,combo_00,combo,intra_pass,near_copy,20,0.72,accept,20,0,0,False,0,False,0,[],[],False
+15034285,25397,1664,True,combo_01,combo,intra_pass,exact,0,0.39,quarantine,17,17,0,True,17,True,0,['intra_run'],['replay'],True
+15034285,25397,1664,True,combo_01,combo,intra_pass,near_copy,17,0.61,accept,17,0,0,False,0,False,0,[],[],False
+15034285,25397,1664,True,combo_02,combo,intra_pass,exact,0,0.31,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run']",['replay'],True
+15034285,25397,1664,True,combo_02,combo,intra_pass,near_copy,7,0.33,accept,7,0,0,False,0,False,0,[],[],False
+15034285,25397,1664,True,combo_03,combo,intra_pass,exact,0,0.38,quarantine,14,14,0,True,14,True,0,"['intra_run', 'regress_run']",['replay'],True
+15034285,25397,1664,True,combo_03,combo,intra_pass,near_copy,14,0.31,accept,14,0,0,False,0,False,0,[],[],False
+15034285,25397,1664,True,combo_04,combo,intra_pass,exact,0,0.15,quarantine,11,11,0,True,11,True,0,"['intra_run', 'regress_run']","['duplicate', 'replay']",True
+15034285,25397,1664,True,combo_04,combo,intra_pass,near_copy,11,0.23,quarantine,11,0,0,False,0,False,0,[],['duplicate'],True
+15034285,25397,1664,True,combo_05,combo,intra_pass,exact,0,0.17,quarantine,16,16,0,True,16,True,0,"['intra_run', 'regress_run']",['replay'],True
+15034285,25397,1664,True,combo_05,combo,intra_pass,near_copy,16,0.67,accept,16,0,0,False,0,False,0,[],[],False
+15034285,25397,1664,True,combo_06,combo,intra_pass,exact,0,0.58,quarantine,16,16,0,True,16,True,0,"['intra_run', 'regress_run']",['replay'],True
+15034285,25397,1664,True,combo_06,combo,intra_pass,near_copy,16,0.69,accept,16,0,0,False,0,False,0,[],[],False
+15034285,25397,1664,True,combo_07,combo,intra_pass,exact,0,0.44,quarantine,10,10,0,True,10,True,0,"['intra_run', 'regress_run']",['replay'],True
+15034285,25397,1664,True,combo_07,combo,intra_pass,near_copy,10,0.47,accept,10,0,0,False,0,False,0,[],[],False
+15034285,25397,1664,True,combo_08,combo,intra_pass,exact,0,0.47,quarantine,6,6,0,True,6,True,0,"['intra_run', 'regress_run']","['duplicate', 'replay']",True
+15034285,25397,1664,True,combo_08,combo,intra_pass,near_copy,6,0.41,quarantine,6,0,0,False,0,False,0,[],['duplicate'],True
+15034285,25397,1664,True,combo_09,combo,intra_pass,exact,0,0.47,quarantine,11,11,0,True,11,True,0,"['intra_run', 'regress_run']",['replay'],True
+15034285,25397,1664,True,combo_09,combo,intra_pass,near_copy,11,0.52,accept,11,0,0,False,0,False,0,[],[],False
+15034285,25397,1664,True,replay_00,replay,intra_pass,exact,0,0.77,quarantine,19,19,0,True,19,True,0,"['intra_run', 'regress_run']",['replay'],True
+15034285,25397,1664,True,replay_00,replay,intra_pass,near_copy,19,0.57,accept,19,0,0,False,0,False,0,[],[],False
+15034285,25397,1664,True,replay_01,replay,intra_pass,exact,0,0.35,quarantine,6,6,0,True,6,True,0,"['intra_run', 'regress_run']",['replay'],True
+15034285,25397,1664,True,replay_01,replay,intra_pass,near_copy,6,0.39,accept,6,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,combo_00,combo,intra_pass,exact,0,0.11,quarantine,6,6,0,True,6,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,combo_00,combo,intra_pass,near_copy,6,0.17,accept,6,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,combo_01,combo,intra_pass,exact,0,0.2,quarantine,9,9,0,True,9,True,0,"['intra_run', 'regress_run', 'rewrite']","['counter_anomaly', 'replay']",True
+15042383,25397,4188,True,combo_01,combo,intra_pass,near_copy,9,0.35,accept,9,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,combo_02,combo,intra_pass,exact,0,0.56,quarantine,14,14,0,True,14,True,0,"['intra_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,combo_02,combo,intra_pass,near_copy,14,0.61,accept,14,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,combo_03,combo,intra_pass,exact,0,0.42,quarantine,11,11,0,True,11,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,combo_03,combo,intra_pass,near_copy,11,0.44,accept,11,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,combo_04,combo,intra_pass,exact,0,0.18,quarantine,11,11,0,True,11,True,0,"['intra_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,combo_04,combo,intra_pass,near_copy,11,0.26,accept,11,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,combo_05,combo,intra_pass,exact,0,0.12,quarantine,6,6,0,True,6,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,combo_05,combo,intra_pass,near_copy,6,0.2,accept,6,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,combo_06,combo,intra_pass,exact,0,0.3,quarantine,11,11,0,True,11,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,combo_06,combo,intra_pass,near_copy,11,0.75,accept,11,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,combo_07,combo,intra_pass,exact,0,0.59,quarantine,13,13,0,True,13,True,0,"['intra_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,combo_07,combo,intra_pass,near_copy,13,0.72,accept,13,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,combo_08,combo,intra_pass,exact,0,0.68,quarantine,12,12,0,True,12,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,combo_08,combo,intra_pass,near_copy,12,0.72,accept,12,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,combo_09,combo,intra_pass,exact,0,0.57,quarantine,12,12,0,True,12,True,0,"['intra_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,combo_09,combo,intra_pass,near_copy,12,0.67,accept,12,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,replay_00,replay,intra_pass,exact,0,0.47,quarantine,10,10,0,True,10,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,replay_00,replay,intra_pass,near_copy,10,0.56,accept,10,0,0,False,0,False,0,[],[],False
+15042383,25397,4188,True,replay_01,replay,intra_pass,exact,0,0.39,quarantine,10,10,0,True,10,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15042383,25397,4188,True,replay_01,replay,intra_pass,near_copy,10,0.4,accept,10,0,0,False,0,False,0,[],[],False
+15080837,25397,4188,True,combo_00,combo,intra_pass,exact,0,0.15,quarantine,5,5,0,True,5,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080837,25397,4188,True,combo_00,combo,intra_pass,near_copy,5,0.15,accept,5,0,0,False,0,False,0,[],[],False
+15080837,25397,4188,True,combo_01,combo,intra_pass,exact,0,0.1,quarantine,5,5,0,True,5,True,0,"['intra_run', 'rewrite']",['replay'],True
+15080837,25397,4188,True,combo_01,combo,intra_pass,near_copy,5,0.23,accept,5,0,0,False,0,False,0,[],[],False
+15080837,25397,4188,True,combo_02,combo,intra_pass,exact,0,0.23,quarantine,7,7,0,True,7,True,0,"['intra_run', 'rewrite']",['replay'],True
+15080837,25397,4188,True,combo_02,combo,intra_pass,near_copy,7,0.38,accept,7,0,0,False,0,False,0,[],[],False
+15080837,25397,4188,True,combo_03,combo,intra_pass,exact,0,0.3,quarantine,6,6,0,True,6,True,0,"['intra_run', 'rewrite']",['replay'],True
+15080837,25397,4188,True,combo_03,combo,intra_pass,near_copy,6,0.37,accept,6,0,0,False,0,False,0,[],[],False
+15080837,25397,4188,True,combo_04,combo,intra_pass,exact,0,0.31,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run', 'rewrite']","['duplicate', 'replay']",True
+15080837,25397,4188,True,combo_04,combo,intra_pass,near_copy,7,0.36,quarantine,7,0,0,False,0,False,0,[],['duplicate'],True
+15080837,25397,4188,True,combo_05,combo,intra_pass,exact,0,0.18,quarantine,10,10,0,True,10,True,0,"['intra_run', 'regress_run', 'rewrite']","['duplicate', 'replay']",True
+15080837,25397,4188,True,combo_05,combo,intra_pass,near_copy,10,0.19,quarantine,10,0,0,False,0,False,0,[],['duplicate'],True
+15080837,25397,4188,True,combo_06,combo,intra_pass,exact,0,0.16,quarantine,10,10,0,True,10,True,0,"['intra_run', 'regress_run', 'rewrite']","['duplicate', 'replay']",True
+15080837,25397,4188,True,combo_06,combo,intra_pass,near_copy,10,0.22,quarantine,10,0,0,False,0,False,0,[],['duplicate'],True
+15080837,25397,4188,True,combo_07,combo,intra_pass,exact,0,0.14,quarantine,6,6,0,True,6,True,0,"['intra_run', 'rewrite']",['replay'],True
+15080837,25397,4188,True,combo_07,combo,intra_pass,near_copy,6,0.23,accept,6,0,0,False,0,False,0,[],[],False
+15080837,25397,4188,True,combo_08,combo,intra_pass,exact,0,0.5,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080837,25397,4188,True,combo_08,combo,intra_pass,near_copy,7,0.52,accept,7,0,0,False,0,False,0,[],[],False
+15080837,25397,4188,True,combo_09,combo,intra_pass,exact,0,0.35,quarantine,6,6,0,True,6,True,0,"['intra_run', 'regress_run', 'rewrite']","['duplicate', 'replay']",True
+15080837,25397,4188,True,combo_09,combo,intra_pass,near_copy,6,0.49,quarantine,6,0,0,False,0,False,0,[],['duplicate'],True
+15080837,25397,4188,True,replay_00,replay,intra_pass,exact,0,0.62,quarantine,12,12,0,True,12,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080837,25397,4188,True,replay_00,replay,intra_pass,near_copy,12,0.7,accept,12,0,0,False,0,False,0,[],[],False
+15080837,25397,4188,True,replay_01,replay,intra_pass,exact,0,0.42,quarantine,8,8,0,True,8,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080837,25397,4188,True,replay_01,replay,intra_pass,near_copy,8,0.54,accept,8,0,0,False,0,False,0,[],[],False
+15080917,25397,4188,True,combo_00,combo,intra_pass,exact,0,0.17,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,combo_00,combo,intra_pass,near_copy,7,0.24,accept,7,0,0,False,0,False,0,[],[],False
+15080917,25397,4188,True,combo_01,combo,intra_pass,exact,0,0.42,quarantine,6,6,1,True,6,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,combo_01,combo,intra_pass,near_copy,6,0.39,quarantine,6,0,0,False,0,False,0,[],['duplicate'],True
+15080917,25397,4188,True,combo_02,combo,intra_pass,exact,0,0.38,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,combo_02,combo,intra_pass,near_copy,7,0.48,accept,7,0,0,False,0,False,0,[],[],False
+15080917,25397,4188,True,combo_03,combo,intra_pass,exact,0,0.35,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,combo_03,combo,intra_pass,near_copy,7,0.55,accept,7,0,0,False,0,False,0,[],[],False
+15080917,25397,4188,True,combo_04,combo,intra_pass,exact,0,0.28,quarantine,6,6,0,True,6,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,combo_04,combo,intra_pass,near_copy,6,0.49,accept,6,0,0,False,0,False,0,[],[],False
+15080917,25397,4188,True,combo_05,combo,intra_pass,exact,0,0.33,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run', 'rewrite']","['duplicate', 'replay']",True
+15080917,25397,4188,True,combo_05,combo,intra_pass,near_copy,7,0.4,quarantine,7,0,0,False,0,False,0,[],['duplicate'],True
+15080917,25397,4188,True,combo_06,combo,intra_pass,exact,0,0.35,quarantine,5,5,0,True,5,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,combo_06,combo,intra_pass,near_copy,5,0.26,accept,5,0,0,False,0,False,0,[],[],False
+15080917,25397,4188,True,combo_07,combo,intra_pass,exact,0,0.18,quarantine,6,6,0,True,6,True,0,"['intra_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,combo_07,combo,intra_pass,near_copy,6,0.3,accept,6,0,0,False,0,False,0,[],[],False
+15080917,25397,4188,True,combo_08,combo,intra_pass,exact,0,0.35,quarantine,6,6,0,True,6,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,combo_08,combo,intra_pass,near_copy,6,0.28,accept,6,0,0,False,0,False,0,[],[],False
+15080917,25397,4188,True,combo_09,combo,intra_pass,exact,0,0.32,quarantine,7,7,0,True,7,True,0,"['intra_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,combo_09,combo,intra_pass,near_copy,7,0.17,accept,7,0,0,False,0,False,0,[],[],False
+15080917,25397,4188,True,replay_00,replay,intra_pass,exact,0,0.13,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,replay_00,replay,intra_pass,near_copy,7,0.2,accept,7,0,0,False,0,False,0,[],[],False
+15080917,25397,4188,True,replay_01,replay,intra_pass,exact,0,0.13,quarantine,8,8,0,True,8,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15080917,25397,4188,True,replay_01,replay,intra_pass,near_copy,8,0.22,accept,8,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,combo_00,combo,intra_pass,exact,0,0.1,quarantine,5,5,0,True,5,True,0,"['intra_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,combo_00,combo,intra_pass,near_copy,5,0.16,accept,5,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,combo_01,combo,intra_pass,exact,0,0.22,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,combo_01,combo,intra_pass,near_copy,7,0.27,accept,7,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,combo_02,combo,intra_pass,exact,0,0.16,quarantine,5,5,0,True,5,True,0,"['intra_run', 'regress_run', 'rewrite']","['duplicate', 'replay']",True
+15091860,25397,5049,True,combo_02,combo,intra_pass,near_copy,5,0.21,quarantine,5,0,0,False,0,False,0,[],['duplicate'],True
+15091860,25397,5049,True,combo_03,combo,intra_pass,exact,0,0.15,quarantine,7,7,0,True,7,True,0,"['intra_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,combo_03,combo,intra_pass,near_copy,7,0.36,accept,7,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,combo_04,combo,intra_pass,exact,0,0.25,quarantine,7,7,0,True,7,True,0,"['intra_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,combo_04,combo,intra_pass,near_copy,7,0.36,accept,7,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,combo_05,combo,intra_pass,exact,0,0.2,quarantine,5,5,0,True,5,True,0,"['intra_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,combo_05,combo,intra_pass,near_copy,5,0.31,accept,5,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,combo_06,combo,intra_pass,exact,0,0.22,quarantine,5,5,0,True,5,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,combo_06,combo,intra_pass,near_copy,5,0.28,accept,5,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,combo_07,combo,intra_pass,exact,0,0.29,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,combo_07,combo,intra_pass,near_copy,7,0.51,accept,7,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,combo_08,combo,intra_pass,exact,0,0.26,quarantine,7,7,0,True,7,True,0,"['intra_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,combo_08,combo,intra_pass,near_copy,7,0.35,accept,7,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,combo_09,combo,intra_pass,exact,0,0.2,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,combo_09,combo,intra_pass,near_copy,7,0.32,accept,7,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,replay_00,replay,intra_pass,exact,0,0.25,quarantine,5,5,0,True,5,True,0,"['intra_run', 'regress_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,replay_00,replay,intra_pass,near_copy,5,0.35,accept,5,0,0,False,0,False,0,[],[],False
+15091860,25397,5049,True,replay_01,replay,intra_pass,exact,0,0.26,quarantine,8,8,0,True,8,True,0,"['intra_run', 'rewrite']",['replay'],True
+15091860,25397,5049,True,replay_01,replay,intra_pass,near_copy,8,0.35,accept,8,0,0,False,0,False,0,[],[],False
+15229495,39444,4806,True,combo_00,combo,intra_pass,exact,0,0.16,quarantine,12,12,0,True,12,True,0,"['intra_run', 'regress_run']",['replay'],True
+15229495,39444,4806,True,combo_00,combo,intra_pass,near_copy,12,0.18,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+15229495,39444,4806,True,combo_01,combo,intra_pass,exact,0,0.12,quarantine,9,9,0,True,9,True,0,"['intra_run', 'regress_run']","['counter_jump', 'replay']",True
+15229495,39444,4806,True,combo_01,combo,intra_pass,near_copy,9,0.28,quarantine,9,0,0,False,9,True,2,[],"['counter_jump', 'forged', 'swap']",True
+15229495,39444,4806,True,combo_02,combo,intra_pass,exact,0,0.27,quarantine,8,8,0,True,8,True,0,"['intra_run', 'regress_run']","['counter_jump', 'replay']",True
+15229495,39444,4806,True,combo_02,combo,intra_pass,near_copy,8,0.39,quarantine,8,0,0,False,8,True,0,[],['forged'],True
+15229495,39444,4806,True,combo_03,combo,intra_pass,exact,0,0.36,quarantine,14,14,0,True,14,True,1,['intra_run'],"['replay', 'swap']",True
+15229495,39444,4806,True,combo_03,combo,intra_pass,near_copy,14,0.53,quarantine,14,0,0,False,14,True,1,[],"['forged', 'swap']",True
+15229495,39444,4806,True,combo_04,combo,intra_pass,exact,0,0.33,quarantine,9,9,0,True,9,True,0,"['intra_run', 'regress_run']","['counter_jump', 'replay']",True
+15229495,39444,4806,True,combo_04,combo,intra_pass,near_copy,9,0.46,quarantine,9,0,0,False,9,True,2,[],"['counter_jump', 'forged', 'swap']",True
+15229495,39444,4806,True,combo_05,combo,intra_pass,exact,0,0.37,quarantine,13,13,0,True,13,True,0,"['intra_run', 'regress_run']","['replay', 'timing']",True
+15229495,39444,4806,True,combo_05,combo,intra_pass,near_copy,13,0.48,quarantine,13,0,0,False,13,True,1,[],"['forged', 'swap']",True
+15229495,39444,4806,True,combo_06,combo,intra_pass,exact,0,0.26,quarantine,8,8,0,True,8,True,0,"['intra_run', 'regress_run']",['replay'],True
+15229495,39444,4806,True,combo_06,combo,intra_pass,near_copy,8,0.3,quarantine,8,0,0,False,8,True,0,[],['forged'],True
+15229495,39444,4806,True,combo_07,combo,intra_pass,exact,0,0.31,quarantine,5,5,0,True,5,True,0,"['intra_run', 'regress_run']","['duplicate', 'replay']",True
+15229495,39444,4806,True,combo_07,combo,intra_pass,near_copy,5,0.29,quarantine,5,0,0,False,5,True,0,[],"['duplicate', 'forged']",True
+15229495,39444,4806,True,combo_08,combo,intra_pass,exact,0,0.4,quarantine,13,13,0,True,13,True,0,"['intra_run', 'regress_run']","['forged', 'replay']",True
+15229495,39444,4806,True,combo_08,combo,intra_pass,near_copy,13,0.51,quarantine,13,0,0,False,13,True,0,[],['forged'],True
+15229495,39444,4806,True,combo_09,combo,intra_pass,exact,0,0.32,quarantine,9,9,0,True,9,True,0,"['intra_run', 'regress_run']",['replay'],True
+15229495,39444,4806,True,combo_09,combo,intra_pass,near_copy,9,0.28,quarantine,9,0,0,False,9,True,0,[],['forged'],True
+15229495,39444,4806,True,replay_00,replay,intra_pass,exact,0,0.27,quarantine,12,12,0,True,12,True,0,"['intra_run', 'regress_run']",['replay'],True
+15229495,39444,4806,True,replay_00,replay,intra_pass,near_copy,12,0.4,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+15229495,39444,4806,True,replay_01,replay,intra_pass,exact,0,0.5,quarantine,17,17,0,True,17,True,0,"['intra_run', 'regress_run']",['replay'],True
+15229495,39444,4806,True,replay_01,replay,intra_pass,near_copy,17,0.95,quarantine,17,0,0,False,17,True,0,[],['forged'],True
+15244977,39444,4806,True,combo_00,combo,intra_pass,exact,0,0.31,quarantine,12,12,0,True,12,True,0,"['intra_run', 'regress_run']",['replay'],True
+15244977,39444,4806,True,combo_00,combo,intra_pass,near_copy,12,0.25,quarantine,12,0,0,False,12,True,0,[],['forged'],True
+15244977,39444,4806,True,combo_01,combo,intra_pass,exact,0,0.27,quarantine,9,9,0,True,9,True,0,"['intra_run', 'regress_run']","['forged', 'replay']",True
+15244977,39444,4806,True,combo_01,combo,intra_pass,near_copy,9,0.36,quarantine,9,0,0,False,9,True,2,[],"['forged', 'swap']",True
+15244977,39444,4806,True,combo_02,combo,intra_pass,exact,0,0.36,quarantine,13,13,0,True,13,True,0,"['intra_run', 'regress_run']","['replay', 'swap']",True
+15244977,39444,4806,True,combo_02,combo,intra_pass,near_copy,13,0.58,quarantine,13,0,0,False,13,True,0,[],"['forged', 'swap']",True
+15244977,39444,4806,True,combo_03,combo,intra_pass,exact,0,0.24,quarantine,7,7,0,True,7,True,0,"['intra_run', 'regress_run']","['replay', 'swap']",True
+15244977,39444,4806,True,combo_03,combo,intra_pass,near_copy,7,0.34,quarantine,7,0,0,False,7,True,0,[],"['forged', 'swap']",True
+15244977,39444,4806,True,combo_04,combo,intra_pass,exact,0,0.41,quarantine,14,14,0,True,14,True,2,['intra_run'],"['counter_jump', 'replay', 'swap']",True
+15244977,39444,4806,True,combo_04,combo,intra_pass,near_copy,14,0.47,quarantine,14,0,0,False,14,True,2,[],"['counter_jump', 'forged', 'swap']",True
+15244977,39444,4806,True,combo_05,combo,intra_pass,exact,0,0.31,quarantine,11,11,0,True,11,True,0,"['intra_run', 'regress_run']","['replay', 'swap']",True
+15244977,39444,4806,True,combo_05,combo,intra_pass,near_copy,11,0.49,quarantine,11,0,0,False,11,True,0,[],"['forged', 'swap']",True
+15244977,39444,4806,True,combo_06,combo,intra_pass,exact,0,0.37,quarantine,14,14,0,True,14,True,0,"['intra_run', 'regress_run']",['replay'],True
+15244977,39444,4806,True,combo_06,combo,intra_pass,near_copy,14,0.58,quarantine,14,0,0,False,14,True,0,[],['forged'],True
+15244977,39444,4806,True,combo_07,combo,intra_pass,exact,0,0.29,quarantine,14,14,0,True,14,True,0,"['intra_run', 'regress_run']","['duplicate', 'replay']",True
+15244977,39444,4806,True,combo_07,combo,intra_pass,near_copy,14,0.45,quarantine,14,0,0,False,14,True,0,[],"['duplicate', 'forged']",True
+15244977,39444,4806,True,combo_08,combo,intra_pass,exact,0,0.16,quarantine,5,5,0,True,5,True,0,"['intra_run', 'regress_run']",['replay'],True
+15244977,39444,4806,True,combo_08,combo,intra_pass,near_copy,5,0.27,quarantine,5,0,0,False,5,True,0,[],['forged'],True
+15244977,39444,4806,True,combo_09,combo,intra_pass,exact,0,0.26,quarantine,9,9,0,True,9,True,0,['intra_run'],"['replay', 'swap']",True
+15244977,39444,4806,True,combo_09,combo,intra_pass,near_copy,9,0.64,quarantine,9,0,0,False,9,True,0,[],"['forged', 'swap']",True
+15244977,39444,4806,True,replay_00,replay,intra_pass,exact,0,0.64,quarantine,16,16,0,True,16,True,0,"['intra_run', 'regress_run']",['replay'],True
+15244977,39444,4806,True,replay_00,replay,intra_pass,near_copy,16,0.88,quarantine,16,0,0,False,16,True,0,[],['forged'],True
+15244977,39444,4806,True,replay_01,replay,intra_pass,exact,0,0.2,quarantine,5,5,0,True,5,True,0,"['intra_run', 'regress_run']",['replay'],True
+15244977,39444,4806,True,replay_01,replay,intra_pass,near_copy,5,0.58,quarantine,5,0,0,False,5,True,0,[],['forged'],True

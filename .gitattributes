@@ -1,0 +1,44 @@
+# Line endings. Scripts run on Linux keep LF.
+*.sh text eol=lf
+Makefile text eol=lf
+
+# Byte-exact files: their SHA-256 is signed in the test locks (models/*/lock.json) or recorded in data/DATA.md
+# section 8. Stored and checked out without any line-ending conversion, so the hashes verify on every OS.
+data/splits.json -text
+data/raw/manifest.csv -text
+data/recipes/** -text
+detect/audio_front.py -text
+detect/canonical.py -text
+detect/counters.py -text
+detect/features.py -text
+detect/frames_io.py -text
+detect/fusion.py -text
+detect/hash_store.py -text
+detect/interference_det.py -text
+detect/line_screen.py -text
+detect/naming.py -text
+detect/replay_det.py -text
+detect/run.py -text
+detect/sequence_det.py -text
+eval/fusion_dev.py -text
+eval/fusion_eval.py -text
+eval/run_standard_test.py -text
+models/fusion/fusion.json -text
+models/fusion/lock.json -text
+models/fusion_v1_superseded/lock.json -text
+models/interference/extras.pkl -text
+models/interference/lock.json -text
+models/interference/model.pkl -text
+models/interference/template.json -text
+models/interference/threshold.json -text
+models/interference_v2/lock.json -text
+models/interference_v2/model.pkl -text
+models/interference_v2/template.json -text
+models/interference_v2/threshold.json -text
+models/replay/hash_store.json -text
+models/replay/lock.json -text
+models/replay/params.json -text
+models/replay/threshold.json -text
+models/sequence/lock.json -text
+models/sequence/profile.json -text
+models/sequence/threshold.json -text

@@ -1,0 +1,10 @@
+# Conda / mamba alternative to setup.sh:  conda env create -f environment.yml && conda activate tsyp-groundlink
+# Any Python 3.11-3.14 works; the packages come from the same pinned requirements.txt.
+name: tsyp-groundlink
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -r requirements.txt

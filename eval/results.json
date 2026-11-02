@@ -1,0 +1,368 @@
+{
+ "source": "eval/out/* reports (TEST split unless stated)",
+ "standard_test": {
+  "n_attacked": 110,
+  "n_negative": 44,
+  "replay_detected": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "sequence_detected": [
+   0.3091,
+   0.1818,
+   0.4455
+  ],
+  "sequence_named": [
+   0.2727,
+   0.1455,
+   0.4
+  ],
+  "interference_detected": [
+   0.5818,
+   0.4636,
+   0.7091
+  ],
+  "all_three": [
+   0.1364,
+   0.0636,
+   0.2091
+  ],
+  "attacked_not_accepted": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "replay_frames_pooled": {
+   "precision": 0.9991,
+   "recall": 1.0,
+   "f1": 0.9996
+  },
+  "sequence_by_subtype": {
+   "counter_jump": {
+    "n": 9,
+    "detected": 0.444,
+    "named": 0.333
+   },
+   "deletion": {
+    "n": 17,
+    "detected": 0.0,
+    "named": 0.0
+   },
+   "duplicate": {
+    "n": 19,
+    "detected": 0.579,
+    "named": 0.526
+   },
+   "forged": {
+    "n": 24,
+    "detected": 0.542,
+    "named": 0.5
+   },
+   "swap": {
+    "n": 25,
+    "detected": 0.16,
+    "named": 0.16
+   },
+   "timing": {
+    "n": 16,
+    "detected": 0.125,
+    "named": 0.062
+   }
+  },
+  "interference_by_duration": {
+   "segment": {
+    "n": 68,
+    "detected": 0.515,
+    "by_window_model": 0.515,
+    "by_line_screen": 0.0
+   },
+   "full_pass": {
+    "n": 42,
+    "detected": 0.69,
+    "by_window_model": 0.571,
+    "by_line_screen": 0.548
+   }
+  },
+  "per_satellite": {
+   "25397": {
+    "replay_detected": 1.0,
+    "sequence_detected": 0.167,
+    "interference_detected": 0.717,
+    "all_three_detected": 0.083
+   },
+   "39444": {
+    "replay_detected": 1.0,
+    "sequence_detected": 0.48,
+    "interference_detected": 0.42,
+    "all_three_detected": 0.2
+   }
+  },
+  "ece_recording": 0.0012
+ },
+ "false_alarms": {
+  "recording_test": {
+   "not_accepted": [
+    0.0,
+    0.0,
+    0.0804
+   ],
+   "clean": [
+    0.0,
+    0.0,
+    0.2849
+   ],
+   "benign": [
+    0.0,
+    0.0,
+    0.1058
+   ],
+   "by_station": {
+    "1664": 0.0,
+    "1763": 0.0,
+    "4188": 0.0,
+    "4806": 0.0,
+    "5049": 0.0
+   },
+   "rule_of_three_upper_95": 0.0682,
+   "exact_one_sided_upper_95": 0.0658
+  },
+  "recording_dev_train_calib": {
+   "n": 243,
+   "not_accepted": 0.1358,
+   "quarantined": 0.0123,
+   "stations_with_false_alarm": {
+    "4272": 0.5625,
+    "4434": 0.5,
+    "5155": 1.0
+   }
+  },
+  "frame_test": {
+   "replay": [
+    0.0,
+    0.0,
+    0.0006
+   ],
+   "replay_by_category": {
+    "benign": {
+     "fpr": 0.0,
+     "n": 552
+    },
+    "clean": {
+     "fpr": 0.0,
+     "n": 184
+    },
+    "other": {
+     "fpr": 0.0,
+     "n": 5057
+    }
+   },
+   "sequence_as_fused_content_off": [
+    0.0016,
+    0.0007,
+    0.0029
+   ],
+   "sequence_v1_with_content": 0.0126,
+   "false_frame_alerts_per_attacked_recording": 0.027
+  },
+  "window_test_interference_v2": {
+   "clean": 0.00141,
+   "benign": 0.00156,
+   "by_station": {
+    "1664": 0.0,
+    "1763": 0.0,
+    "4073": 0.0,
+    "4188": 0.0,
+    "4806": 0.0066,
+    "5049": 0.0
+   }
+  }
+ },
+ "pd_vs_sir": {
+  "window_level_v2_snrgrid": {
+   "-10": 0.766,
+   "-5": 0.734,
+   "0": 0.904,
+   "5": 0.66,
+   "10": 0.837,
+   "15": 0.619,
+   "20": 0.254,
+   "25": 0.005,
+   "30": 0.004,
+   "35": 0.0
+  },
+  "recording_level_standard_test_10dB_bins": {
+   "-10": {
+    "n": 27,
+    "detected": 0.889
+   },
+   "0": {
+    "n": 29,
+    "detected": 0.69
+   },
+   "10": {
+    "n": 29,
+    "detected": 0.655
+   },
+   "20": {
+    "n": 25,
+    "detected": 0.04
+   }
+  }
+ },
+ "evasion": {
+  "J_cross_pass_replay": {
+   "n": 16,
+   "recall": 1.0
+  },
+  "K_sequence": "no dedicated evasion variant; blind spots: deletion 0/21, TECHSAT 1B cannot alert (decision 81)",
+  "L_interference_window_tpr_smoothed": {
+   "v1": 0.836,
+   "v2": 0.442
+  },
+  "N_weak_interference_snr_20_30_dB": {
+   "n": 25,
+   "detected": 0.04
+  },
+  "O_near_copy_replay": {
+   "exact": {
+    "replay_detected": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "any_alert_on_replay": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "not_accepted": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "replay_frames": {
+     "tp": 1424,
+     "fp": 1,
+     "fn": 0,
+     "recall": 1.0,
+     "precision": 0.9993
+    },
+    "events_detected": "133 / 133",
+    "by_satellite": {
+     "25397": 1.0,
+     "39444": 1.0
+    },
+    "not_accepted_by_satellite": {
+     "25397": 1.0,
+     "39444": 1.0
+    },
+    "by_timing_reliable": {
+     "False": 1.0,
+     "True": 1.0
+    },
+    "by_group": {
+     "combo": 1.0,
+     "evasion": 1.0,
+     "replay": 1.0
+    },
+    "evidence_on_replay_frames": {
+     "intra_run": 132,
+     "regress_run": 73,
+     "rewrite": 48,
+     "cross_run": 1
+    },
+    "verdicts": {
+     "quarantine": 133
+    },
+    "false_frame_alerts_per_recording": 0.038
+   },
+   "near_copy": {
+    "replay_detected": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "any_alert_on_replay": [
+     0.4545,
+     0.1818,
+     0.7273
+    ],
+    "not_accepted": [
+     0.5227,
+     0.2652,
+     0.7803
+    ],
+    "replay_frames": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 1424,
+     "recall": 0.0,
+     "precision": 0.0
+    },
+    "events_detected": "0 / 133",
+    "by_satellite": {
+     "25397": 0.0,
+     "39444": 0.0
+    },
+    "not_accepted_by_satellite": {
+     "25397": 0.125,
+     "39444": 1.0
+    },
+    "by_timing_reliable": {
+     "False": 0.0,
+     "True": 0.0
+    },
+    "by_group": {
+     "combo": 0.0,
+     "evasion": 0.0,
+     "replay": 0.0
+    },
+    "evidence_on_replay_frames": {},
+    "verdicts": {
+     "quarantine": 70,
+     "accept": 63
+    },
+    "false_frame_alerts_per_recording": 0.09
+   }
+  }
+ },
+ "latency": {
+  "replay_delay_s_median": 0.0,
+  "replay_delay_s_max": 0.0,
+  "interference_delay_s_median": 9.0,
+  "interference_delay_s_max": 226.5,
+  "line_screen": "offline: decides at the end of the pass"
+ },
+ "efficiency": {
+  "runtime_s_median": 28.91,
+  "runtime_s_max": 85.21,
+  "peak_traced_mb_max": 563.3,
+  "stage_s_median": {
+   "replay": 0.13,
+   "sequence": 0.049,
+   "audio_front": 20.547,
+   "interference": 0.198,
+   "line_screen": 7.706,
+   "fusion": 0.003
+  }
+ },
+ "security_overhead": {
+  "envelope_bytes_per_frame": 102,
+  "envelope_overhead_pct": {
+   "44": 231.8,
+   "256": 39.8
+  },
+  "seal_us": {
+   "44": 4.2,
+   "256": 4.19
+  },
+  "verify_us": {
+   "44": 4.43,
+   "256": 4.71
+  },
+  "ed25519_sign_us": 50.3,
+  "ed25519_verify_us": 98.9,
+  "signature_bytes": 64
+ }
+}

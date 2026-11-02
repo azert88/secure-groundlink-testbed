@@ -1,0 +1,505 @@
+{
+ "obs_id": 15034285,
+ "norad": 25397,
+ "station": 1664,
+ "timing_reliable": true,
+ "recordings": [
+  {
+   "variant_id": "combo_00",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.62,
+   "verdict": "quarantine",
+   "replay_frames": 20,
+   "replay_tp_frames": 20,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 20,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_00",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 20,
+   "runtime_s": 0.72,
+   "verdict": "accept",
+   "replay_frames": 20,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": []
+  },
+  {
+   "variant_id": "combo_01",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.39,
+   "verdict": "quarantine",
+   "replay_frames": 17,
+   "replay_tp_frames": 17,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 17,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_01",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 17,
+   "runtime_s": 0.61,
+   "verdict": "accept",
+   "replay_frames": 17,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": []
+  },
+  {
+   "variant_id": "combo_02",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.31,
+   "verdict": "quarantine",
+   "replay_frames": 7,
+   "replay_tp_frames": 7,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 7,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_02",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 7,
+   "runtime_s": 0.33,
+   "verdict": "accept",
+   "replay_frames": 7,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": []
+  },
+  {
+   "variant_id": "combo_03",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.38,
+   "verdict": "quarantine",
+   "replay_frames": 14,
+   "replay_tp_frames": 14,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 14,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_03",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 14,
+   "runtime_s": 0.31,
+   "verdict": "accept",
+   "replay_frames": 14,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": []
+  },
+  {
+   "variant_id": "combo_04",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.15,
+   "verdict": "quarantine",
+   "replay_frames": 11,
+   "replay_tp_frames": 11,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 11,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "duplicate",
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_04",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 11,
+   "runtime_s": 0.23,
+   "verdict": "quarantine",
+   "replay_frames": 11,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "duplicate"
+   ]
+  },
+  {
+   "variant_id": "combo_05",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.17,
+   "verdict": "quarantine",
+   "replay_frames": 16,
+   "replay_tp_frames": 16,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 16,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_05",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 16,
+   "runtime_s": 0.67,
+   "verdict": "accept",
+   "replay_frames": 16,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": []
+  },
+  {
+   "variant_id": "combo_06",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.58,
+   "verdict": "quarantine",
+   "replay_frames": 16,
+   "replay_tp_frames": 16,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 16,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_06",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 16,
+   "runtime_s": 0.69,
+   "verdict": "accept",
+   "replay_frames": 16,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": []
+  },
+  {
+   "variant_id": "combo_07",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.44,
+   "verdict": "quarantine",
+   "replay_frames": 10,
+   "replay_tp_frames": 10,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_07",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 10,
+   "runtime_s": 0.47,
+   "verdict": "accept",
+   "replay_frames": 10,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": []
+  },
+  {
+   "variant_id": "combo_08",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.47,
+   "verdict": "quarantine",
+   "replay_frames": 6,
+   "replay_tp_frames": 6,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 6,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "duplicate",
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_08",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 6,
+   "runtime_s": 0.41,
+   "verdict": "quarantine",
+   "replay_frames": 6,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "duplicate"
+   ]
+  },
+  {
+   "variant_id": "combo_09",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.47,
+   "verdict": "quarantine",
+   "replay_frames": 11,
+   "replay_tp_frames": 11,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 11,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_09",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 11,
+   "runtime_s": 0.52,
+   "verdict": "accept",
+   "replay_frames": 11,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": []
+  },
+  {
+   "variant_id": "replay_00",
+   "group": "replay",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.77,
+   "verdict": "quarantine",
+   "replay_frames": 19,
+   "replay_tp_frames": 19,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 19,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "replay_00",
+   "group": "replay",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 19,
+   "runtime_s": 0.57,
+   "verdict": "accept",
+   "replay_frames": 19,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": []
+  },
+  {
+   "variant_id": "replay_01",
+   "group": "replay",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.35,
+   "verdict": "quarantine",
+   "replay_frames": 6,
+   "replay_tp_frames": 6,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 6,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run",
+    "regress_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "replay_01",
+   "group": "replay",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 6,
+   "runtime_s": 0.39,
+   "verdict": "accept",
+   "replay_frames": 6,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 0,
+   "any_alert_on_replay": false,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": []
+  }
+ ]
+}

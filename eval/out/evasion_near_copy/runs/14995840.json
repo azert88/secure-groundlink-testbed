@@ -1,0 +1,516 @@
+{
+ "obs_id": 14995840,
+ "norad": 39444,
+ "station": 1763,
+ "timing_reliable": false,
+ "recordings": [
+  {
+   "variant_id": "combo_00",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.33,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 13,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 13,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "forged",
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_00",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 13,
+   "runtime_s": 0.48,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "combo_01",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.27,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 13,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 13,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_01",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 13,
+   "runtime_s": 0.42,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "combo_02",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.23,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 13,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 13,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_02",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 13,
+   "runtime_s": 0.49,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "combo_03",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.23,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 13,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 13,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_03",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 13,
+   "runtime_s": 0.46,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "combo_04",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.3,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 13,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 13,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "forged",
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_04",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 13,
+   "runtime_s": 0.5,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "combo_05",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.24,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 13,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 13,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "forged",
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_05",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 13,
+   "runtime_s": 0.48,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "combo_06",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.26,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 13,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 13,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "forged",
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_06",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 13,
+   "runtime_s": 0.45,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "combo_07",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.24,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 13,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 13,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_07",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 13,
+   "runtime_s": 0.44,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "combo_08",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.3,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 13,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 13,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_08",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 13,
+   "runtime_s": 0.42,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "combo_09",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.25,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 13,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 13,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "combo_09",
+   "group": "combo",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 13,
+   "runtime_s": 0.47,
+   "verdict": "quarantine",
+   "replay_frames": 13,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "replay_00",
+   "group": "replay",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.28,
+   "verdict": "quarantine",
+   "replay_frames": 16,
+   "replay_tp_frames": 16,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 16,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "replay_00",
+   "group": "replay",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 16,
+   "runtime_s": 0.41,
+   "verdict": "quarantine",
+   "replay_frames": 16,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  },
+  {
+   "variant_id": "replay_01",
+   "group": "replay",
+   "subtype": "intra_pass",
+   "mode": "exact",
+   "n_modified": 0,
+   "runtime_s": 0.27,
+   "verdict": "quarantine",
+   "replay_frames": 16,
+   "replay_tp_frames": 16,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "replay_frames_alerted_any": 16,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [
+    "intra_run"
+   ],
+   "alert_names": [
+    "replay"
+   ]
+  },
+  {
+   "variant_id": "replay_01",
+   "group": "replay",
+   "subtype": "intra_pass",
+   "mode": "near_copy",
+   "n_modified": 16,
+   "runtime_s": 0.57,
+   "verdict": "quarantine",
+   "replay_frames": 16,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": false,
+   "replay_frames_alerted_any": 10,
+   "any_alert_on_replay": true,
+   "false_frame_alerts": 0,
+   "evidence_on_replay": [],
+   "alert_names": [
+    "forged"
+   ]
+  }
+ ]
+}
