@@ -7,7 +7,7 @@ OBS ?= data/sample/14932721
 setup:            ## create .venv with the pinned dependencies
 	./setup.sh
 
-demo:             ## offline demo on data/sample/ (attack + detect, a few minutes)
+demo:             ## offline demo on data/sample/ (attack + detect, about 1-2 minutes)
 	$(PY) scripts/demo.py
 
 test:             ## unit tests

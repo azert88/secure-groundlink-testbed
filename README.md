@@ -6,6 +6,11 @@ Classical, explainable methods (frame hashes, counter-time consistency, natural-
 window model, a narrowband line screen) fused into one verdict per recording: **accept / flag / quarantine**, every alert
 with a plain-language reason and a calibrated confidence. CPU only.
 
+**Quick start** (from the unzipped repository folder, Python 3.11–3.14; demo about 1-2 minutes):
+- Linux (Ubuntu / Kali): `./setup.sh && make demo`
+- Windows (PowerShell): `py -m venv .venv; .venv\Scripts\python -m pip install -r requirements.txt; .venv\Scripts\python scripts\demo.py`
+- Details: section 1 (install) and section 2 (what the demo shows).
+
 Results: [`eval/results.md`](eval/results.md) (one table, every challenge metric, with confidence intervals).
 Development log and every decision: [`docs/PROGRESS.md`](docs/PROGRESS.md). Dataset datasheet: [`data/DATA.md`](data/DATA.md).
 
@@ -13,17 +18,18 @@ Development log and every decision: [`docs/PROGRESS.md`](docs/PROGRESS.md). Data
 
 **Supported Python: 3.11, 3.12, 3.13 and 3.14** (64-bit, CPU only). All dependencies are pinned in `requirements.txt` and
 install from binary wheels (no compiler, no system libraries: `soundfile` bundles libsndfile).
-Tested end to end (demo + 151 unit tests) on Windows with Python 3.14 in a fresh environment built from `requirements.txt`,
-and the demo on Kali Linux with Python 3.13 (see below); on Linux the pinned set resolves to binary wheels for Python 3.11–3.14
+Tested end to end (demo + all 151 tests, dataset tables present) on Windows with Python 3.14 in a fresh environment built from `requirements.txt`,
+and on Kali Linux with Python 3.13 (demo + 150 of the 151 tests, see below); on Linux the pinned set resolves to binary wheels for Python 3.11–3.14
 (checked with `pip download --platform manylinux…`).
 
 ### Ubuntu / Kali VM
 
 ```bash
-sudo apt update && sudo apt install -y python3 python3-venv make git   # once, if missing
-git clone <this repository> groundlink && cd groundlink
-./setup.sh          # creates .venv, installs requirements.txt, checks the signed model lock
-make demo           # offline demo, about 2-4 minutes
+sudo apt update && sudo apt install -y python3 python3-venv make unzip   # once, if missing
+unzip groundlink.zip    # the archive provided by the committee (any name); skip if already unpacked
+cd groundlink           # the repository folder (contains setup.sh, Makefile, README.md)
+./setup.sh              # creates .venv, installs requirements.txt, checks the signed model lock
+make demo               # offline demo, about 1-2 minutes
 ```
 
 `setup.sh` picks the first of `python3.13`, `python3.12`, `python3.11`, `python3.14`, `python3` that is >= 3.11;
@@ -37,15 +43,16 @@ py -3.12 -m venv .venv            # any of 3.11 - 3.14
 .venv\Scripts\python scripts\demo.py
 ```
 
-`git clone` keeps the signed files byte-exact on every OS (`.gitattributes` disables line-ending conversion for them),
-so the lock check passes on Linux and Windows.
+The signed files are stored byte-exact in the repository (`.gitattributes` disables line-ending conversion for them),
+so the lock check passes on Linux and Windows, from a git checkout or from an archive made with `git archive`.
+If `./setup.sh` reports "Permission denied" (an archive tool may drop the executable bit), run `bash setup.sh`.
 
 ### Tested on Kali Linux
 
 Fresh clone, then `bash setup.sh` and `make demo`, Python 3.13 (`.venv` interpreter 3.13.12; `setup.sh` picks `python3.13`
 before the system default `python3`, 3.14.8). Demo done in 58 s: both clean recordings accepted, both attacked recordings
-quarantined. Unit tests: `.venv/bin/python -m pytest -q` gives **150 passed, 1 skipped** in about 30 s. The skipped test is
-`tests/test_replay_det.py:207` (`test_rows_reader_reproduces_table_counters`): it needs the dataset tables in `data/tables/`,
+quarantined. Tests: 151 tests; on this fresh clone `.venv/bin/python -m pytest -q` gives **150 passed, 1 skipped** in about 30 s.
+The skipped test is `tests/test_replay_det.py:207` (`test_rows_reader_reproduces_table_counters`): it needs the dataset tables in `data/tables/`,
 which are rebuilt by the reproduction steps (section 5.2) and not stored in the repository.
 
 Evidence from that run, in [`docs/kali_test/`](docs/kali_test/):
@@ -81,7 +88,7 @@ Same attacks, verdicts and alerts as on Windows (same seeds); only the timings d
 Demo done in 58 s. Outputs: out/demo/ (detector reports *.detect.md, spectrograms *.spectrogram.png, demo_summary.json)
 ```
 
-## 2. Demo (offline, a few minutes)
+## 2. Demo (offline, about 1-2 minutes)
 
 `make demo` = `python scripts/demo.py`. For each recording in `data/sample/` (one FUNCUBE-1 and one TECHSAT 1B pass,
 sanitized metadata) it
@@ -179,7 +186,7 @@ make verify                                  # signed lock of models + code
 .venv/bin/python eval/lock.py check --name fusion
 .venv/bin/python eval/results.py             # rebuilds eval/results.{md,json} from eval/out/*
 .venv/bin/python trust/envelope.py bench     # security overhead of the per-frame envelope
-.venv/bin/python -m pytest -q                # 151 unit tests
+.venv/bin/python -m pytest -q                # 151 tests: 150 pass on a fresh clone, 1 needs data/tables/ (5.2)
 ```
 
 ### 5.2 Rebuild everything from SatNOGS (hours; downloads about 0.7 GB)

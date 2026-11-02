@@ -1,4 +1,4 @@
-"""Offline demo (a few minutes, CPU only): attack the sample recordings, then run the detectors and the fusion.
+"""Offline demo (about 1-2 minutes, CPU only): attack the sample recordings, then run the detectors and the fusion.
 
 For each observation in data/sample/ (one FUNCUBE-1, one TECHSAT 1B pass, sanitized metadata):
   1. detect/run.py on the CLEAN recording            -> expected verdict: accept (no false alarm)
