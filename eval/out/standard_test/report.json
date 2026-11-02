@@ -1,0 +1,177 @@
+{
+ "n_test_observations": 11,
+ "n_standard_recordings": 110,
+ "n_negative_recordings": 44,
+ "seeds_per_observation": 10,
+ "ci": "per-observation mean, percentile bootstrap over observations",
+ "standard_replay_detected": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "standard_sequence_detected": [
+  0.3091,
+  0.1818,
+  0.4455
+ ],
+ "standard_sequence_named_correctly": [
+  0.2727,
+  0.1455,
+  0.4
+ ],
+ "standard_interference_detected": [
+  0.5818,
+  0.4636,
+  0.7091
+ ],
+ "standard_all_three_detected": [
+  0.1364,
+  0.0636,
+  0.2091
+ ],
+ "standard_alarm": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "replay_frames_pooled": {
+  "precision": 0.9991,
+  "recall": 1.0,
+  "f1": 0.9996
+ },
+ "false_frame_alerts_per_standard_recording": 0.027,
+ "false_interference_alerts_per_standard_recording": 0.0,
+ "negatives_false_alarm": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "negatives_false_alarm_clean": 0.0,
+ "negatives_false_alarm_benign": 0.0,
+ "negatives_false_alarm_by_station": {
+  "1664": 0.0,
+  "1763": 0.0,
+  "4188": 0.0,
+  "4806": 0.0,
+  "5049": 0.0
+ },
+ "negatives_alert_names": {},
+ "verdicts": {
+  "benign": {
+   "accept": 33
+  },
+  "clean": {
+   "accept": 11
+  },
+  "combo": {
+   "quarantine": 110
+  }
+ },
+ "sequence_by_subtype": {
+  "counter_jump": {
+   "n": 9,
+   "detected": 0.444,
+   "named": 0.333
+  },
+  "deletion": {
+   "n": 17,
+   "detected": 0.0,
+   "named": 0.0
+  },
+  "duplicate": {
+   "n": 19,
+   "detected": 0.579,
+   "named": 0.526
+  },
+  "forged": {
+   "n": 24,
+   "detected": 0.542,
+   "named": 0.5
+  },
+  "swap": {
+   "n": 25,
+   "detected": 0.16,
+   "named": 0.16
+  },
+  "timing": {
+   "n": 16,
+   "detected": 0.125,
+   "named": 0.062
+  }
+ },
+ "sequence_by_timing": {
+  "False": 0.333,
+  "True": 0.3
+ },
+ "interference_by_duration": {
+  "segment": {
+   "n": 68,
+   "detected": 0.515,
+   "by_window_model": 0.515,
+   "by_line_screen": 0.0
+  },
+  "full_pass": {
+   "n": 42,
+   "detected": 0.69,
+   "by_window_model": 0.571,
+   "by_line_screen": 0.548
+  }
+ },
+ "interference_by_snr10": {
+  "-10": {
+   "n": 27,
+   "detected": 0.889
+  },
+  "0": {
+   "n": 29,
+   "detected": 0.69
+  },
+  "10": {
+   "n": 29,
+   "detected": 0.655
+  },
+  "20": {
+   "n": 25,
+   "detected": 0.04
+  }
+ },
+ "interference_by_shape": {
+  "noise": 0.568,
+  "tone": 0.591
+ },
+ "per_satellite": {
+  "25397": {
+   "replay_detected": 1.0,
+   "sequence_detected": 0.167,
+   "interference_detected": 0.717,
+   "all_three_detected": 0.083
+  },
+  "39444": {
+   "replay_detected": 1.0,
+   "sequence_detected": 0.48,
+   "interference_detected": 0.42,
+   "all_three_detected": 0.2
+  }
+ },
+ "ece_recording": 0.0012,
+ "latency": {
+  "replay_delay_s_median": 0.0,
+  "replay_delay_s_max": 0.0,
+  "interference_delay_s_median": 9.0,
+  "interference_delay_s_max": 226.5,
+  "line_screen": "offline: decides at the end of the pass"
+ },
+ "efficiency": {
+  "runtime_s_median": 28.91,
+  "runtime_s_max": 85.21,
+  "peak_traced_mb_max": 563.3,
+  "stage_s_median": {
+   "replay": 0.13,
+   "sequence": 0.049,
+   "audio_front": 20.547,
+   "interference": 0.198,
+   "line_screen": 7.706,
+   "fusion": 0.003
+  }
+ }
+}

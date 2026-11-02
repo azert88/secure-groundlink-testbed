@@ -1,0 +1,24 @@
+{
+ "overhead_bytes_per_frame": 102,
+ "header_bytes": 70,
+ "tag_bytes": 32,
+ "n": 20000,
+ "python": "3.14.3",
+ "per_frame_size": {
+  "44": {
+   "seal_us": 4.2,
+   "verify_us": 4.43,
+   "all_ok": true,
+   "overhead_pct": 231.8
+  },
+  "256": {
+   "seal_us": 4.19,
+   "verify_us": 4.71,
+   "all_ok": true,
+   "overhead_pct": 39.8
+  }
+ },
+ "ed25519_sign_us": 50.3,
+ "ed25519_verify_us": 98.9,
+ "signature_bytes": 64
+}

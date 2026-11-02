@@ -1,0 +1,145 @@
+{
+ "quarantine_min_score": {
+  "sequence": 2.489301,
+  "interference_model": 0.990601
+ },
+ "confidence": {
+  "replay": {
+   "x": [
+    0.85,
+    1.0
+   ],
+   "y": [
+    0.993902,
+    0.993902
+   ],
+   "n": 81,
+   "n_correct": 81
+  },
+  "sequence": {
+   "x": [
+    2.3054,
+    2.4893,
+    2.7825,
+    2.7903
+   ],
+   "y": [
+    0.256626,
+    0.256626,
+    0.947396,
+    0.995763
+   ],
+   "n": 117,
+   "n_correct": 74
+  },
+  "interference_model": {
+   "x": [
+    0.5259,
+    0.6182,
+    0.6566,
+    0.6916,
+    0.7657,
+    0.7974,
+    0.8293,
+    0.9231,
+    0.9504,
+    0.9595,
+    0.9681,
+    0.9973,
+    1.0
+   ],
+   "y": [
+    0.000512,
+    0.315978,
+    0.361844,
+    0.361844,
+    0.506018,
+    0.506018,
+    0.591743,
+    0.591743,
+    0.633197,
+    0.633197,
+    0.847102,
+    0.847102,
+    0.999488
+   ],
+   "n": 975,
+   "n_correct": 754
+  }
+ },
+ "sequence_disabled_evidence": [
+  "content"
+ ],
+ "line_screen": {
+  "cap": "f_edge",
+  "f_edge_margin_hz": 100.0,
+  "band_guard_hz": 500.0,
+  "line_match_hz": 100.0,
+  "precision_dev": 0.9412,
+  "quarantine": true,
+  "precision_dev_counts": {
+   "correct": 15,
+   "n": 15
+  },
+  "downlink": {
+   "25397": [],
+   "39444": [
+    [
+     10898.4,
+     12398.4
+    ]
+   ]
+  }
+ },
+ "version": 1,
+ "fitted_on": "train + calib recordings (interference v2: station-out-of-fold scores)",
+ "line_screen_params": {
+  "line_threshold_db": 10.0,
+  "line_min_frac_windows": 0.3,
+  "line_max_width_hz": 200.0,
+  "signal_band_margin_hz": 200.0
+ },
+ "cap_selection": {
+  "rule": "highest dev line recall among caps with false-line rate <= target and worst station <= 2 x target",
+  "candidates": {
+   "none": {
+    "false_line_rate": 0.11838006230529595,
+    "worst_station": 1.0,
+    "line_recall": 0.31679389312977096,
+    "either_recall": 0.5763358778625954,
+    "line_recall_full_pass": 0.7008547008547008
+   },
+   "f_edge": {
+    "false_line_rate": 0.0,
+    "worst_station": 0.0,
+    "line_recall": 0.26717557251908397,
+    "either_recall": 0.5687022900763359,
+    "line_recall_full_pass": 0.5897435897435898
+   },
+   "band_guard": {
+    "false_line_rate": 0.11838006230529595,
+    "worst_station": 1.0,
+    "line_recall": 0.3053435114503817,
+    "either_recall": 0.5725190839694656,
+    "line_recall_full_pass": 0.6752136752136753
+   }
+  },
+  "chosen": "f_edge"
+ },
+ "interference_model": "models/interference_v2/model.pkl",
+ "quarantine_selection": {
+  "sequence": {
+   "eligible_recordings": 598,
+   "recordings_with_false_alert": 40,
+   "allowed": 5,
+   "min_score": 2.489301
+  },
+  "interference_model": {
+   "eligible_recordings": 583,
+   "recordings_with_false_alert": 72,
+   "allowed": 5,
+   "min_score": 0.990601
+  }
+ },
+ "decision_rule": "quarantine: replay, line screen (if its dev false-line rate <= target), sequence / interference-model alerts with evidence >= quarantine_min_score; flag: other alerts; accept: no alert"
+}

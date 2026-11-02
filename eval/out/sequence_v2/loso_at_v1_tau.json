@@ -1,0 +1,34 @@
+{
+ "tau_v1_frozen": 2.305351369446624,
+ "v1": {
+  "fpr": 0.0187,
+  "worst_station": 0.1435,
+  "worst_id": 5155,
+  "stations_gt_2pct": 3,
+  "funcube_recall": 0.8137,
+  "fa_evidence": {
+   "gap": 99,
+   "content": 75,
+   "time_dev": 34,
+   "inversion": 31,
+   "order_spike": 14,
+   "dup_payload": 3,
+   "same_counter": 1
+  }
+ },
+ "v1_no_content": {
+  "fpr": 0.0119,
+  "worst_station": 0.1435,
+  "worst_id": 5155,
+  "stations_gt_2pct": 2,
+  "funcube_recall": 0.7647,
+  "fa_evidence": {
+   "gap": 58,
+   "inversion": 31,
+   "time_dev": 26,
+   "order_spike": 14,
+   "dup_payload": 3,
+   "same_counter": 1
+  }
+ }
+}

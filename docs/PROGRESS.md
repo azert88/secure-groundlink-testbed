@@ -1,6 +1,6 @@
 # Progress log — dataset build (DATASET_SPEC.md)
 
-Last update: 2026-11-01 (sequence v1 reported, v2 planned; Phase L started, decisions 85–86).
+Last update: 2026-11-02 (Phases N and M done, decisions 95–101).
 
 ## Status by phase
 
@@ -18,6 +18,8 @@ Last update: 2026-11-01 (sequence v1 reported, v2 planned; Phase L started, deci
 | J — Replay detector | **Approved** (2026-11-01): locked, test F1 1.000, FPR 0 |
 | K — Sequence detector | **Version 1 is the reported result** (locked, test per-obs recall 0.29, FPR 1.26 %); version 2 (changes a, b of decision 84) is a planned fix, not built (decision 85) |
 | L — Interference detector | **Done, at STOP** (2026-11-01): version 1 locked; test AUC 0.84 but FPR 34–36 % at the calibrated threshold (station shift, decision 89); `detect/run.py` prototype runs it on a raw folder; **v2 (post hoc, decision 92)** locked and tested once: FPR clean / benign 0.14 % / 0.16 %, TPR 0.48 |
+| N — Fusion and standard test | **Done** (2026-11-02): line screen + fusion, dev on train + calib, sequence v2 gate failed (v1 kept, content off in fusion, decision 100), lock 08:07 UTC, standard test run once: 0 / 44 false alarms, replay 1.00, sequence 0.31, interference 0.58 |
+| M — Trust layer | **Done, at STOP** (2026-11-02): per-frame HMAC envelope (`trust/envelope.py`), 9 deterministic rejection tests, 102 B and ~4.5 µs per frame |
 
 ## Phase A — what exists
 
@@ -632,3 +634,91 @@ Per-station test FPR (raw tau), v1 -> v2: 1664 0.27 % -> 0; 1763 14.4 % -> 0; 40
 Pd vs snr_db (snrgrid), v1: -10..0 dB 1.00, 5 dB 0.97, 10 dB 0.93, 20 dB 0.82, 30 dB 0.20; v2: -10 dB 0.77, 0 dB 0.90,
 10 dB 0.84, 20 dB 0.25, >= 25 dB ~0. v2 meets the false-alarm target on every test station; v1 has the higher recall
 only because its threshold sits inside the false-alarm cloud of new stations. Sequence v2 not built (usage).
+
+## Phase N — Fusion, line screen and standard test: test lock (rule 10)
+
+Final lock signed on 2026-11-02 (08:07:04 UTC) after the sequence v2 check (decision 100) and BEFORE the reported test
+run. Lock `models/fusion/lock.json` (pinned Ed25519 key), SHA-256
+`535df513cb4d6da87ff9fd1cd32afb6a2124399b2e1b5b1a8bbc6e012f2b708c`. It covers `models/fusion/fusion.json`
+(`9ea7831dd6b190837177fe8db5ab9e10e97cbded867f011db51b8559d2b766fd`, sequence content evidence disabled), `detect/{fusion,line_screen,run,naming,interference_det,audio_front,features,replay_det,sequence_det,
+frames_io,hash_store,canonical,counters}.py`, the interference v2, replay and sequence model / threshold files (hashes
+unchanged since their locks), `eval/{run_standard_test,fusion_dev,fusion_eval}.py`. `config.yaml` is not in the lock
+(packaging may edit it); SHA-256 at lock time `75365476b1900b44fc94c59279933d4814a603dfd07f3b26ba7f76bb87abab3d`.
+`detect/run.py` (prototype) now verifies this lock before running (`--no-verify` for development).
+
+## Phase N — development evaluation on train + calib (2026-11-02)
+
+Files: `detect/line_screen.py`, `detect/fusion.py`, `detect/run.py` (new version), `eval/fusion_eval.py` (line screen on
+every train + calib audio variant, cached in `eval/out/fusion/lines/`), `eval/fusion_dev.py`, `eval/run_standard_test.py`;
+tests `tests/test_line_screen.py`, `tests/test_fusion.py` (+ updated `test_interference_det.py`). Report
+`eval/out/fusion/report_dev.{json,md}`; 598 recordings (243 not attacked), interference v2 on station-out-of-fold scores.
+
+| line-screen cap | false-line rate, recordings without interference | worst station | line recall | full pass |
+|---|---|---|---|---|
+| none (feature band) | 0.118 | 1.000 | 0.317 | 0.701 |
+| **f_edge − 100 Hz (chosen; Phase C band)** | **0.000** | **0.000** | 0.267 | 0.590 |
+| feature band − 500 Hz | 0.118 | 1.000 | 0.305 | 0.675 |
+
+| interference | n | any tier | quarantine tier | window model | line screen |
+|---|---|---|---|---|---|
+| segment (5–60 s) | 145 | 0.393 | 0.214 | 0.393 | 0.007 |
+| full pass | 117 | 0.786 | 0.726 | 0.701 | 0.590 |
+
+(Table numbers above are with the content evidence on; with it off (final, decision 100) the line-screen and
+interference rows are unchanged, sequence recall 0.851, quarantine tier 0.690.)
+Not-attacked recordings: not accepted 13.6 % (flag tier: interference model at station 4272, 75 recordings, and sequence
+scores just above tau at 4272 / 5155 / 4434); **quarantined 1.2 %** (only 4272, 6.3 %); all other 20 stations 0.
+Replay recall 1.00 (quarantine), sequence 0.86 (quarantine tier 0.75). Recording ECE 0.168. Sequence false alerts on
+train are in-sample (profile fitted on train), so the train part of this estimate is optimistic.
+
+| # | Decision | Reason |
+|---|---|---|
+| 95 | **Fusion design (Phase N)**: frames named by the locked naming rule; interference = v2 events + line screen, merged when the line holds the event's peak (±100 Hz); per-alert confidence = isotonic map (train + calib, alert correct vs not; v2 on OOF scores), line = dev precision (Laplace, 15/15 correct); recording confidence = 1 − Π(1 − p) | User decisions 1–3 |
+| 96 | **Line screen band = Phase C band [f_low, f_edge − 100 Hz]**, chosen on dev by the fixed rule (highest line recall among caps with false-line rate ≤ 1 % and worst station ≤ 2 %): only f_edge qualified. Limit: TECHSAT 1B interference between f_edge (~10.15 kHz) and the feature-band top (10.9–18.5 kHz) is invisible to the screen | Band-edge roll-off makes a persistent "line" on every recording of some stations |
+| 97 | **Two-tier verdict**: quarantine = replay, line screen, or a sequence / interference-model alert whose evidence ≥ a recording-level point chosen on dev for ≤ 1 % of recordings with a false alert of that family (sequence score ≥ 2.4893, v2 max probability ≥ 0.9906); flag = other alerts (review); accept = none. Replaces a fixed 0.9-confidence rule written before the dev numbers | A 1 % per-window / per-frame FPR gives 16 % (interference) and 5 % (sequence) of recordings with a false alert; a single-tier recording threshold would cost interference recall 0.50 → 0.32 |
+| 98 | Standard test = the 10 frozen `combo_*` recipes per test observation (drawn before any detector, own seed each) + the clean and benign test variants as negatives, materialized as raw folders (audio.ogg in 4096-sample Vorbis blocks, demoddata with branch / rewrite copies, metadata with satellite, start, id) and run through `detect/run.py`. End-to-end check on a TRAIN combo: same v2 decision as on the frozen features (window score correlation 0.97: the written audio.ogg adds one Vorbis pass) | User decision 4, DETECTOR_SPEC 5 |
+| 99 | **Incident, recorded**: the first standard-test launch stopped at its lock check, before reading any test data: the interference v2 lock lists the Phase L `detect/run.py`, replaced in Phase N (decision 91). Fix: for that lock only `detect/run.py` may differ (current run.py and all v2 model files are in the fusion lock); `eval/run_standard_test.py` changed, so the fusion lock was deleted and re-signed (07:39:06 → 07:39:42 UTC, no test result in between) | Transparency (rule 10) |
+| 100 | **Sequence v2 (changes (a) and (b) only, user request 2026-11-02) failed its gate; v1 kept, content evidence disabled in the fusion.** `detect/sequence_v2.py`: (a) small satellite: pooled timestamp statistics, raised to its own p only for values it shows; (b) constant byte positions only for frame types seen at >= 2 stations, violation tail leave-one-station-out. `eval/sequence_v2.py loso` (train + calib, 23 station folds, each version's own OOF 1 % threshold): v1 worst station 2.65 %, FUNCUBE-1 recall 0.765; v2 14.35 % (5155), 0.726 -> gate (worst station lower AND FUNCUBE-1 recall not lower, fixed in advance) **failed**. (b) leaves no content position (no type constant at >= 2 train stations), so v2 = v1 without content plus (a). Fallback check under the same folds: own OOF tau 14.35 % / 0.726 (fails both criteria); at v1's frozen tau 2.3054: pooled FPR 1.87 % -> 1.19 %, stations > 2 % 3 -> 2, worst station 14.35 % unchanged (5155: gap / swap / timing evidence), FUNCUBE-1 recall 0.814 -> 0.765 (`eval/out/sequence_v2/loso_report.md`, `loso_at_v1_tau.json`). As instructed for a failed gate, the fusion uses v1 with the content evidence off (`sequence_disabled_evidence` in fusion.json, passed by `detect/run.py`); its check did not meet the worst-station criterion either, recorded here. v2 not locked, not tested | User decision; TECHSAT 1B still cannot reach tau with v1 (decision 81) |
+| 101 | **Incident, recorded**: the user's sequence v2 request arrived after the first fusion lock (07:39:42 UTC) and during its standard-test run. The run was stopped after 4 of 11 test observations had been written; those files were moved UNREAD to `eval/out/unread_fusion_v1_partial/` and the superseded config / lock to `models/fusion_v1_superseded/`. Nothing was read from them; the reported test is the fresh run with the 08:07:04 lock | Transparency (rule 10) |
+
+## Phase N — standard test on TEST (run once, 2026-11-02, lock 08:07:04 UTC)
+
+`eval/run_standard_test.py run` then `report` -> `eval/out/standard_test/report.{json,md}`, `recordings.csv`. 11 test observations
+with frames and audio x 10 frozen standard-scenario seeds = 110 attacked recordings (replay 5-20 frames + one sequence anomaly
++ narrowband interference at a hidden snr_db ~ U[-10, +30] dB), plus their 11 clean and 33 benign variants as negatives,
+each written as a raw folder and run through `detect/run.py`. Per-observation mean [95 % bootstrap CI over observations]:
+
+| metric | value |
+|---|---|
+| **false alarm: clean / benign recording not accepted** | **0 / 44** (0.000 [0.000, 0.000]); every station 0 |
+| attacked recording quarantined | 110 / 110 |
+| replay detected | 1.000 [1.000, 1.000]; frames P / R / F1 0.999 / 1.000 / 1.000; delay 0 s |
+| sequence anomaly detected / named correctly | 0.309 [0.182, 0.446] / 0.273 [0.145, 0.400] |
+| interference detected | 0.582 [0.464, 0.709] (segment 0.515, full pass 0.690) |
+| all three detected | 0.136 [0.064, 0.209] |
+| recording ECE | 0.001 (every attacked recording carries a replay alert, so confidence is near 0 or 1) |
+
+- Full-pass interference: window model 0.571, line screen 0.548, either 0.690; segments: model only (line screen 0).
+  By snr_db: [-10, 0) 0.89, [0, 10) 0.69, [10, 20) 0.66, [20, 30] 0.04. Tone 0.59, noise 0.57. Per satellite: TECHSAT 1B 0.72, FUNCUBE-1 0.42.
+- Sequence by subtype (detected): duplicate 0.58, forged 0.54, counter_jump 0.44, swap 0.16, timing 0.13, deletion 0.
+  TECHSAT 1B 0.17 (v1 cannot alert on its own evidence, decision 81; duplicates come from the replay detector), FUNCUBE-1 0.48.
+- False alerts inside attacked recordings: 0.027 frame alerts and 0 interference alerts per recording.
+- Latency: replay alert on the first copy (0 s); interference window model median 9 s (max 226 s); line screen decides at the end
+  of the pass. Runtime per recording median 28.9 s (audio front 20.5 s, line screen 7.7 s, frame detectors < 0.2 s), max 85 s
+  (4 workers in parallel); peak traced memory max 563 MB.
+- Limits: only 11 test observations from 5 stations; the 0 / 44 false alarms bound the recording false-alarm rate at about
+  6.6 % (95 % one-sided, rule of three), not at 1 %. Interference above +20 dB SIR is not detected.
+
+## Phase M — trust layer: per-frame envelope (2026-11-02)
+
+`trust/envelope.py` (seal / verify / stream file / bench CLI), `tests/test_envelope.py` (9 tests). Envelope = magic, 16 B session
+id, u64 session counter, u64 timestamp (ms), SHA-256 of the previous envelope (chain), u16 length, frame, HMAC-SHA256 tag
+over everything before it. Strict in-order verifier; a rejected envelope leaves the state unchanged. Deterministic results:
+replay -> `replay`; reorder -> `gap` for the early frame, the stream resumes when it is re-sent in order; deletion -> `gap` for
+every later frame; one flipped payload or header bit -> `bad_tag`; forgery without the key -> `bad_tag`; other session ->
+`wrong_session`; valid tag but wrong chain -> `chain`.
+Overhead (`eval/out/trust/overhead.json`, 20 000 frames, Python 3.14, idle machine): **102 bytes per frame** (70 header + 32 tag;
+232 % of a 44-byte TECHSAT 1B beacon, 40 % of a 256-byte FUNCUBE-1 frame); seal 4.2 µs, verify 4.4–4.7 µs per frame;
+Ed25519 manifest sign 50 µs, verify 99 µs (64-byte signature). `detect/run.py` refuses to run when the signed fusion lock does
+not verify (`--no-verify` for development). Losses before the station are the detectors' job; after the envelope the
+transport must be lossless, so a gap is rejected.

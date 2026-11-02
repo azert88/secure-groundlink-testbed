@@ -1,0 +1,844 @@
+{
+ "obs_id": 14995843,
+ "norad": 39444,
+ "station": 1763,
+ "timing_reliable": false,
+ "recordings": [
+  {
+   "variant_id": "benign_00",
+   "group": "benign",
+   "verdict": "quarantine",
+   "confidence": 0.9526,
+   "alert_names": [
+    "forged"
+   ],
+   "n_alerts": 1,
+   "runtime_s": 15.21,
+   "peak_traced_mb": 462.5,
+   "timing_s": {
+    "replay": 0.055,
+    "sequence": 0.018,
+    "audio_front": 9.258,
+    "interference": 0.154,
+    "line_screen": 5.705,
+    "fusion": 0.0022
+   },
+   "attacked": false,
+   "benign_ops": [
+    "gain"
+   ],
+   "replay_frames": 0,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": null,
+   "sequence_subtype": null,
+   "sequence_detected": null,
+   "sequence_named_correctly": null,
+   "false_frame_alerts": 1,
+   "interference_detected": null,
+   "interference_false_alerts": 0,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    }
+   ]
+  },
+  {
+   "variant_id": "benign_01",
+   "group": "benign",
+   "verdict": "quarantine",
+   "confidence": 0.9526,
+   "alert_names": [
+    "forged"
+   ],
+   "n_alerts": 1,
+   "runtime_s": 14.43,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.049,
+    "sequence": 0.017,
+    "audio_front": 9.207,
+    "interference": 0.069,
+    "line_screen": 5.084,
+    "fusion": 0.002
+   },
+   "attacked": false,
+   "benign_ops": [
+    "noise_rise"
+   ],
+   "replay_frames": 0,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": null,
+   "sequence_subtype": null,
+   "sequence_detected": null,
+   "sequence_named_correctly": null,
+   "false_frame_alerts": 1,
+   "interference_detected": null,
+   "interference_false_alerts": 0,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    }
+   ]
+  },
+  {
+   "variant_id": "benign_02",
+   "group": "benign",
+   "verdict": "quarantine",
+   "confidence": 0.9526,
+   "alert_names": [
+    "forged"
+   ],
+   "n_alerts": 1,
+   "runtime_s": 14.71,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.049,
+    "sequence": 0.019,
+    "audio_front": 9.8,
+    "interference": 0.102,
+    "line_screen": 4.733,
+    "fusion": 0.0012
+   },
+   "attacked": false,
+   "benign_ops": [
+    "gain"
+   ],
+   "replay_frames": 0,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": null,
+   "sequence_subtype": null,
+   "sequence_detected": null,
+   "sequence_named_correctly": null,
+   "false_frame_alerts": 1,
+   "interference_detected": null,
+   "interference_false_alerts": 0,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    }
+   ]
+  },
+  {
+   "variant_id": "clean",
+   "group": "clean",
+   "verdict": "quarantine",
+   "confidence": 0.9526,
+   "alert_names": [
+    "forged"
+   ],
+   "n_alerts": 1,
+   "runtime_s": 13.81,
+   "peak_traced_mb": 462.3,
+   "timing_s": {
+    "replay": 0.047,
+    "sequence": 0.018,
+    "audio_front": 8.871,
+    "interference": 0.069,
+    "line_screen": 4.799,
+    "fusion": 0.0011
+   },
+   "attacked": false,
+   "benign_ops": [],
+   "replay_frames": 0,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": null,
+   "sequence_subtype": null,
+   "sequence_detected": null,
+   "sequence_named_correctly": null,
+   "false_frame_alerts": 1,
+   "interference_detected": null,
+   "interference_false_alerts": 0,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_00",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 0.9997,
+   "alert_names": [
+    "forged",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 15.56,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.091,
+    "sequence": 0.051,
+    "audio_front": 10.865,
+    "interference": 0.115,
+    "line_screen": 4.424,
+    "fusion": 0.0018
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 18,
+   "replay_tp_frames": 18,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "swap",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 1,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": 28.30887129584343,
+   "shape": "noise",
+   "interf_full": true,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_14995843_2026-09-16T03-01-20_0000 of this pass (+156 s; first seen taken as original); 18 frame(s) share this shift"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_01",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 0.9997,
+   "alert_names": [
+    "forged",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 16.91,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.081,
+    "sequence": 0.053,
+    "audio_front": 11.254,
+    "interference": 0.098,
+    "line_screen": 5.413,
+    "fusion": 0.0015
+   },
+   "attacked": true,
+   "benign_ops": [
+    "edge_attenuation"
+   ],
+   "replay_frames": 18,
+   "replay_tp_frames": 18,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "duplicate",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 1,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": -4.395563850639492,
+   "shape": "noise",
+   "interf_full": false,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_14995843_2026-09-16T03-01-20_0000 of this pass (+267 s; first seen taken as original); 18 frame(s) share this shift"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_02",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 0.9997,
+   "alert_names": [
+    "forged",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 15.28,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.092,
+    "sequence": 0.054,
+    "audio_front": 10.713,
+    "interference": 0.108,
+    "line_screen": 4.305,
+    "fusion": 0.0038
+   },
+   "attacked": true,
+   "benign_ops": [
+    "fading"
+   ],
+   "replay_frames": 18,
+   "replay_tp_frames": 18,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "forged",
+   "sequence_detected": true,
+   "sequence_named_correctly": true,
+   "false_frame_alerts": 1,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": 3.4893145340076224,
+   "shape": "tone",
+   "interf_full": false,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_14995843_2026-09-16T03-01-20_0000 of this pass (+104 s; first seen taken as original); 18 frame(s) share this shift"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_03",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "forged",
+    "interference",
+    "replay"
+   ],
+   "n_alerts": 6,
+   "runtime_s": 16.42,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.091,
+    "sequence": 0.051,
+    "audio_front": 12.344,
+    "interference": 0.089,
+    "line_screen": 3.805,
+    "fusion": 0.0322
+   },
+   "attacked": true,
+   "benign_ops": [
+    "gain"
+   ],
+   "replay_frames": 18,
+   "replay_tp_frames": 18,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "duplicate",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 1,
+   "interference_detected": true,
+   "interference_false_alerts": 0,
+   "snr_db": -6.965678185434503,
+   "shape": "tone",
+   "interf_full": true,
+   "interf_by_model": true,
+   "interf_by_line": true,
+   "interference_delay_s": 7.0,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_14995843_2026-09-16T03-01-20_0000 of this pass (+21 s; first seen taken as original); 18 frame(s) share this shift"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.991,
+     "decision": "quarantine",
+     "evidence": [
+      "window_model",
+      "line_screen"
+     ],
+     "reason": "narrowband interference: strongest line at 18281 Hz is 36.1 dB above the band median (clean passes: 17.0 dB), 47 Hz wide, same frequency for 17 previous windows; the clean passes of this satellite almost never peak at this frequency; spectral_entropy = 0.286 is -5.9 robust SD from the clean template; narrowband interference (line screen): line at 18281-18305 Hz (47 Hz wide at -3 dB), 37.7 dB above its local baseline on average and more than +10 dB in 100 % of the 382 s recording, outside the satellite's downlink band"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 18281 Hz is 36.4 dB above the band median (clean passes: 17.0 dB), 47 Hz wide, same frequency for 27 previous windows; the clean passes of this satellite almost never peak at this frequency; spectral_entropy = 0.284 is -5.9 robust SD from the clean template"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.6332,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 18281 Hz is 36.5 dB above the band median (clean passes: 17.0 dB), 47 Hz wide, same frequency for 62 previous windows; the clean passes of this satellite almost never peak at this frequency; spectral_entropy = 0.281 is -5.9 robust SD from the clean template"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.9995,
+     "decision": "quarantine",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 18281 Hz is 36.3 dB above the band median (clean passes: 17.0 dB), 47 Hz wide, same frequency for 459 previous windows; the clean passes of this satellite almost never peak at this frequency; spectral_entropy = 0.285 is -5.9 robust SD from the clean template"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_04",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "forged",
+    "interference",
+    "replay"
+   ],
+   "n_alerts": 3,
+   "runtime_s": 15.41,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.103,
+    "sequence": 0.054,
+    "audio_front": 10.893,
+    "interference": 0.085,
+    "line_screen": 4.259,
+    "fusion": 0.0035
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 18,
+   "replay_tp_frames": 18,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "forged",
+   "sequence_detected": true,
+   "sequence_named_correctly": true,
+   "false_frame_alerts": 1,
+   "interference_detected": true,
+   "interference_false_alerts": 0,
+   "snr_db": -1.0264125004311673,
+   "shape": "noise",
+   "interf_full": false,
+   "interf_by_model": true,
+   "interf_by_line": false,
+   "interference_delay_s": 8.607295251567617,
+   "replay_delay_s": 0.0,
+   "all_three_detected": true,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_14995843_2026-09-16T03-01-20_0000 of this pass (+356 s; first seen taken as original); 18 frame(s) share this shift"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.9995,
+     "decision": "quarantine",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 1195 Hz is 26.9 dB above the band median (clean passes: 17.0 dB), 94 Hz wide, same frequency for 80 previous windows; the clean passes of this satellite almost never peak at this frequency; max_dev_from_obs_median_db = 43.1 is +3.2 robust SD from the clean template"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_05",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 0.9997,
+   "alert_names": [
+    "forged",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 14.36,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.085,
+    "sequence": 0.047,
+    "audio_front": 9.542,
+    "interference": 0.11,
+    "line_screen": 4.571,
+    "fusion": 0.002
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 18,
+   "replay_tp_frames": 18,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "duplicate",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 1,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": -3.5940518751817185,
+   "shape": "tone",
+   "interf_full": false,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_14995843_2026-09-16T03-01-20_0000 of this pass (+76 s; first seen taken as original); 18 frame(s) share this shift"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_06",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 0.9997,
+   "alert_names": [
+    "forged",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 13.97,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.107,
+    "sequence": 0.054,
+    "audio_front": 9.783,
+    "interference": 0.12,
+    "line_screen": 3.896,
+    "fusion": 0.0021
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 18,
+   "replay_tp_frames": 18,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "forged",
+   "sequence_detected": true,
+   "sequence_named_correctly": true,
+   "false_frame_alerts": 1,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": 14.80993124108317,
+   "shape": "noise",
+   "interf_full": false,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_14995843_2026-09-16T03-01-20_0000 of this pass (+113 s; first seen taken as original); 18 frame(s) share this shift"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_07",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 0.9997,
+   "alert_names": [
+    "forged",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 16.0,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.134,
+    "sequence": 0.05,
+    "audio_front": 10.733,
+    "interference": 0.103,
+    "line_screen": 4.972,
+    "fusion": 0.002
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 18,
+   "replay_tp_frames": 18,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "swap",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 1,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": 5.7537558919737855,
+   "shape": "noise",
+   "interf_full": false,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_14995843_2026-09-16T03-01-20_0000 of this pass (+228 s; first seen taken as original); 18 frame(s) share this shift"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_08",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "forged",
+    "interference",
+    "replay"
+   ],
+   "n_alerts": 3,
+   "runtime_s": 14.85,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.084,
+    "sequence": 0.053,
+    "audio_front": 10.05,
+    "interference": 0.102,
+    "line_screen": 4.538,
+    "fusion": 0.0167
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 18,
+   "replay_tp_frames": 18,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "forged",
+   "sequence_detected": true,
+   "sequence_named_correctly": true,
+   "false_frame_alerts": 1,
+   "interference_detected": true,
+   "interference_false_alerts": 0,
+   "snr_db": 15.71560156766093,
+   "shape": "tone",
+   "interf_full": true,
+   "interf_by_model": false,
+   "interf_by_line": true,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": true,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_14995843_2026-09-16T03-01-20_0000 of this pass (+210 s; first seen taken as original); 18 frame(s) share this shift"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.9412,
+     "decision": "quarantine",
+     "evidence": [
+      "line_screen"
+     ],
+     "reason": "narrowband interference (line screen): line at 13664-13664 Hz (23 Hz wide at -3 dB), 13.8 dB above its local baseline on average and more than +10 dB in 100 % of the 382 s recording, outside the satellite's downlink band"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_09",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 0.9997,
+   "alert_names": [
+    "forged",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 15.94,
+   "peak_traced_mb": 462.4,
+   "timing_s": {
+    "replay": 0.1,
+    "sequence": 0.049,
+    "audio_front": 10.471,
+    "interference": 0.114,
+    "line_screen": 5.193,
+    "fusion": 0.003
+   },
+   "attacked": true,
+   "benign_ops": [
+    "noise_rise"
+   ],
+   "replay_frames": 18,
+   "replay_tp_frames": 18,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "duplicate",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 1,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": 8.478900725856878,
+   "shape": "noise",
+   "interf_full": false,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "forged",
+     "confidence": 0.9526,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "forged: 42 byte(s) changed at positions constant in clean frames of this type (p=0.0017)"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_14995843_2026-09-16T03-01-20_0000 of this pass (+35 s; first seen taken as original); 18 frame(s) share this shift"
+    }
+   ]
+  }
+ ]
+}

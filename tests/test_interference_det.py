@@ -1,5 +1,6 @@
 """Tests for the Phase L interference detector, its audio front end and the run.py prototype."""
 
+import json
 import pickle
 
 import numpy as np
@@ -111,8 +112,13 @@ def test_run_py_on_a_raw_folder(tmp_path, toy_bundle):
     mp = tmp_path / "model.pkl"
     mp.write_bytes(pickle.dumps(toy_bundle))
     cfg = yaml.safe_load(open("config.yaml", encoding="utf-8"))
-    res = run(d, cfg, mp)
+    fp = tmp_path / "fusion.json"     # Phase N run.py: detectors + fusion (no demoddata -> audio detectors only)
+    fp.write_text(json.dumps({"quarantine_min_score": {}, "confidence": {},
+                              "line_screen": {"cap": "f_edge", "f_edge_margin_hz": 100.0, "line_match_hz": 100.0,
+                                              "precision_dev": 0.5, "downlink": {}}}), encoding="utf-8")
+    res = run(d, cfg, mp, fp)
     r = res["detectors"]["interference"]
-    assert res["norad"] == 1 and res["alert"] and r["events"]
-    assert "windows" not in r and r["runtime_s"] >= 0
+    assert res["norad"] == 1 and r["n_events"] >= 1 and res["verdict"] != "accept"
+    assert "interference" in res["fusion"]["alert_names"] and "replay, sequence" in res["unavailable"]
+    assert res["runtime_s"] >= 0
     assert set(BASE) <= set(toy_bundle["features"])

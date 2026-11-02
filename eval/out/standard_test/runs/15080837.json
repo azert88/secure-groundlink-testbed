@@ -1,0 +1,950 @@
+{
+ "obs_id": 15080837,
+ "norad": 25397,
+ "station": 4188,
+ "timing_reliable": true,
+ "recordings": [
+  {
+   "variant_id": "benign_00",
+   "group": "benign",
+   "verdict": "accept",
+   "confidence": 0.0,
+   "alert_names": [],
+   "n_alerts": 0,
+   "runtime_s": 71.48,
+   "peak_traced_mb": 563.3,
+   "timing_s": {
+    "replay": 0.289,
+    "sequence": 0.063,
+    "audio_front": 54.295,
+    "interference": 0.996,
+    "line_screen": 15.811,
+    "fusion": 0.005
+   },
+   "attacked": false,
+   "benign_ops": [
+    "edge_attenuation"
+   ],
+   "replay_frames": 0,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": null,
+   "sequence_subtype": null,
+   "sequence_detected": null,
+   "sequence_named_correctly": null,
+   "false_frame_alerts": 0,
+   "interference_detected": null,
+   "interference_false_alerts": 0,
+   "alerts": []
+  },
+  {
+   "variant_id": "benign_01",
+   "group": "benign",
+   "verdict": "accept",
+   "confidence": 0.0,
+   "alert_names": [],
+   "n_alerts": 0,
+   "runtime_s": 76.72,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.249,
+    "sequence": 0.051,
+    "audio_front": 55.391,
+    "interference": 0.49,
+    "line_screen": 20.511,
+    "fusion": 0.0038
+   },
+   "attacked": false,
+   "benign_ops": [
+    "gain"
+   ],
+   "replay_frames": 0,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": null,
+   "sequence_subtype": null,
+   "sequence_detected": null,
+   "sequence_named_correctly": null,
+   "false_frame_alerts": 0,
+   "interference_detected": null,
+   "interference_false_alerts": 0,
+   "alerts": []
+  },
+  {
+   "variant_id": "benign_02",
+   "group": "benign",
+   "verdict": "accept",
+   "confidence": 0.0,
+   "alert_names": [],
+   "n_alerts": 0,
+   "runtime_s": 62.31,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.214,
+    "sequence": 0.065,
+    "audio_front": 44.823,
+    "interference": 0.327,
+    "line_screen": 16.841,
+    "fusion": 0.0093
+   },
+   "attacked": false,
+   "benign_ops": [
+    "gain"
+   ],
+   "replay_frames": 0,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": null,
+   "sequence_subtype": null,
+   "sequence_detected": null,
+   "sequence_named_correctly": null,
+   "false_frame_alerts": 0,
+   "interference_detected": null,
+   "interference_false_alerts": 0,
+   "alerts": []
+  },
+  {
+   "variant_id": "clean",
+   "group": "clean",
+   "verdict": "accept",
+   "confidence": 0.0,
+   "alert_names": [],
+   "n_alerts": 0,
+   "runtime_s": 44.03,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.278,
+    "sequence": 0.041,
+    "audio_front": 26.203,
+    "interference": 0.461,
+    "line_screen": 17.023,
+    "fusion": 0.0028
+   },
+   "attacked": false,
+   "benign_ops": [],
+   "replay_frames": 0,
+   "replay_tp_frames": 0,
+   "replay_fp_frames": 0,
+   "replay_detected": null,
+   "sequence_subtype": null,
+   "sequence_detected": null,
+   "sequence_named_correctly": null,
+   "false_frame_alerts": 0,
+   "interference_detected": null,
+   "interference_false_alerts": 0,
+   "alerts": []
+  },
+  {
+   "variant_id": "combo_00",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "interference",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 62.28,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.529,
+    "sequence": 0.134,
+    "audio_front": 47.993,
+    "interference": 0.168,
+    "line_screen": 13.348,
+    "fusion": 0.0755
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 5,
+   "replay_tp_frames": 5,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "forged",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 0,
+   "interference_detected": true,
+   "interference_false_alerts": 0,
+   "snr_db": -0.14681456273575755,
+   "shape": "noise",
+   "interf_full": true,
+   "interf_by_model": true,
+   "interf_by_line": true,
+   "interference_delay_s": 1.0,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-19-29 of this pass (+341 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 393488426 <= highest counter so far 393488636 and -342 s off the counter-time line; 5 frame(s) share this offset"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 1.0,
+     "decision": "quarantine",
+     "evidence": [
+      "window_model",
+      "line_screen"
+     ],
+     "reason": "narrowband interference: strongest line at 8648 Hz is 24.2 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 1138 previous windows; the clean passes of this satellite almost never peak at this frequency; spectral_entropy = 0.643 is -9.9 robust SD from the clean template; narrowband interference (line screen): line at 8648-8672 Hz (47 Hz wide at -3 dB), 31.8 dB above its local baseline on average and more than +10 dB in 100 % of the 906 s recording, outside the satellite's downlink band"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_01",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 0.9939,
+   "alert_names": [
+    "replay"
+   ],
+   "n_alerts": 1,
+   "runtime_s": 36.52,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.136,
+    "sequence": 0.024,
+    "audio_front": 26.492,
+    "interference": 0.143,
+    "line_screen": 9.701,
+    "fusion": 0.0061
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 5,
+   "replay_tp_frames": 5,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "swap",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 0,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": 29.814240900351052,
+   "shape": "tone",
+   "interf_full": true,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-17-58_g0 of this pass (+236 s; first seen taken as original); 5 frame(s) share this shift; 1 byte-identical rewrite(s) merged (1 s later): probable station rewrite"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_02",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "interference",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 31.26,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.448,
+    "sequence": 0.028,
+    "audio_front": 20.383,
+    "interference": 0.115,
+    "line_screen": 10.252,
+    "fusion": 0.0086
+   },
+   "attacked": true,
+   "benign_ops": [
+    "edge_attenuation"
+   ],
+   "replay_frames": 7,
+   "replay_tp_frames": 7,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "swap",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 0,
+   "interference_detected": true,
+   "interference_false_alerts": 0,
+   "snr_db": -6.378324398931854,
+   "shape": "tone",
+   "interf_full": false,
+   "interf_by_model": true,
+   "interf_by_line": false,
+   "interference_delay_s": 1.664048912166436,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-20-28_g0 of this pass (+28 s; first seen taken as original); 7 frame(s) share this shift; 1 byte-identical rewrite(s) merged (1 s later): probable station rewrite"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.9995,
+     "decision": "quarantine",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 10383 Hz is 29.4 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 75 previous windows; the clean passes of this satellite almost never peak at this frequency; spectral_entropy = 0.378 is -18.2 robust SD from the clean template"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_03",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "interference",
+    "replay"
+   ],
+   "n_alerts": 22,
+   "runtime_s": 34.98,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.129,
+    "sequence": 0.027,
+    "audio_front": 23.048,
+    "interference": 0.185,
+    "line_screen": 11.554,
+    "fusion": 0.02
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 6,
+   "replay_tp_frames": 6,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "swap",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 0,
+   "interference_detected": true,
+   "interference_false_alerts": 0,
+   "snr_db": 19.975212195212624,
+   "shape": "tone",
+   "interf_full": true,
+   "interf_by_model": true,
+   "interf_by_line": false,
+   "interference_delay_s": 23.0,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-18-28_g0 of this pass (+10 s; first seen taken as original); 6 frame(s) share this shift; 1 byte-identical rewrite(s) merged (1 s later): probable station rewrite"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.6332,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 6.7 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 31 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 7.0 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 55 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.5917,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 4.7 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 32 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 6.2 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 54 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.6332,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.3 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 33 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.3 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 37 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.8 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 32 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 4.9 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 33 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.2 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 49 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.1 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 34 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.9995,
+     "decision": "quarantine",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 10.6 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 62 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 10.5 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 48 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.5 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 33 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.8 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 39 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.0 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 53 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.7 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 33 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.9 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 31 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 5.5 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 52 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 4.6 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 38 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.9995,
+     "decision": "quarantine",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 10.6 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 77 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 3727 Hz is 4.0 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 54 previous windows; the clean passes of this satellite almost never peak at this frequency"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_04",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "duplicate",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 35.28,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.112,
+    "sequence": 0.038,
+    "audio_front": 23.639,
+    "interference": 0.148,
+    "line_screen": 11.329,
+    "fusion": 0.0058
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 7,
+   "replay_tp_frames": 7,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "duplicate",
+   "sequence_detected": true,
+   "sequence_named_correctly": true,
+   "false_frame_alerts": 0,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": 29.671349345056313,
+   "shape": "tone",
+   "interf_full": false,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "duplicate",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "duplicate: same bytes as frame data_15080837_2026-09-28T16-17-58_g0 of this pass (+15 s; original = the copy on the counter-time line); 1 frame(s) share this shift; counter 393488336 <= highest counter so far 393488336 and -15 s off the counter-time line; 1 frame(s) share this offset"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-18-28_g0 of this pass (+294 s; original = the copy on the counter-time line); 7 frame(s) share this shift; counter 393488366 <= highest counter so far 393488636 and -294 s off the counter-time line; 7 frame(s) share this offset; 1 byte-identical rewrite(s) merged (1 s later): probable station rewrite"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_05",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "duplicate",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 39.92,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.17,
+    "sequence": 0.053,
+    "audio_front": 31.774,
+    "interference": 0.162,
+    "line_screen": 7.735,
+    "fusion": 0.0069
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 10,
+   "replay_tp_frames": 10,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "duplicate",
+   "sequence_detected": true,
+   "sequence_named_correctly": true,
+   "false_frame_alerts": 0,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": 6.412245338542956,
+   "shape": "tone",
+   "interf_full": false,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "duplicate",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "duplicate: same bytes as frame data_15080837_2026-09-28T16-17-58_g0 of this pass (+15 s; original = the copy on the counter-time line); 1 frame(s) share this shift; counter 393488336 <= highest counter so far 393488336 and -15 s off the counter-time line; 1 frame(s) share this offset"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-18-28_g0 of this pass (+101 s; original = the copy on the counter-time line); 10 frame(s) share this shift; counter 393488366 <= highest counter so far 393488456 and -101 s off the counter-time line; 10 frame(s) share this offset; 1 byte-identical rewrite(s) merged (1 s later): probable station rewrite"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_06",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "duplicate",
+    "replay"
+   ],
+   "n_alerts": 3,
+   "runtime_s": 30.76,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.15,
+    "sequence": 0.043,
+    "audio_front": 21.508,
+    "interference": 0.084,
+    "line_screen": 8.956,
+    "fusion": 0.0042
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 10,
+   "replay_tp_frames": 10,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "duplicate",
+   "sequence_detected": true,
+   "sequence_named_correctly": true,
+   "false_frame_alerts": 0,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": 22.840807538321492,
+   "shape": "noise",
+   "interf_full": false,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-16-58_g0 of this pass (+256 s; original = the copy on the counter-time line); 10 frame(s) share this shift; counter 393488276 <= highest counter so far 393488516 and -256 s off the counter-time line; 10 frame(s) share this offset; 1 byte-identical rewrite(s) merged (1 s later): probable station rewrite"
+    },
+    {
+     "alert": "sequence",
+     "name": "duplicate",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "duplicate: same bytes as frame data_15080837_2026-09-28T16-22-58_g0 of this pass (+120 s; original = the copy on the counter-time line); 1 frame(s) share this shift; counter 393488636 <= highest counter so far 393488636 and -120 s off the counter-time line; 1 frame(s) share this offset"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-20-58_g0 of this pass (+256 s; original = the copy on the counter-time line); 10 frame(s) share this shift; counter 393488516 <= highest counter so far 393488636 and -256 s off the counter-time line; 10 frame(s) share this offset; 1 byte-identical rewrite(s) merged (1 s later): probable station rewrite"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_07",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 0.9939,
+   "alert_names": [
+    "replay"
+   ],
+   "n_alerts": 1,
+   "runtime_s": 32.87,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.118,
+    "sequence": 0.02,
+    "audio_front": 22.77,
+    "interference": 0.105,
+    "line_screen": 9.844,
+    "fusion": 0.0027
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 6,
+   "replay_tp_frames": 6,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "swap",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 0,
+   "interference_detected": false,
+   "interference_false_alerts": 0,
+   "snr_db": 28.243056498992054,
+   "shape": "noise",
+   "interf_full": false,
+   "interf_by_model": false,
+   "interf_by_line": false,
+   "interference_delay_s": null,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-20-28_g0 of this pass (+256 s; first seen taken as original); 6 frame(s) share this shift; 1 byte-identical rewrite(s) merged (1 s later): probable station rewrite"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_08",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "interference",
+    "replay"
+   ],
+   "n_alerts": 2,
+   "runtime_s": 31.56,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.099,
+    "sequence": 0.031,
+    "audio_front": 22.072,
+    "interference": 0.101,
+    "line_screen": 9.238,
+    "fusion": 0.0031
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 7,
+   "replay_tp_frames": 7,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "counter_jump",
+   "sequence_detected": false,
+   "sequence_named_correctly": false,
+   "false_frame_alerts": 0,
+   "interference_detected": true,
+   "interference_false_alerts": 0,
+   "snr_db": 9.979339351624162,
+   "shape": "tone",
+   "interf_full": false,
+   "interf_by_model": true,
+   "interf_by_line": false,
+   "interference_delay_s": 2.156085070874326,
+   "replay_delay_s": 0.0,
+   "all_three_detected": false,
+   "alerts": [
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-19-29 of this pass (+276 s; original = the copy on the counter-time line); 7 frame(s) share this shift; counter 393488426 <= highest counter so far 393488636 and -277 s off the counter-time line; 7 frame(s) share this offset"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.9995,
+     "decision": "quarantine",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 9398 Hz is 14.9 dB above the band median (clean passes: 4.8 dB), 47 Hz wide, same frequency for 61 previous windows; the clean passes of this satellite almost never peak at this frequency; max_dev_from_obs_median_db = 22.3 is +3.9 robust SD from the clean template"
+    }
+   ]
+  },
+  {
+   "variant_id": "combo_09",
+   "group": "combo",
+   "verdict": "quarantine",
+   "confidence": 1.0,
+   "alert_names": [
+    "duplicate",
+    "interference",
+    "replay"
+   ],
+   "n_alerts": 4,
+   "runtime_s": 33.35,
+   "peak_traced_mb": 563.2,
+   "timing_s": {
+    "replay": 0.092,
+    "sequence": 0.031,
+    "audio_front": 22.757,
+    "interference": 0.127,
+    "line_screen": 10.326,
+    "fusion": 0.0044
+   },
+   "attacked": true,
+   "benign_ops": [],
+   "replay_frames": 6,
+   "replay_tp_frames": 6,
+   "replay_fp_frames": 0,
+   "replay_detected": true,
+   "sequence_subtype": "duplicate",
+   "sequence_detected": true,
+   "sequence_named_correctly": true,
+   "false_frame_alerts": 0,
+   "interference_detected": true,
+   "interference_false_alerts": 0,
+   "snr_db": 2.9827809253551862,
+   "shape": "noise",
+   "interf_full": true,
+   "interf_by_model": true,
+   "interf_by_line": false,
+   "interference_delay_s": 226.5,
+   "replay_delay_s": 0.0,
+   "all_three_detected": true,
+   "alerts": [
+    {
+     "alert": "sequence",
+     "name": "duplicate",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "duplicate: same bytes as frame data_15080837_2026-09-28T16-21-58_g0 of this pass (+15 s; original = the copy on the counter-time line); 1 frame(s) share this shift; counter 393488576 <= highest counter so far 393488576 and -15 s off the counter-time line; 1 frame(s) share this offset"
+    },
+    {
+     "alert": "replay",
+     "name": "replay",
+     "confidence": 0.9939,
+     "decision": "quarantine",
+     "evidence": null,
+     "reason": "replay: same bytes as frame data_15080837_2026-09-28T16-18-58_g0 of this pass (+327 s; original = the copy on the counter-time line); 6 frame(s) share this shift; counter 393488396 <= highest counter so far 393488636 and -327 s off the counter-time line; 6 frame(s) share this offset; 1 byte-identical rewrite(s) merged (1 s later): probable station rewrite"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 1758 Hz is 14.9 dB above the band median (clean passes: 4.8 dB), 211 Hz wide, same frequency for 33 previous windows"
+    },
+    {
+     "alert": "interference",
+     "name": "interference",
+     "confidence": 0.8471,
+     "decision": "flag",
+     "evidence": [
+      "window_model"
+     ],
+     "reason": "narrowband interference: strongest line at 1758 Hz is 14.5 dB above the band median (clean passes: 4.8 dB), 188 Hz wide, same frequency for 37 previous windows"
+    }
+   ]
+  }
+ ]
+}

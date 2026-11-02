@@ -1,0 +1,31 @@
+{
+ "created_utc": "2026-11-02T07:39:42Z",
+ "files": {
+  "detect/audio_front.py": "80cdcfc44d0a7c096e7ec553e6b41fcba611e68d14cc02037a2bcbb0ac80758d",
+  "detect/canonical.py": "96523031243787dded35e5f214e4cd6f4f154f4b5d4a447621592aea8c2a9667",
+  "detect/counters.py": "5a569f16b24817e38c3f9a0b6b7aae73f4300d0b4787af6f6c7c327e1f00e1dd",
+  "detect/features.py": "3fa455a14c7edffa72a9e4b0bf7405e25a301367c53241e612d7bc3b321a6e1a",
+  "detect/frames_io.py": "dbb4785535dbdfe7b0c27254be6dbc3c696ad129e9817ea299bdef0b18c95da3",
+  "detect/fusion.py": "d33edec8487028ee7ae57afeb295923acc0c406eae3c7b853fa1bc2421259206",
+  "detect/hash_store.py": "3eeb1474ca6cf91c47c58cfface3cafcdeed1a20c024f8cc56042470d6ae45b0",
+  "detect/interference_det.py": "95d2fa3f02ede9f35c960490eee1bbae75b3a16853133fd6cf12dfb85ce61b2f",
+  "detect/line_screen.py": "bb53feda1f3a83a8362bff6f8fd0741a068092c2ab7f03bbe719e6bd1ed73d03",
+  "detect/naming.py": "f64f9ccf57bcb3bb3347806720ecef4eb3c8259941dd56ef39fa2f5c32b5e74e",
+  "detect/replay_det.py": "ba6d220b003b31456881f637d041aa9617234e024fb755d560734cbcb3f9fdf9",
+  "detect/run.py": "518b8ed0f2aba9a6a6964fbf2aaf178fbaac40652429a4dfceff0147cdd2dcdf",
+  "detect/sequence_det.py": "36b270eaf7266ccd784a9784d768654bd0528054b9effa71eea0ca0fec1a4f83",
+  "eval/fusion_dev.py": "3d593c879fff03c611a00ab165aa10266e6c7c4cbdf6b34b1ea526c9c4d1d6bc",
+  "eval/fusion_eval.py": "64487c738eb8189e99afc7994ccf8073d2d2a8f1d914547342586cec12c8c1f8",
+  "eval/run_standard_test.py": "a35c9cb89decce693fba2e797c2f2486e60fc17303ce29426218a3a2c3b8894b",
+  "models/fusion/fusion.json": "fa0c4c622e0ff9739c5a0730a586751cdfc5da172451292646c648219a59557c",
+  "models/interference_v2/model.pkl": "2412d06aaf39af367304d9ada291d6c14f2fea87b5e2a1ac366364a642c89696",
+  "models/interference_v2/threshold.json": "c8ae4698d7c21e9b1a92ef9459794cf651bb9162d0817831e2ba38a949fdc67d",
+  "models/replay/hash_store.json": "4877fbabfa88d594fa52cc87a11780b6a173fc287589e18e0bf147161acb1a60",
+  "models/replay/params.json": "9d36f6e3f72210300054436a5eb92113c905c9b43c8ffd47a9a8aef4162e2abd",
+  "models/replay/threshold.json": "8b5e2a74641d303ed73370990a6bf70cbea6519dce28d1866beb304d641bf998",
+  "models/sequence/profile.json": "bfd568b29ad55e1516d94a46705b533763023d79ca854db7d684f5f4b830051f",
+  "models/sequence/threshold.json": "98af1c1168bbb02265633385025f558019b7ebc5b2303afcf468207d339480c3"
+ },
+ "label": "test lock: fusion",
+ "signature": "wl6/RYyTEc1KFuL0CdWVui8Hi9nd55CuAxv9xvqT9jMYunTIPxExSTCmN46Gbb9mEiOrB92MFNF/XJgq35UQCg=="
+}
