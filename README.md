@@ -13,8 +13,9 @@ Development log and every decision: [`docs/PROGRESS.md`](docs/PROGRESS.md). Data
 
 **Supported Python: 3.11, 3.12, 3.13 and 3.14** (64-bit, CPU only). All dependencies are pinned in `requirements.txt` and
 install from binary wheels (no compiler, no system libraries: `soundfile` bundles libsndfile).
-Tested end to end (demo + 151 unit tests) on Windows with Python 3.14 in a fresh environment built from `requirements.txt`;
-on Linux the pinned set resolves to binary wheels for Python 3.11–3.14 (checked with `pip download --platform manylinux…`).
+Tested end to end (demo + 151 unit tests) on Windows with Python 3.14 in a fresh environment built from `requirements.txt`,
+and the demo on Kali Linux with Python 3.13 (see below); on Linux the pinned set resolves to binary wheels for Python 3.11–3.14
+(checked with `pip download --platform manylinux…`).
 
 ### Ubuntu / Kali VM
 
@@ -38,6 +39,36 @@ py -3.12 -m venv .venv            # any of 3.11 - 3.14
 
 `git clone` keeps the signed files byte-exact on every OS (`.gitattributes` disables line-ending conversion for them),
 so the lock check passes on Linux and Windows.
+
+### Tested on Kali Linux
+
+Fresh clone, then `bash setup.sh` and `make demo`, Python 3.13.12 (the `.venv` interpreter; `setup.sh` picks
+python3.13 before the system default python3, 3.14.8). Demo done in 58 s: both clean recordings accepted,
+both attacked recordings quarantined. Output (`make demo`):
+
+```text
+.venv/bin/python scripts/demo.py
+
+=== observation 14932721 (FUNCUBE 1, NORAD 39444)
+  clean recording: verdict ACCEPT (confidence attacked 0.00), 0 alert(s), 5 s
+  attack applied (truth file, not read by the detector): replay of 11 frames (-158 s); sequence counter_jump; interference noise at 9159 Hz, snr_db +1.1
+  attacked recording: verdict QUARANTINE (confidence attacked 1.00), 4 alert(s), 5 s
+    - replay [quarantine, conf 0.99]: replay: same bytes as frame data_14932721_2026-09-04T06-02-41_g0 of this pass (-158 s; original = the copy on the counter-time line); 11 frame(s) shar
+    - counter_jump [flag, conf 0.26]: counter_jump: counter 23153437 breaks the order of its neighbours (+50 s off the counter-time line) (p=0.005); +50 s off the counter-time line (counte
+    - duplicate [quarantine, conf 0.95]: duplicate: identical bytes to frame data_14932721_2026-09-04T06-00-58_g0 (+158 s) (p=0.0017)
+    - interference [quarantine, conf 0.94]: narrowband interference (line screen): line at 9094-9234 Hz (164 Hz wide at -3 dB), 20.5 dB above its local baseline on average and more than +10 dB i
+
+=== observation 15080917 (TECHSAT 1B, NORAD 25397)
+  clean recording: verdict ACCEPT (confidence attacked 0.00), 0 alert(s), 7 s
+  attack applied (truth file, not read by the detector): replay of 7 frames (+24 s); sequence forged; interference tone at 2810 Hz, snr_db -2.6
+  attacked recording: verdict QUARANTINE (confidence attacked 1.00), 2 alert(s), 8 s
+    - replay [quarantine, conf 0.99]: replay: same bytes as frame data_15080917_2026-09-28T17-55-58_g0 of this pass (+24 s; first seen taken as original); 7 frame(s) share this shift; 1 by
+    - interference [quarantine, conf 1.00]: narrowband interference: strongest line at 2812 Hz is 26.9 dB above the band median (clean passes: 4.8 dB), 23 Hz wide, same frequency for 742 previou
+
+Demo done in 58 s. Outputs: out/demo/ (detector reports *.detect.md, spectrograms *.spectrogram.png, demo_summary.json)
+```
+
+Same verdicts, alerts and attacks as on Windows (same seeds); only the timings differ.
 
 ## 2. Demo (offline, a few minutes)
 

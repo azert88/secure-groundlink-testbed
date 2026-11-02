@@ -763,3 +763,10 @@ and the sample's `removed_fields` list). History content and commit messages: no
 committer is a GitHub username with its users.noreply.github.com email** (4 commits). Not rewritten, as instructed; future
 commits can use an anonymous identity (`git config user.name` / `user.email`), and the anonymous submission should be an export
 without history (e.g. `git archive`) or a fresh repository.
+
+**Kali Linux test (2026-11-02).** Fresh clone on a Kali Linux VM, `bash setup.sh`, `make demo`, Python 3.13.12 in `.venv`
+(chosen by `setup.sh` over the system python3 3.14.8).
+Lock check passed (the `.gitattributes` fix, decision 105, holds on a real Linux clone). Demo done in 58 s: both clean
+recordings `accept` (0 alerts), both attacked recordings `quarantine` (FUNCUBE-1: replay, counter_jump, duplicate,
+interference; TECHSAT 1B: replay, interference). Same attacks, verdicts and alerts as the Windows run; only timings
+differ. Output in README.md, "Tested on Kali Linux".
