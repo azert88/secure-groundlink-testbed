@@ -70,6 +70,11 @@ Demo done in 58 s. Outputs: out/demo/ (detector reports *.detect.md, spectrogram
 
 Same verdicts, alerts and attacks as on Windows (same seeds); only the timings differ.
 
+Unit tests on the same machine: `.venv/bin/python -m pytest -q` gives **150 passed, 1 skipped** in 30 s. The skipped test,
+`tests/test_replay_det.py::test_rows_reader_reproduces_table_counters`, checks the frame reader against
+`data/tables/frames.csv`; that table is built from the downloaded SatNOGS data by `data/build_tables.py` (section 5.2) and
+is not in git, so a fresh clone skips it ("dataset tables not built"). It runs, and passes, after the full rebuild.
+
 ## 2. Demo (offline, a few minutes)
 
 `make demo` = `python scripts/demo.py`. For each recording in `data/sample/` (one FUNCUBE-1 and one TECHSAT 1B pass,

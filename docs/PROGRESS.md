@@ -769,4 +769,6 @@ without history (e.g. `git archive`) or a fresh repository.
 Lock check passed (the `.gitattributes` fix, decision 105, holds on a real Linux clone). Demo done in 58 s: both clean
 recordings `accept` (0 alerts), both attacked recordings `quarantine` (FUNCUBE-1: replay, counter_jump, duplicate,
 interference; TECHSAT 1B: replay, interference). Same attacks, verdicts and alerts as the Windows run; only timings
-differ. Output in README.md, "Tested on Kali Linux".
+differ. Output in README.md, "Tested on Kali Linux". Unit tests: 150 passed, 1 skipped in 30 s; the skip is
+`test_replay_det.py::test_rows_reader_reproduces_table_counters`, which needs `data/tables/frames.csv` (git-ignored, built by
+`data/build_tables.py` from the raw downloads); all 151 pass on the development machine where the tables exist.
