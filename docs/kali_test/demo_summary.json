@@ -1,0 +1,33 @@
+[
+ {
+  "obs_id": "14932721",
+  "clean_verdict": "accept",
+  "attacked_verdict": "quarantine",
+  "attacks": [
+   "replay",
+   "sequence",
+   "interference"
+  ],
+  "alert_kinds": [
+   "interference",
+   "replay",
+   "sequence"
+  ],
+  "spectrogram": "out/demo/14932721_standard.spectrogram.png"
+ },
+ {
+  "obs_id": "15080917",
+  "clean_verdict": "accept",
+  "attacked_verdict": "quarantine",
+  "attacks": [
+   "replay",
+   "sequence",
+   "interference"
+  ],
+  "alert_kinds": [
+   "interference",
+   "replay"
+  ],
+  "spectrogram": "out/demo/15080917_standard.spectrogram.png"
+ }
+]

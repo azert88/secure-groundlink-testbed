@@ -42,9 +42,22 @@ so the lock check passes on Linux and Windows.
 
 ### Tested on Kali Linux
 
-Fresh clone, then `bash setup.sh` and `make demo`, Python 3.13.12 (the `.venv` interpreter; `setup.sh` picks
-python3.13 before the system default python3, 3.14.8). Demo done in 58 s: both clean recordings accepted,
-both attacked recordings quarantined. Output (`make demo`):
+Fresh clone, then `bash setup.sh` and `make demo`, Python 3.13 (`.venv` interpreter 3.13.12; `setup.sh` picks `python3.13`
+before the system default `python3`, 3.14.8). Demo done in 58 s: both clean recordings accepted, both attacked recordings
+quarantined. Unit tests: `.venv/bin/python -m pytest -q` gives **150 passed, 1 skipped** in about 30 s. The skipped test is
+`tests/test_replay_det.py:207` (`test_rows_reader_reproduces_table_counters`): it needs the dataset tables in `data/tables/`,
+which are rebuilt by the reproduction steps (section 5.2) and not stored in the repository.
+
+Evidence from that run, in [`docs/kali_test/`](docs/kali_test/):
+[`demo_kali.txt`](docs/kali_test/demo_kali.txt) (console output, below),
+[`demo_summary.json`](docs/kali_test/demo_summary.json) (verdicts and alert kinds per recording),
+detector reports [`14932721_clean.detect.md`](docs/kali_test/14932721_clean.detect.md),
+[`14932721_standard.detect.md`](docs/kali_test/14932721_standard.detect.md),
+[`15080917_clean.detect.md`](docs/kali_test/15080917_clean.detect.md),
+[`15080917_standard.detect.md`](docs/kali_test/15080917_standard.detect.md),
+and before / after spectrograms [`14932721_standard.spectrogram.png`](docs/kali_test/14932721_standard.spectrogram.png),
+[`15080917_standard.spectrogram.png`](docs/kali_test/15080917_standard.spectrogram.png).
+Same attacks, verdicts and alerts as on Windows (same seeds); only the timings differ.
 
 ```text
 .venv/bin/python scripts/demo.py
@@ -67,13 +80,6 @@ both attacked recordings quarantined. Output (`make demo`):
 
 Demo done in 58 s. Outputs: out/demo/ (detector reports *.detect.md, spectrograms *.spectrogram.png, demo_summary.json)
 ```
-
-Same verdicts, alerts and attacks as on Windows (same seeds); only the timings differ.
-
-Unit tests on the same machine: `.venv/bin/python -m pytest -q` gives **150 passed, 1 skipped** in 30 s. The skipped test,
-`tests/test_replay_det.py::test_rows_reader_reproduces_table_counters`, checks the frame reader against
-`data/tables/frames.csv`; that table is built from the downloaded SatNOGS data by `data/build_tables.py` (section 5.2) and
-is not in git, so a fresh clone skips it ("dataset tables not built"). It runs, and passes, after the full rebuild.
 
 ## 2. Demo (offline, a few minutes)
 
