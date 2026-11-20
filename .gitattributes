@@ -42,3 +42,9 @@ models/replay/threshold.json -text
 models/sequence/lock.json -text
 models/sequence/profile.json -text
 models/sequence/threshold.json -text
+docs/GATES_PHASE2.md -text
+docs/S1_PLAN.md -text
+docs/HOLDOUT_P2_SPEC.md -text
+data/holdout_p2/config_overlay.yaml -text
+models/gates_p2/lock.json -text
+models/holdout_p2_spec/lock.json -text
