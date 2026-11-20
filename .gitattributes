@@ -48,3 +48,5 @@ docs/HOLDOUT_P2_SPEC.md -text
 data/holdout_p2/config_overlay.yaml -text
 models/gates_p2/lock.json -text
 models/holdout_p2_spec/lock.json -text
+docs/GATES_PHASE2_S1_V21.md -text
+models/gates_p2_v21/lock.json -text
