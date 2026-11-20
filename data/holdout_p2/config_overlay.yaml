@@ -1,0 +1,18 @@
+# Overlay on config.yaml for the Phase 2 held-out download (docs/HOLDOUT_P2_SPEC.md). Only these keys change.
+selection:
+  window_end_utc: "2026-12-01T00:00:00Z"
+  window_days: 30
+  min_stations: 3                       # a 30-day window has fewer stations; the rule is reported, not tuned
+  min_stations_by_class:
+    narrow_1k2: 3
+download:
+  raw_dir: data/holdout_p2/raw
+  manifest: data/holdout_p2/manifest.csv
+  data_md: data/holdout_p2/HOLDOUT.md
+  report_dir: data/holdout_p2/download
+  satellites:
+    - {norad: 25397, class: fsk_9k6, target_obs: null, cap_per_station: 6}
+    - {norad: 39444, class: narrow_1k2, target_obs: null, cap_per_station: 12}
+split:
+  salt: "tsyp14-p2-holdout/"
+  holdout_fraction: 0.75

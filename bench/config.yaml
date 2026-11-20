@@ -1,0 +1,42 @@
+# Hardware bench configuration (Phase 2). Conducted links only: no antenna, ever.
+# Every script that opens a Pluto loads this file through bench/safety.py.
+
+rf:
+  center_hz: 433920000          # inside the Pluto default range (325-3800 MHz); 433.92 MHz ISM centre [local regulation UNVERIFIED]
+  sample_rate: 528000           # 11 x 48 kHz -> integer resampling to SatNOGS audio; above the ~521 kSps no-FIR limit [UNVERIFIED]
+  rf_bandwidth: 400000
+  # Frequency plan (baseband, Hz). Two Plutos at +-25 ppm each -> up to +-22 kHz relative offset at 434 MHz.
+  #   TX LO leakage lands within +-22 kHz of DC; pilot search = pilot_hz +- pilot_search_hz = 37..83 kHz;
+  #   audio band = if_hz .. if_hz + 24 kHz = 120..144 kHz, i.e. 98..166 kHz after the worst offset. No overlap.
+  if_hz: 120000                 # the USB audio band (0-24 kHz) sits at +120..+144 kHz
+  pilot_hz: 60000               # CW pilot for carrier-offset (CFO) estimation
+  pilot_search_hz: 23000        # pilot searched within +- this (> worst relative offset, < gap to leakage / audio)
+  pilot_amplitude: 0.10         # relative to full scale
+  audio_peak: 0.50              # 99.99th percentile of the analytic-signal magnitude (pilot adds 0.10)
+  pluto_full_scale: 16384       # pyadi-iio sample scale (2^14) [UNVERIFIED for the installed firmware]
+
+safety:
+  tx_gain_db: -40               # default Pluto TX hardware gain (0 dB = max, about +7 dBm out)
+  tx_gain_max_db: -10           # scripts refuse anything above this unless --i-have-30db-attenuation is given
+  min_fixed_attenuation_db: 30  # declared fixed attenuation in EVERY TX -> RX path (Pluto RX abs. max +2.5 dBm)
+  rx_abs_max_dbm: 2.5           # ADALM-Pluto RX absolute maximum input (ADI)
+  tx_max_dbm: 7.0               # ADALM-Pluto max TX output (ADI product page)
+  declared_attenuation_db: 0    # EDIT after wiring: total fixed attenuation actually installed (dB); 0 = not wired yet
+
+rx:
+  hardware_gain_db: 30          # manual gain; start low, raise until the pilot SNR is comfortable
+  buffer_samples: 528000        # 1 s per buffer (multiple of 11)
+  audio_lowpass_hz:             # station audio filter per NORAD, like a SatNOGS flowgraph's audio band; null = none.
+    39444: null                 # MUST be fixed from TRAIN observations (median f_drop per satellite) before any locked
+    25397: null                 # bench evaluation; never from a test / held-out pass (decision P2-03)
+
+devices:                        # fill with `python -m bench.probe`; serials go to docs/BENCH_LOG.md
+  satellite: "usb:"             # Pluto #1 on RPi #1
+  attacker: "usb:"              # Pluto #2 on the Kali VM (USB pass-through)
+  station: "usb:"               # Pluto #3 on RPi #2
+
+decoder:
+  gr_satellites: gr_satellites  # executable; Phase 1 pin is v5.9.0
+  names:                        # gr-satellites satellite names [UNVERIFIED: check `gr_satellites --list_satellites`]
+    39444: FUNcube-1
+    25397: TechSat-1B

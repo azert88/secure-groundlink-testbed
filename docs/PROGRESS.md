@@ -772,3 +772,19 @@ verdicts and alerts as the Windows run; only timings differ. Unit tests: 150 pas
 `tests/test_replay_det.py:207`, which needs `data/tables/` (git-ignored, rebuilt by the reproduction steps); all 151 pass on
 the development machine where the tables exist. Evidence: `docs/kali_test/` (demo_kali.txt, demo_summary.json, four
 `.detect.md`, two spectrogram PNGs; checked: not git-ignored, no usernames or absolute paths). README.md, "Tested on Kali Linux".
+
+
+## Phase 2 – start (2026-11-20)
+
+Branch `phase2`. Plan: `PLAN_PHASE2.md` (project docs). Bench code `bench/`, held-out rule `docs/HOLDOUT_P2_SPEC.md`, draft gates `docs/GATES_PHASE2.md`, session keys `trust/session_keys.py`. Nothing transmitted yet. All bench numbers below come from the **offline simulation** (`bench/sim_loopback.py`) on the two public samples; frames copied, not decoded.
+
+| # | Decision | Reason |
+| --- | --- | --- |
+| P2-01 | **Mode A bench = retransmit the real SatNOGS audio as USB** (analytic up-conversion, CW pilot), station = USB demodulation to 48 kHz audio + gr-satellites. Frequency plan at 528 kS/s: LO leakage within +-22 kHz, pilot +60 kHz (searched +-23 kHz), audio +120..+144 kHz. Centre 433.92 MHz | Real waveforms without writing an AO-40 FEC encoder; same decoder and folder format as SatNOGS, so detect/run.py runs unchanged. The first plan (pilot 25 kHz, IF 60 kHz) failed a unit test: at -11.2 kHz offset the audio entered the pilot search band |
+| P2-02 | **New weakness W16 (interference v2)**: the feature band is the steepest spectral drop of each recording. On the public TECHSAT 1B sample (accepted clean), white noise at in-band SNR 40 dB or 30 dB moves the band edge from 11.0 kHz to 20.9-23.8 kHz and the verdict becomes `flag` in 6 / 6 runs (3 seeds x 2 SNRs; 94 and 33 alert windows for seed 1). Measured with a local ffmpeg-based audio reader, not the pinned libsndfile; to be re-measured on the pinned environment | Found while checking bench false alarms; affects any station whose audio band is narrower than 24 kHz. Fix candidate: fixed feature band per station (S3), with a robustness gate |
+| P2-03 | **Bench station audio low-pass per satellite** (`rx.audio_lowpass_hz`), value to be fixed from TRAIN median f_drop before any locked bench evaluation. Simulation, TECHSAT 1B sample, CFO -11.2 kHz, in-band SNR 30 dB: 8 interference alert windows without low-pass, 0 with 11.5 kHz; FUNCUBE-1 sample: 0 without | A real SatNOGS flowgraph also limits its audio band; the bench must look like a station, not like a 24 kHz white-noise source (P2-02) |
+| P2-04 | **Bench passes come from the bench pool** of the November download (25 % by hash of the observation id), never from the Phase 1 dataset | Phase 1 passes are in the replay archive: the simulated retransmission of both samples was (correctly) quarantined as `replay_cross_pass` |
+| P2-05 | **Held-out S5 = all eligible November 2026 observations of both satellites**, Phase 1 rules unchanged, 75 % held-out / 25 % bench pool by SHA-256 of the observation id; rule written 2026-11-20, download 2026-12-01, single locked evaluation 2026-12-04 | W9 / W15: independent numbers; the rule is fixed before the data exist |
+| P2-06 | **Session keys (S8)**: per-pass key = HKDF-SHA256(master, salt = session id, info = label + NORAD); session id = 8-byte epoch + 8 random bytes; station refuses an epoch not above the last accepted one (persistent state, atomic write) | W14: key rotation per pass and rejection of a replayed whole pass, which the per-session counter alone cannot see |
+
+Simulation check (offline, both samples): CFO estimated within 0.1 Hz of the simulated value (7300 Hz + drift; -11200 Hz + drift); phase-insensitive coherence of the bench audio with the source 0.955, against 0.952 for a plain Vorbis re-encode of the source (the radio chain is transparent at in-band SNR 30 dB); detector runtime 7-11 s per pass.

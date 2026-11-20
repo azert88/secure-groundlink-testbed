@@ -1,0 +1,5 @@
+# Bench-only dependencies (Raspberry Pi OS 64-bit / Kali), on top of requirements.txt.
+# System packages first (apt): libiio-utils libiio-dev python3-libiio [names UNVERIFIED per distribution],
+# optional: gnuradio gr-satellites (Phase 1 decoder pin: gr-satellites v5.9.0).
+pyadi-iio            # pin the version after the first working install (pip freeze), record it in docs/PROGRESS.md
+pylibiio             # Python bindings of libiio if not provided by apt [UNVERIFIED package name on PyPI]

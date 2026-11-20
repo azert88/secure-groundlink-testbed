@@ -41,3 +41,12 @@ eval/out/interference/cache_*.pkl
 
 # local outputs of the demo and the CLIs
 /out/
+
+# ---------------------------------------------------------------- Phase 2
+data/holdout_p2/raw/
+data/holdout_p2/download/
+data/holdout_p2/config_merged.yaml
+data/holdout_p2/split.json
+keys/private/master.key
+*.sigmf-data
+bench/state/
