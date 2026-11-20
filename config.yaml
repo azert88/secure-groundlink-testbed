@@ -257,7 +257,7 @@ detectors:
   keys:
     private: keys/private/ed25519_private.pem   # gitignored, generated locally (trust/manifest.py keygen)
     public: keys/public/ed25519_public.pem      # pinned public key
-  replay_version: v1                     # S1 switch read by detect/run_p2.py: v1 (Phase J, locked) or v2; v1 until v2 passes its gate
+  replay_version: v1                     # S1 switch read by detect/run_p2.py: v1 (Phase J, locked), v2 or v2.1; v1 until a version passes its gate
   replay_v2:
     # S1 (detect/replay_det_v2.py, docs/S1_PLAN.md). v1 parameters + the keys below; natural rates: P2-10.
     store: models/replay_v2/frame_store.json   # archive with bytes (detect/frame_store_v2.py), same passes as v1's store
@@ -266,6 +266,12 @@ detectors:
     e1_same_counter: true                # E1: same counter, different bytes = twin (TRAIN natural 0 / 0)
     e2_near_dup_d: {39444: 10, 25397: null}  # E2: masked Hamming <= d bytes = twin; TECHSAT 1B off (36 / 54 at d = 1)
     robust_line: true                    # E3: lower-counter copy cluster set aside when testing the line
+  replay_v21:
+    # S1 v2.1 (P2-13, gate docs/GATES_PHASE2_S1_V21.md): replay v2 code, parameters in models/replay_v21/params.json
+    # (E2 d = 5, E2 only in runs of >= 2 frames sharing one shift); tau = v1 value.
+    store: models/replay_v2/frame_store.json
+    params: models/replay_v21/params.json
+    threshold: models/replay_v21/threshold.json
   replay:
     # Phase J (detect/replay_det.py). Rule-based evidence; only the alert threshold is calibrated.
     store: models/replay/hash_store.json # clean frames of the archive (sha256, frame UTC, pass start UTC)

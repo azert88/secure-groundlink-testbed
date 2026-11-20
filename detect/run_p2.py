@@ -1,8 +1,9 @@
 """Phase 2 entry point: detect/run.py with a replay version switch (S1). detect/run.py is locked and unchanged.
 
 The replay version comes from config detectors.replay_version (default v1) or --replay-version. v1 is exactly
-detect/run.run. v2 runs the same pipeline with detect/replay_det_v2.py in place of detect/replay_det.py (swapped in
-run.py's namespace for the duration of the call), its frame archive, parameters and threshold from detectors.replay_v2.
+detect/run.run. v2 and v2.1 run the same pipeline with detect/replay_det_v2.py in place of detect/replay_det.py
+(swapped in run.py's namespace for the duration of the call), with the frame archive, parameters and threshold of
+detectors.replay_v2 (v2) or detectors.replay_v21 (v2.1, parameter set P2-13).
 Evidence names are v1's, so the locked naming and fusion apply unchanged.
 
 Example:  python detect/run_p2.py --obs-dir data/raw/<obs_id> --replay-version v2 --out out.json
@@ -27,14 +28,16 @@ from detect import replay_det_v2 as V2  # noqa: E402
 from detect import run as R  # noqa: E402
 from detect.frame_store_v2 import FrameStore  # noqa: E402
 
-VERSIONS = ("v1", "v2")
+VERSIONS = ("v1", "v2", "v2.1")
+BLOCKS = {"v2": "replay_v2", "v2.1": "replay_v21"}   # config blocks of the detect/replay_det_v2.py versions
+LOCKS = {"v2": "models/replay_v2/lock.json", "v2.1": "models/replay_v21/lock.json"}
 
 
 @contextlib.contextmanager
-def replay_v2_in_run(cfg: dict):
-    """cfg for run.run with replay v2 swapped in; run.replay_det restored on exit."""
-    rc2 = cfg["detectors"]["replay_v2"]
-    p2 = V2.load_params(cfg)
+def replay_v2_in_run(cfg: dict, block: str = "replay_v2"):
+    """cfg for run.run with replay v2 (block replay_v2) or v2.1 (block replay_v21) swapped in; run.replay_det restored."""
+    rc2 = cfg["detectors"][block]
+    p2 = V2.load_params(cfg, block)
     store = FrameStore.load(Path(rc2["store"])) if Path(rc2["store"]).exists() else None
     shim = types.SimpleNamespace(
         detect=lambda frames, norad, qc, _p, _store, start, obs: V2.detect(frames, norad, qc, p2, store, start, obs),
@@ -56,7 +59,7 @@ def run(obs_dir: Path, cfg: dict, version: str | None = None, **kw) -> dict:
     if version == "v1":
         out = R.run(obs_dir, cfg, **kw)
     else:
-        with replay_v2_in_run(cfg) as c2:
+        with replay_v2_in_run(cfg, BLOCKS[version]) as c2:
             out = R.run(obs_dir, c2, **kw)
     out["replay_version"] = version
     return out
@@ -66,8 +69,8 @@ def verify(version: str) -> tuple[bool, str]:
     ok, msg = R.verify_models()
     if not ok or version == "v1":
         return ok, msg
-    lock = Path("models/replay_v2/lock.json")
-    return R.verify_models(lock) if lock.exists() else (False, f"{lock.as_posix()} missing: v2 is not locked")
+    lock = Path(LOCKS[version])
+    return R.verify_models(lock) if lock.exists() else (False, f"{lock.as_posix()} missing: {version} is not locked")
 
 
 def main(argv: list[str] | None = None) -> int:

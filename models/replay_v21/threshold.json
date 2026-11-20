@@ -1,0 +1,5 @@
+{
+ "rule": "alert if score >= tau",
+ "source": "models/replay/threshold.json (v1 tau, unchanged for v2.1, P2-13)",
+ "tau": 0.35
+}

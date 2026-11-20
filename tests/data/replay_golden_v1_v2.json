@@ -1,0 +1,872 @@
+{
+ "14932721/clean": {
+  "v1": [
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-01-11_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-01-56_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-16_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-31_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-36_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-41_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-46_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-51_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-56_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-01_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-06_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-11_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-16_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-21_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-26_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-36_g0",
+    "reason": "",
+    "score": 0.0
+   }
+  ],
+  "v2": [
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-01-11_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-01-56_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-16_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-31_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-36_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-41_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-46_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-51_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-56_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-01_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-06_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-11_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-16_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-21_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-26_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-36_g0",
+    "reason": "",
+    "score": 0.0
+   }
+  ]
+ },
+ "14932721/near": {
+  "v1": [
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-01-11_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-01-56_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-16_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-31_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-36_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-41_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-46_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-51_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-56_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-01_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-06_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-11_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-16_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-21_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-26_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-36_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "nc_data_14932721_2026-09-04T06-02-16_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "nc_data_14932721_2026-09-04T06-02-31_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "nc_data_14932721_2026-09-04T06-02-36_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "nc_data_14932721_2026-09-04T06-02-41_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "nc_data_14932721_2026-09-04T06-02-46_g0",
+    "reason": "",
+    "score": 0.0
+   }
+  ],
+  "v2": [
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-01-11_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-01-56_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-16_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-31_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-36_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-41_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-46_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-51_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-02-56_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-01_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-06_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-11_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-16_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-21_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-26_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "data_14932721_2026-09-04T06-03-36_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [
+     "intra_run",
+     "regress_run"
+    ],
+    "filename": "nc_data_14932721_2026-09-04T06-02-16_g0",
+    "reason": "same counter twin of frame data_14932721_2026-09-04T06-02-16_g0 of this pass (+200 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 23153423 <= highest counter so far 23153437 and -200 s off the counter-time line; 5 frame(s) share this offset",
+    "score": 0.85
+   },
+   {
+    "evidence": [
+     "intra_run",
+     "regress_run"
+    ],
+    "filename": "nc_data_14932721_2026-09-04T06-02-31_g0",
+    "reason": "same counter twin of frame data_14932721_2026-09-04T06-02-31_g0 of this pass (+200 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 23153426 <= highest counter so far 23153437 and -200 s off the counter-time line; 5 frame(s) share this offset",
+    "score": 0.85
+   },
+   {
+    "evidence": [
+     "intra_run",
+     "regress_run"
+    ],
+    "filename": "nc_data_14932721_2026-09-04T06-02-36_g0",
+    "reason": "same counter twin of frame data_14932721_2026-09-04T06-02-36_g0 of this pass (+200 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 23153427 <= highest counter so far 23153437 and -200 s off the counter-time line; 5 frame(s) share this offset",
+    "score": 0.85
+   },
+   {
+    "evidence": [
+     "intra_run",
+     "regress_run"
+    ],
+    "filename": "nc_data_14932721_2026-09-04T06-02-41_g0",
+    "reason": "same counter twin of frame data_14932721_2026-09-04T06-02-41_g0 of this pass (+200 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 23153428 <= highest counter so far 23153437 and -200 s off the counter-time line; 5 frame(s) share this offset",
+    "score": 0.85
+   },
+   {
+    "evidence": [
+     "intra_run",
+     "regress_run"
+    ],
+    "filename": "nc_data_14932721_2026-09-04T06-02-46_g0",
+    "reason": "same counter twin of frame data_14932721_2026-09-04T06-02-46_g0 of this pass (+200 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 23153429 <= highest counter so far 23153437 and -200 s off the counter-time line; 5 frame(s) share this offset",
+    "score": 0.85
+   }
+  ]
+ },
+ "15080917/clean": {
+  "v1": [
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-55-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-55-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-56-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-56-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [],
+    "filename": "data_15080917_2026-09-28T17-58-29",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-58-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-59-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-59-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T18-00-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T18-00-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   }
+  ],
+  "v2": [
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-55-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-55-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-56-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-56-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [],
+    "filename": "data_15080917_2026-09-28T17-58-29",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-58-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-59-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-59-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T18-00-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T18-00-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   }
+  ]
+ },
+ "15080917/near": {
+  "v1": [
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-55-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-55-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-56-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-56-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [],
+    "filename": "data_15080917_2026-09-28T17-58-29",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-58-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-59-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [],
+    "filename": "nc_data_15080917_2026-09-28T17-56-28_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-59-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [],
+    "filename": "nc_data_15080917_2026-09-28T17-56-58_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T18-00-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T18-00-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [],
+    "filename": "nc_data_15080917_2026-09-28T17-58-29",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "nc_data_15080917_2026-09-28T17-58-58_g0",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [],
+    "filename": "nc_data_15080917_2026-09-28T17-59-28_g0",
+    "reason": "",
+    "score": 0.0
+   }
+  ],
+  "v2": [
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-55-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-55-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-56-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-56-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [],
+    "filename": "data_15080917_2026-09-28T17-58-29",
+    "reason": "",
+    "score": 0.0
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-58-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-59-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "intra_run",
+     "regress_run"
+    ],
+    "filename": "nc_data_15080917_2026-09-28T17-56-28_g0",
+    "reason": "same counter twin of frame data_15080917_2026-09-28T17-56-28_g0 of this pass (+200 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 393494246 <= highest counter so far 393494426 and -200 s off the counter-time line; 5 frame(s) share this offset",
+    "score": 0.85
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T17-59-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "intra_run",
+     "regress_run"
+    ],
+    "filename": "nc_data_15080917_2026-09-28T17-56-58_g0",
+    "reason": "same counter twin of frame data_15080917_2026-09-28T17-56-58_g0 of this pass (+200 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 393494276 <= highest counter so far 393494456 and -200 s off the counter-time line; 5 frame(s) share this offset",
+    "score": 0.85
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T18-00-28_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "rewrite"
+    ],
+    "filename": "data_15080917_2026-09-28T18-00-58_g0",
+    "reason": "1 byte-identical rewrite(s) merged (1 s later): probable station rewrite",
+    "score": 0.15
+   },
+   {
+    "evidence": [
+     "intra_run",
+     "regress_run"
+    ],
+    "filename": "nc_data_15080917_2026-09-28T17-58-29",
+    "reason": "same counter twin of frame data_15080917_2026-09-28T17-58-29 of this pass (+200 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 393494366 <= highest counter so far 393494516 and -201 s off the counter-time line; 5 frame(s) share this offset",
+    "score": 0.85
+   },
+   {
+    "evidence": [
+     "intra_run",
+     "regress_run"
+    ],
+    "filename": "nc_data_15080917_2026-09-28T17-58-58_g0",
+    "reason": "same counter twin of frame data_15080917_2026-09-28T17-58-58_g0 of this pass (+200 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 393494396 <= highest counter so far 393494516 and -200 s off the counter-time line; 5 frame(s) share this offset",
+    "score": 0.85
+   },
+   {
+    "evidence": [
+     "intra_run",
+     "regress_run"
+    ],
+    "filename": "nc_data_15080917_2026-09-28T17-59-28_g0",
+    "reason": "same counter twin of frame data_15080917_2026-09-28T17-59-28_g0 of this pass (+200 s; original = the copy on the counter-time line); 5 frame(s) share this shift; counter 393494426 <= highest counter so far 393494516 and -200 s off the counter-time line; 5 frame(s) share this offset",
+    "score": 0.85
+   }
+  ]
+ }
+}

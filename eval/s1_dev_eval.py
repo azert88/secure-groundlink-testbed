@@ -22,7 +22,11 @@ Stages (1 worker, resumable: one JSON per recording in out/s1_dev/rec/<obs_id>/<
               (c) clean + benign recordings not accepted (frozen fusion with the Phase N audio inputs, v2 replay)
             pooled over folds + worst station; stress curve (named rate per mode, v1 and v2). -> report.{json,md}
 
-Usage:  python eval/s1_dev_eval.py prepare
+Versions (--version): v2 (P2-11, out/s1_dev/: per-fold E2 distance, per-fold tau) or v2.1 (P2-13, gate
+docs/GATES_PHASE2_S1_V21.md, out/s1_dev_v21/: parameters models/replay_v21/params.json, E2 d = 5 in every fold, E2
+only in runs of >= 2 frames, tau = v1 value). Gate (b) is also reported for v1 on the same frames (Phase J caches).
+
+Usage:  python eval/s1_dev_eval.py [--version v2.1] prepare
         python eval/s1_dev_eval.py score [--obs ID ...] [--variants V ...] [--modes M ...] [--limit N]
         python eval/s1_dev_eval.py report [--skip-c]
 """
@@ -59,6 +63,9 @@ from eval import metrics as M  # noqa: E402
 from eval import s1_natural_rates as NR  # noqa: E402
 
 OUT = ROOT / "out/s1_dev"
+OUTS = {"v2": ROOT / "out/s1_dev", "v2.1": ROOT / "out/s1_dev_v21"}
+BLOCKS = {"v2": "replay_v2", "v2.1": "replay_v21"}
+VERSION = "v2"
 MODES = ("nc1", "nc2", "nc4", "nc8", "nc16", "nc1_ctr")
 SPLITS = ("train", "calib")
 KEEP = ("filename", "t_utc", "t_rel_s", "score", "evidence", "reason", "trajectory", "phase_dev_s", "dev_s")
@@ -84,6 +91,13 @@ def dev_obs() -> dict[int, dict]:
                 out[int(o)] = {"norad": int(norad), "split": split, "station": int(fl["station_id"]),
                                "timing_reliable": bool(fl["timing_reliable"])}
     return out
+
+
+def version_params(cfg: dict) -> dict:
+    """Detector parameters of the selected version (v2: v1 params + replay_v2 keys; v2.1: its params file)."""
+    if VERSION == "v2":
+        return {**v1.load_params(cfg), **{k: cfg["detectors"]["replay_v2"][k] for k in v2.V2_KEYS}}
+    return v2.load_params(cfg, BLOCKS[VERSION])
 
 
 def d_key(norad: int, d: int | None) -> str:
@@ -127,7 +141,10 @@ def prepare(cfg: dict) -> dict:
     for s in sorted({v["station"] for v in dev.values()}):
         d = {}
         for norad in sorted({v["norad"] for v in dev.values()}):
-            cfg_d = v2.e2_distance(norad, rc2)
+            cfg_d = v2.e2_distance(norad, rc2 if VERSION == "v2" else version_params(cfg))
+            if VERSION != "v2":
+                d[str(norad)] = cfg_d                         # v2.1: fixed d (P2-13), not re-measured per fold
+                continue
             if cfg_d is None:
                 d[str(norad)] = None                          # E2 off for this satellite (P2-10)
                 continue
@@ -137,7 +154,7 @@ def prepare(cfg: dict) -> dict:
         folds[str(s)] = {"obs": sorted(o for o, v in dev.items() if v["station"] == s), "d": d}
     dset = {str(n): sorted({f["d"][str(n)] for f in folds.values()}, key=lambda x: -1 if x is None else x)
             for n in {v["norad"] for v in dev.values()}}
-    out = {"created_utc": datetime.now(timezone.utc).strftime(FMT), "funcube_norad": fc,
+    out = {"created_utc": datetime.now(timezone.utc).strftime(FMT), "version": VERSION, "funcube_norad": fc,
            "store_frames": st.n_frames(), "folds": folds, "distances": dset,
            "runtime_s": round(time.perf_counter() - t, 1)}
     OUT.mkdir(parents=True, exist_ok=True)
@@ -203,7 +220,7 @@ def score(cfg: dict, only_obs: list[int] | None, only_var: list[str] | None, mod
     qc = qc_view(cfg)
     folds = json.loads((OUT / "folds.json").read_text(encoding="utf-8"))
     p1 = v1.load_params(cfg)
-    base2 = {**p1, **{k: cfg["detectors"]["replay_v2"][k] for k in v2.V2_KEYS}}
+    base2 = version_params(cfg)
     hs = HashStore.load(ROOT / cfg["detectors"]["replay"]["store"])
     fs = FrameStore.load(ROOT / cfg["detectors"]["replay_v2"]["store"])
     prof = json.loads((ROOT / cfg["detectors"]["sequence"]["profile"]).read_text(encoding="utf-8"))
@@ -290,6 +307,7 @@ def frame_table(recs: list[dict], cfg: dict) -> pd.DataFrame:
             for x in rows or []:
                 lb = lab.loc[x["filename"]] if x["filename"] in lab.index else None
                 parts.append({"obs_id": r["obs_id"], "variant_id": r["variant_id"], "kind": kind(r["variant_id"]),
+                              "filename": x["filename"],
                               "split": r["split"], "station": r["station"], "norad": r["norad"], "dkey": key,
                               "score": x["score"], "is_attack": int(lb["is_attack"]) if lb is not None else 0,
                               "pos": lb is not None and lb["is_attack"] == 1 and lb["attack_type"] == "replay"})
@@ -308,6 +326,15 @@ def fold_tau(ft: pd.DataFrame, station: int, dkeys: dict, alpha: float) -> float
             taus.append(M.threshold_for_fpr(neg["score"].to_numpy(float), alpha, neg["norad"].to_numpy(),
                                             extra_candidates=extra))
     return max(taus) if taus else float("inf")
+
+
+def v1_cache(cfg: dict, split: str, oid: int) -> dict:
+    """Phase J per-frame v1 scores {(variant, filename): score} (eval/out/replay/<split>/<obs>.csv)."""
+    p = ROOT / cfg["detectors"]["eval_dir"] / "replay" / split / f"{oid}.csv"
+    if not p.exists():
+        return {}
+    df = pd.read_csv(p, usecols=["variant_id", "filename", "score"])
+    return {(r.variant_id, r.filename): float(r.score) for r in df.itertuples()}
 
 
 def named_replay(rep_rows, seq_rows, tau_r, tau_s, spc, fcfg, replayed) -> bool:
@@ -333,13 +360,21 @@ def report(cfg: dict, skip_c: bool) -> dict:
     taus, dk = {}, {}
     for s, f in folds["folds"].items():
         dk[s] = {n: d_key(int(n), d) for n, d in f["d"].items()}
-        taus[s] = fold_tau(ft, int(s), dk[s], alpha) if not ft.empty else float("inf")
+        if VERSION == "v2":
+            taus[s] = fold_tau(ft, int(s), dk[s], alpha) if not ft.empty else float("inf")
+        else:                                                 # v2.1: tau unchanged, v1 value (P2-13)
+            taus[s] = json.loads((ROOT / cfg["detectors"][BLOCKS[VERSION]]["threshold"]).read_text(encoding="utf-8"))["tau"]
     # (b) frame false alarms on clean + benign of the held-out station
-    b_rows = []
+    b_rows, v1c = [], {}
     for s in folds["folds"]:
         h = ft[(ft["station"] == int(s)) & ft["kind"].isin(["clean", "benign"]) & (ft["is_attack"] == 0)]
         h = h[h["dkey"] == h["norad"].astype(str).map(dk[s])]
-        b_rows += [{"station": int(s), "alert": sc >= taus[s]} for sc in h["score"]]
+        for x in h.itertuples():
+            if (x.split, x.obs_id) not in v1c:
+                v1c[(x.split, x.obs_id)] = v1_cache(cfg, x.split, x.obs_id)
+            s1 = v1c[(x.split, x.obs_id)].get((x.variant_id, x.filename))
+            b_rows.append({"station": int(s), "alert": x.score >= taus[s],
+                           "v1_alert": None if s1 is None else s1 >= tau_v1})
     b = pd.DataFrame(b_rows)
     # (a) + stress: near-copy recordings named replay
     a_rows = []
@@ -390,11 +425,16 @@ def report(cfg: dict, skip_c: bool) -> dict:
     gate = {"a_near_copy_named_replay": pooled_worst(a1, "v2", "min"),
             "b_replay_frame_fa_clean_benign": pooled_worst(b, "alert"),
             "c_not_accepted_clean_benign": pooled_worst(c, "v2_not_accepted")}
-    th = {"a": (">=", 0.80), "b": ("<=", 0.001), "c": ("<=", 0.136)}
+    b_v1 = pooled_worst(b, "v1_alert")
+    if VERSION == "v2":
+        th = {"a": (">=", 0.80), "b": ("<=", 0.001), "c": ("<=", 0.136)}         # docs/GATES_PHASE2.md (signed)
+    else:                                                                     # docs/GATES_PHASE2_S1_V21.md (signed)
+        th = {"a": (">=", 0.80), "b": ("<=", b_v1["pooled"] if b_v1["pooled"] is not None else 0.0), "c": ("<=", 0.136)}
     for k, (op, v) in th.items():
         g = gate[next(x for x in gate if x.startswith(k + "_"))]
         g["threshold"] = f"{op} {v}"
         g["pass"] = None if g["pooled"] is None else (g["pooled"] >= v if op == ">=" else g["pooled"] <= v)
+    gate["b_replay_frame_fa_clean_benign"]["v1_same_frames"] = b_v1
     stress = {}
     if not a.empty:
         for m, g in a.groupby("mode"):
@@ -404,7 +444,7 @@ def report(cfg: dict, skip_c: bool) -> dict:
     ref = {"v1_not_accepted_clean_benign": _rate(c["v1_not_accepted"]) if not c.empty else None,
            "v1_near_copy_named_nc1": _rate(a1["v1"]) if not a1.empty else None}
     n_total = sum(1 for _ in (OUT / "rec").glob("*/*.json"))
-    rep = {"created_utc": datetime.now(timezone.utc).strftime(FMT), "recordings_scored": n_total,
+    rep = {"created_utc": datetime.now(timezone.utc).strftime(FMT), "version": VERSION, "recordings_scored": n_total,
            "fold_taus": taus, "fold_d": {s: f["d"] for s, f in folds["folds"].items()}, "gate": gate,
            "stress": stress, "reference_v1": ref, "skip_c": skip_c,
            "note": "pooled over LOSO folds (held-out station predictions); worst station reported next to it"}
@@ -414,11 +454,14 @@ def report(cfg: dict, skip_c: bool) -> dict:
 
 
 def markdown(r: dict) -> str:
-    L = ["# S1 replay v2: development evaluation (LOSO, train + calib)", "",
+    L = [f"# S1 replay {r.get('version', 'v2')}: development evaluation (LOSO, train + calib)", "",
          f"{r['recordings_scored']} recordings scored. Gate pooled over folds; worst station next to it.", "",
          "| gate | pooled | n | threshold | pass | worst station |", "|---|---|---|---|---|---|"]
     for k, g in r["gate"].items():
         L.append(f"| {k} | {g['pooled']} | {g['n']} | {g.get('threshold')} | {g.get('pass')} | {g['worst_station']} |")
+    bv = r["gate"]["b_replay_frame_fa_clean_benign"].get("v1_same_frames")
+    if bv:
+        L.append(f"| b, v1 on the same frames | {bv['pooled']} | {bv['n']} | reference | | {bv['worst_station']} |")
     L += ["", "| mode | n | v1 named | v2 named |", "|---|---|---|---|"]
     for m, s in r["stress"].items():
         L.append(f"| {m} | {s['n']} | {s['v1']} | {s['v2']} |")
@@ -429,6 +472,7 @@ def markdown(r: dict) -> str:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="S1 replay v2 development evaluation (LOSO, train + calib)")
     ap.add_argument("stage", choices=["prepare", "score", "report"])
+    ap.add_argument("--version", choices=list(OUTS), default="v2")
     ap.add_argument("--config", default="config.yaml")
     ap.add_argument("--obs", type=int, nargs="*", default=None)
     ap.add_argument("--variants", nargs="*", default=None)
@@ -437,6 +481,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--skip-c", action="store_true", help="skip gate (c) (loads the Phase N audio inputs)")
     a = ap.parse_args(argv)
     cfg = load_cfg(a.config)
+    global OUT, VERSION
+    VERSION, OUT = a.version, OUTS[a.version]
     if a.stage == "prepare":
         r = prepare(cfg)
         print(json.dumps({k: r[k] for k in ("store_frames", "distances", "runtime_s")} |

@@ -6,7 +6,9 @@ copy of the other):
   E1     same decoded counter, different bytes: a near-copy that kept its counter (TRAIN natural rate 0 / 0, P2-10)
   E2     same length and Hamming distance <= d bytes with the counter field, FUNCUBE-1 byte 0 and the TECHSAT 1B
          marker masked: a near-copy, also with a rewritten counter (d per satellite: FUNCUBE-1 10, TECHSAT 1B off,
-         P2-10)
+         P2-10). v2.1 (P2-13, params models/replay_v21/params.json): d = 5 and e2_min_run = 2, i.e. an E2-only twin
+         counts only when >= 2 frames share one time shift (within shift_group_tol_s); E1 and exact twins unaffected.
+         The run filter uses the whole stream, so in the causal trajectory an E2 twin may appear one frame early.
   E3     robust counter-time line: line weights use twin groups instead of byte-identical groups, and a cluster of
          >= 2 frames below the line whose counters re-use this pass's counter range is set aside as copies when
          deciding whether the line is usable (decision 102). A counter reset (counters below the range) is not.
@@ -102,6 +104,12 @@ def twin_pairs(frames: list[dict], norad: int | None, qc: dict, p: dict) -> dict
                  dist.get((i, j)), d_max, e1)
         if h is not None:
             out[(i, j)] = h
+    n_run = _min_run(p)
+    if n_run > 1:                                         # v2.1: E2-only twins count only in a common-shift run
+        near = [((i, j), j, (frames[j]["t_utc"] - frames[i]["t_utc"]).total_seconds())
+                for (i, j), h in out.items() if h.startswith("near")]
+        keep = _keep_runs(near, p["shift_group_tol_s"], n_run)
+        out = {k: h for k, h in out.items() if not h.startswith("near") or k in keep}
     return out
 
 
@@ -152,7 +160,26 @@ def archive_hits(frames: list[dict], norad: int | None, qc: dict, p: dict, store
             if h is not None:
                 hits.append((ent[k]["obs"], ent[k]["ps"], ent[k]["fu"], h))
         out.append(hits)
+    n_run = _min_run(p)
+    if n_run > 1:                                         # v2.1: E2-only archive twins count only in a common-shift run
+        near = [((i, k), i, (frames[i]["t_utc"] - h[2]).total_seconds())
+                for i, hh in enumerate(out) for k, h in enumerate(hh) if h[3].startswith("near")]
+        keep = _keep_runs(near, p["shift_group_tol_s"], n_run)
+        out = [[h for k, h in enumerate(hh) if not h[3].startswith("near") or (i, k) in keep] for i, hh in enumerate(out)]
     return out
+
+
+def _min_run(p: dict) -> int:
+    return int(p.get("e2_min_run") or 1)
+
+
+def _keep_runs(items: list[tuple], tol: float, n_run: int) -> set:
+    """items (key, frame index, shift s): keys whose shift cluster (chained within tol) holds >= n_run distinct frames."""
+    keep = set()
+    for g in _clusters([(k, it[2]) for k, it in enumerate(items)], tol):
+        if len({items[k][1] for k in g}) >= n_run:
+            keep |= {items[k][0] for k in g}
+    return keep
 
 
 def _groups(k: int, twins: dict) -> list[list[int]]:
@@ -371,9 +398,9 @@ def detect(frames: list[dict], norad: int | None, qc: dict, p: dict, store=None,
 events = v1.events
 
 
-def load_params(cfg: dict) -> dict:
-    """v2 parameters: models/replay_v2/params.json if present, else v1's parameters + the replay_v2 config keys."""
-    rc2 = cfg["detectors"]["replay_v2"]
+def load_params(cfg: dict, block: str = "replay_v2") -> dict:
+    """v2 / v2.1 parameters: the block's params file if present, else v1's parameters + the block's config keys."""
+    rc2 = cfg["detectors"][block]
     pp = Path(rc2["params"])
     if pp.exists():
         return json.loads(pp.read_text(encoding="utf-8"))["params"]
