@@ -1,0 +1,9 @@
+{
+ "created_utc": "2026-11-20T16:14:42Z",
+ "files": {
+  "data/holdout_p2/config_overlay.yaml": "fe1dd0909267928c6db359c3bbad84e554bfe22cf93fb4cc0b7c2c17d6472192",
+  "docs/HOLDOUT_P2_SPEC.md": "cab4eaecb42aa50c999f710c95aa69073c2023f6e6092520dff12afc479765f9"
+ },
+ "label": "test lock: holdout_p2_spec",
+ "signature": "K0ZlcG/uOQ1zCLvZs5cR5c592LF4XPA4gYytYWmL+FGHunbBAfNKnJXc1Gif9N0djd28ATww1o0P82dfmCW6BQ=="
+}
