@@ -11,7 +11,7 @@ with a plain-language reason and a calibrated confidence. CPU only.
 - Windows (PowerShell): `py -m venv .venv; .venv\Scripts\python -m pip install -r requirements.txt; .venv\Scripts\python scripts\demo.py`
 - Details: section 1 (install) and section 2 (what the demo shows).
 
-Results: [`eval/results.md`](eval/results.md) (one table, every challenge metric, with confidence intervals).
+Results: [`eval/results.md`](eval/results.md) (one table, every challenge metric, with confidence intervals). Phase 2 results (hand-maintained, next to v1/v2): [`eval/results_p2.md`](eval/results_p2.md).
 Development log and every decision: [`docs/PROGRESS.md`](docs/PROGRESS.md). Dataset datasheet: [`data/DATA.md`](data/DATA.md).
 
 ## 1. Install

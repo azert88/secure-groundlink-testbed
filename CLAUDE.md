@@ -14,6 +14,7 @@ TSYP14 Track 1. Phase 1 (done, locked): detectors for replay, sequence anomalies
 6. **Honesty.** Never invent a number, reference, result or hardware capability. Mark uncertain items `[UNVERIFIED]`. Report failures and negative results.
 7. **Dependencies.** `requirements.txt` is pinned and must stay installable on Python 3.11–3.14. Bench-only dependencies go in `requirements-bench.txt`.
 8. **Secrets.** Never commit private keys, HMAC keys or `.env`. Only `keys/public/` is tracked.
+9. **config.yaml is frozen.** `config.yaml` is in the `replay_v21` lock (and Phase 1 locks): never edit it. New versions read their parameters from new files under `models/<version>/` or a new `config_p2.yaml`. Select versions with command-line options (e.g. `--replay-version v2.1`).
 
 ## Way of working
 - Plan first, then code, then run only the unit tests you touched (`pytest tests/<file> -q`).
