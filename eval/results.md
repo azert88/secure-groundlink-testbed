@@ -28,3 +28,7 @@ Assembled by `eval/results.py` from the reports in `eval/out/` (TEST split unles
 | Security: Ed25519 signed manifests / model locks | sign 50 µs, verify 99 µs, 64 B signature |
 
 Near-copy diagnosis (Phase O, decision 102, nothing retuned): without hash matches the copies enter the counter-time line fit; when they are a large share of the pass the fit fails, which disables the counter-regression evidence. Planned fix: a robust line (dominant line + lower-counter off-line cluster = copies), as a new locked version.
+
+## Phase 2 (development, not independent)
+
+S1 replay v2.1 (decisions P2-13 to P2-15, gate docs/GATES_PHASE2_S1_V21.md, LOSO train + calib, designed after seeing dev): near-copy named replay 1.00 (80 / 80, FUNCUBE-1 only; v1 0.10); replay frame false alarms on clean + benign 0.26 % = v1 on the same frames (worst station 5155 6.25 % in both); recordings not accepted 13.58 % (33 / 243) = v1. Replay v2 failed its gate (P2-12). Independent test: Phase 2 held-out set, 2026-12-04.
