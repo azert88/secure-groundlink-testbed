@@ -50,3 +50,12 @@ models/gates_p2/lock.json -text
 models/holdout_p2_spec/lock.json -text
 docs/GATES_PHASE2_S1_V21.md -text
 models/gates_p2_v21/lock.json -text
+detect/__init__.py -text
+detect/frame_store_v2.py -text
+detect/replay_det_v2.py -text
+detect/run_p2.py -text
+config.yaml -text
+models/replay_v2/frame_store.json -text
+models/replay_v21/params.json -text
+models/replay_v21/threshold.json -text
+models/replay_v21/lock.json -text
