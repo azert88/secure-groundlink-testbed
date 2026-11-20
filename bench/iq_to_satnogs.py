@@ -89,10 +89,21 @@ def frames_from_dir(src: Path, src_start: datetime, start: datetime, delay_s: fl
     return out
 
 
+OGG_BLOCK = 65536
+
+
+def write_ogg(path: Path, audio: np.ndarray, sr: int) -> None:
+    """Write Ogg Vorbis in blocks: one sf.write of ~20 M samples overflows the stack in libsndfile 1.2.2 on Windows."""
+    channels = 1 if audio.ndim == 1 else audio.shape[1]
+    with sf.SoundFile(str(path), "w", sr, channels, format="OGG", subtype="VORBIS") as f:
+        for i in range(0, len(audio), OGG_BLOCK):
+            f.write(audio[i:i + OGG_BLOCK])
+
+
 def write_folder(out: Path, audio: np.ndarray, features: list[dict], frames: list[dict], obs_id: int, norad: int,
                  start: datetime, bench_info: dict) -> None:
     out.mkdir(parents=True, exist_ok=True)
-    sf.write(str(out / "audio.ogg"), audio, dsp.AUDIO_SR, format="OGG", subtype="VORBIS")
+    write_ogg(out / "audio.ogg", audio, dsp.AUDIO_SR)
     dd = out / "demoddata"
     if dd.exists():
         shutil.rmtree(dd)
@@ -135,7 +146,7 @@ def main() -> None:
     audio = station_lowpass(audio, (cfg["rx"].get("audio_lowpass_hz") or {}).get(args.norad))
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
-    sf.write(str(out / "audio.ogg"), audio, dsp.AUDIO_SR, format="OGG", subtype="VORBIS")
+    write_ogg(out / "audio.ogg", audio, dsp.AUDIO_SR)  # needed here: gr-satellites decodes this file before write_folder
     if args.frames_from:
         src_start = datetime.fromisoformat(args.frames_src_start.replace("Z", "+00:00"))
         frames, decoder = frames_from_dir(Path(args.frames_from), src_start, start), "copied (simulation)"

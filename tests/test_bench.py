@@ -10,7 +10,7 @@ import numpy as np
 import pytest
 
 from bench import dsp, iqfile, kiss
-from bench.iq_to_satnogs import demodulate, frame_name, station_lowpass, write_folder
+from bench.iq_to_satnogs import demodulate, frame_name, station_lowpass, write_folder, write_ogg
 from bench.prepare_tx import prepare
 from bench.safety import SafetyError, check_tx, load_config, worst_case_rx_dbm
 
@@ -134,3 +134,14 @@ def test_frame_name_counts_per_second():
     used = {}
     t = datetime(2026, 11, 20, 12, 0, 5, tzinfo=timezone.utc)
     assert [frame_name(1, t, used) for _ in range(2)] == ["data_1_2026-11-20T12-00-05_g0", "data_1_2026-11-20T12-00-05_g1"]
+
+
+def test_write_ogg_blockwise_round_trip(tmp_path: Path):
+    import soundfile as sf
+    sr = 48000
+    x = (0.1 * np.random.default_rng(0).standard_normal(30 * sr)).astype(np.float32)
+    write_ogg(tmp_path / "a.ogg", x, sr)
+    info = sf.info(str(tmp_path / "a.ogg"))
+    y, sr2 = sf.read(str(tmp_path / "a.ogg"), dtype="float32")
+    assert sr2 == sr and info.samplerate == sr and info.channels == 1
+    assert len(y) == len(x)
