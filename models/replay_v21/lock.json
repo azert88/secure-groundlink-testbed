@@ -1,0 +1,32 @@
+{
+ "created_utc": "2026-11-20T16:50:39Z",
+ "files": {
+  "config.yaml": "70778f61111534040c0f4dc907764b4620505209e01ef43801b8fb182eca516a",
+  "detect/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "detect/audio_front.py": "80cdcfc44d0a7c096e7ec553e6b41fcba611e68d14cc02037a2bcbb0ac80758d",
+  "detect/canonical.py": "96523031243787dded35e5f214e4cd6f4f154f4b5d4a447621592aea8c2a9667",
+  "detect/counters.py": "5a569f16b24817e38c3f9a0b6b7aae73f4300d0b4787af6f6c7c327e1f00e1dd",
+  "detect/features.py": "3fa455a14c7edffa72a9e4b0bf7405e25a301367c53241e612d7bc3b321a6e1a",
+  "detect/frame_store_v2.py": "2479f8ef103311264f204626dd2961751ed605c5282c52f3eac8eec61069b11b",
+  "detect/frames_io.py": "dbb4785535dbdfe7b0c27254be6dbc3c696ad129e9817ea299bdef0b18c95da3",
+  "detect/fusion.py": "d33edec8487028ee7ae57afeb295923acc0c406eae3c7b853fa1bc2421259206",
+  "detect/hash_store.py": "3eeb1474ca6cf91c47c58cfface3cafcdeed1a20c024f8cc56042470d6ae45b0",
+  "detect/interference_det.py": "95d2fa3f02ede9f35c960490eee1bbae75b3a16853133fd6cf12dfb85ce61b2f",
+  "detect/line_screen.py": "bb53feda1f3a83a8362bff6f8fd0741a068092c2ab7f03bbe719e6bd1ed73d03",
+  "detect/naming.py": "f64f9ccf57bcb3bb3347806720ecef4eb3c8259941dd56ef39fa2f5c32b5e74e",
+  "detect/replay_det.py": "ba6d220b003b31456881f637d041aa9617234e024fb755d560734cbcb3f9fdf9",
+  "detect/replay_det_v2.py": "24aa55c5a46bdbdc62a6183eafd05f1df4d42fe50370411980154ab723501e64",
+  "detect/run.py": "f85e95a8bfeeedd4b2eada280bc1b17b2744817220ec870a3a31d3810f8f7d95",
+  "detect/run_p2.py": "0d1848890887be3dc037ee5cec200bc11e3d9db00d939271b78f3f23f21aaebc",
+  "detect/sequence_det.py": "36b270eaf7266ccd784a9784d768654bd0528054b9effa71eea0ca0fec1a4f83",
+  "models/fusion/fusion.json": "9ea7831dd6b190837177fe8db5ab9e10e97cbded867f011db51b8559d2b766fd",
+  "models/interference_v2/model.pkl": "2412d06aaf39af367304d9ada291d6c14f2fea87b5e2a1ac366364a642c89696",
+  "models/replay_v2/frame_store.json": "54263e1338ef289880a6b2a4ac8da7c528ecd948e09fca65ff94d53948e4e509",
+  "models/replay_v21/params.json": "6ebe1c472396086019327e51b56104d305704751066b7f5985bbab4782deaf65",
+  "models/replay_v21/threshold.json": "0e7c40200c11fca6a8c785a4d52db8f21dd223366c8301cfd8d0fd42922140d0",
+  "models/sequence/profile.json": "bfd568b29ad55e1516d94a46705b533763023d79ca854db7d684f5f4b830051f",
+  "models/sequence/threshold.json": "98af1c1168bbb02265633385025f558019b7ebc5b2303afcf468207d339480c3"
+ },
+ "label": "test lock: replay_v21",
+ "signature": "ec+ZRQJLaa29S5+l1Z38tbPzCsoUyAoNmLx5Hzz0uVSurGkPznyaW2rOkLMf8U3vDKtgdqPlt8NmIEFCXcfCBg=="
+}
