@@ -1,0 +1,9 @@
+{
+ "created_utc": "2026-11-21T11:53:02Z",
+ "files": {
+  "docs/GATES_PHASE2_S3.md": "aea9599a4965617e6a4cc6add5abc06d6079991080e281ed4f385149004b9ff8",
+  "docs/S3_PLAN.md": "a17a7e1b479b945fc63e075e0116f712deb09d1ecce0fa62e8cf8883b7b702e5"
+ },
+ "label": "test lock: gates_p2_s3",
+ "signature": "lOO3MH7mG3/kUQL2MEfoy9mTZm8j+/DCfxD1Pl6XTTqqXQhGx811QGvN09SdyTuK4NVA/dD6060EEt6DNMeTBw=="
+}
