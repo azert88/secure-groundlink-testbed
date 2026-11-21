@@ -1,0 +1,14 @@
+{
+ "version": "v3.1",
+ "source": "docs/GATES_PHASE2_S3_V31.md (signed, models/gates_p2_s3_v31/lock.json); v3 = docs/S3_PLAN.md section 2",
+ "k_max": 3,
+ "k_min": 1,
+ "sigma_min_db": 1.0,
+ "smooth_bins": 3,
+ "band_top_margin_hz": 200.0,
+ "k": 3,
+ "n": 5,
+ "target_fpr": 0.01,
+ "band_edge": "chained",
+ "min_level_db": -60.0
+}

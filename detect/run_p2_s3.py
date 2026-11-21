@@ -1,7 +1,8 @@
 """Phase 2 entry point with an interference version switch (S3). detect/run_p2.py (in the replay_v21 lock) and
 detect/run.py (in the fusion lock) are unchanged; this wraps run_p2.run as run_p2 wraps run.run.
 
---interference-version v2 (default) is exactly detect/run_p2.run. v3 (detect/interference_v3.py) runs interference v2
+--interference-version v2 (default) is exactly detect/run_p2.run. v3 (detect/interference_v3.py) or v3.1
+(detect/interference_v31.py, v3 with the re-encoded band edge and empty bins ignored) runs interference v2
 as before and ORs a per-station template alert into its windows; template-only runs become extra interference events
 (fusion reads them as interference-model events with v2's probability, so they stay in the flag tier unless v2 is
 confident). The station comes from metadata.json ground_station or --station.
@@ -23,15 +24,17 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from detect import fusion as F  # noqa: E402
 from detect import interference_v3 as IV3  # noqa: E402
+from detect import interference_v31 as IV31  # noqa: E402
 from detect import run as R  # noqa: E402
 from detect import run_p2 as P2  # noqa: E402
 
-INTERFERENCE_VERSIONS = ("v2", "v3")
-INTERFERENCE_LOCKS = {"v3": "models/interference_v3/lock.json"}
+INTERFERENCE_VERSIONS = ("v2", "v3", "v3.1")
+INTERFERENCE_MODULES = {"v3": IV3, "v3.1": IV31}
+INTERFERENCE_LOCKS = {"v3": "models/interference_v3/lock.json", "v3.1": "models/interference_v31/lock.json"}
 
 
 @contextlib.contextmanager
-def interference_v3_in_run(cfg: dict, obs_dir: Path, station: int | None = None):
+def interference_v3_in_run(cfg: dict, obs_dir: Path, station: int | None = None, module=IV3):
     """run.audio_windows wrapped to keep the chained audio, run.Detector wrapped to add the template alert; both
     restored afterwards."""
     mp = Path(obs_dir) / "metadata.json"
@@ -56,8 +59,8 @@ def interference_v3_in_run(cfg: dict, obs_dir: Path, station: int | None = None)
 
         def run(self, win, norad):
             res = self.inner.run(win, norad)
-            v3 = IV3.run_on_recording(res, cap["y"], cap["sr"], station, norad, start, cfg)
-            merged = IV3.merge_into_v2(res, v3)
+            v3 = module.run_on_recording(res, cap["y"], cap["sr"], station, norad, start, cfg)
+            merged = module.merge_into_v2(res, v3)
             cap["v3"] = merged["v3"]
             cap.pop("y", None)
             return merged
@@ -76,7 +79,7 @@ def run(obs_dir: Path, cfg: dict, version: str | None = None, interference_versi
     if interference_version == "v2":
         out = P2.run(obs_dir, cfg, version, **kw)
     else:
-        with interference_v3_in_run(cfg, obs_dir, station) as cap:
+        with interference_v3_in_run(cfg, obs_dir, station, INTERFERENCE_MODULES[interference_version]) as cap:
             out = P2.run(obs_dir, cfg, version, **kw)
         out["interference_v3"] = cap.get("v3")
     out["interference_version"] = interference_version
