@@ -1,0 +1,28 @@
+{
+ "group": "s3dev_snrgrid",
+ "norad": 25397,
+ "obs_id": 15087941,
+ "operations": [
+  {
+   "bw_hz": 153.72983954058617,
+   "drift_hz_s": 0.0,
+   "evasion": 0,
+   "f0_hz": 7936.340673133418,
+   "phase": 6.0324289431030955,
+   "segments": [
+    [
+     0.0,
+     531.212
+    ]
+   ],
+   "shape": "noise",
+   "snr_db": 10.0,
+   "subtype": "noise",
+   "type": "interference"
+  }
+ ],
+ "seed": 3130594888616984185,
+ "seed_tag": "s3-dev",
+ "split": "calib",
+ "variant_id": "s3dev_snrgrid_+10"
+}

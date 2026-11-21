@@ -1,0 +1,28 @@
+{
+ "group": "s3dev_snrgrid",
+ "norad": 25397,
+ "obs_id": 15087899,
+ "operations": [
+  {
+   "bw_hz": 192.23708837629198,
+   "drift_hz_s": 0.0,
+   "evasion": 0,
+   "f0_hz": 6380.603565120368,
+   "phase": 5.96772699186105,
+   "segments": [
+    [
+     0.0,
+     564.841
+    ]
+   ],
+   "shape": "noise",
+   "snr_db": 10.0,
+   "subtype": "noise",
+   "type": "interference"
+  }
+ ],
+ "seed": 1464375031968982371,
+ "seed_tag": "s3-dev",
+ "split": "train",
+ "variant_id": "s3dev_snrgrid_+10"
+}
