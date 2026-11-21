@@ -50,3 +50,6 @@ data/holdout_p2/split.json
 keys/private/master.key
 *.sigmf-data
 bench/state/
+
+# S3 enrollment passes: raw files never committed (manifest, qc and plan kept)
+data/raw_enroll/*/

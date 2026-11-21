@@ -1,0 +1,1593 @@
+{
+ "summary": {
+  "created_utc": "2026-11-21T11:56:48Z",
+  "mode": "plan",
+  "K": 3,
+  "lookback_days": 90.0,
+  "stations": 22,
+  "station_satellite_pairs": 22,
+  "scored_passes": 60,
+  "scored_passes_by_k": {
+   "0": 3,
+   "1": 4,
+   "2": 2,
+   "3": 51
+  },
+  "enroll_passes": 125,
+  "local": 28,
+  "fetched": 0,
+  "to_fetch": 97,
+  "to_fetch_by_satellite": {
+   "25397": 68,
+   "39444": 29
+  },
+  "estimated_mb": 307.8,
+  "seconds_per_request": 3.49,
+  "estimated_minutes": 5.6,
+  "listing_requests": 27,
+  "unlisted_pairs_offline": 0,
+  "cache_hits": 38,
+  "note": "plan assumes every to_fetch candidate passes audio QC; --full walks further back when one fails"
+ },
+ "groups": [
+  {
+   "station": 6,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 4,
+   "passes": [
+    {
+     "obs_id": 14966459,
+     "start": "2026-09-10T15:01:39Z",
+     "k": 2,
+     "enroll": [
+      {
+       "obs_id": 14886162,
+       "start": "2026-08-27T04:13:37Z",
+       "source": "to_fetch",
+       "duration_s": 233.0
+      },
+      {
+       "obs_id": 14818280,
+       "start": "2026-08-19T04:00:55Z",
+       "source": "to_fetch",
+       "duration_s": 314.0
+      }
+     ]
+    },
+    {
+     "obs_id": 14976061,
+     "start": "2026-09-11T14:37:58Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14966459,
+       "start": "2026-09-10T15:01:39Z",
+       "source": "local",
+       "duration_s": 233.0
+      },
+      {
+       "obs_id": 14886162,
+       "start": "2026-08-27T04:13:37Z",
+       "source": "to_fetch",
+       "duration_s": 233.0
+      },
+      {
+       "obs_id": 14818280,
+       "start": "2026-08-19T04:00:55Z",
+       "source": "to_fetch",
+       "duration_s": 314.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 431,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 32,
+   "passes": [
+    {
+     "obs_id": 14911770,
+     "start": "2026-08-30T16:03:42Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14911525,
+       "start": "2026-08-30T14:26:40Z",
+       "source": "local",
+       "duration_s": 274.0
+      },
+      {
+       "obs_id": 14909361,
+       "start": "2026-08-30T06:17:31Z",
+       "source": "to_fetch",
+       "duration_s": 450.0
+      },
+      {
+       "obs_id": 14909257,
+       "start": "2026-08-30T04:37:52Z",
+       "source": "to_fetch",
+       "duration_s": 454.0
+      }
+     ]
+    },
+    {
+     "obs_id": 14915678,
+     "start": "2026-08-31T15:40:14Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14914727,
+       "start": "2026-08-31T04:14:58Z",
+       "source": "to_fetch",
+       "duration_s": 340.0
+      },
+      {
+       "obs_id": 14911770,
+       "start": "2026-08-30T16:03:42Z",
+       "source": "to_fetch",
+       "duration_s": 536.0
+      },
+      {
+       "obs_id": 14911525,
+       "start": "2026-08-30T14:26:40Z",
+       "source": "local",
+       "duration_s": 274.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 754,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 17,
+   "passes": [
+    {
+     "obs_id": 15237441,
+     "start": "2026-10-18T13:45:04Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15228416,
+       "start": "2026-10-17T14:08:43Z",
+       "source": "to_fetch",
+       "duration_s": 906.0
+      },
+      {
+       "obs_id": 15213661,
+       "start": "2026-10-16T00:35:06Z",
+       "source": "to_fetch",
+       "duration_s": 910.0
+      },
+      {
+       "obs_id": 15188007,
+       "start": "2026-10-12T00:29:45Z",
+       "source": "to_fetch",
+       "duration_s": 906.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15244766,
+     "start": "2026-10-20T00:40:28Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15242342,
+       "start": "2026-10-19T13:21:31Z",
+       "source": "to_fetch",
+       "duration_s": 860.0
+      },
+      {
+       "obs_id": 15239736,
+       "start": "2026-10-19T01:04:03Z",
+       "source": "to_fetch",
+       "duration_s": 915.0
+      },
+      {
+       "obs_id": 15237441,
+       "start": "2026-10-18T13:45:04Z",
+       "source": "local",
+       "duration_s": 916.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 1466,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 54,
+   "passes": [
+    {
+     "obs_id": 15001383,
+     "start": "2026-09-15T16:27:21Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14977378,
+       "start": "2026-09-11T16:21:56Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      },
+      {
+       "obs_id": 14963006,
+       "start": "2026-09-09T05:45:21Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      },
+      {
+       "obs_id": 14954459,
+       "start": "2026-09-07T16:16:31Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15287498,
+     "start": "2026-10-25T05:57:40Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15275464,
+       "start": "2026-10-23T16:28:52Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      },
+      {
+       "obs_id": 15269980,
+       "start": "2026-10-22T16:52:14Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      },
+      {
+       "obs_id": 15254914,
+       "start": "2026-10-21T05:52:16Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 1696,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 78,
+   "passes": [
+    {
+     "obs_id": 14911777,
+     "start": "2026-08-30T16:03:42Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14909369,
+       "start": "2026-08-30T06:17:31Z",
+       "source": "to_fetch",
+       "duration_s": 456.0
+      },
+      {
+       "obs_id": 14909273,
+       "start": "2026-08-30T04:37:52Z",
+       "source": "local",
+       "duration_s": 454.0
+      },
+      {
+       "obs_id": 14899382,
+       "start": "2026-08-27T17:16:03Z",
+       "source": "to_fetch",
+       "duration_s": 397.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15128862,
+     "start": "2026-10-05T16:53:00Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15117767,
+       "start": "2026-10-04T05:54:35Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      },
+      {
+       "obs_id": 15098903,
+       "start": "2026-10-01T16:47:42Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      },
+      {
+       "obs_id": 15095466,
+       "start": "2026-10-01T05:25:49Z",
+       "source": "to_fetch",
+       "duration_s": 227.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 2107,
+   "norad": 39444,
+   "n_scored": 12,
+   "n_candidates": 102,
+   "passes": [
+    {
+     "obs_id": 14932721,
+     "start": "2026-09-04T05:59:54Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14930295,
+       "start": "2026-09-03T19:24:15Z",
+       "source": "to_fetch",
+       "duration_s": 315.0
+      },
+      {
+       "obs_id": 14928173,
+       "start": "2026-09-03T06:08:55Z",
+       "source": "to_fetch",
+       "duration_s": 320.0
+      },
+      {
+       "obs_id": 14926105,
+       "start": "2026-09-02T19:33:03Z",
+       "source": "to_fetch",
+       "duration_s": 311.0
+      }
+     ]
+    },
+    {
+     "obs_id": 14934136,
+     "start": "2026-09-04T19:15:27Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14932721,
+       "start": "2026-09-04T05:59:54Z",
+       "source": "local",
+       "duration_s": 286.0
+      },
+      {
+       "obs_id": 14930295,
+       "start": "2026-09-03T19:24:15Z",
+       "source": "to_fetch",
+       "duration_s": 315.0
+      },
+      {
+       "obs_id": 14928173,
+       "start": "2026-09-03T06:08:55Z",
+       "source": "to_fetch",
+       "duration_s": 320.0
+      }
+     ]
+    },
+    {
+     "obs_id": 14944444,
+     "start": "2026-09-06T05:42:01Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14938443,
+       "start": "2026-09-05T19:06:41Z",
+       "source": "to_fetch",
+       "duration_s": 310.0
+      },
+      {
+       "obs_id": 14936924,
+       "start": "2026-09-05T05:50:56Z",
+       "source": "to_fetch",
+       "duration_s": 245.0
+      },
+      {
+       "obs_id": 14934136,
+       "start": "2026-09-04T19:15:27Z",
+       "source": "local",
+       "duration_s": 316.0
+      }
+     ]
+    },
+    {
+     "obs_id": 14957048,
+     "start": "2026-09-08T06:59:25Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14954315,
+       "start": "2026-09-07T18:49:08Z",
+       "source": "to_fetch",
+       "duration_s": 289.0
+      },
+      {
+       "obs_id": 14947697,
+       "start": "2026-09-06T18:57:54Z",
+       "source": "to_fetch",
+       "duration_s": 302.0
+      },
+      {
+       "obs_id": 14944444,
+       "start": "2026-09-06T05:42:01Z",
+       "source": "local",
+       "duration_s": 198.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15023587,
+     "start": "2026-09-19T06:53:27Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15021391,
+       "start": "2026-09-18T18:43:51Z",
+       "source": "to_fetch",
+       "duration_s": 268.0
+      },
+      {
+       "obs_id": 15019296,
+       "start": "2026-09-18T07:03:00Z",
+       "source": "to_fetch",
+       "duration_s": 406.0
+      },
+      {
+       "obs_id": 15008866,
+       "start": "2026-09-16T19:01:35Z",
+       "source": "to_fetch",
+       "duration_s": 299.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15090581,
+     "start": "2026-09-30T06:46:25Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15086361,
+       "start": "2026-09-29T18:37:24Z",
+       "source": "to_fetch",
+       "duration_s": 243.0
+      },
+      {
+       "obs_id": 15082400,
+       "start": "2026-09-29T06:56:00Z",
+       "source": "to_fetch",
+       "duration_s": 410.0
+      },
+      {
+       "obs_id": 15080510,
+       "start": "2026-09-28T18:46:20Z",
+       "source": "to_fetch",
+       "duration_s": 266.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15178847,
+     "start": "2026-10-11T19:52:49Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15176528,
+       "start": "2026-10-11T06:38:27Z",
+       "source": "to_fetch",
+       "duration_s": 391.0
+      },
+      {
+       "obs_id": 15174505,
+       "start": "2026-10-10T18:29:54Z",
+       "source": "to_fetch",
+       "duration_s": 213.0
+      },
+      {
+       "obs_id": 15172105,
+       "start": "2026-10-10T06:48:02Z",
+       "source": "to_fetch",
+       "duration_s": 403.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15192857,
+     "start": "2026-10-13T06:19:27Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15190690,
+       "start": "2026-10-12T19:43:36Z",
+       "source": "to_fetch",
+       "duration_s": 287.0
+      },
+      {
+       "obs_id": 15188198,
+       "start": "2026-10-12T06:28:56Z",
+       "source": "to_fetch",
+       "duration_s": 369.0
+      },
+      {
+       "obs_id": 15178847,
+       "start": "2026-10-11T19:52:49Z",
+       "source": "local",
+       "duration_s": 272.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15202507,
+     "start": "2026-10-14T06:10:02Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15192857,
+       "start": "2026-10-13T06:19:27Z",
+       "source": "local",
+       "duration_s": 343.0
+      },
+      {
+       "obs_id": 15190690,
+       "start": "2026-10-12T19:43:36Z",
+       "source": "to_fetch",
+       "duration_s": 287.0
+      },
+      {
+       "obs_id": 15188198,
+       "start": "2026-10-12T06:28:56Z",
+       "source": "to_fetch",
+       "duration_s": 369.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15275276,
+     "start": "2026-10-23T19:34:15Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15271874,
+       "start": "2026-10-23T06:19:29Z",
+       "source": "to_fetch",
+       "duration_s": 333.0
+      },
+      {
+       "obs_id": 15269864,
+       "start": "2026-10-22T19:43:35Z",
+       "source": "to_fetch",
+       "duration_s": 289.0
+      },
+      {
+       "obs_id": 15261075,
+       "start": "2026-10-22T06:29:05Z",
+       "source": "to_fetch",
+       "duration_s": 361.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15285174,
+     "start": "2026-10-24T19:24:56Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15276881,
+       "start": "2026-10-24T06:09:57Z",
+       "source": "to_fetch",
+       "duration_s": 298.0
+      },
+      {
+       "obs_id": 15275276,
+       "start": "2026-10-23T19:34:15Z",
+       "source": "local",
+       "duration_s": 298.0
+      },
+      {
+       "obs_id": 15271874,
+       "start": "2026-10-23T06:19:29Z",
+       "source": "to_fetch",
+       "duration_s": 333.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15305451,
+     "start": "2026-10-28T07:07:27Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15300416,
+       "start": "2026-10-27T05:41:41Z",
+       "source": "to_fetch",
+       "duration_s": 544.0
+      },
+      {
+       "obs_id": 15297715,
+       "start": "2026-10-26T19:06:20Z",
+       "source": "to_fetch",
+       "duration_s": 289.0
+      },
+      {
+       "obs_id": 15291362,
+       "start": "2026-10-26T05:49:52Z",
+       "source": "to_fetch",
+       "duration_s": 702.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 2173,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 120,
+   "passes": [
+    {
+     "obs_id": 15202727,
+     "start": "2026-10-14T05:13:31Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15193341,
+       "start": "2026-10-13T07:18:15Z",
+       "source": "to_fetch",
+       "duration_s": 306.0
+      },
+      {
+       "obs_id": 15193251,
+       "start": "2026-10-13T05:37:03Z",
+       "source": "to_fetch",
+       "duration_s": 537.0
+      },
+      {
+       "obs_id": 15188722,
+       "start": "2026-10-12T06:00:43Z",
+       "source": "to_fetch",
+       "duration_s": 528.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15252654,
+     "start": "2026-10-20T15:57:56Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15245510,
+       "start": "2026-10-20T06:11:35Z",
+       "source": "to_fetch",
+       "duration_s": 518.0
+      },
+      {
+       "obs_id": 15242827,
+       "start": "2026-10-19T16:21:31Z",
+       "source": "to_fetch",
+       "duration_s": 211.0
+      },
+      {
+       "obs_id": 15242818,
+       "start": "2026-10-19T14:43:51Z",
+       "source": "to_fetch",
+       "duration_s": 334.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 2968,
+   "norad": 25397,
+   "n_scored": 1,
+   "n_candidates": 33,
+   "passes": [
+    {
+     "obs_id": 15305494,
+     "start": "2026-10-28T02:59:56Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14902790,
+       "start": "2026-08-28T11:53:00Z",
+       "source": "to_fetch",
+       "duration_s": 333.0
+      },
+      {
+       "obs_id": 14898322,
+       "start": "2026-08-27T12:14:57Z",
+       "source": "to_fetch",
+       "duration_s": 476.0
+      },
+      {
+       "obs_id": 14895698,
+       "start": "2026-08-27T04:05:31Z",
+       "source": "to_fetch",
+       "duration_s": 765.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 2987,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 12,
+   "passes": [
+    {
+     "obs_id": 15230631,
+     "start": "2026-10-18T00:22:50Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15191882,
+       "start": "2026-10-12T23:10:02Z",
+       "source": "to_fetch",
+       "duration_s": 293.0
+      },
+      {
+       "obs_id": 15178584,
+       "start": "2026-10-11T12:34:06Z",
+       "source": "to_fetch",
+       "duration_s": 357.0
+      },
+      {
+       "obs_id": 15161423,
+       "start": "2026-10-09T00:35:44Z",
+       "source": "to_fetch",
+       "duration_s": 259.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15236772,
+     "start": "2026-10-18T11:28:35Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15230631,
+       "start": "2026-10-18T00:22:50Z",
+       "source": "local",
+       "duration_s": 910.0
+      },
+      {
+       "obs_id": 15191882,
+       "start": "2026-10-12T23:10:02Z",
+       "source": "to_fetch",
+       "duration_s": 293.0
+      },
+      {
+       "obs_id": 15178584,
+       "start": "2026-10-11T12:34:06Z",
+       "source": "to_fetch",
+       "duration_s": 357.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 3855,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 43,
+   "passes": [
+    {
+     "obs_id": 15080453,
+     "start": "2026-09-28T16:17:02Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14971395,
+       "start": "2026-09-10T16:42:45Z",
+       "source": "to_fetch",
+       "duration_s": 626.0
+      },
+      {
+       "obs_id": 14965591,
+       "start": "2026-09-09T17:06:50Z",
+       "source": "to_fetch",
+       "duration_s": 585.0
+      },
+      {
+       "obs_id": 14892716,
+       "start": "2026-08-27T05:52:16Z",
+       "source": "to_fetch",
+       "duration_s": 370.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15312338,
+     "start": "2026-10-28T16:07:43Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15301931,
+       "start": "2026-10-27T16:31:17Z",
+       "source": "to_fetch",
+       "duration_s": 640.0
+      },
+      {
+       "obs_id": 15259617,
+       "start": "2026-10-22T16:49:40Z",
+       "source": "to_fetch",
+       "duration_s": 626.0
+      },
+      {
+       "obs_id": 15243486,
+       "start": "2026-10-20T15:57:00Z",
+       "source": "to_fetch",
+       "duration_s": 628.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 4011,
+   "norad": 39444,
+   "n_scored": 1,
+   "n_candidates": 2,
+   "passes": [
+    {
+     "obs_id": 15123656,
+     "start": "2026-10-05T03:15:05Z",
+     "k": 1,
+     "enroll": [
+      {
+       "obs_id": 14771048,
+       "start": "2026-08-13T03:21:01Z",
+       "source": "to_fetch",
+       "duration_s": 472.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 4151,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 4,
+   "passes": [
+    {
+     "obs_id": 15033837,
+     "start": "2026-09-21T05:57:35Z",
+     "k": 1,
+     "enroll": [
+      {
+       "obs_id": 15029587,
+       "start": "2026-09-20T16:07:23Z",
+       "source": "to_fetch",
+       "duration_s": 505.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15087941,
+     "start": "2026-09-30T05:44:44Z",
+     "k": 2,
+     "enroll": [
+      {
+       "obs_id": 15033837,
+       "start": "2026-09-21T05:57:35Z",
+       "source": "local",
+       "duration_s": 522.0
+      },
+      {
+       "obs_id": 15029587,
+       "start": "2026-09-20T16:07:23Z",
+       "source": "to_fetch",
+       "duration_s": 505.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 4171,
+   "norad": 25397,
+   "n_scored": 1,
+   "n_candidates": 1,
+   "passes": [
+    {
+     "obs_id": 14942057,
+     "start": "2026-09-05T22:01:33Z",
+     "k": 0,
+     "enroll": []
+    }
+   ]
+  },
+  {
+   "station": 4272,
+   "norad": 39444,
+   "n_scored": 12,
+   "n_candidates": 21,
+   "passes": [
+    {
+     "obs_id": 14987124,
+     "start": "2026-09-13T03:30:19Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14838864,
+       "start": "2026-08-21T02:12:21Z",
+       "source": "to_fetch",
+       "duration_s": 471.0
+      },
+      {
+       "obs_id": 14822222,
+       "start": "2026-08-19T02:29:52Z",
+       "source": "to_fetch",
+       "duration_s": 481.0
+      },
+      {
+       "obs_id": 14771093,
+       "start": "2026-08-12T14:14:43Z",
+       "source": "to_fetch",
+       "duration_s": 387.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15012409,
+     "start": "2026-09-17T02:53:16Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14987124,
+       "start": "2026-09-13T03:30:19Z",
+       "source": "local",
+       "duration_s": 354.0
+      },
+      {
+       "obs_id": 14838864,
+       "start": "2026-08-21T02:12:21Z",
+       "source": "to_fetch",
+       "duration_s": 471.0
+      },
+      {
+       "obs_id": 14822222,
+       "start": "2026-08-19T02:29:52Z",
+       "source": "to_fetch",
+       "duration_s": 481.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15192903,
+     "start": "2026-10-13T02:02:10Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15012409,
+       "start": "2026-09-17T02:53:16Z",
+       "source": "local",
+       "duration_s": 457.0
+      },
+      {
+       "obs_id": 14987124,
+       "start": "2026-09-13T03:30:19Z",
+       "source": "local",
+       "duration_s": 354.0
+      },
+      {
+       "obs_id": 14838864,
+       "start": "2026-08-21T02:12:21Z",
+       "source": "to_fetch",
+       "duration_s": 471.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15202641,
+     "start": "2026-10-14T01:53:02Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15192903,
+       "start": "2026-10-13T02:02:10Z",
+       "source": "local",
+       "duration_s": 397.0
+      },
+      {
+       "obs_id": 15012409,
+       "start": "2026-09-17T02:53:16Z",
+       "source": "local",
+       "duration_s": 457.0
+      },
+      {
+       "obs_id": 14987124,
+       "start": "2026-09-13T03:30:19Z",
+       "source": "local",
+       "duration_s": 354.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15211184,
+     "start": "2026-10-15T13:59:47Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15202641,
+       "start": "2026-10-14T01:53:02Z",
+       "source": "local",
+       "duration_s": 361.0
+      },
+      {
+       "obs_id": 15192903,
+       "start": "2026-10-13T02:02:10Z",
+       "source": "local",
+       "duration_s": 397.0
+      },
+      {
+       "obs_id": 15012409,
+       "start": "2026-09-17T02:53:16Z",
+       "source": "local",
+       "duration_s": 457.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15222456,
+     "start": "2026-10-16T13:50:19Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15211184,
+       "start": "2026-10-15T13:59:47Z",
+       "source": "local",
+       "duration_s": 460.0
+      },
+      {
+       "obs_id": 15202641,
+       "start": "2026-10-14T01:53:02Z",
+       "source": "local",
+       "duration_s": 361.0
+      },
+      {
+       "obs_id": 15192903,
+       "start": "2026-10-13T02:02:10Z",
+       "source": "local",
+       "duration_s": 397.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15228452,
+     "start": "2026-10-17T13:40:54Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15222456,
+       "start": "2026-10-16T13:50:19Z",
+       "source": "local",
+       "duration_s": 467.0
+      },
+      {
+       "obs_id": 15211184,
+       "start": "2026-10-15T13:59:47Z",
+       "source": "local",
+       "duration_s": 460.0
+      },
+      {
+       "obs_id": 15202641,
+       "start": "2026-10-14T01:53:02Z",
+       "source": "local",
+       "duration_s": 361.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15230978,
+     "start": "2026-10-18T02:49:09Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15228452,
+       "start": "2026-10-17T13:40:54Z",
+       "source": "local",
+       "duration_s": 467.0
+      },
+      {
+       "obs_id": 15222456,
+       "start": "2026-10-16T13:50:19Z",
+       "source": "local",
+       "duration_s": 467.0
+      },
+      {
+       "obs_id": 15211184,
+       "start": "2026-10-15T13:59:47Z",
+       "source": "local",
+       "duration_s": 460.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15237468,
+     "start": "2026-10-18T13:31:32Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15230978,
+       "start": "2026-10-18T02:49:09Z",
+       "source": "local",
+       "duration_s": 443.0
+      },
+      {
+       "obs_id": 15228452,
+       "start": "2026-10-17T13:40:54Z",
+       "source": "local",
+       "duration_s": 467.0
+      },
+      {
+       "obs_id": 15222456,
+       "start": "2026-10-16T13:50:19Z",
+       "source": "local",
+       "duration_s": 467.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15242426,
+     "start": "2026-10-19T13:22:13Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15237468,
+       "start": "2026-10-18T13:31:32Z",
+       "source": "local",
+       "duration_s": 460.0
+      },
+      {
+       "obs_id": 15230978,
+       "start": "2026-10-18T02:49:09Z",
+       "source": "local",
+       "duration_s": 443.0
+      },
+      {
+       "obs_id": 15228452,
+       "start": "2026-10-17T13:40:54Z",
+       "source": "local",
+       "duration_s": 467.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15297741,
+     "start": "2026-10-26T13:49:56Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15242426,
+       "start": "2026-10-19T13:22:13Z",
+       "source": "local",
+       "duration_s": 296.0
+      },
+      {
+       "obs_id": 15237468,
+       "start": "2026-10-18T13:31:32Z",
+       "source": "local",
+       "duration_s": 460.0
+      },
+      {
+       "obs_id": 15230978,
+       "start": "2026-10-18T02:49:09Z",
+       "source": "local",
+       "duration_s": 443.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15301862,
+     "start": "2026-10-27T13:40:25Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15297741,
+       "start": "2026-10-26T13:49:56Z",
+       "source": "local",
+       "duration_s": 458.0
+      },
+      {
+       "obs_id": 15242426,
+       "start": "2026-10-19T13:22:13Z",
+       "source": "local",
+       "duration_s": 296.0
+      },
+      {
+       "obs_id": 15237468,
+       "start": "2026-10-18T13:31:32Z",
+       "source": "local",
+       "duration_s": 460.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 4394,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 8,
+   "passes": [
+    {
+     "obs_id": 15066716,
+     "start": "2026-09-26T20:58:58Z",
+     "k": 1,
+     "enroll": [
+      {
+       "obs_id": 14672059,
+       "start": "2026-08-01T21:15:13Z",
+       "source": "to_fetch",
+       "duration_s": 887.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15091907,
+     "start": "2026-09-30T21:04:20Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15068181,
+       "start": "2026-09-27T08:08:01Z",
+       "source": "to_fetch",
+       "duration_s": 467.0
+      },
+      {
+       "obs_id": 15066716,
+       "start": "2026-09-26T20:58:58Z",
+       "source": "local",
+       "duration_s": 456.0
+      },
+      {
+       "obs_id": 14672059,
+       "start": "2026-08-01T21:15:13Z",
+       "source": "to_fetch",
+       "duration_s": 887.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 4451,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 15,
+   "passes": [
+    {
+     "obs_id": 15004025,
+     "start": "2026-09-16T09:03:25Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14951658,
+       "start": "2026-09-07T09:16:09Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      },
+      {
+       "obs_id": 14947251,
+       "start": "2026-09-06T20:42:52Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      },
+      {
+       "obs_id": 14935747,
+       "start": "2026-09-05T10:03:15Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15063067,
+     "start": "2026-09-25T21:33:26Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15038998,
+       "start": "2026-09-21T21:28:01Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      },
+      {
+       "obs_id": 15038982,
+       "start": "2026-09-21T10:24:52Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      },
+      {
+       "obs_id": 15025677,
+       "start": "2026-09-19T22:12:06Z",
+       "source": "to_fetch",
+       "duration_s": 180.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 4460,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 38,
+   "passes": [
+    {
+     "obs_id": 15087899,
+     "start": "2026-09-29T15:51:00Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15080562,
+       "start": "2026-09-28T14:34:14Z",
+       "source": "to_fetch",
+       "duration_s": 619.0
+      },
+      {
+       "obs_id": 15078023,
+       "start": "2026-09-28T04:52:34Z",
+       "source": "to_fetch",
+       "duration_s": 581.0
+      },
+      {
+       "obs_id": 15077749,
+       "start": "2026-09-28T03:12:55Z",
+       "source": "to_fetch",
+       "duration_s": 553.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15252702,
+     "start": "2026-10-20T15:54:26Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15245380,
+       "start": "2026-10-20T04:32:09Z",
+       "source": "to_fetch",
+       "duration_s": 625.0
+      },
+      {
+       "obs_id": 15242738,
+       "start": "2026-10-19T14:37:40Z",
+       "source": "to_fetch",
+       "duration_s": 484.0
+      },
+      {
+       "obs_id": 15240568,
+       "start": "2026-10-19T04:56:01Z",
+       "source": "to_fetch",
+       "duration_s": 580.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 4738,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 4,
+   "passes": [
+    {
+     "obs_id": 15150189,
+     "start": "2026-10-07T21:31:03Z",
+     "k": 0,
+     "enroll": []
+    },
+    {
+     "obs_id": 15173022,
+     "start": "2026-10-10T08:01:18Z",
+     "k": 1,
+     "enroll": [
+      {
+       "obs_id": 15150189,
+       "start": "2026-10-07T21:31:03Z",
+       "source": "local",
+       "duration_s": 905.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 4755,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 27,
+   "passes": [
+    {
+     "obs_id": 14926205,
+     "start": "2026-09-02T14:46:38Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14925044,
+       "start": "2026-09-02T03:27:27Z",
+       "source": "to_fetch",
+       "duration_s": 736.0
+      },
+      {
+       "obs_id": 14520696,
+       "start": "2026-07-15T02:46:18Z",
+       "source": "to_fetch",
+       "duration_s": 637.0
+      },
+      {
+       "obs_id": 14517150,
+       "start": "2026-07-14T14:28:36Z",
+       "source": "to_fetch",
+       "duration_s": 746.0
+      }
+     ]
+    },
+    {
+     "obs_id": 14944671,
+     "start": "2026-09-06T03:37:07Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14944579,
+       "start": "2026-09-06T03:32:49Z",
+       "source": "to_fetch",
+       "duration_s": 253.0
+      },
+      {
+       "obs_id": 14934117,
+       "start": "2026-09-04T14:00:39Z",
+       "source": "to_fetch",
+       "duration_s": 646.0
+      },
+      {
+       "obs_id": 14926205,
+       "start": "2026-09-02T14:46:38Z",
+       "source": "local",
+       "duration_s": 754.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 4791,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 20,
+   "passes": [
+    {
+     "obs_id": 15021469,
+     "start": "2026-09-18T15:12:05Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15019641,
+       "start": "2026-09-18T03:53:09Z",
+       "source": "local",
+       "duration_s": 278.0
+      },
+      {
+       "obs_id": 15014927,
+       "start": "2026-09-17T15:35:43Z",
+       "source": "to_fetch",
+       "duration_s": 316.0
+      },
+      {
+       "obs_id": 15009536,
+       "start": "2026-09-16T16:00:10Z",
+       "source": "to_fetch",
+       "duration_s": 223.0
+      }
+     ]
+    },
+    {
+     "obs_id": 15087940,
+     "start": "2026-09-29T15:52:20Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 15075792,
+       "start": "2026-09-27T14:59:38Z",
+       "source": "to_fetch",
+       "duration_s": 288.0
+      },
+      {
+       "obs_id": 15067758,
+       "start": "2026-09-26T15:22:51Z",
+       "source": "to_fetch",
+       "duration_s": 328.0
+      },
+      {
+       "obs_id": 15066319,
+       "start": "2026-09-26T04:03:45Z",
+       "source": "to_fetch",
+       "duration_s": 308.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 4803,
+   "norad": 25397,
+   "n_scored": 2,
+   "n_candidates": 52,
+   "passes": [
+    {
+     "obs_id": 14956312,
+     "start": "2026-09-08T09:30:10Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14937163,
+       "start": "2026-09-05T22:01:49Z",
+       "source": "to_fetch",
+       "duration_s": 654.0
+      },
+      {
+       "obs_id": 14937105,
+       "start": "2026-09-05T10:40:21Z",
+       "source": "to_fetch",
+       "duration_s": 684.0
+      },
+      {
+       "obs_id": 14908312,
+       "start": "2026-08-29T21:27:01Z",
+       "source": "to_fetch",
+       "duration_s": 686.0
+      }
+     ]
+    },
+    {
+     "obs_id": 14974899,
+     "start": "2026-09-11T19:43:46Z",
+     "k": 3,
+     "enroll": [
+      {
+       "obs_id": 14956312,
+       "start": "2026-09-08T09:30:10Z",
+       "source": "local",
+       "duration_s": 579.0
+      },
+      {
+       "obs_id": 14937163,
+       "start": "2026-09-05T22:01:49Z",
+       "source": "to_fetch",
+       "duration_s": 654.0
+      },
+      {
+       "obs_id": 14937105,
+       "start": "2026-09-05T10:40:21Z",
+       "source": "to_fetch",
+       "duration_s": 684.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "station": 5155,
+   "norad": 39444,
+   "n_scored": 1,
+   "n_candidates": 3,
+   "passes": [
+    {
+     "obs_id": 14966979,
+     "start": "2026-09-10T03:55:22Z",
+     "k": 0,
+     "enroll": []
+    }
+   ]
+  }
+ ]
+}
