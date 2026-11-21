@@ -62,3 +62,4 @@ models/replay_v21/lock.json -text
 docs/GATES_PHASE2_S3.md -text
 docs/S3_PLAN.md -text
 models/gates_p2_s3/lock.json -text
+data/recipes_s3dev/** -text
