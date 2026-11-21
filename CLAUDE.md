@@ -3,7 +3,7 @@
 Read at the start of every session. Keep replies short. The user writes in French; code, comments, docs and reports are in English.
 
 ## Project in one paragraph
-TSYP14 Track 1. Phase 1 (done, locked): detectors for replay, sequence anomalies and narrowband interference on SatNOGS recordings (FUNCUBE-1 BPSK 1k2, TECHSAT 1B FSK 9k6), plus a per-frame HMAC-SHA256 envelope (`trust/envelope.py`) and Ed25519-signed locks (`eval/lock.py`). Phase 2 (deadline 2026-12-11): a conducted hardware bench (3 ADALM-Pluto, 2 Raspberry Pi, Kali VM) and new locked versions that fix measured weaknesses W1–W15 (see `docs/PROGRESS.md`). Phase 2 deliverables are NOT anonymous.
+TSYP14 Track 1. Phase 1 (done, locked): detectors for replay, sequence anomalies and narrowband interference on SatNOGS recordings (FUNCUBE-1 BPSK 1k2, TECHSAT 1B FSK 9k6), plus a per-frame HMAC-SHA256 envelope (`trust/envelope.py`) and Ed25519-signed locks (`eval/lock.py`). Phase 2 (deadline 2026-12-11): a conducted hardware bench (3 ADALM-Pluto, 2 Raspberry Pi, Kali VM) and new locked versions that fix measured weaknesses W1–W15 (see `docs/WEAKNESSES.md`). Phase 2 deliverables are NOT anonymous.
 
 ## Hard rules
 1. **RF safety.** Never run, schedule or suggest running any command that transmits (any script under `bench/` that opens a TX, any `iio` / `pyadi-iio` / GNU Radio flowgraph with a TX sink). Write the code; the user runs it. Every TX path must go through `bench/safety.py` (default tx gain -40 dB, max -10 dB unless `--i-have-30db-attenuation`, min 30 dB fixed attenuation in config). No antenna, conducted only.
