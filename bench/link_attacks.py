@@ -9,8 +9,8 @@ transmitter at -18 kHz, in-band SNR 15 dB. Fresh random master key and epoch sta
          (replayed while the receiver is still in the earlier session, the same frames are rejected as replay)
   b      3 frames of the live pass replayed inside the pass                    -> replay
   c      one forged frame (frame bytes changed, original tag kept) injected     -> bad_tag
-  d      2 frames of the live pass dropped (jammed / deleted)                   -> gap (strict: every later frame)
-  d_resync  same with --gap-policy resync                                       -> ok_after_gap, 2 frames missing
+  d      2 frames of the live pass dropped (jammed / deleted), default resync policy -> 0 rejections, 2 missing
+  d_strict  same with the Phase 1 strict rule (--gap-policy strict)             -> gap for every later frame
   e      attacker key guess: 3 frames sealed with the live session id and a random key -> bad_tag
 
   python -m bench.link_attacks --all --sim
@@ -36,8 +36,9 @@ from trust.session_keys import EpochState  # noqa: E402
 
 LIVE_OBS, EARLIER_OBS = 14934136, 14932721       # two consecutive FUNCUBE-1 passes of station 2107 (Phase 1 dev)
 CFO_SAT, CFO_ATK, SNR_DB = 15000.0, -18000.0, 15.0
-EXPECTED = {"clean": {}, "a": {"rollback": 16}, "b": {"replay": 3}, "c": {"bad_tag": 1}, "d": {"gap": 7},
-            "d_resync": {}, "e": {"bad_tag": 3}}
+EXPECTED = {"clean": {}, "a": {"rollback": 16}, "b": {"replay": 3}, "c": {"bad_tag": 1}, "d": {},
+            "d_strict": {"gap": 7}, "e": {"bad_tag": 3}}
+EXPECTED_MISSING = {"d": 2}
 ATTACKS = tuple(EXPECTED)
 
 
@@ -52,7 +53,7 @@ def run(attack: str, seed: int = 0, snr_db: float = SNR_DB) -> dict:
         d = Path(d)
         master = os.urandom(32)
         sender = LS.Sender(master, EpochState(d / "sender.json"))
-        rx = LS.Receiver(master, EpochState(d / "receiver.json"), gap_policy="resync" if attack == "d_resync" else "strict")
+        rx = LS.Receiver(master, EpochState(d / "receiver.json"), gap_policy="strict" if attack == "d_strict" else "resync")
         setup = []
         if attack == "a":
             earlier = sender.seal_pass(LS.load_frames(EARLIER_OBS))            # epoch 0, received normally earlier
@@ -65,7 +66,7 @@ def run(attack: str, seed: int = 0, snr_db: float = SNR_DB) -> dict:
             bursts = sat[:10] + [(live[i], CFO_ATK) for i in (4, 5, 6)] + sat[10:]
         elif attack == "c":
             bursts = sat[:8] + [(forge(live[8]), CFO_ATK)] + sat[8:]
-        elif attack in ("d", "d_resync"):
+        elif attack in ("d", "d_strict"):
             bursts = sat[:6] + sat[8:]
         elif attack == "e":
             sid = HEADER.unpack(live[0][:HEADER.size])[1]
@@ -76,9 +77,10 @@ def run(attack: str, seed: int = 0, snr_db: float = SNR_DB) -> dict:
             bursts = sat
         rows = LS.receive_iq(rx, PHY.demodulate(LS.bursts_iq(bursts, snr_db, seed)))
     s = LS.summary(rows)
-    return {"attack": attack, "sent": len(bursts), "setup": LS.summary(setup) if setup else None, "rows": rows,
+    return {"attack": attack, "sent": len(bursts), "sources": ["satellite" if c == CFO_SAT else "attacker" for _, c in bursts],
+            "setup": LS.summary(setup) if setup else None, "rows": rows,
             **s, "expected_rejections": EXPECTED[attack], "as_expected": s["rejected"] == EXPECTED[attack]
-            and s["received"] == len(bursts)}
+            and s["received"] == len(bursts) and s["missing"] == EXPECTED_MISSING.get(attack, 0)}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -96,11 +98,12 @@ def main(argv: list[str] | None = None) -> int:
         for row in r["rows"]:
             if a.verbose or row["verdict"] != "ok":
                 print(LS.fmt_row(row))
-    print("\n| attack | frames sent | received | accepted | rejected by reason | as expected |")
-    print("| --- | --- | --- | --- | --- | --- |")
+    print("\n| attack | frames sent | received | accepted | missing | rejected by reason | as expected |")
+    print("| --- | --- | --- | --- | --- | --- | --- |")
     for r in res:
         rej = ", ".join(f"{k} {v}" for k, v in r["rejected"].items()) or "-"
-        print(f"| {r['attack']} | {r['sent']} | {r['received']} | {r['accepted']} | {rej} | {r['as_expected']} |")
+        print(f"| {r['attack']} | {r['sent']} | {r['received']} | {r['accepted']} | {r['missing']} | {rej} | "
+              f"{r['as_expected']} |")
     return 0 if all(r["as_expected"] for r in res) else 1
 
 

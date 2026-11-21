@@ -51,5 +51,20 @@ def test_attack_gives_expected_rejection(attack):
         assert r["accepted"] == r["sent"] and not r["rejected"]
     if attack == "a":
         assert r["setup"]["accepted"] == 16 and r["accepted"] == r["sent"] - 16
-    if attack == "d_resync":
+    if attack == "d":
         assert [x["missing"] for x in r["rows"] if x["verdict"] == "ok_after_gap"] == [2]
+
+
+def test_resync_default_one_lost_frame_then_old_replay(tmp_path):
+    m = os.urandom(32)
+    envs = LS.Sender(m, EpochState(tmp_path / "s.json")).seal_pass([(1000 * i, bytes([i]) * 40) for i in range(6)])
+    rx = LS.Receiver(m, EpochState(tmp_path / "r.json"))             # default policy = resync
+    assert rx.gap_policy == "resync"
+    out = [rx.receive(e) for e in envs[:2] + envs[3:]]               # frame 2 lost on the radio
+    assert [o["verdict"] for o in out] == ["ok", "ok", "ok_after_gap", "ok", "ok"]
+    assert all(o["accepted"] for o in out) and LS.summary([{**o, "rx_s": 0} for o in out])["missing"] == 1
+    assert out[2]["missing"] == 1 and out[2]["counter"] == 3
+    for old in (envs[1], envs[2], envs[4]):                          # old / lost frames replayed after the gap
+        assert rx.receive(old)["verdict"] == "replay"
+    strict = LS.Receiver(m, EpochState(tmp_path / "r2.json"), gap_policy="strict")
+    assert [strict.receive(e)["verdict"] for e in envs[:2] + envs[3:]] == ["ok", "ok", "gap", "gap", "gap"]

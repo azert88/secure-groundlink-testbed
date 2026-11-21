@@ -8,9 +8,11 @@ Receiver per burst: PHY CRC -> envelope header -> session:
     epoch <= the last accepted one is a replayed / rolled-back session (rollback, EpochState.accept); a new epoch
     must start at counter 0 (else gap); it then becomes the current session (EpochState.commit).
   - PHY CRC failure: phy_crc (frame lost on the link, before the envelope).
-  gap policy "strict" (default, Phase 1 envelope semantics: after a missing envelope every later one is rejected as a
-  gap, the hash chain cannot be followed) or "resync" (an authentic envelope with a higher counter is accepted as
-  ok_after_gap and the chain restarts from its header; replay protection is kept, the missing frames are reported).
+  gap policy on the radio link: "resync" (DEFAULT, decision P2-28): an authentic envelope with a forward counter jump
+  is accepted as ok_after_gap, the skipped counters are reported as missing (never silently), the chain restarts from
+  its header; replay / rollback / bad_tag rules are unchanged. "strict" (--gap-policy strict) = the Phase 1 envelope
+  rule, still the default for files (trust/envelope.py unchanged): after a missing envelope every later one is
+  rejected as a gap, so one frame lost or jammed on the radio would reject the rest of the pass (denial of service).
 Master key: keys/private/master.key (32 random bytes, created if missing, git-ignored, never printed).
 Frames: --obs (default 14932721, a FUNCUBE-1 pass) from data/tables/frames.csv (clean variant, hex, SHA-256 checked;
 data/sample/14932721 has no demoddata) or --demod-dir (one file per frame, sorted by name, timestamps = file order).
@@ -101,7 +103,7 @@ def parse(env: bytes):
 
 
 class Receiver:
-    def __init__(self, master: bytes, state: EpochState, norad: int = NORAD, gap_policy: str = "strict"):
+    def __init__(self, master: bytes, state: EpochState, norad: int = NORAD, gap_policy: str = "resync"):
         if gap_policy not in ("strict", "resync"):
             raise ValueError("gap_policy is strict or resync")
         self.master, self.state, self.norad, self.gap_policy = master, state, norad, gap_policy
@@ -135,7 +137,9 @@ class Receiver:
             return {"verdict": "gap", "accepted": False, **info}
         self.state.commit(sid)
         self.sid, self.key, self.ver = sid, key, v
-        return {"verdict": "ok" if ctr == 0 else "ok_after_gap", "accepted": True, **info}
+        if ctr == 0:
+            return {"verdict": "ok", "accepted": True, **info}
+        return {"verdict": "ok_after_gap", "accepted": True, "missing": ctr, **info}
 
 
 # ------------------------------------------------------------------------------------------- link
@@ -167,7 +171,7 @@ def fmt_row(r: dict) -> str:
 def summary(rows: list[dict]) -> dict:
     c = Counter(r["verdict"] for r in rows)
     acc = sum(r["accepted"] for r in rows)
-    return {"received": len(rows), "accepted": acc,
+    return {"received": len(rows), "accepted": acc, "missing": sum(r.get("missing", 0) for r in rows),
             "rejected": {k: c[k] for k in VERDICTS if c[k] and k not in ("ok", "ok_after_gap")}}
 
 
@@ -183,7 +187,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--master-key", default=str(MASTER))
     ap.add_argument("--state-dir", default=None, help="epoch state files (default: temp dir for --sim, "
                                                       "out/bench_link/state otherwise)")
-    ap.add_argument("--gap-policy", choices=["strict", "resync"], default="strict")
+    ap.add_argument("--gap-policy", choices=["strict", "resync"], default="resync",
+                    help="radio link default resync (missing frames reported); strict = Phase 1 file rule")
     ap.add_argument("--cfo-hz", type=float, default=15000.0)
     ap.add_argument("--snr-db", type=float, default=15.0)
     ap.add_argument("--seed", type=int, default=0)
