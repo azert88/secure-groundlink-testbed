@@ -63,3 +63,5 @@ docs/GATES_PHASE2_S3.md -text
 docs/S3_PLAN.md -text
 models/gates_p2_s3/lock.json -text
 data/recipes_s3dev/** -text
+docs/GATES_PHASE2_S3_V31.md -text
+models/gates_p2_s3_v31/lock.json -text
