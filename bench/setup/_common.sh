@@ -8,11 +8,21 @@ PHASE1_GR_SATELLITES="5.9.0"
 log()  { printf '\n=== %s\n' "$*"; }
 warn() { printf 'WARNING: %s\n' "$*" >&2; WARNINGS+=("$*"); }
 
+# Candidate version of an apt package ("" if none). Output captured first, then parsed: piping apt-cache into
+# 'grep -q' made apt-cache die of SIGPIPE, and under 'set -o pipefail' every package looked unavailable.
+apt_candidate() {
+  local out
+  out="$(LC_ALL=C apt-cache policy "$1" 2>/dev/null || true)"
+  awk '$1 == "Candidate:" && $2 != "(none)" { print $2; exit }' <<<"$out"
+}
+
 # Install a package only if apt has a candidate for it; otherwise warn and continue.
 apt_try() {
-  local p
+  local p c
   for p in "$@"; do
-    if apt-cache policy "$p" 2>/dev/null | grep -q 'Candidate: [^(]'; then
+    c="$(apt_candidate "$p")"
+    if [ -n "$c" ]; then
+      echo "apt: $p candidate $c"
       sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "$p" || warn "apt install $p failed"
     else
       warn "apt package '$p' not available on this distribution"
@@ -29,7 +39,7 @@ apt_base() {
   # Python bindings of libiio from apt (module 'iio'); used as fallback if the pip binding fails. [UNVERIFIED name]
   apt_try python3-libiio
   if [ "${NO_GNURADIO:-0}" = "1" ]; then
-    warn "gnuradio / gr-satellites skipped (NO_GNURADIO=1): the station cannot decode frames on this machine"
+    warn "gnuradio / gr-satellites skipped: this machine cannot decode frames (not needed for TX-only roles)"
   else
     apt_try gnuradio
     # gr-satellites: Debian package name 'gr-satellites' [UNVERIFIED on Bookworm / Kali]. Fallback: build from
@@ -60,12 +70,34 @@ python_venv() {
   .venv/bin/python -m pip install --upgrade pip
   # Binary wheels only, as setup.sh: building scipy / scikit-learn from source on a Pi would exhaust its RAM.
   .venv/bin/python -m pip install --only-binary=:all: -r requirements.txt
-  # Bench extras: pyadi-iio (pure Python) + pylibiio (libiio ctypes binding, source dist). [pylibiio UNVERIFIED]
-  if ! .venv/bin/python -m pip install -r requirements-bench.txt; then
+  # Bench extras: pyadi-iio (pure Python) + pylibiio (libiio ctypes binding). pylibiio 1.x needs libiio 1.x:
+  # with a 0.x system libiio, constrain pylibiio<1.
+  local libiio_ver cons
+  libiio_ver="$(system_libiio_version)"
+  cons="$(mktemp)"
+  case "$libiio_ver" in
+    0.*) echo "pylibiio<1" > "$cons"; echo "system libiio $libiio_ver (0.x): installing pylibiio<1" ;;
+    "")  : > "$cons"; warn "system libiio version unknown: pylibiio left unconstrained" ;;
+    *)   : > "$cons"; echo "system libiio $libiio_ver" ;;
+  esac
+  if ! .venv/bin/python -m pip install -c "$cons" -r requirements-bench.txt; then
     warn "pip install -r requirements-bench.txt failed; retrying pyadi-iio without its pylibiio dependency"
     .venv/bin/python -m pip install --no-deps pyadi-iio || warn "pyadi-iio install failed"
   fi
+  rm -f "$cons"
+  echo "libiio (system): ${libiio_ver:-unknown}   pylibiio (venv): $(pylibiio_version)"
   iio_binding_fallback
+}
+
+# Upstream version of the installed libiio runtime package (libiio0 or libiio1), e.g. "0.26"; "" if none.
+system_libiio_version() {
+  local v
+  v="$(dpkg-query -W -f='${Version}\n' libiio1 libiio0 2>/dev/null | grep -v '^$' | head -1 || true)"
+  v="${v#*:}"; echo "${v%%[-+]*}"
+}
+
+pylibiio_version() {
+  .venv/bin/python -m pip show pylibiio 2>/dev/null | awk '$1 == "Version:" { print $2 }' | grep . || echo "not installed"
 }
 
 # If 'import iio' fails in the venv (pylibiio missing or mismatched with the system libiio), link the apt binding.
@@ -146,6 +178,7 @@ print_versions() {
   echo "Python (venv):  $(.venv/bin/python --version 2>&1)"
   echo "pip packages:   $(.venv/bin/python -m pip list --format=freeze 2>/dev/null \
       | grep -iE '^(numpy|scipy|scikit-learn|soundfile|cryptography|pyadi-iio|pylibiio)==' | tr '\n' ' ')"
+  echo "libiio:         system $(system_libiio_version | grep . || echo unknown)   pylibiio (venv) $(pylibiio_version)"
   echo "iio (Python):   $(.venv/bin/python -c 'import iio; print(iio.version)' 2>/dev/null || echo 'not importable')"
   echo "apt packages:"
   dpkg-query -W -f='                ${Package} ${Version}\n' \

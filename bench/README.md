@@ -30,6 +30,9 @@ sudo apt update && sudo apt install -y python3-venv libiio-utils gnuradio gr-sat
 .venv/bin/python -m bench.probe             # lists the Plutos; copy URIs into bench/config.yaml
 gr_satellites --version                      # Phase 1 pin is v5.9.0; record any difference
 ```
+One-command install per machine: `bench/setup/setup_rpi.sh`, `bench/setup/setup_kali.sh` (checklist `bench/setup/CHECKLIST.md`).
+
+**Decoder version.** The station (RPi #2) must record its `gr_satellites --version` in `docs/BENCH_LOG.md` for every session: the Phase 1 pin is v5.9.0, while distribution packages can differ (Kali offers gr-satellites 5.8.0). Frames decoded with another version are reported with that version, never as v5.9.0.
 
 ## Mode A: a real SatNOGS pass through the bench
 | Step | Where | Command |

@@ -18,7 +18,7 @@ wget -O setup_rpi.sh  https://raw.githubusercontent.com/azert88/secure-groundlin
 bash setup_rpi.sh                    # RPi #2 station (decodes: needs gr-satellites)
 NO_GNURADIO=1 bash setup_rpi.sh      # RPi #1 satellite (optional: skips GNU Radio)
 wget -O setup_kali.sh https://raw.githubusercontent.com/azert88/secure-groundlink-testbed/phase2/bench/setup/setup_kali.sh
-bash setup_kali.sh                   # Kali VM: set USB pass-through first (header of setup_kali.sh)
+bash setup_kali.sh                   # Kali VM (no GNU Radio; add --with-gnuradio to decode): USB pass-through first
 ```
 | Machine | Install OK | Tests (pass / total) | Warnings | Log file |
 | --- | --- | --- | --- | --- |

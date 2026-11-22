@@ -14,6 +14,7 @@ REPO_BRANCH="${REPO_BRANCH:-phase2}"
 REPO_DIR="${REPO_DIR:-$HOME/secure-groundlink-testbed}"
 MACHINE_ROLE="Raspberry Pi"
 WARNINGS=()
+NO_GNURADIO="${NO_GNURADIO:-0}"
 
 LOG="$HOME/bench_setup_$(hostname)_$(date -u +%Y%m%dT%H%M%SZ).log"
 exec > >(tee -a "$LOG") 2>&1

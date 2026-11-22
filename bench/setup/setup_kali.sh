@@ -3,9 +3,10 @@
 # Target: Kali Linux rolling (amd64) in VirtualBox or VMware. Needs sudo and network. RECEIVE-ONLY: transmits nothing.
 #
 #   wget -O setup_kali.sh https://raw.githubusercontent.com/azert88/secure-groundlink-testbed/phase2/bench/setup/setup_kali.sh
-#   bash setup_kali.sh
+#   bash setup_kali.sh                     # attacker role: no GNU Radio / gr-satellites (VM has 2.8 GB RAM)
+#   bash setup_kali.sh --with-gnuradio     # also install gnuradio + gr-satellites (Kali offers gr-satellites 5.8.0)
 #
-# Options (environment): REPO_DIR (default ~/secure-groundlink-testbed), REPO_BRANCH (phase2), NO_GNURADIO=1.
+# Options (environment): REPO_DIR (default ~/secure-groundlink-testbed), REPO_BRANCH (phase2).
 # Full log: ~/bench_setup_<host>_<UTC>.log. Rerunnable.
 #
 # ---------------------------------------------------------------------------------------------------------------
@@ -31,6 +32,13 @@ REPO_BRANCH="${REPO_BRANCH:-phase2}"
 REPO_DIR="${REPO_DIR:-$HOME/secure-groundlink-testbed}"
 MACHINE_ROLE="Kali VM"
 WARNINGS=()
+NO_GNURADIO=1                            # attacker role does not decode; opt in with --with-gnuradio
+for a in "$@"; do
+  case "$a" in
+    --with-gnuradio) NO_GNURADIO=0 ;;
+    *) echo "unknown option: $a (only --with-gnuradio)" >&2; exit 2 ;;
+  esac
+done
 
 LOG="$HOME/bench_setup_$(hostname)_$(date -u +%Y%m%dT%H%M%SZ).log"
 exec > >(tee -a "$LOG") 2>&1
