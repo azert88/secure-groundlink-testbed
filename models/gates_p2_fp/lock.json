@@ -1,0 +1,9 @@
+{
+ "created_utc": "2026-11-22T16:35:32Z",
+ "files": {
+  "docs/FINGERPRINT_PLAN.md": "56d8dbcf1a7167ef53462b252a7c2c0182ff330f969467c8c59fd4a1ddb62e3c",
+  "docs/GATES_PHASE2_FP.md": "9a336f6f9cbf8215829d968fc2d9f226dff1145169f53d6229883875e639855f"
+ },
+ "label": "test lock: gates_p2_fp",
+ "signature": "+PHZOsXxjl+Lk51OgVwJye1qQ1GhcDpSWvA8/VgPK0UPE4LQ2K+WUphUbiorYO2EUuoEEB2CDmCJ0wBfvJEZAQ=="
+}
