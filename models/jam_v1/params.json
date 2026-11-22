@@ -1,0 +1,13 @@
+{
+ "version": "jam_v1",
+ "gate": "docs/GATES_PHASE2_S4.md (models/gates_p2_s4/lock.json)",
+ "window_frames": 10,
+ "min_last_window_frames": 5,
+ "loss_threshold": 0.3,
+ "consecutive": 2,
+ "p0_quantile": 99.0,
+ "p0_min_windows": 20,
+ "inband_hz": [98000.0, 166000.0],
+ "block_s": 0.05,
+ "note": "P0 is not stored here: it is fitted on the threshold set of each setting (simulation calib runs, SatNOGS LOSO, bench calib sessions) by detect/jam_v1.fit_p0 and written next to that setting's results."
+}
