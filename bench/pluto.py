@@ -13,6 +13,9 @@ RX_FULL_SCALE = 2 ** 11
 
 
 def open_pluto(uri: str):
+    if str(uri).startswith("fake:"):                # rehearsal stand-in, no hardware (bench/fake_pluto.py)
+        from bench.fake_pluto import FakePluto
+        return FakePluto(uri)
     import adi                                     # pyadi-iio; imported here so the rest of bench/ runs without it
     return adi.Pluto(uri)
 

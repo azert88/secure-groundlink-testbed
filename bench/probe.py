@@ -1,16 +1,27 @@
-"""List the connected Plutos (no transmission).  python -m bench.probe
+"""List the connected Plutos (no transmission).  python -m bench.probe [--config bench/config.yaml]
 
 Prints each IIO context URI and, when pyadi-iio is installed, the default settings of each Pluto.
+Devices configured with a "fake:" URI (rehearsal, bench/fake_pluto.py) are listed too.
 Copy the URIs into bench/config.yaml (devices) and the serials / firmware into docs/BENCH_LOG.md.
 """
 
 from __future__ import annotations
 
+import argparse
 import shutil
 import subprocess
 
+from bench.safety import DEFAULT_CONFIG, load_config
 
-def main() -> None:
+
+def main(argv: list[str] | None = None) -> None:
+    ap = argparse.ArgumentParser(description="List the connected Plutos (no transmission)")
+    ap.add_argument("--config", default=str(DEFAULT_CONFIG))
+    args = ap.parse_args(argv)
+    from bench.pluto import describe, open_pluto
+    for role, uri in (load_config(args.config).get("devices") or {}).items():
+        if str(uri).startswith("fake:"):
+            print(f"{role}\t{uri}\tFAKE (no hardware)\n   ", describe(open_pluto(uri)))
     exe = shutil.which("iio_info")
     if exe:
         r = subprocess.run([exe, "-s"], capture_output=True, text=True)
@@ -23,7 +34,6 @@ def main() -> None:
         for uri, desc in ctxs.items():
             print(f"{uri}\t{desc}")
             try:
-                from bench.pluto import describe, open_pluto
                 print("   ", describe(open_pluto(uri)))
             except Exception as e:
                 print(f"    could not open with pyadi-iio: {e}")

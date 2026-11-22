@@ -33,7 +33,11 @@ def write_meta(base: str | Path, sample_rate: float, center_hz: float, start: da
     for k, v in (extra or {}).items():
         doc["global"][f"bench:{k}"] = v
     if data.exists():
-        doc["global"]["core:sha512"] = hashlib.sha512(data.read_bytes()).hexdigest()
+        h = hashlib.sha512()                       # chunked: a 320 s capture is ~0.7 GB, too much RAM on a Pi
+        with open(data, "rb") as fh:
+            for chunk in iter(lambda: fh.read(1 << 22), b""):
+                h.update(chunk)
+        doc["global"]["core:sha512"] = h.hexdigest()
     meta.write_text(json.dumps(doc, indent=2), encoding="utf-8")
     return meta
 
