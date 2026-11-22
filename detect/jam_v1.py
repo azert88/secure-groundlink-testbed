@@ -2,7 +2,10 @@
 
 Idea (Xu et al., MobiHoc 2005): high received power in the signal band + high frame loss = jamming; loss at low power
 = poor propagation. No pilot, no carrier offset, no fingerprint input. Output is a separate field
-`jamming_suspected`; the fused verdict is not changed (decision P2-31, Q3).
+`jamming_suspected` (name fixed by the signed gate) with the alert text ALERT_TEXT and the equivalent field
+`jamming_or_strong_interference_suspected`; the fused verdict is not changed (decision P2-31, Q3).
+Known limit, not a defect: benign noise or interference strong enough to cause loss on a strong link is physically
+indistinguishable from jamming by power and loss alone, so the alert never claims an attack (decision P2-34).
 
 Inputs (any setting: simulation, bench, SatNOGS):
   frames  list of dicts in expected order: t0, t1 (time span of the expected frame), lost (bool); optional b0, b1
@@ -22,6 +25,7 @@ from pathlib import Path
 import numpy as np
 
 PARAMS = Path(__file__).resolve().parents[1] / "models" / "jam_v1" / "params.json"
+ALERT_TEXT = "jamming or strong interference suspected"
 
 
 def load_params(path: str | Path = PARAMS) -> dict:
@@ -95,7 +99,8 @@ def apply(rows: list[dict], p0: float, params: dict, key: str = "P", loss_thresh
             i = j
         else:
             i += 1
-    return [{**r, "candidate": c, "jamming_suspected": a} for r, c, a in zip(rows, cand, alert)]
+    return [{**r, "candidate": c, "jamming_suspected": a, "jamming_or_strong_interference_suspected": a,
+             "alert_text": ALERT_TEXT if a else ""} for r, c, a in zip(rows, cand, alert)]
 
 
 def pass_alert(rows: list[dict]) -> bool:

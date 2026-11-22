@@ -40,6 +40,9 @@ def test_window_rows_and_consecutive_rule():
     assert [r["lost"] for r in rows] == [0, 10, 10, 0, 1, 0]
     out = J.apply(rows, -30.0, P)
     assert [r["jamming_suspected"] for r in out] == [False, True, True, False, False, False]
+    assert out[1]["alert_text"] == "jamming or strong interference suspected" and out[0]["alert_text"] == ""
+    assert all(r["jamming_or_strong_interference_suspected"] == r["jamming_suspected"] for r in out)
+    assert "attack" not in J.ALERT_TEXT
     single = J.apply(rows[:2], -30.0, P)                                         # one candidate alone: no alert
     assert single[1]["candidate"] and not single[1]["jamming_suspected"]
     assert not J.pass_alert(J.apply(rows, -10.0, P))
