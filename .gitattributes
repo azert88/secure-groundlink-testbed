@@ -66,3 +66,5 @@ data/recipes_s3dev/** -text
 docs/GATES_PHASE2_S3_V31.md -text
 models/gates_p2_s3_v31/lock.json -text
 models/interference_v31/** -text
+docs/GATES_PHASE2_S4.md -text
+docs/S4_PLAN.md -text
